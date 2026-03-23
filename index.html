@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Particulate LLC — A New Jersey company building brands at the intersection of technology, commerce, and collectibles." />
+  <meta property="og:title" content="Particulate LLC" />
+  <meta property="og:description" content="Building brands at the intersection of technology, commerce, and collectibles." />
+  <meta property="og:type" content="website" />
+  <title>Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --surface2: #10101a;
+      --border: #1a1a28;
+      --accent: #6366f1;
+      --accent2: #818cf8;
+      --accent3: #a5b4fc;
+      --glow: rgba(99, 102, 241, 0.15);
+      --text: #e8e8f4;
+      --muted: #7070a0;
+      --card: #0e0e18;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.5px;
+      box-shadow: 0 0 20px rgba(99,102,241,0.3);
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand-name span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.85em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border-radius: 7px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); background: var(--surface2); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      color: var(--accent3);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 2.25rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-lockup {
+      width: 88px; height: 88px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 auto 2.25rem;
+      box-shadow: 0 0 70px rgba(99,102,241,0.4);
+      letter-spacing: -0.5px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(150deg, #fff 40%, var(--accent3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 1rem;
+      line-height: 1.75;
+    }
+
+    .hero-legal {
+      font-size: 0.78rem;
+      color: #3a3a58;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      box-shadow: 0 4px 28px rgba(99,102,241,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(99,102,241,0.55);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      color: var(--text);
+      border-color: rgba(99,102,241,0.4);
+      background: var(--surface2);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── BRANDS SECTION ── */
+    .brands-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5.5rem 2rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .brand-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .brand-card.vindom::after { background: radial-gradient(ellipse at top left, rgba(124,58,237,0.08), transparent 60%); }
+    .brand-card.layered::after { background: radial-gradient(ellipse at top left, rgba(0,229,255,0.06), transparent 60%); }
+    .brand-card.boba::after { background: radial-gradient(ellipse at top left, rgba(239,68,68,0.06), transparent 60%); }
+
+    .brand-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+
+    .brand-card:hover::after { opacity: 1; }
+
+    .brand-card.vindom:hover { border-color: rgba(124,58,237,0.45); }
+    .brand-card.layered:hover { border-color: rgba(0,229,255,0.35); }
+    .brand-card.boba:hover { border-color: rgba(239,68,68,0.35); }
+
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand-icon {
+      width: 52px; height: 52px;
+      border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .vindom .brand-icon { background: rgba(124,58,237,0.15); }
+    .layered .brand-icon { background: rgba(0,229,255,0.1); }
+    .boba .brand-icon { background: rgba(239,68,68,0.1); }
+
+    .brand-name-tag h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .brand-name-tag .brand-type {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.15rem;
+    }
+
+    .vindom .brand-type { color: rgba(167,139,250,0.7); }
+    .layered .brand-type { color: rgba(0,229,255,0.6); }
+    .boba .brand-type { color: rgba(239,68,68,0.6); }
+
+    .brand-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-link-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: all 0.18s;
+    }
+
+    .brand-link-chip:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .brand-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-left: auto;
+      align-self: flex-start;
+    }
+
+    .status-live { background: rgba(29,185,84,0.12); color: #1db954; border: 1px solid rgba(29,185,84,0.2); }
+    .status-building { background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text .section-desc { max-width: 100%; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .stat-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--accent3);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      margin-top: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px; height: 300px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-card > p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--accent3);
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      min-width: 280px;
+      justify-content: center;
+    }
+
+    .contact-item:hover {
+      border-color: rgba(99,102,241,0.5);
+      background: rgba(99,102,241,0.08);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-brand .brand-mark {
+      width: 28px; height: 28px;
+      font-size: 0.72rem;
+      border-radius: 6px;
+      box-shadow: none;
+    }
+
+    .footer-brand span {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 5px;
+      transition: all 0.15s;
+    }
+
+    .footer-nav a:hover { color: var(--accent3); }
+
+    .footer-copy {
+      color: #2a2a48;
+      font-size: 0.78rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0.75rem 1.25rem; }
+      .nav-links { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .brands-grid { grid-template-columns: 1fr; }
+      .contact-item { min-width: unset; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <div class="brand-mark">P</div>
+      <div class="brand-name">Particulate LLC <span>/ NJ</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#brands">Brands</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-eyebrow">🏢 New Jersey LLC · Est. 2026</div>
+    <div class="hero-lockup">P</div>
+    <h1>Particulate LLC</h1>
+    <p class="hero-desc">
+      Building brands at the intersection of technology, commerce, and collectibles.
+    </p>
+    <p class="hero-legal">Entity ID 0451432646 · NJ Division of Revenue</p>
+    <div class="hero-actions">
+      <a href="#brands" class="btn btn-primary">
+        Our Brands
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- BRANDS -->
+  <section class="brands-section" id="brands">
+    <div class="section-eyebrow">Our Portfolio</div>
+    <h2 class="section-title">Three Brands.<br />One Company.</h2>
+    <p class="section-desc">
+      Particulate LLC operates multiple consumer brands across trading cards, 3D printing, and digital marketplaces.
+    </p>
+
+    <div class="brands-grid">
+
+      <!-- Vindom Games -->
+      <a href="https://vindomgames.com" target="_blank" class="brand-card vindom">
+        <div class="brand-header">
+          <div class="brand-icon">🎴</div>
+          <div class="brand-name-tag">
+            <h3>Vindom Games</h3>
+            <div class="brand-type">Trading Cards &amp; Collectibles</div>
+          </div>
+          <span class="brand-status status-live">● Live</span>
+        </div>
+        <p>
+          Trading cards, collectibles, and related merchandise. Powered by eBay and TCGPlayer, with a dedicated presence on the BoBA Marketplace for Bo Jackson cards.
+        </p>
+        <div class="brand-links">
+          <a href="https://www.ebay.com/usr/vindomgames" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">🛒 eBay</a>
+          <a href="https://www.tcgplayer.com/search/all/product?seller=6c76d173&view=grid" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">🎴 TCGPlayer</a>
+          <a href="https://frontend-phi-rust.vercel.app" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">⚡ BoBA</a>
+        </div>
+      </a>
+
+      <!-- Layered Up -->
+      <a href="https://usedcarsales.github.io/layeredup/" target="_blank" class="brand-card layered">
+        <div class="brand-header">
+          <div class="brand-icon">🖨️</div>
+          <div class="brand-name-tag">
+            <h3>Layered Up</h3>
+            <div class="brand-type">3D Printing &amp; Social Commerce</div>
+          </div>
+          <span class="brand-status status-live">● Live</span>
+        </div>
+        <p>
+          Original 3D printed products, maker deals, and print timelapses. Available on TikTok Shop, Telegram, and Amazon — with Etsy and YouTube coming soon.
+        </p>
+        <div class="brand-links">
+          <a href="https://www.tiktok.com/@layeredup" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">🎬 TikTok</a>
+          <a href="https://t.me/LayeredUp" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">📱 Telegram</a>
+          <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">📦 Amazon</a>
+        </div>
+      </a>
+
+      <!-- BoBA Marketplace -->
+      <a href="https://frontend-phi-rust.vercel.app" target="_blank" class="brand-card boba">
+        <div class="brand-header">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-name-tag">
+            <h3>BoBA Marketplace</h3>
+            <div class="brand-type">SaaS / Digital Marketplace</div>
+          </div>
+          <span class="brand-status status-building">⬡ Building</span>
+        </div>
+        <p>
+          A dedicated marketplace for Bo Jackson cards — connecting buyers and sellers with real listings, graded inventory, and secure checkout. Built on modern web tech with Stripe-powered payments.
+        </p>
+        <div class="brand-links">
+          <a href="https://frontend-phi-rust.vercel.app" target="_blank" class="brand-link-chip" onclick="event.stopPropagation()">🌐 Visit Marketplace</a>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-title">Built in New Jersey.</h2>
+        <p class="section-desc">
+          Particulate LLC is a New Jersey single-member LLC operating multiple consumer brands. We build at the intersection of technology and commerce — from physical products to digital marketplaces.
+        </p>
+        <p class="section-desc" style="margin-top:1rem;">
+          Our brands are independently branded but share a common infrastructure: shared bookkeeping, legal compliance, and a commitment to fair dealing with customers and partners.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Active Brands</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">NJ</div>
+          <div class="stat-label">State of Formation</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">61+</div>
+          <div class="stat-label">eBay Ratings</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2026</div>
+          <div class="stat-label">Est.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-desc" style="margin:0 auto;">
+      Business inquiries, partnership opportunities, or press — reach out directly.
+    </p>
+
+    <div class="contact-card">
+      <h3>Particulate LLC</h3>
+      <p>New Jersey · United States</p>
+      <div class="contact-links">
+        <a href="mailto:james@vindomgames.com" class="contact-item">
+          ✉️ james@vindomgames.com
+        </a>
+        <a href="https://vindomgames.com" target="_blank" class="contact-item">
+          🎴 Vindom Games
+        </a>
+        <a href="https://usedcarsales.github.io/layeredup/" target="_blank" class="contact-item">
+          🖨️ Layered Up
+        </a>
+        <a href="https://frontend-phi-rust.vercel.app" target="_blank" class="contact-item">
+          ⚡ BoBA Marketplace
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark">P</div>
+        <span>Particulate LLC</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://vindomgames.com">Vindom Games</a>
+        <a href="https://usedcarsales.github.io/layeredup/">Layered Up</a>
+        <a href="https://frontend-phi-rust.vercel.app">BoBA Marketplace</a>
+        <a href="mailto:james@vindomgames.com">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Particulate LLC · New Jersey · Entity ID 0451432646</p>
+    </div>
+  </footer>
+
+</body>
+</html>
