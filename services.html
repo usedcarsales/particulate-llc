@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Particulate LLC — Managed AI Services for small businesses. Automated operations, monitoring, content, and reporting that actually works." />
+  <meta property="og:title" content="AI Services — Particulate LLC" />
+  <meta property="og:description" content="Practical AI automation for your business. Not hype — results." />
+  <title>AI Services — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --surface2: #10101a;
+      --border: #1a1a28;
+      --accent: #6366f1;
+      --accent2: #818cf8;
+      --accent3: #a5b4fc;
+      --glow: rgba(99, 102, 241, 0.15);
+      --text: #e8e8f4;
+      --muted: #7070a0;
+      --card: #0e0e18;
+      --green: #22c55e;
+      --green-glow: rgba(34, 197, 94, 0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { color: var(--accent3); }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); }
+    .nav-brand span { color: var(--accent2); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 20px;
+      background: var(--green-glow);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      font-size: 13px; font-weight: 600; color: var(--green);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent2); }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-size: 16px; font-weight: 600;
+      transition: all 0.3s;
+    }
+    .hero-cta:hover {
+      background: var(--accent2); color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--glow);
+    }
+
+    /* Sections */
+    section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 12px;
+    }
+    .section-title { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; color: var(--muted); max-width: 600px; margin-bottom: 48px; }
+
+    /* Service Cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    .service-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--glow);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 20px;
+    }
+    .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .service-card ul { list-style: none; margin-top: 16px; }
+    .service-card li {
+      font-size: 13px; color: var(--muted);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .service-card li::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px var(--glow);
+    }
+    .pricing-card.featured::before {
+      content: "MOST POPULAR";
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      padding: 4px 16px; border-radius: 20px;
+      background: var(--accent); color: white;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    }
+    .pricing-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .pricing-card .price { font-size: 48px; font-weight: 800; margin: 16px 0 4px; }
+    .pricing-card .price span { font-size: 16px; color: var(--muted); font-weight: 400; }
+    .pricing-card .desc { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .pricing-card ul { list-style: none; text-align: left; margin-bottom: 24px; }
+    .pricing-card li { font-size: 14px; padding: 8px 0; color: var(--muted); }
+    .pricing-card li::before { content: "✓ "; color: var(--green); font-weight: 700; }
+    .pricing-btn {
+      display: block; width: 100%; padding: 12px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      color: var(--text); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .pricing-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+    .pricing-card.featured .pricing-btn { background: var(--accent); border-color: var(--accent); color: white; }
+
+    /* How It Works */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+    .step { text-align: center; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--glow); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: var(--accent2);
+      margin: 0 auto 16px;
+    }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 13px; color: var(--muted); }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 80px 24px;
+      background: linear-gradient(180deg, transparent, var(--glow), transparent);
+      border-radius: 24px;
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .services-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How It Works</a>
+      <a href="mailto:hello@particulatellc.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">🤖 AI-Powered Automation</div>
+  <h1>Your business runs <em>better</em> while you sleep.</h1>
+  <p>Managed AI services that handle monitoring, reporting, content, and operations — so you can focus on growing your business instead of running it.</p>
+  <a href="mailto:hello@particulatellc.com" class="hero-cta">Get a Free Consultation →</a>
+</div>
+
+<section id="services">
+  <div class="section-label">What We Do</div>
+  <div class="section-title">Practical AI. Real Results.</div>
+  <div class="section-desc">No buzzwords. No hype. Just automation that saves you time and makes you money.</div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Morning Status Reports</h3>
+      <p>Wake up to a complete business briefing every day — automatically compiled from all your data sources.</p>
+      <ul>
+        <li>Sales & revenue overnight summary</li>
+        <li>Inventory alerts & low stock warnings</li>
+        <li>Website traffic & lead notifications</li>
+        <li>Competitor price monitoring</li>
+        <li>Social media engagement metrics</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>Online Presence & SEO</h3>
+      <p>Automated content, keyword tracking, and search ranking optimization that runs 24/7.</p>
+      <ul>
+        <li>Weekly content generation & posting</li>
+        <li>Keyword rank tracking & reports</li>
+        <li>Google Business Profile management</li>
+        <li>Review monitoring & response drafting</li>
+        <li>Local SEO optimization</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📢</div>
+      <h3>Marketing Automation</h3>
+      <p>Social media, email campaigns, and ad management that adapts to your business goals.</p>
+      <ul>
+        <li>Social media scheduling & posting</li>
+        <li>Email newsletter automation</li>
+        <li>Google Ads monitoring & optimization</li>
+        <li>Lead capture & CRM integration</li>
+        <li>Campaign performance reports</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🛡️</div>
+      <h3>Operations Monitoring</h3>
+      <p>Keep your business systems healthy with continuous automated monitoring and alerts.</p>
+      <ul>
+        <li>Website uptime & speed monitoring</li>
+        <li>Payment processing health checks</li>
+        <li>API & integration status tracking</li>
+        <li>Security scanning & alerts</li>
+        <li>Automated backup verification</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏪</div>
+      <h3>E-Commerce Automation</h3>
+      <p>For online sellers — automated pricing, listing management, and marketplace optimization.</p>
+      <ul>
+        <li>Dynamic pricing based on competitors</li>
+        <li>Multi-platform listing sync (eBay, Amazon, Etsy)</li>
+        <li>Inventory tracking across channels</li>
+        <li>Order fulfillment monitoring</li>
+        <li>Customer message auto-response</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Custom Workflows</h3>
+      <p>Have a repetitive task eating your time? We'll automate it.</p>
+      <ul>
+        <li>Data entry & spreadsheet automation</li>
+        <li>Invoice generation & tracking</li>
+        <li>Appointment scheduling bots</li>
+        <li>Document processing & filing</li>
+        <li>Custom integrations between your tools</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <div class="section-title">Simple, transparent pricing.</div>
+  <div class="section-desc">No setup fees. No long-term contracts. Cancel anytime.</div>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Starter</h3>
+      <div class="price">$299<span>/mo</span></div>
+      <div class="desc">Perfect for solo operators and micro-businesses</div>
+      <ul>
+        <li>Daily status report (1 data source)</li>
+        <li>Basic website monitoring</li>
+        <li>Weekly social media post (1 platform)</li>
+        <li>Monthly performance report</li>
+        <li>Email support</li>
+      </ul>
+      <a href="mailto:hello@particulatellc.com?subject=Starter Plan" class="pricing-btn">Get Started</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <h3>Growth</h3>
+      <div class="price">$599<span>/mo</span></div>
+      <div class="desc">For growing businesses that want to scale faster</div>
+      <ul>
+        <li>Daily briefing (unlimited data sources)</li>
+        <li>Full SEO monitoring & content</li>
+        <li>Social media (3 platforms)</li>
+        <li>Google Ads optimization</li>
+        <li>E-commerce pricing automation</li>
+        <li>Priority Slack/Discord support</li>
+      </ul>
+      <a href="mailto:hello@particulatellc.com?subject=Growth Plan" class="pricing-btn">Get Started</a>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Enterprise</h3>
+      <div class="price">$999<span>/mo</span></div>
+      <div class="desc">Full-service AI operations for established businesses</div>
+      <ul>
+        <li>Everything in Growth</li>
+        <li>Custom workflow automation</li>
+        <li>Multi-location support</li>
+        <li>API integrations</li>
+        <li>Dedicated account manager</li>
+        <li>24/7 monitoring & alerts</li>
+      </ul>
+      <a href="mailto:hello@particulatellc.com?subject=Enterprise Plan" class="pricing-btn">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-label">How It Works</div>
+  <div class="section-title">Up and running in days, not months.</div>
+  <div class="section-desc">We handle the technical setup. You just tell us what matters to your business.</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Free Consultation</h3>
+      <p>Tell us about your business and what's eating your time. We'll identify the highest-impact automations.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Custom Setup</h3>
+      <p>We connect to your existing tools and build your AI workflows. No disruption to your current operations.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Go Live</h3>
+      <p>Your automations start running. Morning reports land in your inbox. Tasks get done while you sleep.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Optimize</h3>
+      <p>We continuously improve based on results. Monthly reviews to add new automations and refine existing ones.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Ready to automate?</h2>
+  <p>Book a free 15-minute call and we'll show you exactly what AI can do for your business.</p>
+  <a href="mailto:hello@particulatellc.com?subject=Free Consultation Request" class="hero-cta">Book Free Consultation →</a>
+</div>
+
+<footer>
+  <p>© 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="mailto:hello@particulatellc.com">Contact</a></p>
+</footer>
+
+</body>
+</html>
