@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Particulate LLC — AI Consulting Services. Expert AI agent setup, retirement planning guidance, and business automation consulting." />
+  <meta property="og:title" content="Consulting — Particulate LLC" />
+  <meta property="og:description" content="AI agents helping you set up AI agents. Plus retirement planning guidance powered by AI." />
+  <title>Consulting — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --surface2: #10101a;
+      --border: #1a1a28;
+      --accent: #6366f1;
+      --accent2: #818cf8;
+      --accent3: #a5b4fc;
+      --glow: rgba(99, 102, 241, 0.15);
+      --text: #e8e8f4;
+      --muted: #7070a0;
+      --card: #0e0e18;
+      --green: #22c55e;
+      --green-glow: rgba(34, 197, 94, 0.15);
+      --orange: #f59e0b;
+      --orange-glow: rgba(245, 158, 11, 0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { color: var(--accent3); }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); }
+    .nav-brand span { color: var(--accent2); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--accent2); }
+
+    /* Hero */
+    .hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 20px;
+      background: var(--glow);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      font-size: 13px; font-weight: 600; color: var(--accent2);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent2); }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-size: 16px; font-weight: 600;
+      transition: all 0.3s;
+      border: none; cursor: pointer;
+    }
+    .hero-cta:hover {
+      background: var(--accent2); color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--glow);
+    }
+
+    /* Sections */
+    section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 12px;
+    }
+    .section-title { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; color: var(--muted); max-width: 640px; margin-bottom: 48px; }
+
+    /* Service Tabs */
+    .tabs {
+      display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .tab {
+      padding: 12px 24px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      color: var(--muted); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .tab:hover { border-color: var(--accent); color: var(--text); }
+    .tab.active { background: var(--accent); border-color: var(--accent); color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .pricing-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px var(--glow);
+    }
+    .pricing-card.featured::before {
+      content: "MOST POPULAR";
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      padding: 4px 16px; border-radius: 20px;
+      background: var(--accent); color: white;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    }
+    .pricing-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .pricing-card .price { font-size: 42px; font-weight: 800; margin: 12px 0 4px; }
+    .pricing-card .price span { font-size: 16px; color: var(--muted); font-weight: 400; }
+    .pricing-card .desc { font-size: 14px; color: var(--muted); margin-bottom: 20px; min-height: 40px; }
+    .pricing-card ul { list-style: none; margin-bottom: 24px; }
+    .pricing-card li { font-size: 14px; padding: 6px 0; color: var(--muted); }
+    .pricing-card li::before { content: "✓ "; color: var(--green); font-weight: 700; }
+    .pricing-btn {
+      display: block; width: 100%; padding: 12px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      color: var(--text); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.3s; text-align: center;
+    }
+    .pricing-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+    .pricing-card.featured .pricing-btn { background: var(--accent); border-color: var(--accent); color: white; }
+
+    /* Feature Cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .feature-card .icon { font-size: 28px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+    .step { text-align: center; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--glow); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: var(--accent2);
+      margin: 0 auto 16px;
+    }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 13px; color: var(--muted); }
+
+    /* Proof Banner */
+    .proof {
+      background: linear-gradient(135deg, var(--surface2), var(--card));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .proof h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+    .proof p { font-size: 15px; color: var(--muted); max-width: 600px; margin: 0 auto; }
+    .proof-stats {
+      display: flex; justify-content: center; gap: 48px; margin-top: 32px; flex-wrap: wrap;
+    }
+    .proof-stat { text-align: center; }
+    .proof-stat .num { font-size: 36px; font-weight: 800; color: var(--accent2); }
+    .proof-stat .label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 48px;
+    }
+    .disclaimer h4 { font-size: 14px; font-weight: 700; color: var(--orange); margin-bottom: 8px; }
+    .disclaimer p { font-size: 12px; color: var(--muted); line-height: 1.8; }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 80px 24px;
+      background: linear-gradient(180deg, transparent, var(--glow), transparent);
+      border-radius: 24px;
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { font-size: 16px; color: var(--muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .pricing-grid, .features-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .proof-stats { gap: 24px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/consulting.html" class="active">Consulting</a>
+      <a href="mailto:hello@particulatellc.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🤖 AI-Powered Consulting</div>
+  <h1>Expert guidance from agents who <em>live it daily.</em></h1>
+  <p>Our AI agents have spent months building, breaking, and perfecting real business operations. Now they'll help you do the same — at a fraction of traditional consulting costs.</p>
+  <a href="#services" class="hero-cta">Explore Services →</a>
+</div>
+
+<!-- PROOF BANNER -->
+<section>
+  <div class="proof">
+    <h3>Built by AI. Proven in Production.</h3>
+    <p>Our consulting team includes AI agents that have been operating in real business environments since February 2026 — managing projects, delegating tasks, and shipping products 24/7.</p>
+    <div class="proof-stats">
+      <div class="proof-stat">
+        <div class="num">12+</div>
+        <div class="label">Products Shipped</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">2+</div>
+        <div class="label">Months in Production</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">24/7</div>
+        <div class="label">Availability</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">2</div>
+        <div class="label">AI Agent Team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE TABS -->
+<section id="services">
+  <div class="section-label">Our Consulting Services</div>
+  <div class="section-title">Choose your path.</div>
+  <div class="section-desc">Two specialized consulting tracks — both powered by battle-tested AI agents backed by human oversight.</div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('agents')">🤖 AI Agent Setup</div>
+    <div class="tab" onclick="switchTab('retirement')">📊 Retirement Planning</div>
+  </div>
+
+  <!-- AI AGENT SETUP TAB -->
+  <div id="tab-agents" class="tab-content active">
+    <div class="features-grid" style="margin-bottom: 48px;">
+      <div class="feature-card">
+        <div class="icon">🔧</div>
+        <h3>Full Agent Configuration</h3>
+        <p>We walk you through installing OpenClaw, configuring your AI agent's personality, setting up memory systems, cron jobs, and multi-agent coordination — the same setup powering our own business.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📱</div>
+        <h3>Multi-Channel Support</h3>
+        <p>Get help via SMS, WhatsApp, Zoom video calls, or Discord. We meet you wherever you're most comfortable — and our agents respond 24/7.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📋</div>
+        <h3>Battle-Tested Templates</h3>
+        <p>Start with proven configuration templates extracted from our own production operations. SOUL.md, AGENTS.md, HEARTBEAT.md — all customized for your use case.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔄</div>
+        <h3>Ongoing Agent Care</h3>
+        <p>Monthly health checks, new skill installations, optimization reviews, and priority support. Keep your agents running at peak performance.</p>
+      </div>
+    </div>
+
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Agent Setup Packages</div>
+    <div class="section-desc">From quick guidance to full enterprise deployment.</div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>QuickStart</h3>
+        <div class="price">$299</div>
+        <div class="desc">Perfect for tech-savvy users who need direction.</div>
+        <ul>
+          <li>1-hour Zoom consultation</li>
+          <li>Platform & model recommendations</li>
+          <li>Hosting cost breakdown</li>
+          <li>Starter SOUL.md template</li>
+          <li>Written setup guide (PDF)</li>
+          <li>7 days follow-up support</li>
+        </ul>
+        <a href="mailto:hello@particulatellc.com?subject=QuickStart Inquiry" class="pricing-btn">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Full Setup</h3>
+        <div class="price">$699</div>
+        <div class="desc">We walk through the entire installation with you.</div>
+        <ul>
+          <li>Everything in QuickStart</li>
+          <li>Step-by-step installation walkthrough</li>
+          <li>Complete agent configuration written</li>
+          <li>3 essential skills installed</li>
+          <li>Memory system + first cron job</li>
+          <li>GitHub workspace initialized</li>
+          <li>2 weeks follow-up support</li>
+        </ul>
+        <a href="mailto:hello@particulatellc.com?subject=Full Setup Inquiry" class="pricing-btn">Get Started</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="price">$999</div>
+        <div class="desc">Production-grade multi-agent operations.</div>
+        <ul>
+          <li>Everything in Full Setup</li>
+          <li>Multi-agent architecture design</li>
+          <li>1 custom skill developed</li>
+          <li>Twilio/WhatsApp integration</li>
+          <li>5+ automated routines</li>
+          <li>Cost monitoring & alerts</li>
+          <li>30 days support + optimization review</li>
+        </ul>
+        <a href="mailto:hello@particulatellc.com?subject=Enterprise Setup Inquiry" class="pricing-btn">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Agent Care Subscriptions -->
+    <div style="margin-top: 48px;">
+      <div class="section-label">Ongoing Support</div>
+      <div class="section-title">Agent Care Plans</div>
+      <div class="section-desc">Keep your agents healthy and optimized with monthly support.</div>
+
+      <div class="pricing-grid" style="max-width: 700px;">
+        <div class="pricing-card">
+          <h3>Agent Care</h3>
+          <div class="price">$49<span>/mo</span></div>
+          <div class="desc">Essential monitoring and support.</div>
+          <ul>
+            <li>Monthly agent health check</li>
+            <li>Priority SMS/WhatsApp support</li>
+            <li>Optimization recommendations</li>
+            <li>1 skill install per month</li>
+            <li>Quarterly review call (30 min)</li>
+          </ul>
+          <a href="mailto:hello@particulatellc.com?subject=Agent Care Inquiry" class="pricing-btn">Subscribe</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <h3>Agent Care Pro</h3>
+          <div class="price">$149<span>/mo</span></div>
+          <div class="desc">Premium support for power users.</div>
+          <ul>
+            <li>Everything in Agent Care</li>
+            <li>Dedicated automated monitoring</li>
+            <li>1 custom skill per quarter</li>
+            <li>&lt;2 hour response time</li>
+            <li>Multi-agent coordination support</li>
+            <li>Cost optimization reviews</li>
+          </ul>
+          <a href="mailto:hello@particulatellc.com?subject=Agent Care Pro Inquiry" class="pricing-btn">Subscribe</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <h4>⚠️ AI Disclosure</h4>
+      <p>Consultation services are primarily provided by AI agents operated by Particulate LLC, with human oversight and review. We provide technology guidance and education. Results may vary based on your specific setup, hardware, and use case. Particulate LLC is not responsible for third-party services, API costs, or agent behavior after setup completion. All consultations are backed by our human operator for quality assurance.</p>
+    </div>
+  </div>
+
+  <!-- RETIREMENT PLANNING TAB -->
+  <div id="tab-retirement" class="tab-content">
+    <div class="features-grid" style="margin-bottom: 48px;">
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h3>Retirement Readiness Assessment</h3>
+        <p>AI-powered analysis of your retirement preparedness — covering 401(k), IRA, Social Security, Medicare, and more. Get a clear picture of where you stand.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3>Social Security Optimization</h3>
+        <p>Compare claiming scenarios (age 62 vs 67 vs 70) with personalized projections. Understand spousal benefits, survivor benefits, and optimal timing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🏥</div>
+        <h3>Medicare Navigation</h3>
+        <p>Enrollment timelines, deadline alerts, plan comparison tools, and penalty avoidance guidance. Never miss a critical enrollment window.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤝</div>
+        <h3>Professional Matching</h3>
+        <p>We connect you with vetted, fee-only financial advisors, CPAs, and estate attorneys in your area. No commissions — we recommend people, not products.</p>
+      </div>
+    </div>
+
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Retirement Planning Packages</div>
+    <div class="section-desc">Education and guidance to help you navigate retirement with confidence.</div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Navigator</h3>
+        <div class="price">$29<span>/mo</span></div>
+        <div class="desc">Essential retirement planning tools.</div>
+        <ul>
+          <li>Retirement readiness assessment</li>
+          <li>Personalized retirement timeline</li>
+          <li>Social Security scenarios</li>
+          <li>Medicare enrollment timeline</li>
+          <li>RMD calculator & reminders</li>
+          <li>Monthly action items</li>
+          <li>Educational content library</li>
+        </ul>
+        <a href="mailto:hello@particulatellc.com?subject=Navigator Inquiry" class="pricing-btn">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Navigator Pro</h3>
+        <div class="price">$99<span>/mo</span></div>
+        <div class="desc">Comprehensive planning for pre-retirees.</div>
+        <ul>
+          <li>Everything in Navigator</li>
+          <li>Tax-efficient withdrawal scenarios</li>
+          <li>Estate planning checklist</li>
+          <li>Insurance needs assessment</li>
+          <li>Quarterly financial health report</li>
+          <li>Priority professional referrals</li>
+          <li>1-on-1 onboarding call</li>
+        </ul>
+        <a href="mailto:hello@particulatellc.com?subject=Navigator Pro Inquiry" class="pricing-btn">Get Started</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Retirement Blueprint</h3>
+        <div class="price">$499</div>
+        <div class="desc">Comprehensive one-time assessment.</div>
+        <ul>
+          <li>Complete retirement analysis</li>
+          <li>Full benefits inventory</li>
+          <li>Gap analysis & action plan</li>
+          <li>Professional referral package</li>
+          <li>90-day follow-up check</li>
+        </ul>
+        <a href="mailto:hello@particulatellc.com?subject=Blueprint Inquiry" class="pricing-btn">Get Started</a>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <h4>⚠️ Important Disclosure</h4>
+      <p>Particulate LLC provides retirement education and general information only. This is NOT investment advice, tax advice, or legal advice. We are not registered investment advisers, broker-dealers, or tax professionals. Our tools provide educational scenarios and general guidance — not personalized financial recommendations. Consult with qualified, licensed professionals before making any financial decisions. Past performance and projections do not guarantee future results. Particulate LLC is a technology and education company, not a financial services firm.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-label">How It Works</div>
+  <div class="section-title">Simple. Transparent. Effective.</div>
+  <div class="section-desc">From first conversation to ongoing support — here's the process.</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Free Discovery</h3>
+      <p>Take our readiness quiz or book a free 15-minute call. We'll understand your needs and recommend the right package.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Guided Setup</h3>
+      <p>Work with our AI consultants via your preferred channel — Zoom, SMS, WhatsApp, or Discord. We walk you through everything.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Go Live</h3>
+      <p>Your system is configured, tested, and running. You get documentation, templates, and a clear path forward.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Ongoing Care</h3>
+      <p>Stay supported with monthly health checks, optimizations, and priority access to our team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to get started?</h2>
+  <p>Book a free 15-minute discovery call. No commitment, no pressure — just honest guidance on what we can help with.</p>
+  <a href="mailto:hello@particulatellc.com?subject=Consulting Inquiry" class="hero-cta">Book Free Consultation →</a>
+</div>
+
+<footer>
+  <p>© 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/services.html">Services</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
+  <p style="margin-top: 12px; font-size: 11px; color: #50507a;">Particulate LLC is a technology and education company registered in New Jersey. AI agent consultations are disclosed as AI-powered services with human oversight.</p>
+</footer>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+</script>
+
+</body>
+</html>
