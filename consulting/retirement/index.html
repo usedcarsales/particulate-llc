@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI-Powered Retirement Planning Consultation — Particulate LLC. Personalized retirement analysis, contribution optimization, and tax-advantaged strategies." />
+  <title>Retirement Planning Consultation — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508; --surface: #0c0c14; --border: #1a1a28;
+      --accent: #10b981; --accent2: #34d399; --accent3: #6ee7b7;
+      --glow: rgba(16, 185, 129, 0.15);
+      --text: #e8e8f4; --muted: #7070a0; --card: #0e0e18;
+      --blue: #6366f1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; }
+
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 1.5rem; }
+    .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
+    .disclaimer strong { color: var(--accent2); }
+
+    .tiers { max-width: 900px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
+    .tier-card.featured { border-color: var(--accent); position: relative; }
+    .tier-card.featured::before { content: 'Best Value'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
+    .tier-name { font-size: 0.85rem; color: var(--accent2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tier-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .tier-features { list-style: none; margin-bottom: 1.5rem; }
+    .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; }
+    .tier-features li::before { content: '✓'; color: var(--accent); font-weight: 700; margin-right: 0.6rem; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .tier-cta:hover { opacity: 0.9; }
+
+    .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .form-section h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+    .form-section .subtitle { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--accent3); margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-family: inherit; font-size: 0.95rem;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237070a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent), #059669); color: white; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; }
+    .submit-btn:hover { opacity: 0.9; }
+    .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; }
+    footer .legal { max-width: 700px; margin: 1rem auto 0; line-height: 1.5; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .tiers { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Particulate<span>.</span></div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/consulting">AI Agents</a>
+      <a href="#intake">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Retirement Planning <span>Consultation</span></h1>
+    <p>AI-powered analysis to help you organize your retirement accounts, optimize contributions, and identify tax-advantaged strategies — all in plain English.</p>
+    <div class="disclaimer">
+      <strong>⚠️ Important:</strong> This is an educational and organizational service. We are not registered investment advisors (RIA), fiduciaries, or financial planners. We do not provide investment advice, manage assets, or recommend specific securities. We help you understand and organize your options so you can make informed decisions — or bring better questions to your financial advisor.
+    </div>
+  </section>
+
+  <section class="tiers" id="tiers">
+    <div class="tier-card">
+      <div class="tier-name">Snapshot</div>
+      <div class="tier-price">$297</div>
+      <div class="tier-desc">Clear picture of where you stand</div>
+      <ul class="tier-features">
+        <li>Account inventory & organization</li>
+        <li>Contribution limit analysis</li>
+        <li>Tax bracket assessment</li>
+        <li>3 actionable next steps</li>
+        <li>Plain-English summary report</li>
+        <li>Delivered in 48 hours</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Get Your Snapshot</a>
+    </div>
+
+    <div class="tier-card featured">
+      <div class="tier-name">Full Analysis</div>
+      <div class="tier-price">$597</div>
+      <div class="tier-desc">Comprehensive strategy roadmap</div>
+      <ul class="tier-features">
+        <li>Everything in Snapshot</li>
+        <li>Multi-account optimization plan</li>
+        <li>Roth conversion analysis</li>
+        <li>Catch-up contribution strategy</li>
+        <li>Social Security timing overview</li>
+        <li>Tax-loss harvesting opportunities</li>
+        <li>30-min review call</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Start Analysis</a>
+    </div>
+
+    <div class="tier-card">
+      <div class="tier-name">Quarterly Check-In</div>
+      <div class="tier-price">$149<span style="font-size:0.9rem;color:var(--muted)">/quarter</span></div>
+      <div class="tier-desc">Stay on track year-round</div>
+      <ul class="tier-features">
+        <li>Quarterly account review</li>
+        <li>Contribution tracking updates</li>
+        <li>Tax-law change alerts</li>
+        <li>Rebalancing reminders</li>
+        <li>Year-end tax optimization prep</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Subscribe</a>
+    </div>
+  </section>
+
+  <section class="form-section" id="intake">
+    <h2>Get Your Retirement Analysis</h2>
+    <p class="subtitle">Tell us about your situation. Everything you share is confidential.</p>
+
+    <form id="retirementIntake" action="https://formspree.io/f/placeholder" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="jane@email.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="age">Current Age *</label>
+          <input type="number" id="age" name="age" required min="18" max="100" placeholder="45" />
+        </div>
+        <div class="form-group">
+          <label for="retire-age">Target Retirement Age</label>
+          <input type="number" id="retire-age" name="target_retirement_age" min="50" max="100" placeholder="65" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tier">Which service interests you? *</label>
+        <select id="tier" name="tier" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="snapshot">Snapshot — $297</option>
+          <option value="full-analysis">Full Analysis — $597</option>
+          <option value="quarterly">Quarterly Check-In — $149/quarter</option>
+          <option value="unsure">Not sure — help me decide</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employment">Employment Status *</label>
+        <select id="employment" name="employment_status" required>
+          <option value="" disabled selected>Select status</option>
+          <option value="w2-employee">W-2 Employee</option>
+          <option value="self-employed">Self-Employed / LLC</option>
+          <option value="both">Both (W-2 + Side Business)</option>
+          <option value="retired">Already Retired</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="accounts">What retirement accounts do you currently have?</label>
+        <textarea id="accounts" name="current_accounts" placeholder="Examples: 401(k) with employer match, Traditional IRA, Roth IRA, SEP-IRA, HSA, brokerage account, pension..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="concerns">What's your biggest retirement concern? *</label>
+        <textarea id="concerns" name="primary_concern" required placeholder="Example: I don't know if I'm saving enough. Or: I'm not sure whether to do Roth conversions. Or: I have accounts scattered everywhere and don't know my total picture."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="advisor">Do you currently work with a financial advisor?</label>
+        <select id="advisor" name="has_advisor">
+          <option value="" disabled selected>Select</option>
+          <option value="yes">Yes — I want a second perspective</option>
+          <option value="no">No — I manage everything myself</option>
+          <option value="looking">No — I'm looking for one</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="how-found">How did you hear about us?</label>
+        <input type="text" id="how-found" name="referral_source" placeholder="Google, referral, Moltbook, etc." />
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button type="submit" class="submit-btn">Submit — Get Your Retirement Analysis</button>
+      <p class="form-note">We'll review your information and respond within 24 hours. All information is kept strictly confidential.</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
+    <p style="margin-top:0.5rem"><a href="/privacy" style="color:var(--muted)">Privacy Policy</a> · <a href="/terms" style="color:var(--muted)">Terms</a></p>
+    <div class="legal">
+      <strong>Disclaimer:</strong> Particulate LLC provides educational and organizational services only. We are not a registered investment advisor (RIA), broker-dealer, or financial planner. Nothing on this site constitutes investment advice, tax advice, or a recommendation to buy, sell, or hold any security. Consult a qualified financial professional before making investment decisions. Past performance does not guarantee future results.
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    document.getElementById('retirementIntake').addEventListener('submit', function() {
+      const btn = this.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>

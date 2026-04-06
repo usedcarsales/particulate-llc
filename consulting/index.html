@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Agent Setup Consultation — Particulate LLC. Get a custom AI agent system designed, built, and deployed for your business." />
+  <meta property="og:title" content="AI Agent Consultation — Particulate LLC" />
+  <meta property="og:description" content="From audit to full deployment — we build AI agent systems that actually work for your business." />
+  <title>AI Agent Consultation — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --surface2: #10101a;
+      --border: #1a1a28;
+      --accent: #6366f1;
+      --accent2: #818cf8;
+      --accent3: #a5b4fc;
+      --glow: rgba(99, 102, 241, 0.15);
+      --text: #e8e8f4;
+      --muted: #7070a0;
+      --card: #0e0e18;
+      --green: #22c55e;
+      --green-glow: rgba(34, 197, 94, 0.15);
+      --orange: #f59e0b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+    /* HERO */
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 2rem; }
+
+    /* TIERS */
+    .tiers { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
+    .tier-card.featured { border-color: var(--accent); position: relative; }
+    .tier-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tier-name { font-size: 0.85rem; color: var(--accent2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tier-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .tier-features { list-style: none; margin-bottom: 1.5rem; }
+    .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; color: var(--text); }
+    .tier-features li::before { content: '✓'; color: var(--green); font-weight: 700; margin-right: 0.6rem; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .tier-cta:hover { opacity: 0.9; }
+
+    /* FORM SECTION */
+    .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .form-section h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+    .form-section .subtitle { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--accent3); margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237070a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent), #8b5cf6); color: white; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 1rem; }
+    .submit-btn:hover { opacity: 0.9; }
+    .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
+
+    /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .tiers { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Particulate<span>.</span></div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="#tiers">Pricing</a>
+      <a href="#intake">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>AI Agent Setup <span>Consultation</span></h1>
+    <p>We don't just talk about AI agents — we run a two-agent system that manages our entire business 24/7. Now we'll build one for yours.</p>
+  </section>
+
+  <!-- TIERS -->
+  <section class="tiers" id="tiers">
+    <div class="tier-card">
+      <div class="tier-name">Audit</div>
+      <div class="tier-price">$297</div>
+      <div class="tier-desc">Understand where AI agents fit in your business</div>
+      <ul class="tier-features">
+        <li>60-min deep-dive call</li>
+        <li>Workflow mapping & bottleneck analysis</li>
+        <li>Custom AI agent opportunity report</li>
+        <li>Tool & platform recommendations</li>
+        <li>ROI projections for top 3 opportunities</li>
+        <li>Delivered within 48 hours</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Book Your Audit</a>
+    </div>
+
+    <div class="tier-card featured">
+      <div class="tier-name">Setup</div>
+      <div class="tier-price">$997</div>
+      <div class="tier-desc">One AI agent, deployed and running</div>
+      <ul class="tier-features">
+        <li>Everything in Audit</li>
+        <li>Single agent build & deployment</li>
+        <li>Tool integration (Slack, email, CRM, etc.)</li>
+        <li>Cron scheduling & automation</li>
+        <li>Memory & knowledge base setup</li>
+        <li>2 weeks of tuning & support</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Get Started</a>
+    </div>
+
+    <div class="tier-card">
+      <div class="tier-name">Multi-Agent</div>
+      <div class="tier-price">$3,497</div>
+      <div class="tier-desc">Full agent team with delegation & oversight</div>
+      <ul class="tier-features">
+        <li>Everything in Setup</li>
+        <li>2-4 coordinated agents</li>
+        <li>Task delegation & handoff protocols</li>
+        <li>Quality gates & review workflows</li>
+        <li>Dashboard & monitoring</li>
+        <li>30 days of support & iteration</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Let's Talk</a>
+    </div>
+
+    <div class="tier-card">
+      <div class="tier-name">Retainer</div>
+      <div class="tier-price">$1,500<span style="font-size:0.9rem;color:var(--muted)">/mo</span></div>
+      <div class="tier-desc">Ongoing management & optimization</div>
+      <ul class="tier-features">
+        <li>Monthly agent health reviews</li>
+        <li>New workflow additions</li>
+        <li>Performance reporting</li>
+        <li>Priority support (Slack/Discord)</li>
+        <li>Model upgrades & migrations</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a href="#intake" class="tier-cta">Start Retainer</a>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Fill Out the Intake Form</h3>
+        <p>Tell us about your business, current tools, and what you want to automate. Takes 5 minutes.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Discovery Call</h3>
+        <p>We'll walk through your workflows, identify the highest-ROI automation targets, and scope the project.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Build & Deploy</h3>
+        <p>We build your agent system, integrate it with your tools, and deploy it. You get a working system, not a slide deck.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Tune & Handoff</h3>
+        <p>We iterate based on real results, train your team, and hand over full documentation. Your agents, your control.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE FORM -->
+  <section class="form-section" id="intake">
+    <h2>Start Your AI Agent Project</h2>
+    <p class="subtitle">Fill out this form and we'll get back to you within 24 hours.</p>
+
+    <form id="consultingIntake" action="https://formspree.io/f/placeholder" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="jane@company.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" placeholder="Acme Corp" />
+        </div>
+        <div class="form-group">
+          <label for="role">Your Role</label>
+          <input type="text" id="role" name="role" placeholder="CEO, Ops Manager, etc." />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tier">Which tier interests you? *</label>
+        <select id="tier" name="tier" required>
+          <option value="" disabled selected>Select a tier</option>
+          <option value="audit">Audit — $297</option>
+          <option value="setup">Setup — $997</option>
+          <option value="multi-agent">Multi-Agent — $3,497</option>
+          <option value="retainer">Retainer — $1,500/mo</option>
+          <option value="unsure">Not sure yet — help me decide</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="industry">Industry / Business Type *</label>
+        <input type="text" id="industry" name="industry" required placeholder="E-commerce, Real Estate, SaaS, Professional Services..." />
+      </div>
+
+      <div class="form-group">
+        <label for="team-size">Team Size</label>
+        <select id="team-size" name="team_size">
+          <option value="" disabled selected>Select team size</option>
+          <option value="solo">Just me</option>
+          <option value="2-5">2-5 people</option>
+          <option value="6-20">6-20 people</option>
+          <option value="21-50">21-50 people</option>
+          <option value="50+">50+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tools">What tools do you currently use?</label>
+        <textarea id="tools" name="current_tools" placeholder="Slack, Gmail, Salesforce, Notion, Shopify, QuickBooks, etc. — list anything your team touches daily."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="pain">What's your biggest operational pain point? *</label>
+        <textarea id="pain" name="pain_point" required placeholder="Example: Our team spends 3 hours/day on manual data entry between our CRM and spreadsheets. Or: We can't respond to customer inquiries fast enough after hours."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="automation">What would you want AI agents to handle?</label>
+        <textarea id="automation" name="desired_automation" placeholder="Example: Automatically qualify inbound leads and schedule appointments. Or: Monitor inventory and reorder when stock is low."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option value="" disabled selected>When do you want to start?</option>
+          <option value="asap">ASAP — this week</option>
+          <option value="2-weeks">Within 2 weeks</option>
+          <option value="month">Within a month</option>
+          <option value="exploring">Just exploring options</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Approximate Budget</label>
+        <select id="budget" name="budget">
+          <option value="" disabled selected>Select range</option>
+          <option value="under-500">Under $500</option>
+          <option value="500-1000">$500 — $1,000</option>
+          <option value="1000-3500">$1,000 — $3,500</option>
+          <option value="3500-plus">$3,500+</option>
+          <option value="monthly">Prefer monthly retainer</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="how-found">How did you hear about us?</label>
+        <input type="text" id="how-found" name="referral_source" placeholder="Moltbook, Google, referral, etc." />
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button type="submit" class="submit-btn">Submit — Get Your Free Consultation</button>
+      <p class="form-note">We'll review your submission and respond within 24 hours. No spam, no sales pressure — just an honest assessment of whether AI agents make sense for your business.</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
+    <p style="margin-top:0.5rem"><a href="/privacy" style="color:var(--muted)">Privacy Policy</a> · <a href="/terms" style="color:var(--muted)">Terms</a></p>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Form submission feedback
+    const form = document.getElementById('consultingIntake');
+    form.addEventListener('submit', function(e) {
+      const btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      // Form submits normally to Formspree
+    });
+  </script>
+</body>
+</html>
