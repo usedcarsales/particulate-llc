@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Tax & Accounting Assistant — Particulate LLC. Automated bookkeeping, tax preparation help, and deduction discovery powered by AI agents." />
+  <meta property="og:title" content="AI Tax & Accounting — Particulate LLC" />
+  <meta property="og:description" content="Your AI-powered bookkeeper and tax strategist — 24/7. Deduction discovery, receipt scanning, quarterly estimates, and more." />
+  <title>AI Tax & Accounting — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508; --surface: #0c0c14; --border: #1a1a28;
+      --accent: #f59e0b; --accent2: #fbbf24; --accent3: #fde68a;
+      --glow: rgba(245, 158, 11, 0.15);
+      --text: #e8e8f4; --muted: #7070a0; --card: #0e0e18;
+      --green: #22c55e; --blue: #6366f1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+    /* HERO */
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 1.5rem; }
+    .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
+    .disclaimer strong { color: var(--accent2); }
+
+    /* FEATURES */
+    .features { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .feature h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature p { color: var(--muted); font-size: 0.85rem; }
+
+    /* TIERS */
+    .tiers { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .tiers-title { text-align: center; margin-bottom: 2rem; }
+    .tiers-title h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .tiers-title p { color: var(--muted); }
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
+    .tier-card.featured { border-color: var(--accent); position: relative; }
+    .tier-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tier-name { font-size: 0.85rem; color: var(--accent2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tier-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.25rem; }
+    .tier-price .period { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .tier-features { list-style: none; margin-bottom: 1.5rem; }
+    .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; color: var(--text); }
+    .tier-features li::before { content: '✓'; color: var(--green); font-weight: 700; margin-right: 0.6rem; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .tier-cta:hover { opacity: 0.9; }
+
+    /* WHO IT'S FOR */
+    .who-for { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .who-for h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .who-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .who-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent3); }
+    .who-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+
+    /* FORM */
+    .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .form-section h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+    .form-section .subtitle { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--accent3); margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237070a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent), #d97706); color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 1rem; }
+    .submit-btn:hover { opacity: 0.9; }
+    .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Particulate<span>.</span></div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/consulting">Consulting</a>
+      <a href="#tiers">Pricing</a>
+      <a href="#intake">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>AI Tax & Accounting <span>Assistant</span></h1>
+    <p>Your AI-powered bookkeeper and tax strategist — available 24/7. Deduction discovery, receipt scanning, quarterly estimates, and year-round tax guidance at a fraction of CPA costs.</p>
+    <div class="disclaimer">
+      <strong>⚠️ Important:</strong> Particulate LLC provides tax education and general information only. This is NOT tax advice, accounting advice, or legal advice. We are not CPAs, enrolled agents, or tax professionals. Our AI tools provide educational scenarios and general guidance — not personalized tax recommendations. Consult with a licensed tax professional before making any tax decisions.
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">🔍</div>
+      <h3>Deduction Discovery</h3>
+      <p>AI scans your expenses and identifies deductions you might be missing</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📸</div>
+      <h3>Receipt Scanning</h3>
+      <p>Snap a photo, AI categorizes it — meals, travel, office, supplies</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📅</div>
+      <h3>Deadline Reminders</h3>
+      <p>Never miss a quarterly estimate, filing deadline, or enrollment window</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3>Monthly Reports</h3>
+      <p>Income, expenses, and tax liability — updated automatically every month</p>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="tiers" id="tiers">
+    <div class="tiers-title">
+      <h2>Simple, Transparent Pricing</h2>
+      <p>No hidden fees. Cancel anytime.</p>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-name">Tax Chat</div>
+        <div class="tier-price">$29<span class="period">/mo</span></div>
+        <div class="tier-desc">AI tax assistant — answers when you need them</div>
+        <ul class="tier-features">
+          <li>AI tax Q&A — ask anything, anytime</li>
+          <li>Deduction discovery engine</li>
+          <li>Estimated quarterly tax calculator</li>
+          <li>Federal & state deadline reminders</li>
+          <li>2026 tax bracket lookups</li>
+          <li>Educational content library</li>
+        </ul>
+        <a href="#intake" class="tier-cta">Start Tax Chat</a>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-name">Bookkeeping + Tax</div>
+        <div class="tier-price">$79<span class="period">/mo</span></div>
+        <div class="tier-desc">Receipt scanning, categorization, and monthly reports</div>
+        <ul class="tier-features">
+          <li>Everything in Tax Chat</li>
+          <li>Receipt photo scanning & OCR</li>
+          <li>AI expense categorization</li>
+          <li>Monthly financial health report</li>
+          <li>Income/expense tracking dashboard</li>
+          <li>Tax loss harvesting suggestions</li>
+          <li>Export to CSV for your CPA</li>
+        </ul>
+        <a href="#intake" class="tier-cta">Start Bookkeeping</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">Business Tax Suite</div>
+        <div class="tier-price">$199<span class="period">/mo</span></div>
+        <div class="tier-desc">Full business tax tools — quarterly estimates, 1099s, entity advice</div>
+        <ul class="tier-features">
+          <li>Everything in Bookkeeping + Tax</li>
+          <li>Quarterly estimated tax calculations</li>
+          <li>1099 preparation assistance</li>
+          <li>Entity structure guidance (LLC vs S-Corp)</li>
+          <li>Priority support — faster responses</li>
+          <li>Annual tax strategy review (1 hour)</li>
+          <li>Multi-state tax obligation tracking</li>
+        </ul>
+        <a href="#intake" class="tier-cta">Start Business Suite</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who-for">
+    <h2>Built For</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <h3>🧑‍💻 Solopreneurs & Freelancers</h3>
+        <p>$0–$50K revenue. You don't need a full CPA — just help categorizing expenses and finding deductions you're missing.</p>
+      </div>
+      <div class="who-card">
+        <h3>🏪 Small Business Owners</h3>
+        <p>$50K–$500K revenue. Need bookkeeping help, quarterly estimates, and expense tracking without paying QuickBooks prices.</p>
+      </div>
+      <div class="who-card">
+        <h3>💸 Side Hustle Owners</h3>
+        <p>Airbnb hosts, Uber drivers, eBay sellers, gig workers — complex deductions most people miss. We find them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Sign Up & Onboard</h3>
+        <p>Choose your tier, tell us about your business situation (sole prop, LLC, S-Corp, etc.), and connect your channels.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Start Asking & Scanning</h3>
+        <p>Ask tax questions anytime. Snap receipt photos for instant categorization. Get deadline alerts before they creep up on you.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Get Monthly Insights</h3>
+        <p>Automated monthly reports show your income, expenses, estimated tax liability, and deductions found — all in plain English.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>File With Confidence</h3>
+        <p>Export your organized records to share with your CPA, or use our guidance to file yourself. Either way — you're prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE FORM -->
+  <section class="form-section" id="intake">
+    <h2>Start Your Tax & Accounting Service</h2>
+    <p class="subtitle">Choose your tier and we'll get you set up within 24 hours.</p>
+
+    <form id="taxIntake" action="https://formspree.io/f/placeholder" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="jane@company.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="business-name">Business Name</label>
+          <input type="text" id="business-name" name="business_name" placeholder="Acme Corp (or your name if sole prop)" />
+        </div>
+        <div class="form-group">
+          <label for="entity-type">Business Entity Type *</label>
+          <select id="entity-type" name="entity_type" required>
+            <option value="" disabled selected>Select entity type</option>
+            <option value="sole-prop">Sole Proprietorship</option>
+            <option value="llc-single">Single-Member LLC</option>
+            <option value="llc-multi">Multi-Member LLC</option>
+            <option value="s-corp">S-Corporation</option>
+            <option value="c-corp">C-Corporation</option>
+            <option value="partnership">Partnership</option>
+            <option value="not-sure">Not sure — help me decide</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tier">Which tier interests you? *</label>
+        <select id="tier" name="tier" required>
+          <option value="" disabled selected>Select a tier</option>
+          <option value="tax-chat">Tax Chat — $29/mo</option>
+          <option value="bookkeeping">Bookkeeping + Tax — $79/mo</option>
+          <option value="business-suite">Business Tax Suite — $199/mo</option>
+          <option value="unsure">Not sure yet — help me decide</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="state">What state are you in? *</label>
+        <input type="text" id="state" name="state" required placeholder="New Jersey, New York, California..." />
+      </div>
+
+      <div class="form-group">
+        <label for="revenue">Approximate Annual Revenue</label>
+        <select id="revenue" name="revenue">
+          <option value="" disabled selected>Select range</option>
+          <option value="under-25k">Under $25K</option>
+          <option value="25k-50k">$25K — $50K</option>
+          <option value="50k-100k">$50K — $100K</option>
+          <option value="100k-250k">$100K — $250K</option>
+          <option value="250k-500k">$250K — $500K</option>
+          <option value="500k-plus">$500K+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pain">What's your biggest tax or accounting pain point? *</label>
+        <textarea id="pain" name="pain_point" required placeholder="Example: I never know what I can deduct. Or: Quarterly estimates always sneak up on me. Or: My receipts are a mess at tax time."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="current-tools">What accounting tools do you currently use?</label>
+        <textarea id="current-tools" name="current_tools" placeholder="QuickBooks, Wave, Google Sheets, a shoebox of receipts..."></textarea>
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button type="submit" class="submit-btn">Start Your Tax Service</button>
+      <p class="form-note">We'll review your submission and set up your account within 24 hours. No spam, no hard sells — just organized finances and fewer surprises at tax time.</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
+    <p style="margin-top:0.5rem"><a href="/privacy" style="color:var(--muted)">Privacy Policy</a> · <a href="/terms" style="color:var(--muted)">Terms</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    const form = document.getElementById('taxIntake');
+    form.addEventListener('submit', function(e) {
+      const btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
