@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="First-Time Home Buyer AI Consultation — Particulate LLC. Step-by-step home buying guidance powered by AI agents. Know what to do, when to do it, and what to avoid." />
+  <meta property="og:title" content="First-Time Home Buyer AI Consultation — Particulate LLC" />
+  <meta property="og:description" content="I explain the entire home buying process in 5 minutes — no confusion. Step-by-step guidance, cost breakdowns, and red flags for first-time buyers." />
+  <title>First-Time Home Buyer Consultation — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508; --surface: #0c0c14; --border: #1a1a28;
+      --accent: #22c55e; --accent2: #4ade80; --accent3: #86efac;
+      --glow: rgba(34, 197, 94, 0.15);
+      --text: #e8e8f4; --muted: #7070a0; --card: #0e0e18;
+      --green: #22c55e; --blue: #6366f1; --orange: #f59e0b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+    /* HERO */
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 1.5rem; }
+    .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
+    .disclaimer strong { color: var(--accent2); }
+
+    /* FEATURES */
+    .features { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .feature h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature p { color: var(--muted); font-size: 0.85rem; }
+
+    /* TIERS */
+    .tiers { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .tiers-title { text-align: center; margin-bottom: 2rem; }
+    .tiers-title h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .tiers-title p { color: var(--muted); }
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
+    .tier-card.featured { border-color: var(--accent); position: relative; }
+    .tier-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tier-name { font-size: 0.85rem; color: var(--accent2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tier-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.25rem; }
+    .tier-price .period { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .tier-features { list-style: none; margin-bottom: 1.5rem; }
+    .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; color: var(--text); }
+    .tier-features li::before { content: '✓'; color: var(--green); font-weight: 700; margin-right: 0.6rem; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .tier-cta:hover { opacity: 0.9; }
+
+    /* WHO IT'S FOR */
+    .who-for { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .who-for h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .who-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .who-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent3); }
+    .who-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+
+    /* TRICKS */
+    .tricks { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .tricks h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .trick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+    .trick { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; border-left: 3px solid var(--accent); }
+    .trick h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent3); }
+    .trick p { color: var(--muted); font-size: 0.85rem; }
+
+    /* FORM */
+    .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .form-section h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+    .form-section .subtitle { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--accent3); margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237070a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent), #16a34a); color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 1rem; }
+    .submit-btn:hover { opacity: 0.9; }
+    .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .trick-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Particulate<span>.</span></div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/consulting">Consulting</a>
+      <a href="#tiers">Pricing</a>
+      <a href="#intake">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Buying Your First Home? <span>We Walk You Through EVERYTHING.</span></h1>
+    <p>I explain the entire home buying process in 5 minutes — no confusion. Step-by-step guidance, real cost breakdowns, and red flags that catch first-time buyers off guard.</p>
+    <div class="disclaimer">
+      <strong>⚠️ Important:</strong> Particulate LLC provides educational guidance only. We are NOT licensed real estate agents, financial advisors, or attorneys. This is not financial advice, legal advice, or a substitute for professional representation. Consult with licensed professionals before making any real estate decisions.
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">🗺️</div>
+      <h3>Step-by-Step Roadmap</h3>
+      <p>Pre-approval → find agent → shop → offer → inspection → closing. Every step explained.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💰</div>
+      <h3>Real Cost Breakdown</h3>
+      <p>Monthly payments, closing costs, cash needed — with real numbers, not vague estimates.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📋</div>
+      <h3>Who to Contact Next</h3>
+      <p>Lender, agent, inspector, title company — know exactly who to call and when.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🚩</div>
+      <h3>Red Flags & Mistakes</h3>
+      <p>Hidden costs, bad loan terms, negotiation mistakes — know what to avoid before it's too late.</p>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="tiers" id="tiers">
+    <div class="tiers-title">
+      <h2>Simple, Transparent Pricing</h2>
+      <p>One-time payment. No subscriptions. No hidden fees.</p>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-name">Basic Roadmap</div>
+        <div class="tier-price">$9</div>
+        <div class="tier-desc">The essential buying roadmap — know every step</div>
+        <ul class="tier-features">
+          <li>Step-by-step home buying roadmap</li>
+          <li>Timeline with realistic expectations</li>
+          <li>Required documents checklist</li>
+          <li>Key "tricks" first-time buyers miss</li>
+          <li>What to do first (and why)</li>
+        </ul>
+        <a href="#intake" class="tier-cta">Start Your Roadmap</a>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-name">Full Breakdown</div>
+        <div class="tier-price">$29</div>
+        <div class="tier-desc">Complete cost breakdown + contacts + red flags</div>
+        <ul class="tier-features">
+          <li>Everything in Basic Roadmap</li>
+          <li>Monthly payment calculator</li>
+          <li>Closing costs breakdown (2–5%)</li>
+          <li>Cash needed at closing estimate</li>
+          <li>Contact list: lender, agent, inspector, title co.</li>
+          <li>Red flags: overbudget, bad loans, hidden costs</li>
+          <li>Financing options comparison (FHA, VA, conventional)</li>
+        </ul>
+        <a href="#intake" class="tier-cta">Get Full Breakdown</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">Guided Buying Plan</div>
+        <div class="tier-price">$79</div>
+        <div class="tier-desc">Your personalized plan + ongoing Q&A support</div>
+        <ul class="tier-features">
+          <li>Everything in Full Breakdown</li>
+          <li>Personalized "what to do next" checklist</li>
+          <li>State-specific first-time buyer programs</li>
+          <li>Down payment assistance lookup (NJHMFA, etc.)</li>
+          <li>AI Q&A — ask anything about your situation</li>
+          <li>Pre-approval prep guide</li>
+          <li>Inspection negotiation playbook</li>
+        </ul>
+        <a href="#intake" class="tier-cta">Get Guided Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who-for">
+    <h2>Built For</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <h3>🏡 First-Time Buyers</h3>
+        <p>You've never bought a home. The process feels overwhelming. We break it down so you know exactly what to do, when, and why.</p>
+      </div>
+      <div class="who-card">
+        <h3>💸 Budget-Conscious Buyers</h3>
+        <p>You want to know the REAL cost — not just the listing price. Closing costs, taxes, insurance, PMI — we calculate it all.</p>
+      </div>
+      <div class="who-card">
+        <h3>🤔 "Should I Buy?" Deciders</h3>
+        <p>You're not sure if you're ready. We help you figure out if now is the right time, what you can afford, and what to do first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRICKS -->
+  <section class="tricks">
+    <h2>Things Most First-Time Buyers Don't Know</h2>
+    <div class="trick-grid">
+      <div class="trick">
+        <h3>Buyers don't pay agent commission</h3>
+        <p>Seller pays both agents. You get professional representation for free — always use a buyer's agent.</p>
+      </div>
+      <div class="trick">
+        <h3>Pre-approval ≠ final approval</h3>
+        <p>Pre-approval is just an estimate. Final approval comes after underwriting. Don't make big purchases between the two.</p>
+      </div>
+      <div class="trick">
+        <h3>Closing costs surprise everyone</h3>
+        <p>2–5% on top of your down payment. On a $350K home, that's $7K–$17.5K you might not be expecting.</p>
+      </div>
+      <div class="trick">
+        <h3>Taxes + insurance swing payments HARD</h3>
+        <p>NJ property tax averages 2.4%. A $350K home could mean $700+/month just in taxes and insurance on top of your mortgage.</p>
+      </div>
+      <div class="trick">
+        <h3>You can negotiate after inspection</h3>
+        <p>Found issues? You can renegotiate price, ask for repairs, or walk away. The inspection is YOUR safety net.</p>
+      </div>
+      <div class="trick">
+        <h3>You don't need 20% down</h3>
+        <p>Conventional: 3% down. FHA: 3.5%. VA & USDA: 0%. The 20% myth keeps people renting for years longer than needed.</p>
+      </div>
+      <div class="trick">
+        <h3>First-time buyer programs exist</h3>
+        <p>NJHMFA offers $10K–$15K down payment assistance, special rates (5.375%), and $22K for first-generation buyers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Tell Us About Your Situation</h3>
+        <p>Budget, location, timeline, credit estimate — basic info so we can tailor your plan.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Get Your Personalized Plan</h3>
+        <p>Step-by-step roadmap, cost breakdown, contact list, and red flags — all customized to your situation.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Know What to Do Next</h3>
+        <p>"Call this lender." "Get these documents." "Avoid this common mistake." Clear next steps, no ambiguity.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Ask Questions Anytime</h3>
+        <p>Guided plan includes AI Q&A — ask about pre-approval, inspections, closing, anything. We're here until you get your keys.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE FORM -->
+  <section class="form-section" id="intake">
+    <h2>Start Your Home Buying Plan</h2>
+    <p class="subtitle">Choose your plan and we'll get you your personalized roadmap within 24 hours.</p>
+
+    <form id="homeBuyerIntake" action="https://formspree.io/f/placeholder" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="jane@email.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="budget">Home Budget Range *</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select range</option>
+            <option value="under-200k">Under $200K</option>
+            <option value="200k-300k">$200K — $300K</option>
+            <option value="300k-400k">$300K — $400K</option>
+            <option value="400k-500k">$400K — $500K</option>
+            <option value="500k-750k">$500K — $750K</option>
+            <option value="750k-plus">$750K+</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">State / Area *</label>
+          <input type="text" id="location" name="location" required placeholder="New Jersey, Philadelphia metro..." />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="down-payment">Down Payment Saved</label>
+          <select id="down-payment" name="down_payment">
+            <option value="" disabled selected>Select range</option>
+            <option value="under-5k">Under $5K</option>
+            <option value="5k-15k">$5K — $15K</option>
+            <option value="15k-30k">$15K — $30K</option>
+            <option value="30k-50k">$30K — $50K</option>
+            <option value="50k-plus">$50K+</option>
+            <option value="not-sure">Not sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="credit">Credit Score Estimate</label>
+          <select id="credit" name="credit_estimate">
+            <option value="" disabled selected>Select range</option>
+            <option value="excellent">Excellent (760+)</option>
+            <option value="good">Good (700–759)</option>
+            <option value="fair">Fair (620–699)</option>
+            <option value="below-fair">Below 620</option>
+            <option value="not-sure">Not sure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tier">Which plan interests you? *</label>
+        <select id="tier" name="tier" required>
+          <option value="" disabled selected>Select a plan</option>
+          <option value="basic">Basic Roadmap — $9</option>
+          <option value="full">Full Breakdown — $29</option>
+          <option value="guided">Guided Buying Plan — $79</option>
+          <option value="unsure">Not sure yet — help me decide</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="timeline">When are you planning to buy?</label>
+        <select id="timeline" name="timeline">
+          <option value="" disabled selected>Select timeframe</option>
+          <option value="immediately">Immediately (0–3 months)</option>
+          <option value="soon">Soon (3–6 months)</option>
+          <option value="this-year">This year (6–12 months)</option>
+          <option value="exploring">Just exploring (12+ months)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="questions">What's your biggest question or concern about buying?</label>
+        <textarea id="questions" name="questions" placeholder="Example: How much money do I actually need? Or: I don't know where to start. Or: What's the difference between pre-qualification and pre-approval?"></textarea>
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button type="submit" class="submit-btn">Start Your Plan</button>
+      <p class="form-note">We'll review your situation and deliver your personalized plan within 24 hours. No spam, no pressure — just clear next steps for your home purchase.</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
+    <p style="margin-top:0.5rem"><a href="/privacy" style="color:var(--muted)">Privacy Policy</a> · <a href="/terms" style="color:var(--muted)">Terms</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    const form = document.getElementById('homeBuyerIntake');
+    form.addEventListener('submit', function(e) {
+      const btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
