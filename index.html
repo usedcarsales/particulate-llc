@@ -433,6 +433,96 @@
       font-weight: 500;
     }
 
+    /* ── SMS OPT-IN ── */
+    .optin-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+
+    .optin-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .optin-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .optin-method {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .optin-method-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .optin-method h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .optin-method p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .optin-disclosures {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .optin-disclosures h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--accent3);
+    }
+
+    .optin-disclosures ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .optin-disclosures li {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.65;
+      padding: 0.35rem 0;
+      padding-left: 0;
+    }
+
+    .optin-legal {
+      color: #3a3a58;
+      font-size: 0.78rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .optin-legal a {
+      color: var(--accent2);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .optin-methods { grid-template-columns: 1fr; }
+    }
+
     /* ── CONTACT ── */
     .contact-section {
       max-width: 700px;
@@ -715,6 +805,47 @@
       </div>
     </div>
   </div>
+
+  <!-- SMS OPT-IN -->
+  <section class="optin-section" id="sms-opt-in">
+    <div class="section-eyebrow">SMS Notifications</div>
+    <h2 class="section-title">Stay Updated via Text</h2>
+    <p class="section-desc" style="margin:0 auto 2rem;">
+      Text our business number to opt in to vehicle inventory updates, pricing, and appointment reminders from Particulate LLC.
+    </p>
+
+    <div class="optin-card">
+      <div class="optin-methods">
+        <div class="optin-method">
+          <div class="optin-method-icon">📱</div>
+          <h4>Text Us Directly</h4>
+          <p>Text our business number to start a conversation about available vehicles. By texting us, you consent to receive SMS replies regarding vehicle availability, pricing, and appointment scheduling.</p>
+        </div>
+        <div class="optin-method">
+          <div class="optin-method-icon">💬</div>
+          <h4>Keyword Opt-In</h4>
+          <p>Text <strong>START</strong>, <strong>YES</strong>, or <strong>SUBSCRIBE</strong> to our number to opt in to vehicle inventory updates.</p>
+        </div>
+      </div>
+
+      <div class="optin-disclosures">
+        <h4>Disclosure & Consent Information</h4>
+        <ul>
+          <li><strong>Message frequency:</strong> Varies based on your inquiry and conversation.</li>
+          <li><strong>Message & data rates may apply.</strong> Check with your carrier for details.</li>
+          <li><strong>Opt out:</strong> Reply <strong>STOP</strong> at any time to cancel. You will receive one confirmation message and no further messages.</li>
+          <li><strong>Help:</strong> Reply <strong>HELP</strong> for assistance.</li>
+          <li><strong>SMS consent is not required</strong> to purchase any goods or services.</li>
+          <li><strong>We do not share, sell, or rent</strong> your phone number or SMS data to third parties for marketing.</li>
+          <li><strong>Supported carriers:</strong> AT&T, T-Mobile, Verizon, Sprint, and most major US carriers. Carrier support is not guaranteed.</li>
+          <li><strong>Data retention:</strong> SMS conversation data is retained for up to 90 days unless a longer period is required by law.</li>
+        </ul>
+        <p class="optin-legal">By texting our business number, you acknowledge that you have read and agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
