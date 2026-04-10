@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="First-Time Home Buyer AI Consultation — Particulate LLC. Step-by-step home buying guidance powered by AI agents. Know what to do, when to do it, and what to avoid." />
-  <meta property="og:title" content="First-Time Home Buyer AI Consultation — Particulate LLC" />
+  <meta property="og:title" content="First-Time Home Buyer Consultation — Particulate LLC" />
   <meta property="og:description" content="I explain the entire home buying process in 5 minutes — no confusion. Step-by-step guidance, cost breakdowns, and red flags for first-time buyers." />
   <title>First-Time Home Buyer Consultation — Particulate LLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,14 +38,7 @@
     .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
     .disclaimer strong { color: var(--accent2); }
 
-    /* FEATURES */
-    .features { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
-    .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-    .feature h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .feature p { color: var(--muted); font-size: 0.85rem; }
-
-    /* TIERS */
+    /* TIERS — moved above features */
     .tiers { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 4rem; }
     .tiers-title { text-align: center; margin-bottom: 2rem; }
     .tiers-title h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
@@ -62,8 +55,15 @@
     .tier-features { list-style: none; margin-bottom: 1.5rem; }
     .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; color: var(--text); }
     .tier-features li::before { content: '✓'; color: var(--green); font-weight: 700; margin-right: 0.6rem; }
-    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; cursor: pointer; border: none; width: 100%; font-family: inherit; }
     .tier-cta:hover { opacity: 0.9; }
+
+    /* FEATURES */
+    .features { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .feature h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature p { color: var(--muted); font-size: 0.85rem; }
 
     /* WHO IT'S FOR */
     .who-for { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
@@ -104,6 +104,69 @@
     .submit-btn:hover { opacity: 0.9; }
     .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
 
+    /* STRIPE CHECKOUT OVERLAY */
+    #stripe-modal {
+      display: none;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    #stripe-modal.open { display: flex; }
+    .stripe-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+    }
+    .stripe-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stripe-box .stripe-price { font-size: 2.5rem; font-weight: 900; color: var(--accent2); margin: 1rem 0; }
+    .stripe-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stripe-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 0.75rem;
+      text-decoration: none;
+      text-align: center;
+    }
+    .stripe-btn:hover { opacity: 0.9; }
+    .stripe-btn.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .close-modal {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      text-decoration: underline;
+    }
+
+    /* SUCCESS STATE */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .success-state.visible { display: block; }
+    .success-state h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent2); }
+
     /* FOOTER */
     footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
 
@@ -136,6 +199,61 @@
     </div>
   </section>
 
+  <!-- TIERS — now above features -->
+  <section class="tiers" id="tiers">
+    <div class="tiers-title">
+      <h2>Simple, Transparent Pricing</h2>
+      <p>One-time payment. No subscriptions. No hidden fees.</p>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-name">Basic Roadmap</div>
+        <div class="tier-price">$9</div>
+        <div class="tier-desc">The essential buying roadmap — know every step</div>
+        <ul class="tier-features">
+          <li>Step-by-step home buying roadmap</li>
+          <li>Timeline with realistic expectations</li>
+          <li>Required documents checklist</li>
+          <li>Key "tricks" first-time buyers miss</li>
+          <li>What to do first (and why)</li>
+        </ul>
+        <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Started — $9</button>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-name">Full Breakdown</div>
+        <div class="tier-price">$29</div>
+        <div class="tier-desc">Complete cost breakdown + contacts + red flags</div>
+        <ul class="tier-features">
+          <li>Everything in Basic Roadmap</li>
+          <li>Monthly payment calculator</li>
+          <li>Closing costs breakdown (2–5%)</li>
+          <li>Cash needed at closing estimate</li>
+          <li>Contact list: lender, agent, inspector, title co.</li>
+          <li>Red flags: overbudget, bad loans, hidden costs</li>
+          <li>Financing options comparison (FHA, VA, conventional)</li>
+        </ul>
+        <button class="tier-cta" onclick="openCheckout('full', 29)">Get Started — $29</button>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">Guided Buying Plan</div>
+        <div class="tier-price">$79</div>
+        <div class="tier-desc">Your personalized plan + ongoing Q&A support</div>
+        <ul class="tier-features">
+          <li>Everything in Full Breakdown</li>
+          <li>Personalized "what to do next" checklist</li>
+          <li>State-specific first-time buyer programs</li>
+          <li>Down payment assistance lookup (NJHMFA, etc.)</li>
+          <li>AI Q&A — ask anything about your situation</li>
+          <li>Pre-approval prep guide</li>
+          <li>Inspection negotiation playbook</li>
+        </ul>
+        <button class="tier-cta" onclick="openCheckout('guided', 79)">Get Started — $79</button>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURES -->
   <section class="features">
     <div class="feature">
@@ -160,94 +278,6 @@
     </div>
   </section>
 
-  <!-- TIERS -->
-  <section class="tiers" id="tiers">
-    <div class="tiers-title">
-      <h2>Simple, Transparent Pricing</h2>
-      <p>One-time payment. No subscriptions. No hidden fees.</p>
-    </div>
-    <div class="tiers-grid">
-      <div class="tier-card">
-        <div class="tier-name">Basic Roadmap</div>
-        <div class="tier-price">$9</div>
-        <div class="tier-desc">The essential buying roadmap — know every step</div>
-        <ul class="tier-features">
-          <li>Step-by-step home buying roadmap</li>
-          <li>Timeline with realistic expectations</li>
-          <li>Required documents checklist</li>
-          <li>Key "tricks" first-time buyers miss</li>
-          <li>What to do first (and why)</li>
-        </ul>
-        <a href="#intake" class="tier-cta">Start Your Roadmap</a>
-      </div>
-
-      <div class="tier-card featured">
-        <div class="tier-name">Full Breakdown</div>
-        <div class="tier-price">$29</div>
-        <div class="tier-desc">Complete cost breakdown + contacts + red flags</div>
-        <ul class="tier-features">
-          <li>Everything in Basic Roadmap</li>
-          <li>Monthly payment calculator</li>
-          <li>Closing costs breakdown (2–5%)</li>
-          <li>Cash needed at closing estimate</li>
-          <li>Contact list: lender, agent, inspector, title co.</li>
-          <li>Red flags: overbudget, bad loans, hidden costs</li>
-          <li>Financing options comparison (FHA, VA, conventional)</li>
-        </ul>
-        <a href="#intake" class="tier-cta">Get Full Breakdown</a>
-      </div>
-
-      <div class="tier-card">
-        <div class="tier-name">Guided Buying Plan</div>
-        <div class="tier-price">$79</div>
-        <div class="tier-desc">Your personalized plan + ongoing Q&A support</div>
-        <ul class="tier-features">
-          <li>Everything in Full Breakdown</li>
-          <li>Personalized "what to do next" checklist</li>
-          <li>State-specific first-time buyer programs</li>
-          <li>Down payment assistance lookup (NJHMFA, etc.)</li>
-          <li>AI Q&A — ask anything about your situation</li>
-          <li>Pre-approval prep guide</li>
-          <li>Inspection negotiation playbook</li>
-        </ul>
-        <a href="#intake" class="tier-cta">Get Guided Plan</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process">
-    <h2>How It Works</h2>
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-content">
-        <h3>Tell Us About Your Situation</h3>
-        <p>Budget, location, timeline, credit estimate — basic info so we can tailor your plan.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-content">
-        <h3>Get Your Personalized Plan</h3>
-        <p>Step-by-step roadmap, cost breakdown, contact list, and red flags — all customized to your situation.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-content">
-        <h3>Know What to Do Next</h3>
-        <p>"Call this lender." "Get these documents." "Avoid this common mistake." Clear next steps, no ambiguity.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-content">
-        <h3>Ask Questions Anytime</h3>
-        <p>Guided plan includes AI Q&A — ask about pre-approval, inspections, closing, anything. We're here until you get your keys.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- WHO IT'S FOR -->
   <section class="who-for">
     <h2>Built For</h2>
@@ -263,6 +293,39 @@
       <div class="who-card">
         <h3>🤔 "Should I Buy?" Deciders</h3>
         <p>You're not sure if you're ready. We help you figure out if now is the right time, what you can afford, and what to do first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Choose Your Plan</h3>
+        <p>Pick the tier that fits your situation and click Get Started. You'll pay securely via Stripe.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Fill Out the Intake Form</h3>
+        <p>After payment, you'll see a short form to tell us about your budget, location, and timeline.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Get Your Personalized Plan</h3>
+        <p>We deliver your step-by-step roadmap, cost breakdown, and red flags within 24 hours.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Ask Questions Anytime</h3>
+        <p>Guided plan includes AI Q&A — ask about pre-approval, inspections, closing, anything. We're here until you get your keys.</p>
       </div>
     </div>
   </section>
@@ -305,9 +368,18 @@
   <!-- INTAKE FORM -->
   <section class="form-section" id="intake">
     <h2>Start Your Home Buying Plan</h2>
-    <p class="subtitle">Choose your plan and we'll get you your personalized roadmap within 24 hours.</p>
+    <p class="subtitle">Fill this out after you choose a plan above. We'll deliver your personalized roadmap within 24 hours.</p>
+
+    <!-- SUCCESS STATE -->
+    <div class="success-state" id="success-state">
+      <h3>✓ You're on the list!</h3>
+      <p style="color: var(--muted);">We received your intake. Check your email — your personalized home buying roadmap is on its way within 24 hours.</p>
+    </div>
 
     <form id="homeBuyerIntake" action="https://formspree.io/f/placeholder" method="POST">
+      <input type="hidden" id="selected-tier" name="tier_selected" value="" />
+      <input type="hidden" id="payment-amount" name="payment_amount" value="" />
+
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name *</label>
@@ -366,14 +438,8 @@
       </div>
 
       <div class="form-group">
-        <label for="tier">Which plan interests you? *</label>
-        <select id="tier" name="tier" required>
-          <option value="" disabled selected>Select a plan</option>
-          <option value="basic">Basic Roadmap — $9</option>
-          <option value="full">Full Breakdown — $29</option>
-          <option value="guided">Guided Buying Plan — $79</option>
-          <option value="unsure">Not sure yet — help me decide</option>
-        </select>
+        <label for="tier-display">Selected Plan</label>
+        <input type="text" id="tier-display" name="tier_display" readonly placeholder="Click a 'Get Started' button above to select your plan" style="background: var(--border); cursor: not-allowed;" />
       </div>
 
       <div class="form-group">
@@ -394,10 +460,21 @@
 
       <input type="text" name="_gotcha" style="display:none" />
 
-      <button type="submit" class="submit-btn">Start Your Plan</button>
-      <p class="form-note">We'll review your situation and deliver your personalized plan within 24 hours. No spam, no pressure — just clear next steps for your home purchase.</p>
+      <button type="submit" class="submit-btn" id="submit-btn">Submit Your Plan Request</button>
+      <p class="form-note">We deliver your personalized plan within 24 hours. No spam, no pressure — just clear next steps for your home purchase.</p>
     </form>
   </section>
+
+  <!-- STRIPE MODAL -->
+  <div id="stripe-modal">
+    <div class="stripe-box">
+      <h3 id="modal-title">Confirm Your Plan</h3>
+      <div class="stripe-price" id="modal-price">$9</div>
+      <p id="modal-desc">One-time payment. You'll be redirected to secure checkout via Stripe.</p>
+      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
+      <button class="close-modal" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
@@ -405,6 +482,7 @@
   </footer>
 
   <script>
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -412,11 +490,77 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    // Tier → Stripe price ID mapping (fill in your Stripe price IDs)
+    const tierMap = {
+      'basic':  { name: 'Basic Roadmap',       price: 9,  stripePriceId: 'REPLACE_WITH_STRIPE_PRICE_ID_basic' },
+      'full':   { name: 'Full Breakdown',        price: 29, stripePriceId: 'REPLACE_WITH_STRIPE_PRICE_ID_full' },
+      'guided': { name: 'Guided Buying Plan',    price: 79, stripePriceId: 'REPLACE_WITH_STRIPE_PRICE_ID_guided' }
+    };
+
+    function openCheckout(tier, price) {
+      const info = tierMap[tier];
+      if (!info) return;
+
+      document.getElementById('modal-title').textContent = info.name;
+      document.getElementById('modal-price').textContent = '$' + price;
+      document.getElementById('selected-tier').value = tier;
+      document.getElementById('payment-amount').value = price;
+      document.getElementById('tier-display').value = info.name + ' — $' + price;
+
+      // Build Stripe Checkout URL
+      // Replace YOUR_STRIPE_PRICE_ID with actual Stripe price IDs from your dashboard
+      // Format: https://checkout.stripe.com/pay/price_XXX
+      let checkoutUrl = 'https://buy.stripe.com/test_' + tier; // placeholder — replace with real price IDs
+      document.getElementById('stripe-checkout-btn').href = checkoutUrl;
+
+      document.getElementById('stripe-modal').classList.add('open');
+      // Scroll modal into view on mobile
+      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeModal() {
+      document.getElementById('stripe-modal').classList.remove('open');
+    }
+
+    // Close modal on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Form submission → Formspree
     const form = document.getElementById('homeBuyerIntake');
-    form.addEventListener('submit', function(e) {
-      const btn = form.querySelector('.submit-btn');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
+    const submitBtn = document.getElementById('submit-btn');
+    const successState = document.getElementById('success-state');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successState.classList.add('visible');
+          window.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          alert('Something went wrong. Please email us directly at support@particulatellc.com');
+          submitBtn.textContent = 'Submit Your Plan Request';
+          submitBtn.disabled = false;
+        }
+      } catch (err) {
+        alert('Connection error. Please email us directly at support@particulatellc.com');
+        submitBtn.textContent = 'Submit Your Plan Request';
+        submitBtn.disabled = false;
+      }
     });
   </script>
 </body>
