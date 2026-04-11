@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Health Navigation Consultation — Particulate LLC. Navigate insurance, find providers, understand medical bills, and make informed healthcare decisions with AI-powered guidance." />
+  <title>AI Health Navigation Consultation — Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508; --surface: #0c0c14; --border: #1a1a28;
+      --accent: #ef4444; --accent2: #f87171; --accent3: #fca5a5;
+      --glow: rgba(239, 68, 68, 0.15);
+      --text: #e8e8f4; --muted: #7070a0; --card: #0e0e18;
+      --blue: #6366f1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; }
+
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 1.5rem; }
+    .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
+    .disclaimer strong { color: var(--accent2); }
+
+    .tiers { max-width: 900px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
+    .tier-card.featured { border-color: var(--accent); position: relative; }
+    .tier-card.featured::before { content: 'Best Value'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
+    .tier-name { font-size: 0.85rem; color: var(--accent2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tier-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .tier-features { list-style: none; margin-bottom: 1.5rem; }
+    .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; }
+    .tier-features li::before { content: '✓'; color: var(--accent); font-weight: 700; margin-right: 0.6rem; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .tier-cta:hover { opacity: 0.9; }
+
+    .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .form-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .form-section p { color: var(--muted); margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 0.9rem; font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .submit-btn {
+      background: var(--accent); color: white; border: none; padding: 0.85rem 2rem;
+      border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover { opacity: 0.9; }
+
+    .features { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .features h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feature-card p { color: var(--muted); font-size: 0.88rem; }
+    .feature-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+    .faq { max-width: 700px; margin: 0 auto; padding: 2rem; }
+    .faq h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item h3 { font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .faq-item p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; display: none; }
+    .faq-item.open p { display: block; }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent2); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .tiers { padding: 1rem; }
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Particulate <span>LLC</span></div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/consulting/">Consulting</a>
+      <a href="/consulting/health-nav/" style="color:var(--accent2)">Health Nav</a>
+      <a href="/privacy-policy/">Privacy</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>AI Health <span>Navigation</span></h1>
+    <p>Healthcare is confusing. Insurance jargon, surprise bills, provider networks, treatment options — it's a maze. Our AI-powered health navigation service helps you cut through the noise and make informed decisions about your care.</p>
+    <div class="disclaimer">
+      <strong>⚠️ Important:</strong> This is a navigation and information service, not medical advice. We help you understand your options, decode your bills, find in-network providers, and prepare for appointments. Always consult a licensed medical professional for clinical decisions.
+    </div>
+  </section>
+
+  <section class="tiers">
+    <div class="tier-card">
+      <div class="tier-name">Quick Check</div>
+      <div class="tier-price">$9</div>
+      <div class="tier-desc">One question, one answer. Fast.</div>
+      <ul class="tier-features">
+        <li>Single health navigation question</li>
+        <li>Insurance coverage check</li>
+        <li>Provider network lookup</li>
+        <li>Written response within 24 hours</li>
+      </ul>
+      <a href="#contact" class="tier-cta">Get Started</a>
+    </div>
+    <div class="tier-card featured">
+      <div class="tier-name">Care Path</div>
+      <div class="tier-price">$29</div>
+      <div class="tier-desc">Full navigation for one health concern.</div>
+      <ul class="tier-features">
+        <li>Complete insurance breakdown</li>
+        <li>In-network provider search & comparison</li>
+        <li>Medical bill review & error detection</li>
+        <li>Appointment prep guide</li>
+        <li>Follow-up navigation for 30 days</li>
+      </ul>
+      <a href="#contact" class="tier-cta">Get Started</a>
+    </div>
+    <div class="tier-card">
+      <div class="tier-name">Health Advocate</div>
+      <div class="tier-price">$79</div>
+      <div class="tier-desc">Ongoing navigation support.</div>
+      <ul class="tier-features">
+        <li>Everything in Care Path</li>
+        <li>90-day unlimited navigation support</li>
+        <li>Bill negotiation assistance</li>
+        <li>Referral coordination</li>
+        <li>Priority response (same business day)</li>
+        <li>Annual open enrollment guidance</li>
+      </ul>
+      <a href="#contact" class="tier-cta">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>What We Help You Navigate</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏥</div>
+        <h3>Insurance Decoded</h3>
+        <p>Deductibles, copays, coinsurance, out-of-pocket maximums — we translate your plan into plain English and help you understand what's covered before you get care.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Provider Search</h3>
+        <p>Find in-network specialists, compare quality ratings, check acceptance of your specific plan, and get directions — all before you book.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💊</div>
+        <h3>Prescription Navigation</h3>
+        <p>Check formulary coverage, find lower-cost alternatives, understand prior authorization requirements, and locate in-network pharmacies.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💵</div>
+        <h3>Bill Review & Errors</h3>
+        <p>Up to 80% of medical bills contain errors. We review your bills for duplicate charges, upcoding, and balance billing — and help you dispute them.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Appointment Prep</h3>
+        <p>Get a personalized guide before your appointment: what to bring, what to ask, what tests to expect, and how to advocate for yourself.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Referral Coordination</h3>
+        <p>Need to see a specialist? We help navigate referral requirements, find providers that accept your insurance, and coordinate between your care team.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Common Questions</h2>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h3>Is this medical advice?</h3>
+      <p>No. This is a navigation and information service. We help you understand the healthcare system, find providers, decode bills, and prepare for appointments. We never diagnose, prescribe, or replace your doctor's guidance.</p>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h3>What insurance plans do you support?</h3>
+      <p>We can navigate most major US health insurance plans including employer-sponsored, ACA marketplace, Medicare, and Medicaid. Bring your plan details and we'll decode them for you.</p>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h3>How does bill review work?</h3>
+      <p>Send us your medical bill and we'll review it for common errors: duplicate charges, upcoding (charging for a more expensive procedure than you received), unbundling, and balance billing. If we find errors, we provide a dispute letter template and next steps.</p>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h3>Can you help during open enrollment?</h3>
+      <p>Yes! Our Health Advocate tier includes annual open enrollment guidance. We compare plans available to you, estimate total costs, and recommend the best option for your health needs and budget.</p>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h3>How quickly will I hear back?</h3>
+      <p>Quick Check: within 24 hours. Care Path: within 24 hours, with 30-day follow-up. Health Advocate: same business day, with 90-day unlimited support.</p>
+    </div>
+  </section>
+
+  <section class="form-section" id="contact">
+    <h2>Get Navigation Help</h2>
+    <p>Tell us what you're dealing with and we'll help you find your way through it.</p>
+    <form action="https://formspree.io/f/placeholder" method="POST">
+      <input type="hidden" name="_subject" value="Health Navigation Inquiry — Particulate LLC" />
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="tier">Service Level</label>
+        <select id="tier" name="tier">
+          <option value="quick-check">Quick Check — $9</option>
+          <option value="care-path" selected>Care Path — $29</option>
+          <option value="health-advocate">Health Advocate — $79</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">What do you need help navigating?</label>
+        <textarea id="message" name="message" placeholder="Example: I got a $2,400 bill for an MRI and my insurance says it's out of network but I checked before I went..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Inquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Particulate LLC. All rights reserved. | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-and-conditions/">Terms</a></p>
+    <p style="margin-top:0.5rem;">This service provides health navigation information, not medical advice. Always consult a licensed healthcare provider for clinical decisions.</p>
+  </footer>
+</body>
+</html>
