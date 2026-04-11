@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI SEO AI Tax & Accounting Assistant — Particulate LLC Growth Consultant — Particulate LLC. Technical SEO Audit, tax preparation help, and deduction discovery powered by AI agents." />
-  <meta property="og:title" content="AI SEO AI Tax & Accounting — Particulate LLC Growth — Particulate LLC" />
-  <meta property="og:description" content="Your AI-powered growth strategist. We tie SEO activity to measurable revenue outcomes — not vanity metrics. Results vary based on implementation and market conditions." />
-  <title>AI SEO AI Tax & Accounting — Particulate LLC Growth — Particulate LLC</title>
+  <meta name="description" content="AI Tax & Accounting Assistant — Particulate LLC. Automated bookkeeping, tax preparation help, and deduction discovery powered by AI agents." />
+  <meta property="og:title" content="AI Tax & Accounting — Particulate LLC" />
+  <meta property="og:description" content="Your AI-powered bookkeeper and tax strategist — 24/7. Deduction discovery, receipt scanning, quarterly estimates, and more." />
+  <title>AI Tax & Accounting — Particulate LLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -120,7 +120,7 @@
   </nav>
 
   <section class="hero">
-    <h1>AI SEO <h1>AI Tax & Accounting <span>Assistant</span></h1>amp; Growth Consultant<span></span></h1>
+    <h1>AI Tax & Accounting <span>Assistant</span></h1>
     <p>Your AI-powered bookkeeper and tax strategist — available 24/7. Deduction discovery, receipt scanning, quarterly estimates, and year-round tax guidance at a fraction of CPA costs.</p>
     <div class="disclaimer">
       <strong>⚠️ Important:</strong> Particulate LLC provides tax education and general information only. This is NOT tax advice, accounting advice, or legal advice. We are not CPAs, enrolled agents, or tax professionals. Our AI tools provide educational scenarios and general guidance — not personalized tax recommendations. Consult with a licensed tax professional before making any tax decisions.
@@ -131,7 +131,7 @@
   <section class="features">
     <div class="feature">
       <div class="feature-icon">🔍</div>
-      <h3>Content Deduction Discovery Authority Building</h3>
+      <h3>Deduction Discovery</h3>
       <p>AI scans your expenses and identifies deductions you might be missing</p>
     </div>
     <div class="feature">
