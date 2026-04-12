@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /seo-snapshot/
+
+Sitemap: https://particulatellc.com/sitemap.xml
