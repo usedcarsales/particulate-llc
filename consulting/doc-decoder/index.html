@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DocDecoder — AI Document Translation. Upload any confusing document (medical bill, EOB, collection letter, lease, tax form) and get a plain-English breakdown with flagged issues and action steps." />
+  <meta property="og:title" content="DocDecoder — AI Document Translation | Particulate LLC" />
+  <meta property="og:description" content="Don't pay what you don't owe. Upload confusing documents and get instant analysis with flagged issues and action steps." />
+  <title>DocDecoder — AI Document Translation | Particulate LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --surface2: #10101a;
+      --border: #1a1a28;
+      --accent: #22c55e;
+      --accent2: #4ade80;
+      --accent3: #86efac;
+      --glow: rgba(34, 197, 94, 0.15);
+      --text: #e8e8f4;
+      --muted: #7070a0;
+      --card: #0e0e18;
+      --red: #ef4444;
+      --orange: #f59e0b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 2rem; }
+    .hero .tagline { font-size: 1.3rem; color: var(--text); font-weight: 600; margin-bottom: 1.5rem; }
+
+    .tiers { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
+    .tier-card.featured { border-color: var(--accent); position: relative; }
+    .tier-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tier-name { font-size: 0.85rem; color: var(--accent2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tier-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .tier-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .tier-features { list-style: none; margin-bottom: 1.5rem; }
+    .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; color: var(--text); }
+    .tier-features li::before { content: '✓'; color: var(--accent); font-weight: 700; margin-right: 0.6rem; }
+    .tier-features li.warning::before { content: '⚠'; color: var(--orange); }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .tier-cta:hover { opacity: 0.9; }
+
+    .upload-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; }
+    .upload-section h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+    .upload-section .subtitle { text-align: center; color: var(--muted); margin-bottom: 2rem; }
+    
+    .upload-area { 
+      border: 2px dashed var(--border); 
+      border-radius: 12px; 
+      padding: 3rem 2rem; 
+      text-align: center; 
+      background: var(--surface);
+      transition: border-color 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+    .upload-area:hover { border-color: var(--accent); background: var(--surface2); }
+    .upload-area.dragover { border-color: var(--accent); background: var(--glow); }
+    .upload-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .upload-area p { color: var(--muted); font-size: 0.95rem; }
+    .upload-area p strong { color: var(--text); }
+    .file-input { display: none; }
+    
+    .file-list { margin-top: 1.5rem; text-align: left; }
+    .file-item { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      background: var(--surface2); 
+      padding: 0.75rem 1rem; 
+      border-radius: 8px; 
+      margin-bottom: 0.5rem;
+      border: 1px solid var(--border);
+    }
+    .file-item .name { font-size: 0.9rem; color: var(--text); }
+    .file-item .remove { color: var(--red); cursor: pointer; font-size: 0.85rem; }
+
+    .sample-docs { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .sample-docs h2 { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; }
+    .sample-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .sample-card { 
+      background: var(--surface2); 
+      border: 1px solid var(--border); 
+      border-radius: 8px; 
+      padding: 1.25rem; 
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .sample-card:hover { border-color: var(--accent); }
+    .sample-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .sample-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .sample-card p { font-size: 0.8rem; color: var(--muted); }
+
+    .how-it-works { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .how-it-works h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+
+    .faq { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; }
+    .faq h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    .faq-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent2); }
+    .faq-item p { color: var(--muted); font-size: 0.9rem; }
+
+    .disclaimer { max-width: 700px; margin: 0 auto; padding: 2rem; border-top: 1px solid var(--border); }
+    .disclaimer p { color: var(--muted); font-size: 0.75rem; text-align: center; }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .tiers { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="/consulting/">Consulting</a>
+      <a href="/services">Services</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Don't Pay What<br /><span>You Don't Owe</span></h1>
+    <p class="tagline">Upload any confusing document — medical bills, insurance EOBs, collection letters, leases, tax forms — and get a plain-English breakdown with flagged issues and action steps.</p>
+    <p>Our AI analyzes every line item, cross-references against known error patterns, and tells you exactly what to do next. 80% of medical bills contain errors. You're probably overpaying.</p>
+  </section>
+
+  <section class="tiers">
+    <div class="tier-card">
+      <div class="tier-name">Quick Scan</div>
+      <div class="tier-price">$9</div>
+      <div class="tier-desc">24-hour turnaround</div>
+      <ul class="tier-features">
+        <li>1 document upload</li>
+        <li>Plain-English summary</li>
+        <li>Flagged issues highlighted</li>
+        <li>Your rights explained</li>
+        <li>Email delivery</li>
+      </ul>
+      <a href="#upload" class="tier-cta">Upload Document</a>
+    </div>
+
+    <div class="tier-card featured">
+      <div class="tier-name">Full Audit</div>
+      <div class="tier-price">$29</div>
+      <div class="tier-desc">48-hour turnaround</div>
+      <ul class="tier-features">
+        <li>1 document + deep analysis</li>
+        <li>Error report with line items</li>
+        <li>Dispute letter template</li>
+        <li>30-day follow-up support</li>
+        <li>Phone call walkthrough</li>
+      </ul>
+      <a href="#upload" class="tier-cta">Upload Document</a>
+    </div>
+
+    <div class="tier-card">
+      <div class="tier-name">Navigator</div>
+      <div class="tier-price">$79</div>
+      <div class="tier-desc">72-hour turnaround</div>
+      <ul class="tier-features">
+        <li>3 documents analyzed</li>
+        <li>Full audit on each</li>
+        <li>Dispute letters for all</li>
+        <li>90-day ongoing support</li>
+        <li>Priority processing</li>
+      </ul>
+      <a href="#upload" class="tier-cta">Upload Document</a>
+    </div>
+  </section>
+
+  <section class="upload-section" id="upload">
+    <h2>Upload Your Document</h2>
+    <p class="subtitle">Drag & drop or click to upload. We accept PDF, PNG, JPG — any format.</p>
+    
+    <div class="upload-area" id="uploadArea">
+      <div class="upload-icon">📄</div>
+      <p><strong>Drop your document here</strong></p>
+      <p>or click to browse</p>
+      <p style="margin-top: 1rem; font-size: 0.8rem;">PDF, PNG, JPG up to 10MB</p>
+      <input type="file" class="file-input" id="fileInput" accept=".pdf,.png,.jpg,.jpeg" multiple />
+    </div>
+    
+    <div class="file-list" id="fileList"></div>
+  </section>
+
+  <section class="sample-docs">
+    <h2>What We Analyze</h2>
+    <div class="sample-grid">
+      <div class="sample-card">
+        <div class="sample-icon">🏥</div>
+        <h3>Medical Bills</h3>
+        <p>Upcoding, duplicate charges, unbundling, balance billing</p>
+      </div>
+      <div class="sample-card">
+        <div class="sample-icon">📋</div>
+        <h3>Insurance EOBs</h3>
+        <p>Coverage denials, deductible info, out-of-network surprises</p>
+      </div>
+      <div class="sample-card">
+        <div class="sample-icon">📧</div>
+        <h3>Collection Letters</h3>
+        <p>Validation requests, FDCPA violations, statute of limitations</p>
+      </div>
+      <div class="sample-card">
+        <div class="sample-icon">🏠</div>
+        <h3>Leases & Contracts</h3>
+        <p>Hidden fees, renewal terms, cancellation clauses</p>
+      </div>
+      <div class="sample-card">
+        <div class="sample-icon">📊</div>
+        <h3>Tax Documents</h3>
+        <p>1099s, K-1s, deduction clarifications, notice responses</p>
+      </div>
+      <div class="sample-card">
+        <div class="sample-icon">💰</div>
+        <h3>Credit Reports</h3>
+        <p>Dispute reasons, collections, hard inquiries</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Upload</h3>
+        <p>Drag and drop your document (PDF, photo, or scan). Our system accepts any format.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>We Analyze</h3>
+        <p>Our AI extracts every line item and cross-references against thousands of known error patterns — the same ones that cost consumers billions annually.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>You Get Answers</h3>
+        <p>Receive a plain-English breakdown: what the document says, what's suspicious, what your rights are, and exactly what to do next.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Take Action</h3>
+        <p>Get ready-to-use dispute templates, validation letters, and call scripts. We'll walk you through the next steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>Is this legal advice?</h3>
+      <p>No. DocDecoder is an information and navigation service. We explain what documents say in plain English and provide general guidance. For specific legal matters, consult an attorney.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do you find errors?</h3>
+      <p>We cross-reference your document against known error patterns from industry research. For medical bills, this includes upcoding, duplicate charges, unbundling, and balance billing. For collections, we check FDCPA compliance and statute of limitations.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if you find an error?</h3>
+      <p>You'll receive a detailed error report and a dispute letter template tailored to your specific situation. Higher tiers include follow-up support to guide you through the resolution process.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How accurate is the analysis?</h3>
+      <p>Our AI catches the most common error patterns with high accuracy. However, we always recommend human review for high-stakes situations. Think of us as your first line of defense — we catch the obvious stuff so you don't overpay.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does it take?</h3>
+      <p>Quick Scan: 24 hours. Full Audit: 48 hours. Navigator: 72 hours. Rush processing available for urgent situations.</p>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <p><strong>Disclaimer:</strong> DocDecoder is an informational and navigation service only. We do not provide legal, medical, or financial advice. Analysis results are for general informational purposes and should not be construed as legal representation or professional financial advice. Always consult with qualified professionals for specific legal, medical, or financial decisions.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
+    <p style="margin-top:0.5rem"><a href="/privacy" style="color:var(--muted)">Privacy Policy</a> · <a href="/terms" style="color:var(--muted)">Terms</a></p>
+  </footer>
+
+  <script>
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+    let files = [];
+
+    uploadArea.addEventListener('click', () => fileInput.click());
+    
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.classList.add('dragover');
+    });
+    
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.classList.remove('dragover');
+    });
+    
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('dragover');
+      handleFiles(e.dataTransfer.files);
+    });
+    
+    fileInput.addEventListener('change', (e) => {
+      handleFiles(e.target.files);
+    });
+
+    function handleFiles(newFiles) {
+      for (const file of newFiles) {
+        if (file.size <= 10 * 1024 * 1024) {
+          files.push(file);
+        }
+      }
+      renderFileList();
+    }
+
+    function removeFile(index) {
+      files.splice(index, 1);
+      renderFileList();
+    }
+
+    function renderFileList() {
+      fileList.innerHTML = files.map((file, i) => `
+        <div class="file-item">
+          <span class="name">📄 ${file.name}</span>
+          <span class="remove" onclick="removeFile(${i})">Remove</span>
+        </div>
+      `).join('');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
