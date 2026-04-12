@@ -114,24 +114,25 @@
 
     /* Service Tabs */
     .tabs {
-      display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap;
+      display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; justify-content: center;
     }
     .tab {
-      padding: 12px 24px; border-radius: 10px;
+      padding: 10px 18px; border-radius: 10px;
       background: var(--surface2); border: 1px solid var(--border);
-      color: var(--muted); font-size: 15px; font-weight: 600;
+      color: var(--muted); font-size: 14px; font-weight: 600;
       cursor: pointer; transition: all 0.3s;
     }
     .tab:hover { border-color: var(--accent); color: var(--text); }
     .tab.active { background: var(--accent); border-color: var(--accent); color: white; }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .tab-content { display: none; width: 100%; }
+    .tab-content.active { display: block; width: 100%; }
 
     /* Pricing Grid */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
+      justify-content: center;
     }
     .pricing-card {
       background: var(--card);
@@ -178,6 +179,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
+      justify-content: center;
     }
     .feature-card {
       background: var(--card);
