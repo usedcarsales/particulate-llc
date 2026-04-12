@@ -371,12 +371,15 @@
     <p class="subtitle">Fill this out after you choose a plan above. We'll deliver your personalized roadmap within 24 hours.</p>
 
     <!-- SUCCESS STATE -->
-    <div class="success-state" id="success-state">
-      <h3>✓ You're on the list!</h3>
+    
       <p style="color: var(--muted);">We received your intake. Check your email — your personalized home buying roadmap is on its way within 24 hours.</p>
     </div>
 
-    <form id="homeBuyerIntake" action="https://formspree.io/f/placeholder" method="POST">
+        <div data-fs-success id="form-success" style="display:none; text-align:center; padding:2rem 0;">
+      <h3 style="color:var(--accent2); font-size:1.8rem; font-weight:800; margin-bottom:0.75rem;">✓ You're on the list!</h3>
+      <p style="color:var(--muted);">We received your intake. Check your email — your personalized plan is on its way within 24 hours.</p>
+    </div>
+    <form id="homeBuyerIntake" action="https://formspree.io/f/xaqlrrna" method="POST">
       <input type="hidden" id="selected-tier" name="tier_selected" value="" />
       <input type="hidden" id="payment-amount" name="payment_amount" value="" />
 
@@ -460,7 +463,7 @@
 
       <input type="text" name="_gotcha" style="display:none" />
 
-      <button type="submit" class="submit-btn" id="submit-btn">Submit Your Plan Request</button>
+      <button type="submit" class="submit-btn" id="submit-btn" data-fs-submit-btn>Submit Your Plan Request</button>
       <p class="form-note">We deliver your personalized plan within 24 hours. No spam, no pressure — just clear next steps for your home purchase.</p>
     </form>
   </section>
@@ -529,39 +532,9 @@
     });
 
     // Form submission → Formspree
-    const form = document.getElementById('homeBuyerIntake');
-    const submitBtn = document.getElementById('submit-btn');
-    const successState = document.getElementById('success-state');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-
-      const formData = new FormData(form);
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          successState.classList.add('visible');
-          window.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          alert('Something went wrong. Please email us directly at support@particulatellc.com');
-          submitBtn.textContent = 'Submit Your Plan Request';
-          submitBtn.disabled = false;
-        }
-      } catch (err) {
-        alert('Connection error. Please email us directly at support@particulatellc.com');
-        submitBtn.textContent = 'Submit Your Plan Request';
-        submitBtn.disabled = false;
-      }
-    });
+    // Formspree AJAX library handles submission automatically
+    // See data-fs-success and data-fs-submit-btn attributes on the form
   </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
