@@ -62,8 +62,18 @@
     .tier-features { list-style: none; margin-bottom: 1.5rem; }
     .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; color: var(--text); }
     .tier-features li::before { content: '✓'; color: var(--green); font-weight: 700; margin-right: 0.6rem; }
-    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; cursor: pointer; border: none; width: 100%; font-family: inherit; }
     .tier-cta:hover { opacity: 0.9; }
+    /* STRIPE CHECKOUT OVERLAY */
+    #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
+    #stripe-modal.open { display: flex; }
+    .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
+    .stripe-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stripe-price { font-size: 2.5rem; font-weight: 900; color: var(--accent2); margin: 1rem 0; }
+    .stripe-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stripe-btn { display: block; width: 100%; padding: 1rem; background: var(--accent); color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; margin-bottom: 0.75rem; text-decoration: none; text-align: center; }
+    .stripe-btn:hover { opacity: 0.9; }
+    .close-modal { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.85rem; margin-top: 0.5rem; text-decoration: underline; }
 
     /* WHO IT'S FOR */
     .who-for { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
@@ -170,7 +180,7 @@
           <li>2026 tax bracket lookups</li>
           <li>Educational content library</li>
         </ul>
-        <a href="#intake" class="tier-cta">Start Tax Chat</a>
+        <button class="tier-cta" onclick="openCheckout('tax-chat', 29)">Start Tax Chat — $29/mo</button>
       </div>
 
       <div class="tier-card featured">
@@ -186,7 +196,7 @@
           <li>Tax loss harvesting suggestions</li>
           <li>Export to CSV for your CPA</li>
         </ul>
-        <a href="#intake" class="tier-cta">Start Bookkeeping</a>
+        <button class="tier-cta" onclick="openCheckout('bookkeeping', 79)">Start Bookkeeping — $79/mo</button>
       </div>
 
       <div class="tier-card">
@@ -202,7 +212,7 @@
           <li>Annual tax strategy review (1 hour)</li>
           <li>Multi-state tax obligation tracking</li>
         </ul>
-        <a href="#intake" class="tier-cta">Start Business Suite</a>
+        <button class="tier-cta" onclick="openCheckout('business-suite', 199)">Start Business Suite — $199/mo</button>
       </div>
     </div>
   </section>
@@ -265,6 +275,7 @@
     <p class="subtitle">Choose your tier and we'll get you set up within 24 hours.</p>
 
     <form id="taxIntake" action="https://formspree.io/f/xaqlrrna" method="POST">
+      <input type="hidden" name="_subject" value="Tax Inquiry — Particulate LLC" />
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name *</label>
@@ -361,6 +372,41 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
     });
+
+    const tierMap = {
+      'tax-chat':      { name: 'Tax Chat — $29/mo',       price: 29,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_TAX_CHAT' },
+      'bookkeeping':   { name: 'Bookkeeping+Tax — $79/mo', price: 79,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_BOOKKEEPING' },
+      'business-suite': { name: 'Business Suite — $199/mo',  price: 199, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_BUSINESS' }
+    };
+
+    function openCheckout(tier, price) {
+      const info = tierMap[tier];
+      if (!info) return;
+      document.getElementById('modal-title').textContent = 'Particulate LLC — ' + info.name;
+      document.getElementById('modal-price').textContent = '$' + price;
+      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
+      document.getElementById('stripe-modal').classList.add('open');
+      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeModal() {
+      document.getElementById('stripe-modal').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
   </script>
+
+  <div id="stripe-modal">
+    <div class="stripe-box">
+      <h3 id="modal-title">Particulate LLC Consultation</h3>
+      <div class="stripe-price" id="modal-price">$29</div>
+      <p id="modal-desc">Secure checkout via Stripe. You'll complete your intake after payment.</p>
+      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
+      <button class="close-modal" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
 </body>
 </html>
