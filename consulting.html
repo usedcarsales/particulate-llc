@@ -861,43 +861,6 @@
   </section>
 </div>
 
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="section-label">How It Works</div>
-  <div class="section-title">Simple. Transparent. Effective.</div>
-  <div class="section-desc">From first conversation to ongoing support — here's the process.</div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Free Discovery</h3>
-      <p>Take our readiness quiz or book a free 15-minute call. We'll understand your needs and recommend the right package.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Guided Setup</h3>
-      <p>Work with our AI consultants via your preferred channel — Zoom, SMS, WhatsApp, or Discord. We walk you through everything.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Go Live</h3>
-      <p>Your system is configured, tested, and running. You get documentation, templates, and a clear path forward.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h3>Ongoing Care</h3>
-      <p>Stay supported with monthly health checks, optimizations, and priority access to our team.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-section">
-  <h2>Ready to get started?</h2>
-  <p>Book a free 15-minute discovery call. No commitment, no pressure — just honest guidance on what we can help with.</p>
-  <a href="mailto:hello@particulatellc.com?subject=Consulting Inquiry" class="hero-cta">Book Free Consultation →</a>
-</div>
-
 <footer>
   <p>© 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/services.html">Services</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
   <p style="margin-top: 12px; font-size: 11px; color: #50507a;">Particulate LLC is a technology and education company registered in New Jersey. AI agent consultations are disclosed as AI-powered services with human oversight.</p>
@@ -1153,7 +1116,7 @@ function closeIntakeModal(){
 function handleIntakeSubmit(e){
   e.preventDefault();
   closeIntakeModal();
-  window.open('https://buy.stripe.com/'+activeIntakePrice,'_blank');
+  window.location.href='mailto:hello@particulatellc.com?subject='+encodeURIComponent('Consulting Inquiry — '+activeIntakeTier)+'&body='+encodeURIComponent('I\'m interested in the '+activeIntakeTier+' tier. Please send me payment instructions.');
   return false;
 }
 </script>
