@@ -229,22 +229,22 @@
 
   <section class="faq">
     <h2>Common Questions</h2>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>Is this credit repair?</h3>
-      <p>No. Credit repair companies charge monthly fees to dispute items on your credit report — often things you can do yourself for free. We teach you how to do it and give you the templates, but we don't dispute on your behalf.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>Can you negotiate with my creditors for me?</h3>
-      <p>We provide scripts, strategies, and coaching — but you make the calls. This keeps you in control and avoids the fees and risks of third-party debt settlement companies.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>What information do you need from me?</h3>
-      <p>For the Snapshot: your total debt, approximate interest rates, and monthly income. For the Payoff Plan: a list of all debts with balances, rates, minimums, and your credit score if you have it. The more detail you provide, the better the plan.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>How is this different from free budgeting apps?</h3>
-      <p>Budgeting apps track spending. We help you make strategic decisions: which debts to prioritize, when to settle vs pay in full, how to time disputes, and whether consolidation makes sense for your specific situation.</p>
-    </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Is this credit repair?</h3>
+        <p>No. Credit repair companies charge monthly fees to dispute items on your credit report — often things you can dispute yourself for free. We help you understand your full financial picture, prioritize which debts to tackle first, and build a realistic payoff strategy.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Can you negotiate with my creditors for me?</h3>
+        <p>We provide scripts, strategies, and coaching — but you make the calls. This keeps you in control and avoids the fees that debt settlement companies charge (typically 15-25% of your enrolled debt).</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>What information do you need from me?</h3>
+        <p>For the Snapshot: your total debt, approximate interest rates, and monthly income. For the Payoff Plan: we'll also ask about your expenses, financial goals, and timeline. The more detail you provide, the more tailored your plan.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>How is this different from free budgeting apps?</h3>
+        <p>Budgeting apps track spending. We help you make strategic decisions: which debts to prioritize, when to negotiate, whether consolidation makes sense for your situation, and how to protect your credit score while paying things off.</p>
+      </div>
   </section>
 
 
@@ -317,39 +317,91 @@
   </footer>
 
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Particulate LLC — AI Debt & Credit Consultation",
-      "description": "AI-powered debt navigation — payoff strategies, credit score roadmaps, dispute templates, and creditor negotiation guidance.",
-      "url": "https://particulatellc.com/consulting/debt-credit/",
-      "email": "hello@particulatellc.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Jersey",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      },
-      "priceRange": "$9-$49",
-      "areaServed": "US",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Particulate LLC",
-        "url": "https://particulatellc.com"
-      },
-      "serviceType": "AI Debt & Credit Consulting"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Particulate LLC — AI Debt & Credit Consultation",
+    "description": "AI-powered debt navigation — payoff strategies, credit score roadmaps, dispute templates, and creditor negotiation guidance.",
+    "url": "https://particulatellc.com/consulting/debt-credit/",
+    "email": "hello@particulatellc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Jersey",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
-        { "@type": "ListItem", "position": 3, "name": "AI Debt & Credit" }
-      ]
-    }
-  ]
+    "priceRange": "$9-$49",
+    "areaServed": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Particulate LLC",
+      "url": "https://particulatellc.com"
+    },
+    "serviceType": "AI Debt & Credit Consulting"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://particulatellc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting",
+        "item": "https://particulatellc.com/consulting.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Debt & Credit"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this credit repair?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Credit repair companies charge monthly fees to dispute items on your credit report — often things you can dispute yourself for free. We help you understand your full financial picture, prioritize which debts to tackle first, and build a realistic payoff strategy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you negotiate with my creditors for me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We provide scripts, strategies, and coaching — but you make the calls. This keeps you in control and avoids the fees that debt settlement companies charge (typically 15-25% of your enrolled debt)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information do you need from me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the Snapshot: your total debt, approximate interest rates, and monthly income. For the Payoff Plan: we'll also ask about your expenses, financial goals, and timeline. The more detail you provide, the more tailored your plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from free budgeting apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budgeting apps track spending. We help you make strategic decisions: which debts to prioritize, when to negotiate, whether consolidation makes sense for your situation, and how to protect your credit score while paying things off."
+        }
+      }
+    ]
+  }
+]
   </script>
 </body>
 </html>

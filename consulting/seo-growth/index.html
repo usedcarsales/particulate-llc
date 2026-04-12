@@ -138,6 +138,14 @@
       .features { grid-template-columns: 1fr 1fr; }
       .who-grid { grid-template-columns: 1fr; }
     }
+  
+    .faq { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    .faq h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; cursor: pointer; }
+    .faq-item h3 { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .faq-item p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; display: none; line-height: 1.6; }
+    .faq-item.open p { display: block; }
+    .faq-item:hover h3 { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -343,6 +351,27 @@
     </form>
   </section>
 
+
+  <section class="faq">
+    <h2>Common Questions</h2>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Is this a full SEO agency service?</h3>
+        <p>No. We provide AI-assisted analysis, content recommendations, and strategic roadmaps. We tell you exactly what to fix, what to build, and what to prioritize — but you (or your developer) implement the changes. This keeps costs low and you in control.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>How fast will I see results?</h3>
+        <p>SEO is a 3-12 month game. Technical fixes can show results in weeks. Content and authority building takes 3-6 months for meaningful traffic gains. We set realistic expectations and track progress monthly.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Do you build backlinks?</h3>
+        <p>We identify backlink opportunities and provide outreach templates, but we don't buy or build links for you. Bought links violate Google's guidelines and risk penalties. We focus on legitimate authority building.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>What's included in the audit?</h3>
+        <p>Technical SEO crawl, on-page analysis, keyword gap assessment, competitor comparison, content recommendations, and a prioritized 90-day action plan. Delivered as a written report within 48 hours of intake.</p>
+      </div>
+  </section>
+
   <footer>
     <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
     <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/home-buyer/">Home Buyer</a></p>
@@ -350,39 +379,91 @@
   </footer>
 
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Particulate LLC — AI SEO & Growth Consultant",
-      "description": "AI-powered SEO consulting — technical audits, content strategy, link building, and analytics setup tied to measurable revenue.",
-      "url": "https://particulatellc.com/consulting/seo-growth/",
-      "email": "hello@particulatellc.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Jersey",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      },
-      "priceRange": "$9-$79",
-      "areaServed": "US",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Particulate LLC",
-        "url": "https://particulatellc.com"
-      },
-      "serviceType": "AI SEO Consulting"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Particulate LLC — AI SEO & Growth Consultant",
+    "description": "AI-powered SEO consulting — technical audits, content strategy, link building, and analytics setup tied to measurable revenue.",
+    "url": "https://particulatellc.com/consulting/seo-growth/",
+    "email": "hello@particulatellc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Jersey",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
-        { "@type": "ListItem", "position": 3, "name": "AI SEO & Growth" }
-      ]
-    }
-  ]
+    "priceRange": "$9-$79",
+    "areaServed": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Particulate LLC",
+      "url": "https://particulatellc.com"
+    },
+    "serviceType": "AI SEO Consulting"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://particulatellc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting",
+        "item": "https://particulatellc.com/consulting.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI SEO & Growth"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this a full SEO agency service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We provide AI-assisted analysis, content recommendations, and strategic roadmaps. We tell you exactly what to fix, what to build, and what to prioritize — but you (or your developer) implement the changes. This keeps costs low and you in control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast will I see results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO is a 3-12 month game. Technical fixes can show results in weeks. Content and authority building takes 3-6 months for meaningful traffic gains. We set realistic expectations and track progress monthly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you build backlinks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We identify backlink opportunities and provide outreach templates, but we don't buy or build links for you. Bought links violate Google's guidelines and risk penalties. We focus on legitimate authority building."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's included in the audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Technical SEO crawl, on-page analysis, keyword gap assessment, competitor comparison, content recommendations, and a prioritized 90-day action plan. Delivered as a written report within 48 hours of intake."
+        }
+      }
+    ]
+  }
+]
   </script>
 
   <script>

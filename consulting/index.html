@@ -126,6 +126,14 @@
       .form-row { grid-template-columns: 1fr; }
       .tiers { grid-template-columns: 1fr; }
     }
+  
+    .faq { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    .faq h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; cursor: pointer; }
+    .faq-item h3 { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .faq-item p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; display: none; line-height: 1.6; }
+    .faq-item.open p { display: block; }
+    .faq-item:hover h3 { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -348,6 +356,27 @@
     </form>
   </section>
 
+
+  <section class="faq">
+    <h2>Common Questions</h2>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Are these real people or AI agents?</h3>
+        <p>Our consultations are AI-powered with human oversight. You get the speed and availability of AI with the quality control of a real team reviewing key outputs. Think of it as an expert system that works 24/7, with humans checking the important stuff.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>What if I need help from a real professional?</h3>
+        <p>We'll tell you honestly when a situation requires a licensed professional — CPA, attorney, financial advisor, or medical professional. We don't try to be what we're not. Our job is to get you organized and informed so you can make the most of professional help when you need it.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>How quickly do I get my results?</h3>
+        <p>Quick Check tier: within 24 hours. All other tiers: within 24-48 hours of intake submission. Premium and Advocate tiers include ongoing support for the duration specified.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Is my information secure?</h3>
+        <p>Yes. We use Stripe for payment processing (we never see your card details) and industry-standard encryption for data in transit. We don't sell or share your information. Our full privacy policy is at particulatellc.com/privacy-policy/.</p>
+      </div>
+  </section>
+
   <footer>
     <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
     <p style="margin-top:0.5rem"><a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
@@ -355,39 +384,91 @@
   </footer>
 
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Particulate LLC — AI Agent Setup Consultation",
-      "description": "Custom AI agent systems designed, built, and deployed for your business. From audit to full deployment.",
-      "url": "https://particulatellc.com/consulting/",
-      "email": "hello@particulatellc.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Jersey",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      },
-      "priceRange": "$49-$199",
-      "areaServed": "US",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Particulate LLC",
-        "url": "https://particulatellc.com"
-      },
-      "serviceType": "AI Agent Consulting"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Particulate LLC — AI Agent Setup Consultation",
+    "description": "Custom AI agent systems designed, built, and deployed for your business. From audit to full deployment.",
+    "url": "https://particulatellc.com/consulting/",
+    "email": "hello@particulatellc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Jersey",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
-        { "@type": "ListItem", "position": 3, "name": "AI Agent Setup" }
-      ]
-    }
-  ]
+    "priceRange": "$49-$199",
+    "areaServed": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Particulate LLC",
+      "url": "https://particulatellc.com"
+    },
+    "serviceType": "AI Agent Consulting"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://particulatellc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting",
+        "item": "https://particulatellc.com/consulting.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Agent Setup"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are these real people or AI agents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our consultations are AI-powered with human oversight. You get the speed and availability of AI with the quality control of a real team reviewing key outputs. Think of it as an expert system that works 24/7, with humans checking the important stuff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need help from a real professional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We'll tell you honestly when a situation requires a licensed professional — CPA, attorney, financial advisor, or medical professional. We don't try to be what we're not. Our job is to get you organized and informed so you can make the most of professional help when you need it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly do I get my results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quick Check tier: within 24 hours. All other tiers: within 24-48 hours of intake submission. Premium and Advocate tiers include ongoing support for the duration specified."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my information secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We use Stripe for payment processing (we never see your card details) and industry-standard encryption for data in transit. We don't sell or share your information. Our full privacy policy is at particulatellc.com/privacy-policy/."
+        }
+      }
+    ]
+  }
+]
   </script>
 
   <script>

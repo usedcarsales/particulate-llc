@@ -229,26 +229,26 @@
 
   <section class="faq">
     <h2>Common Questions</h2>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>Is this medical advice?</h3>
-      <p>No. This is a navigation and information service. We help you understand the healthcare system, find providers, decode bills, and prepare for appointments. We never diagnose, prescribe, or replace your doctor's guidance.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>What insurance plans do you support?</h3>
-      <p>We can navigate most major US health insurance plans including employer-sponsored, ACA marketplace, Medicare, and Medicaid. Bring your plan details and we'll decode them for you.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>How does bill review work?</h3>
-      <p>Send us your medical bill and we'll review it for common errors: duplicate charges, upcoding (charging for a more expensive procedure than you received), unbundling, and balance billing. If we find errors, we provide a dispute letter template and next steps.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>Can you help during open enrollment?</h3>
-      <p>Yes! Our Health Advocate tier includes annual open enrollment guidance. We compare plans available to you, estimate total costs, and recommend the best option for your health needs and budget.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h3>How quickly will I hear back?</h3>
-      <p>Quick Check: within 24 hours. Care Path: within 24 hours, with 30-day follow-up. Health Advocate: same business day, with 90-day unlimited support.</p>
-    </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Is this medical advice?</h3>
+        <p>No. This is a navigation and information service. We help you understand the healthcare system, find providers, decode bills, and prepare for appointments. We never diagnose, prescribe, or replace your doctor's guidance.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>What insurance plans do you support?</h3>
+        <p>We can navigate most major US health insurance plans including employer-sponsored, ACA marketplace, Medicare, and Medicaid. Bring your plan details and we'll decode them for you.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>How does bill review work?</h3>
+        <p>Send us your medical bill and we'll review it for common errors: duplicate charges, upcoding (charging for a more expensive procedure than you received), unbundling, and balance billing. If we find errors, we provide a dispute letter template and next steps.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Can you help during open enrollment?</h3>
+        <p>Yes! Our Health Advocate tier includes annual open enrollment guidance. We compare plans available to you, estimate total costs, and recommend the best option for your health needs and budget.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>How quickly will I hear back?</h3>
+        <p>Quick Check: within 24 hours. Care Path: within 24 hours, with 30-day follow-up. Health Advocate: same business day, with 90-day unlimited support.</p>
+      </div>
   </section>
 
 
@@ -321,39 +321,99 @@
   </footer>
 
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Particulate LLC — AI Health Navigation Consultation",
-      "description": "AI-powered health navigation — decode insurance, find providers, catch bill errors, and make informed healthcare decisions.",
-      "url": "https://particulatellc.com/consulting/health-nav/",
-      "email": "hello@particulatellc.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Jersey",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      },
-      "priceRange": "$9-$49",
-      "areaServed": "US",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Particulate LLC",
-        "url": "https://particulatellc.com"
-      },
-      "serviceType": "AI Health Navigation Consulting"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Particulate LLC — AI Health Navigation Consultation",
+    "description": "AI-powered health navigation — decode insurance, find providers, catch bill errors, and make informed healthcare decisions.",
+    "url": "https://particulatellc.com/consulting/health-nav/",
+    "email": "hello@particulatellc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Jersey",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
-        { "@type": "ListItem", "position": 3, "name": "AI Health Navigation" }
-      ]
-    }
-  ]
+    "priceRange": "$9-$49",
+    "areaServed": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Particulate LLC",
+      "url": "https://particulatellc.com"
+    },
+    "serviceType": "AI Health Navigation Consulting"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://particulatellc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting",
+        "item": "https://particulatellc.com/consulting.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Health Navigation"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this medical advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This is a navigation and information service. We help you understand the healthcare system, find providers, decode bills, and prepare for appointments. We never diagnose, prescribe, or replace your doctor's guidance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What insurance plans do you support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can navigate most major US health insurance plans including employer-sponsored, ACA marketplace, Medicare, and Medicaid. Bring your plan details and we'll decode them for you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does bill review work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Send us your medical bill and we'll review it for common errors: duplicate charges, upcoding (charging for a more expensive procedure than you received), unbundling, and balance billing. If we find errors, we provide a dispute letter template and next steps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help during open enrollment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Our Health Advocate tier includes annual open enrollment guidance. We compare plans available to you, estimate total costs, and recommend the best option for your health needs and budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly will I hear back?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quick Check: within 24 hours. Care Path: within 24 hours, with 30-day follow-up. Health Advocate: same business day, with 90-day unlimited support."
+        }
+      }
+    ]
+  }
+]
   </script>
 </body>
 </html>

@@ -138,6 +138,14 @@
       .features { grid-template-columns: 1fr 1fr; }
       .who-grid { grid-template-columns: 1fr; }
     }
+  
+    .faq { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    .faq h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; cursor: pointer; }
+    .faq-item h3 { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .faq-item p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; display: none; line-height: 1.6; }
+    .faq-item.open p { display: block; }
+    .faq-item:hover h3 { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -375,6 +383,27 @@
     </form>
   </section>
 
+
+  <section class="faq">
+    <h2>Common Questions</h2>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Is this tax filing?</h3>
+        <p>No. We don't file your taxes. We help you organize your financial information, identify deductions and credits you might be missing, and prepare a clean package for your CPA or tax software. Think of it as pre-filing optimization.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Can you replace my CPA?</h3>
+        <p>No — but we can make your CPA's job easier and potentially cheaper. When you come prepared with organized documents and identified deductions, your CPA spends less time (and charges you less) while finding more savings.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>What NJ-specific tax situations do you cover?</h3>
+        <p>NJ has unique rules: high property taxes with limited deduction options, no city-level tax but state income tax brackets that matter, specific business expense categories, and the PA/NJ reciprocal tax agreement for cross-border workers. We know these inside and out.</p>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>What do you need from me to get started?</h3>
+        <p>For the Snapshot: last year's tax return and a brief description of your situation. For the Full Review: we'll send a detailed checklist covering income sources, deductions, business expenses, and life changes that affect your tax picture.</p>
+      </div>
+  </section>
+
   <footer>
     <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
     <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
@@ -382,39 +411,91 @@
   </footer>
 
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Particulate LLC — AI Tax & Accounting",
-      "description": "AI-powered bookkeeping, tax preparation help, and deduction discovery for solopreneurs, small businesses, and side hustle owners.",
-      "url": "https://particulatellc.com/consulting/tax/",
-      "email": "hello@particulatellc.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Jersey",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      },
-      "priceRange": "$29-$199",
-      "areaServed": "US",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Particulate LLC",
-        "url": "https://particulatellc.com"
-      },
-      "serviceType": "AI Tax Consulting"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Particulate LLC — AI Tax & Accounting",
+    "description": "AI-powered bookkeeping, tax preparation help, and deduction discovery for solopreneurs, small businesses, and side hustle owners.",
+    "url": "https://particulatellc.com/consulting/tax/",
+    "email": "hello@particulatellc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Jersey",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
-        { "@type": "ListItem", "position": 3, "name": "AI Tax & Accounting" }
-      ]
-    }
-  ]
+    "priceRange": "$29-$199",
+    "areaServed": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Particulate LLC",
+      "url": "https://particulatellc.com"
+    },
+    "serviceType": "AI Tax Consulting"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://particulatellc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting",
+        "item": "https://particulatellc.com/consulting.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Tax & Accounting"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this tax filing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We don't file your taxes. We help you organize your financial information, identify deductions and credits you might be missing, and prepare a clean package for your CPA or tax software. Think of it as pre-filing optimization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you replace my CPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — but we can make your CPA's job easier and potentially cheaper. When you come prepared with organized documents and identified deductions, your CPA spends less time (and charges you less) while finding more savings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What NJ-specific tax situations do you cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NJ has unique rules: high property taxes with limited deduction options, no city-level tax but state income tax brackets that matter, specific business expense categories, and the PA/NJ reciprocal tax agreement for cross-border workers. We know these inside and out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do you need from me to get started?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the Snapshot: last year's tax return and a brief description of your situation. For the Full Review: we'll send a detailed checklist covering income sources, deductions, business expenses, and life changes that affect your tax picture."
+        }
+      }
+    ]
+  }
+]
   </script>
 
   <script>
