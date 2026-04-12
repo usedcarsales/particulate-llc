@@ -2,31 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Particulate LLC — Health Navigation",
-    "url": "https://particulatellc.com/consulting/health-nav/",
-    "telephone": "+1-XXX-XXX-XXXX",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "REPLACE_WITH_ADDRESS",
-      "addressLocality": "REPLACE_WITH_CITY",
-      "addressRegion": "REPLACE_WITH_STATE",
-      "postalCode": "REPLACE_WITH_ZIP",
-      "addressCountry": "US"
-    },
-    "areaServed": "US",
-    "priceRange": "$9-$79",
-    "serviceType": "Health Insurance Navigation",
-    "description": "AI-powered health navigation — insurance decoded, provider search, medical bill review, and appointment preparation."
-  }
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="AI Health Navigation Consultation — Particulate LLC. Navigate insurance, find providers, understand medical bills, and make informed healthcare decisions with AI-powered guidance." />
   <meta property="og:title" content="AI Health Navigation Consultation — Particulate LLC" />
   <meta property="og:description" content="AI-powered health navigation — decode insurance, find providers, catch bill errors, and make informed healthcare decisions." />
+  <link rel="canonical" href="https://particulatellc.com/consulting/health-nav/" />
   <title>AI Health Navigation Consultation — Particulate LLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,22 +64,28 @@
     .tier-features { list-style: none; margin-bottom: 1.5rem; }
     .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; }
     .tier-features li::before { content: '✓'; color: var(--accent); font-weight: 700; margin-right: 0.6rem; }
-    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; cursor: pointer; border: none; width: 100%; font-family: inherit; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
     .tier-cta:hover { opacity: 0.9; }
 
     .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-    .form-section h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
-    .form-section .subtitle { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--accent3); margin-bottom: 0.5rem; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237070a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 1rem; }
+    .form-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .form-section p { color: var(--muted); margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 0.9rem; font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .submit-btn {
+      background: var(--accent); color: white; border: none; padding: 0.85rem 2rem;
+      border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%;
+      margin-top: 0.5rem;
+    }
     .submit-btn:hover { opacity: 0.9; }
-    .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
 
     .features { max-width: 900px; margin: 0 auto; padding: 2rem; }
     .features h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
@@ -128,7 +114,7 @@
     .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #ef4444; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
     .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
     .step-content p { color: var(--muted); font-size: 0.9rem; }
-    
+    /* STRIPE MODAL */
     #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
     #stripe-modal.open { display: flex; }
     .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
@@ -174,7 +160,7 @@
         <li>Provider network lookup</li>
         <li>Written response within 24 hours</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Started — $9</button>
+      <a href="#contact" class="tier-cta">Get Started</a>
     </div>
     <div class="tier-card featured">
       <div class="tier-name">Care Path</div>
@@ -187,7 +173,7 @@
         <li>Appointment prep guide</li>
         <li>Follow-up navigation for 30 days</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('full', 29)">Get Started — $29</button>
+      <a href="#contact" class="tier-cta">Get Started</a>
     </div>
     <div class="tier-card">
       <div class="tier-name">Health Advocate</div>
@@ -201,7 +187,7 @@
         <li>Priority response (same business day)</li>
         <li>Annual open enrollment guidance</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('guided', 79)">Get Started — $79</button>
+      <a href="#contact" class="tier-cta">Get Started</a>
     </div>
   </section>
 
@@ -226,7 +212,7 @@
       <div class="feature-card">
         <div class="feature-icon">💵</div>
         <h3>Bill Review & Errors</h3>
-        <p>Up to 80% of medical bills contain errors. We review your bills for duplicate charges, upcoding, and balance billing — and help you dispute them. Medical bills turned into debt? Our <a href="/consulting/debt-credit/" style="color:var(--accent2)">Debt & Credit Navigation</a> can help you manage the financial side.</p>
+        <p>Up to 80% of medical bills contain errors. We review your bills for duplicate charges, upcoding, and balance billing — and help you dispute them.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📋</div>
@@ -301,88 +287,73 @@
 
   <section class="form-section" id="contact">
     <h2>Get Navigation Help</h2>
-    <p class="subtitle">Tell us what you're dealing with and we'll help you find your way through it.</p>
-    <form id="healthNavIntake" action="https://formspree.io/f/xaqlrrna" method="POST">
+    <p>Tell us what you're dealing with and we'll help you find your way through it.</p>
+    <form action="https://formspree.io/f/xaqlrrna" method="POST">
       <input type="hidden" name="_subject" value="Health Navigation Inquiry — Particulate LLC" />
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your Name *</label>
-          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required placeholder="jane@email.com" />
-        </div>
-      </div>
-
       <div class="form-group">
-        <label for="tier">Which tier interests you? *</label>
-        <select id="tier" name="tier" required>
-          <option value="" disabled selected>Select a tier</option>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="tier">Service Level</label>
+        <select id="tier" name="tier">
           <option value="quick-check">Quick Check — $9</option>
-          <option value="care-path">Care Path — $29</option>
+          <option value="care-path" selected>Care Path — $29</option>
           <option value="health-advocate">Health Advocate — $79</option>
-          <option value="unsure">Not sure yet — help me decide</option>
         </select>
       </div>
-
       <div class="form-group">
-        <label for="insurance">What insurance do you have?</label>
-        <input type="text" id="insurance" name="insurance" placeholder="Blue Cross Blue Shield, Aetna, UnitedHealthcare, Medicare, etc." />
+        <label for="message">What do you need help navigating?</label>
+        <textarea id="message" name="message" placeholder="Example: I got a $2,400 bill for an MRI and my insurance says it's out of network but I checked before I went..." required></textarea>
       </div>
-
-      <div class="form-group">
-        <label for="message">What do you need help navigating? *</label>
-        <textarea id="message" name="message" required placeholder="Example: I got a $2,400 bill for an MRI and my insurance says it's out of network but I checked before I went..."></textarea>
-      </div>
-
-      <input type="text" name="_gotcha" style="display:none" />
-
-      <button type="submit" class="submit-btn">Start Your Health Navigation</button>
-      <p class="form-note">We'll review your situation and respond within 24 hours. No spam, no pressure — just clear next steps for your healthcare navigation.</p>
+      <button type="submit" class="submit-btn">Send Inquiry</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2026 Particulate LLC. All rights reserved. | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-and-conditions/">Terms</a></p>
-    <p style="margin-top:0.5rem;">This service provides health navigation information, not medical advice. Always consult a licensed healthcare provider for clinical decisions.</p>
+    <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
+    <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
+    <p style="margin-top:0.5rem;font-size:11px;color:var(--muted)">Particulate LLC is a technology and education company registered in New Jersey. This service provides health navigation information, not medical advice. Always consult a licensed healthcare provider for clinical decisions.</p>
   </footer>
 
-  <div id="stripe-modal">
-    <div class="stripe-box">
-      <h3 id="modal-title">Particulate LLC Consultation</h3>
-      <div class="stripe-price" id="modal-price">$9</div>
-      <p id="modal-desc">Secure checkout via Stripe. You'll complete your intake after payment.</p>
-      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
-      <button class="close-modal" onclick="closeModal()">Cancel</button>
-    </div>
-  </div>
-
-  <script>
-    const tierMap = {
-      'basic':  { name: 'Quick Check — $9',   price: 9,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_9' },
-      'full':   { name: 'Care Path — $29',    price: 29, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_29' },
-      'guided': { name: 'Health Advocate — $79', price: 79, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_79' }
-    };
-
-    function openCheckout(tier, price) {
-      const info = tierMap[tier];
-      if (!info) return;
-      document.getElementById('modal-title').textContent = 'Particulate LLC — ' + info.name;
-      document.getElementById('modal-price').textContent = '$' + price;
-      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
-      document.getElementById('stripe-modal').classList.add('open');
-      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Particulate LLC — AI Health Navigation Consultation",
+      "description": "AI-powered health navigation — decode insurance, find providers, catch bill errors, and make informed healthcare decisions.",
+      "url": "https://particulatellc.com/consulting/health-nav/",
+      "email": "hello@particulatellc.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Jersey",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "priceRange": "$9-$49",
+      "areaServed": "US",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Particulate LLC",
+        "url": "https://particulatellc.com"
+      },
+      "serviceType": "AI Health Navigation Consulting"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
+        { "@type": "ListItem", "position": 3, "name": "AI Health Navigation" }
+      ]
     }
-
-    function closeModal() {
-      document.getElementById('stripe-modal').classList.remove('open');
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
+  ]
   </script>
 </body>
 </html>

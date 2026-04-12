@@ -2,31 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Particulate LLC — Retirement Planning",
-    "url": "https://particulatellc.com/consulting/retirement/",
-    "telephone": "+1-XXX-XXX-XXXX",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "REPLACE_WITH_ADDRESS",
-      "addressLocality": "REPLACE_WITH_CITY",
-      "addressRegion": "REPLACE_WITH_STATE",
-      "postalCode": "REPLACE_WITH_ZIP",
-      "addressCountry": "US"
-    },
-    "areaServed": "US",
-    "priceRange": "$297-$597",
-    "serviceType": "Retirement Planning Consultation",
-    "description": "AI-powered retirement analysis — account inventory, Roth conversion analysis, contribution optimization, and Social Security timing."
-  }
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="AI-Powered Retirement Planning Consultation — Particulate LLC. Personalized retirement analysis, Social Security optimization, contribution strategies, and tax-advantaged withdrawal planning." />
   <meta property="og:title" content="AI Retirement Planning Consultation — Particulate LLC" />
   <meta property="og:description" content="Get a personalized retirement analysis — Social Security timing, 401k/Roth optimization, and withdrawal strategies powered by AI." />
+  <link rel="canonical" href="https://particulatellc.com/consulting/retirement/" />
   <title>AI Retirement Planning Consultation — Particulate LLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,7 +64,7 @@
     .tier-features { list-style: none; margin-bottom: 1.5rem; }
     .tier-features li { padding: 0.4rem 0; font-size: 0.88rem; }
     .tier-features li::before { content: '✓'; color: var(--accent); font-weight: 700; margin-right: 0.6rem; }
-    .tier-cta { display: block; text-align: center; background: var(--accent); color: #000; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; cursor: pointer; border: none; width: 100%; font-family: inherit; }
+    .tier-cta { display: block; text-align: center; background: var(--accent); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
     .tier-cta:hover { opacity: 0.9; }
 
     .form-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
@@ -117,7 +97,7 @@
     .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
     .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
     .step-content p { color: var(--muted); font-size: 0.9rem; }
-    
+    /* STRIPE MODAL */
     #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
     #stripe-modal.open { display: flex; }
     .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
@@ -162,8 +142,7 @@
         <li>Plain-English summary report</li>
         <li>Delivered in 48 hours</li>
       </ul>
-      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem">Tax implications of your retirement accounts? See our <a href="/consulting/tax/" style="color:var(--accent2)">Tax & Accounting</a> service.</p>
-      <button class="tier-cta" onclick="openCheckout('snapshot', 297)">Get Your Snapshot — $297</button>
+      <a href="#intake" class="tier-cta">Get Your Snapshot</a>
     </div>
 
     <div class="tier-card featured">
@@ -179,7 +158,7 @@
         <li>Tax-loss harvesting opportunities</li>
         <li>30-min review call</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('analysis', 597)">Start Analysis — $597</button>
+      <a href="#intake" class="tier-cta">Start Analysis</a>
     </div>
 
     <div class="tier-card">
@@ -194,7 +173,7 @@
         <li>Year-end tax optimization prep</li>
         <li>Cancel anytime</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('quarterly', 149)">Subscribe — $149/quarter</button>
+      <a href="#intake" class="tier-cta">Subscribe</a>
     </div>
   </section>
 
@@ -237,7 +216,6 @@
     <p class="subtitle">Tell us about your situation. Everything you share is confidential.</p>
 
     <form id="retirementIntake" action="https://formspree.io/f/xaqlrrna" method="POST">
-      <input type="hidden" name="_subject" value="Retirement Inquiry — Particulate LLC" />
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name *</label>
@@ -316,22 +294,49 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
-    <p style="margin-top:0.5rem"><a href="/privacy" style="color:var(--muted)">Privacy Policy</a> · <a href="/terms" style="color:var(--muted)">Terms</a></p>
+    <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
+    <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
+    <p style="margin-top:0.5rem;font-size:11px;color:var(--muted)">Particulate LLC is a technology and education company registered in New Jersey. AI agent consultations are disclosed as AI-powered services with human oversight.</p>
     <div class="legal">
       <strong>Disclaimer:</strong> Particulate LLC provides educational and organizational services only. We are not a registered investment advisor (RIA), broker-dealer, or financial planner. Nothing on this site constitutes investment advice, tax advice, or a recommendation to buy, sell, or hold any security. Consult a qualified financial professional before making investment decisions. Past performance does not guarantee future results.
     </div>
   </footer>
 
-  <div id="stripe-modal">
-    <div class="stripe-box">
-      <h3 id="modal-title">Particulate LLC Consultation</h3>
-      <div class="stripe-price" id="modal-price">$297</div>
-      <p id="modal-desc">Secure checkout via Stripe. You'll complete your intake after payment.</p>
-      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
-      <button class="close-modal" onclick="closeModal()">Cancel</button>
-    </div>
-  </div>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Particulate LLC — AI Retirement Planning Consultation",
+      "description": "AI-powered retirement planning — Social Security optimization, 401k/Roth strategies, and withdrawal planning.",
+      "url": "https://particulatellc.com/consulting/retirement/",
+      "email": "hello@particulatellc.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Jersey",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "priceRange": "$9-$49",
+      "areaServed": "US",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Particulate LLC",
+        "url": "https://particulatellc.com"
+      },
+      "serviceType": "AI Retirement Planning Consulting"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://particulatellc.com/consulting.html" },
+        { "@type": "ListItem", "position": 3, "name": "AI Retirement Planning" }
+      ]
+    }
+  ]
+  </script>
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -341,31 +346,6 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-
-    const tierMap = {
-      'snapshot':  { name: 'Snapshot — $297',  price: 297, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_SNAPSHOT' },
-      'analysis':  { name: 'Full Analysis — $597', price: 597, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_ANALYSIS' },
-      'quarterly': { name: 'Quarterly — $149/quarter', price: 149, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_QUARTERLY' }
-    };
-
-    function openCheckout(tier, price) {
-      const info = tierMap[tier];
-      if (!info) return;
-      document.getElementById('modal-title').textContent = 'Particulate LLC — ' + info.name;
-      document.getElementById('modal-price').textContent = '$' + price;
-      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
-      document.getElementById('stripe-modal').classList.add('open');
-      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function closeModal() {
-      document.getElementById('stripe-modal').classList.remove('open');
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
-
     document.getElementById('retirementIntake').addEventListener('submit', function() {
       const btn = this.querySelector('.submit-btn');
       btn.textContent = 'Sending...';
