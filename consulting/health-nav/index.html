@@ -33,6 +33,23 @@
     .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
     .disclaimer strong { color: var(--accent2); }
 
+    /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #ef4444; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+    /* STRIPE MODAL */
+    #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
+    #stripe-modal.open { display: flex; }
+    .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
+    .stripe-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stripe-price { font-size: 2.5rem; font-weight: 900; color: #f87171; margin: 1rem 0; }
+    .stripe-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stripe-btn { display: block; width: 100%; padding: 1rem; background: #ef4444; color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; margin-bottom: 0.75rem; text-decoration: none; text-align: center; }
+    .stripe-btn:hover { opacity: 0.9; }
+    .close-modal { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.85rem; margin-top: 0.5rem; text-decoration: underline; }
     .tiers { max-width: 900px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
     .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
     .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
@@ -87,7 +104,24 @@
 
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; }
-      .tiers { padding: 1rem; }
+      /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #ef4444; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+    /* STRIPE MODAL */
+    #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
+    #stripe-modal.open { display: flex; }
+    .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
+    .stripe-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stripe-price { font-size: 2.5rem; font-weight: 900; color: #f87171; margin: 1rem 0; }
+    .stripe-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stripe-btn { display: block; width: 100%; padding: 1rem; background: #ef4444; color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; margin-bottom: 0.75rem; text-decoration: none; text-align: center; }
+    .stripe-btn:hover { opacity: 0.9; }
+    .close-modal { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.85rem; margin-top: 0.5rem; text-decoration: underline; }
+    .tiers { padding: 1rem; }
       nav { padding: 1rem; }
       .nav-links { gap: 1rem; }
     }
@@ -211,6 +245,40 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <h3>How quickly will I hear back?</h3>
       <p>Quick Check: within 24 hours. Care Path: within 24 hours, with 30-day follow-up. Health Advocate: same business day, with 90-day unlimited support.</p>
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="process">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Choose Your Plan</h3>
+        <p>Select the tier that fits your situation and click Get Started. You'll pay securely via Stripe.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Complete Your Intake</h3>
+        <p>After payment, fill out a short intake form. Tell us your situation and we'll take it from there.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Get Your Plan</h3>
+        <p>We deliver your personalized plan, analysis, or roadmap within 24-48 hours of intake submission.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Ask Questions Anytime</h3>
+        <p>Reply to your delivery email anytime with follow-up questions about your plan or next steps.</p>
+      </div>
     </div>
   </section>
 

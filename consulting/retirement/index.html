@@ -33,6 +33,23 @@
     .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.8rem; color: var(--muted); text-align: left; }
     .disclaimer strong { color: var(--accent2); }
 
+    /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+    /* STRIPE MODAL */
+    #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
+    #stripe-modal.open { display: flex; }
+    .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
+    .stripe-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stripe-price { font-size: 2.5rem; font-weight: 900; color: var(--accent2); margin: 1rem 0; }
+    .stripe-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stripe-btn { display: block; width: 100%; padding: 1rem; background: var(--accent); color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; margin-bottom: 0.75rem; text-decoration: none; text-align: center; }
+    .stripe-btn:hover { opacity: 0.9; }
+    .close-modal { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.85rem; margin-top: 0.5rem; text-decoration: underline; }
     .tiers { max-width: 900px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
     .tier-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s; }
     .tier-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--glow); }
@@ -70,7 +87,24 @@
     @media (max-width: 640px) {
       .hero h1 { font-size: 2rem; }
       .form-row { grid-template-columns: 1fr; }
-      .tiers { grid-template-columns: 1fr; }
+      /* PROCESS */
+    .process { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+    .process h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+    /* STRIPE MODAL */
+    #stripe-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
+    #stripe-modal.open { display: flex; }
+    .stripe-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; max-width: 480px; width: 90%; text-align: center; }
+    .stripe-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stripe-price { font-size: 2.5rem; font-weight: 900; color: var(--accent2); margin: 1rem 0; }
+    .stripe-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stripe-btn { display: block; width: 100%; padding: 1rem; background: var(--accent); color: #000; border: none; border-radius: 8px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; margin-bottom: 0.75rem; text-decoration: none; text-align: center; }
+    .stripe-btn:hover { opacity: 0.9; }
+    .close-modal { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.85rem; margin-top: 0.5rem; text-decoration: underline; }
+    .tiers { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -137,6 +171,40 @@
         <li>Cancel anytime</li>
       </ul>
       <a href="#intake" class="tier-cta">Subscribe</a>
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="process">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Choose Your Plan</h3>
+        <p>Select the tier that fits your situation and click Get Started. You'll pay securely via Stripe.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Complete Your Intake</h3>
+        <p>After payment, fill out a short form about your retirement goals, current accounts, and timeline.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Get Your Analysis</h3>
+        <p>We deliver a full written analysis with your account inventory, strategy recommendations, and next steps.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Ask Follow-Up Questions</h3>
+        <p>Not sure about something in the report? Reply to your analysis email anytime with questions.</p>
+      </div>
     </div>
   </section>
 

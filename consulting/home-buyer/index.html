@@ -297,6 +297,8 @@
     </div>
   </section>
 
+
+
   <!-- PROCESS -->
   <section class="process">
     <h2>How It Works</h2>
@@ -311,7 +313,7 @@
       <div class="step-num">2</div>
       <div class="step-content">
         <h3>Fill Out the Intake Form</h3>
-        <p>After payment, you'll see a short form to tell us about your budget, location, and timeline.</p>
+        <p>After payment, you'll get a short intake form tailored to your selected service. Tell us your situation and we'll handle the rest.</p>
       </div>
     </div>
     <div class="step">
@@ -364,6 +366,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- INTAKE FORM -->
   <section class="form-section" id="intake">
@@ -471,9 +474,9 @@
   <!-- STRIPE MODAL -->
   <div id="stripe-modal">
     <div class="stripe-box">
-      <h3 id="modal-title">Confirm Your Plan</h3>
+      <h3 id="modal-title">Particulate LLC Consultation</h3>
       <div class="stripe-price" id="modal-price">$9</div>
-      <p id="modal-desc">One-time payment. You'll be redirected to secure checkout via Stripe.</p>
+      <p id="modal-desc">Select your tier on the next page. Secure checkout via Stripe.</p>
       <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
       <button class="close-modal" onclick="closeModal()">Cancel</button>
     </div>
@@ -496,29 +499,21 @@
 
     // Tier → Stripe price ID mapping (fill in your Stripe price IDs)
     const tierMap = {
-      'basic':  { name: 'Basic Roadmap',       price: 9,  stripePriceId: 'REPLACE_WITH_STRIPE_PRICE_ID_basic' },
-      'full':   { name: 'Full Breakdown',        price: 29, stripePriceId: 'REPLACE_WITH_STRIPE_PRICE_ID_full' },
-      'guided': { name: 'Guided Buying Plan',    price: 79, stripePriceId: 'REPLACE_WITH_STRIPE_PRICE_ID_guided' }
+      'basic':  { name: 'Basic — $9',   price: 9,  checkoutUrl: 'https://buy.stripe.com/REPLACE_WITH_YOUR_PRICE_ID_9' },
+      'full':   { name: 'Standard — $29', price: 29, checkoutUrl: 'https://buy.stripe.com/REPLACE_WITH_YOUR_PRICE_ID_29' },
+      'guided': { name: 'Premium — $79', price: 79, checkoutUrl: 'https://buy.stripe.com/REPLACE_WITH_YOUR_PRICE_ID_79' }
     };
 
     function openCheckout(tier, price) {
       const info = tierMap[tier];
       if (!info) return;
-
-      document.getElementById('modal-title').textContent = info.name;
+      document.getElementById('modal-title').textContent = 'Particulate LLC Consultation';
       document.getElementById('modal-price').textContent = '$' + price;
       document.getElementById('selected-tier').value = tier;
       document.getElementById('payment-amount').value = price;
-      document.getElementById('tier-display').value = info.name + ' — $' + price;
-
-      // Build Stripe Checkout URL
-      // Replace YOUR_STRIPE_PRICE_ID with actual Stripe price IDs from your dashboard
-      // Format: https://checkout.stripe.com/pay/price_XXX
-      let checkoutUrl = 'https://buy.stripe.com/test_' + tier; // placeholder — replace with real price IDs
-      document.getElementById('stripe-checkout-btn').href = checkoutUrl;
-
+      document.getElementById('tier-display').value = info.name;
+      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
       document.getElementById('stripe-modal').classList.add('open');
-      // Scroll modal into view on mobile
       document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
     }
 
