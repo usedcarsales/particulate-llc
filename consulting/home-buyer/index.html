@@ -8,13 +8,13 @@
     "@type": "ProfessionalService",
     "name": "Particulate LLC — Home Buyer Consultation",
     "url": "https://particulatellc.com/consulting/home-buyer/",
-    "telephone": "+1-XXX-XXX-XXXX",
+    "telephone": "+1-856-335-5537",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "REPLACE_WITH_ADDRESS",
-      "addressLocality": "REPLACE_WITH_CITY",
-      "addressRegion": "REPLACE_WITH_STATE",
-      "postalCode": "REPLACE_WITH_ZIP",
+      "streetAddress": "",
+      "addressLocality": "Burlington County",
+      "addressRegion": "NJ",
+      "postalCode": "08016",
       "addressCountry": "US"
     },
     "areaServed": "US",
@@ -607,24 +607,27 @@
       });
     });
 
-    // Tier → Stripe price ID mapping (fill in your Stripe price IDs)
+    // Tier → Stripe price ID mapping
     const tierMap = {
-      'basic':  { name: 'Basic — $9',   price: 9,  checkoutUrl: 'https://buy.stripe.com/price_1TLV7fFCjIsAzbKcH7j746YP' },
-      'full':   { name: 'Standard — $29', price: 29, checkoutUrl: 'https://buy.stripe.com/price_1TLV7fFCjIsAzbKclr4BY4bw' },
-      'guided': { name: 'Premium — $79', price: 79, checkoutUrl: 'https://buy.stripe.com/price_1TLV7fFCjIsAzbKc3sldvipJ' }
+      'basic':  { name: 'Basic — $9',   price: 9,  priceId: 'price_1TLV7fFCjIsAzbKcH7j746YP' },
+      'full':   { name: 'Standard — $29', price: 29, priceId: 'price_1TLV7fFCjIsAzbKclr4BY4bw' },
+      'guided': { name: 'Premium — $79', price: 79, priceId: 'price_1TLV7fFCjIsAzbKc3sldvipJ' }
     };
 
     function openCheckout(tier, price) {
       const info = tierMap[tier];
       if (!info) return;
-      document.getElementById('modal-title').textContent = 'Particulate LLC Consultation';
-      document.getElementById('modal-price').textContent = '$' + price;
-      document.getElementById('selected-tier').value = tier;
-      document.getElementById('payment-amount').value = price;
-      document.getElementById('tier-display').value = info.name;
-      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
-      document.getElementById('stripe-modal').classList.add('open');
-      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
+      stripe.redirectToCheckout({
+        lineItems: [{ price: info.priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/consulting/home-buyer/?success=true',
+        cancelUrl: window.location.origin + '/consulting/home-buyer/?canceled=true'
+      }).then(function(result) {
+        if (result.error) {
+          alert(result.error.message);
+        }
+      });
     }
 
     function closeModal() {
@@ -641,5 +644,6 @@
     // See data-fs-success and data-fs-submit-btn attributes on the form
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <script src="https://js.stripe.com/v3/" defer></script>
 </body>
 </html>
