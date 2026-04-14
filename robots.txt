@@ -1,5 +1,16 @@
 User-agent: *
 Allow: /
 Disallow: /seo-snapshot/
+Disallow: /privacy/
+Disallow: /terms/
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
 
 Sitemap: https://particulatellc.com/sitemap.xml
