@@ -265,6 +265,7 @@
       .nav-links a { font-size: 12px; }
     }
   </style>
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 
@@ -1003,11 +1004,11 @@ function switchTab(tab) {
     <button class="modal-close" onclick="closeIntakeModal()">&times;</button>
     <div class="modal-header">
       <div class="section-label">Get Started</div>
-      <div class="section-title">Tell Us About Your Home Buying Journey</div>
-      <div class="section-desc">Answer 5 questions — get your personalized roadmap within 24 hours.</div>
+      <div class="section-title">Let's Get Started</div>
+      <div class="section-desc">Answer a few questions — we'll send your plan within 24 hours.</div>
     </div>
     <form id="intake-modal-form" onsubmit="return handleIntakeSubmit(event)">
-      <input type="hidden" name="tier" id="intake-tier" value="full">
+      <input type="hidden" name="tier" id="intake-tier" value="">
       <div class="form-group">
         <label>Which plan fits your situation?</label>
         <div class="tier-selector">
@@ -1118,8 +1119,11 @@ function closeIntakeModal(){
 }
 function handleIntakeSubmit(e){
   e.preventDefault();
+  var tier = document.getElementById('intake-tier').value || activeIntakeTier;
+  var price = activeIntakePrice;
   closeIntakeModal();
-  window.location.href='mailto:hello@particulatellc.com?subject='+encodeURIComponent('Consulting Inquiry — '+activeIntakeTier)+'&body='+encodeURIComponent('I\'m interested in the '+activeIntakeTier+' tier. Please send me payment instructions.');
+  // Redirect to Stripe Payment Link
+  window.location.href = 'https://buy.stripe.com/' + price;
   return false;
 }
 </script>
