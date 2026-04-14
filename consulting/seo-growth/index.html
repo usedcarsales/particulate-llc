@@ -18,7 +18,7 @@
       "addressCountry": "US"
     },
     "areaServed": "US",
-    "priceRange": "$59-$250",
+    "priceRange": "$9-$250",
     "serviceType": "SEO Audit & Growth Consulting",
     "description": "AI-powered SEO consulting — technical audits, content strategy, link building, and analytics setup to grow organic traffic."
   }
@@ -200,7 +200,7 @@
     <div class="tiers-grid">
       <div class="tier-card">
         <div class="tier-name">Quick Audit</div>
-        <div class="tier-price">$59</div>
+        <div class="tier-price">$9</div>
         <div class="tier-desc">Top issues and quick wins</div>
         <ul class="tier-features">
           <li>Technical SEO checklist review</li>
@@ -208,12 +208,12 @@
           <li>Basic keyword opportunity list</li>
           <li>Written report within 24 hours</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('basic', 59)">Get Quick Audit — $59</button>
+        <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Quick Audit — $9</button>
       </div>
 
       <div class="tier-card featured">
         <div class="tier-name">Growth Audit</div>
-        <div class="tier-price">$250</div>
+        <div class="tier-price">$59</div>
         <div class="tier-desc">Full SEO audit + content strategy</div>
         <ul class="tier-features">
           <li>Complete technical SEO audit</li>
@@ -222,7 +222,7 @@
           <li>3-month content calendar</li>
           <li>30-day follow-up support</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('full', 250)">Get Growth Audit — $250</button>
+        <button class="tier-cta" onclick="openCheckout('full', 59)">Get Growth Audit — $59</button>
       </div>
 
       <div class="tier-card">
@@ -327,8 +327,8 @@
         <label for="tier">Which tier interests you? *</label>
         <select id="tier" name="tier" required>
           <option value="" disabled selected>Select a tier</option>
-          <option value="quick-audit">Quick Audit — $59</option>
-          <option value="growth-audit">Growth Audit — $250</option>
+          <option value="quick-audit">Quick Audit — $9</option>
+          <option value="growth-audit">Growth Audit — $59</option>
           <option value="growth-partner">Growth Partner — $250</option>
           <option value="unsure">Not sure yet — help me decide</option>
         </select>
@@ -393,7 +393,7 @@
       "addressRegion": "NJ",
       "addressCountry": "US"
     },
-    "priceRange": "$59-$250",
+    "priceRange": "$9-$250",
     "areaServed": "US",
     "provider": {
       "@type": "LocalBusiness",
@@ -482,8 +482,8 @@
     });
 
     const tierMap = {
-      'basic':  { name: 'Quick Audit — $59',    price: 59,  priceId: 'price_1TLyk0FCjIsAzbKcjMegHLD3' },
-      'full':   { name: 'Growth Audit — $250',  price: 250, priceId: 'price_1TLyk0FCjIsAzbKcxxmrdKCq' },
+      'basic':  { name: 'Quick Audit — $9',    price: 9,   priceId: 'price_1TLyk0FCjIsAzbKcjMegHLD3' },
+      'full':   { name: 'Growth Audit — $59',  price: 59,  priceId: 'price_1TLyk0FCjIsAzbKcxxmrdKCq' },
       'guided': { name: 'Growth Partner — $250', price: 250, priceId: 'price_1TLyk0FCjIsAzbKcDnZSl7Kk' }
     };
 
