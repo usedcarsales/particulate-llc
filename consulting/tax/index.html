@@ -514,39 +514,26 @@
     });
 
     const tierMap = {
-      'tax-chat':      { name: 'Tax Chat — $29/mo',       price: 29,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_TAX_CHAT' },
-      'bookkeeping':   { name: 'Bookkeeping+Tax — $79/mo', price: 79,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_BOOKKEEPING' },
-      'business-suite': { name: 'Business Suite — $199/mo',  price: 199, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_BUSINESS' }
+      'tax-chat':      { name: 'Tax Chat — $29/mo',       price: 29,  priceId: 'price_1TLxRXFCjIsAzbKcNO6tPGS4' },
+      'bookkeeping':   { name: 'Bookkeeping+Tax — $79/mo', price: 79,  priceId: 'price_1TLxRXFCjIsAzbKcquSr2wNp' },
+      'business-suite': { name: 'Business Suite — $199/mo',  price: 199, priceId: 'price_1TLxRXFCjIsAzbKcM5BDVOJF' }
     };
 
     function openCheckout(tier, price) {
       const info = tierMap[tier];
       if (!info) return;
-      document.getElementById('modal-title').textContent = 'Particulate LLC — ' + info.name;
-      document.getElementById('modal-price').textContent = '$' + price;
-      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
-      document.getElementById('stripe-modal').classList.add('open');
-      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
+      stripe.redirectToCheckout({
+        lineItems: [{ price: info.priceId, quantity: 1 }],
+        mode: 'subscription',
+        successUrl: window.location.origin + '/consulting/tax/?success=true',
+        cancelUrl: window.location.origin + '/consulting/tax/?canceled=true'
+      }).then(function(result) {
+        if (result.error) { alert(result.error.message); }
+      });
     }
-
-    function closeModal() {
-      document.getElementById('stripe-modal').classList.remove('open');
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
   </script>
 
-  <div id="stripe-modal">
-    <div class="stripe-box">
-      <h3 id="modal-title">Particulate LLC Consultation</h3>
-      <div class="stripe-price" id="modal-price">$29</div>
-      <p id="modal-desc">Secure checkout via Stripe. You'll complete your intake after payment.</p>
-      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
-      <button class="close-modal" onclick="closeModal()">Cancel</button>
-    </div>
-  </div>
-
+  <script src="https://js.stripe.com/v3/" defer></script>
 </body>
 </html>

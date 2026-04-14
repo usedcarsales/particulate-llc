@@ -169,7 +169,7 @@
         <li>Plain-English summary report</li>
         <li>Delivered in 48 hours</li>
       </ul>
-      <a href="#intake" class="tier-cta">Get Your Snapshot</a>
+      <button class="tier-cta" onclick="openCheckout('snapshot', 297)">Get Your Snapshot — $297</button>
     </div>
 
     <div class="tier-card featured">
@@ -185,7 +185,7 @@
         <li>Tax-loss harvesting opportunities</li>
         <li>30-min review call</li>
       </ul>
-      <a href="#intake" class="tier-cta">Start Analysis</a>
+      <button class="tier-cta" onclick="openCheckout('analysis', 597)">Start Analysis — $597</button>
     </div>
 
     <div class="tier-card">
@@ -200,7 +200,7 @@
         <li>Year-end tax optimization prep</li>
         <li>Cancel anytime</li>
       </ul>
-      <a href="#intake" class="tier-cta">Subscribe</a>
+      <button class="tier-cta" onclick="openCheckout('quarterly', 149)">Subscribe — $149/qtr</button>
     </div>
   </section>
 
@@ -451,6 +451,28 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
     });
+  </script>
+  <script src="https://js.stripe.com/v3/" defer></script>
+  <script>
+    const tierMap = {
+      'snapshot':  { name: 'Snapshot — $297',  price: 297,  priceId: 'price_1TLxq5FCjIsAzbKcxZE29Yi9' },
+      'analysis':  { name: 'Full Analysis — $597', price: 597, priceId: 'price_1TLxq5FCjIsAzbKcxBVccCzX' },
+      'quarterly': { name: 'Quarterly Check-In — $149/qtr', price: 149, priceId: 'price_1TLxq5FCjIsAzbKcwHXBz1qW' }
+    };
+
+    function openCheckout(tier, price) {
+      const info = tierMap[tier];
+      if (!info) return;
+      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
+      stripe.redirectToCheckout({
+        lineItems: [{ price: info.priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/consulting/retirement/?success=true',
+        cancelUrl: window.location.origin + '/consulting/retirement/?canceled=true'
+      }).then(function(result) {
+        if (result.error) { alert(result.error.message); }
+      });
+    }
   </script>
 </body>
 </html>

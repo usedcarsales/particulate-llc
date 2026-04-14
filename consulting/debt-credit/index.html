@@ -179,7 +179,7 @@
         <li>One key action recommendation</li>
         <li>Written response within 24 hours</li>
       </ul>
-      <a href="#contact" class="tier-cta">Get Started</a>
+      <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Started — $9</button>
     </div>
     <div class="tier-card featured">
       <div class="tier-name">Payoff Plan</div>
@@ -192,7 +192,7 @@
         <li>Negotiation scripts for creditors</li>
         <li>30-day follow-up support</li>
       </ul>
-      <a href="#contact" class="tier-cta">Get Started</a>
+      <button class="tier-cta" onclick="openCheckout('full', 29)">Get Started — $29</button>
     </div>
     <div class="tier-card">
       <div class="tier-name">Debt Navigator</div>
@@ -206,7 +206,7 @@
         <li>Priority same-day response</li>
         <li>Creditor negotiation coaching</li>
       </ul>
-      <a href="#contact" class="tier-cta">Get Started</a>
+      <button class="tier-cta" onclick="openCheckout('guided', 79)">Get Started — $79</button>
     </div>
   </section>
 
@@ -421,6 +421,28 @@
     ]
   }
 ]
+  </script>
+  <script src="https://js.stripe.com/v3/" defer></script>
+  <script>
+    const tierMap = {
+      'basic':  { name: 'Snapshot — $9',  price: 9,  priceId: 'price_1TLbX1FCjIsAzbKc1DJuwIYG' },
+      'full':   { name: 'Payoff Plan — $29',   price: 29, priceId: 'price_1TLbX1FCjIsAzbKcfUsmmJcs' },
+      'guided': { name: 'Debt Navigator — $79', price: 79, priceId: 'price_1TLbX1FCjIsAzbKcxsCe57CT' }
+    };
+
+    function openCheckout(tier, price) {
+      const info = tierMap[tier];
+      if (!info) return;
+      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
+      stripe.redirectToCheckout({
+        lineItems: [{ price: info.priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/consulting/debt-credit/?success=true',
+        cancelUrl: window.location.origin + '/consulting/debt-credit/?canceled=true'
+      }).then(function(result) {
+        if (result.error) { alert(result.error.message); }
+      });
+    }
   </script>
 </body>
 </html>

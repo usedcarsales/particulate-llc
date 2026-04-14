@@ -18,7 +18,7 @@
       "addressCountry": "US"
     },
     "areaServed": "US",
-    "priceRange": "$297-$3,497",
+    "priceRange": "$49-$699",
     "serviceType": "AI Agent Setup & Deployment",
     "description": "Custom AI agent systems designed, built, and deployed for your business — from audit to full multi-agent deployment."
   }
@@ -155,8 +155,8 @@
   <!-- TIERS -->
   <section class="tiers" id="tiers">
     <div class="tier-card">
-      <div class="tier-name">Audit</div>
-      <div class="tier-price">$297</div>
+      <div class="tier-name">Starter</div>
+      <div class="tier-price">$49</div>
       <div class="tier-desc">Understand where AI agents fit in your business</div>
       <ul class="tier-features">
         <li>60-min deep-dive call</li>
@@ -166,12 +166,12 @@
         <li>ROI projections for top 3 opportunities</li>
         <li>Delivered within 48 hours</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('audit', 297)">Book Your Audit — $297</button>
+      <button class="tier-cta" onclick="openCheckout('audit', 49)">Starter Audit — $49</button>
     </div>
 
     <div class="tier-card featured">
-      <div class="tier-name">Setup</div>
-      <div class="tier-price">$997</div>
+      <div class="tier-name">Professional</div>
+      <div class="tier-price">$149</div>
       <div class="tier-desc">One AI agent, deployed and running</div>
       <ul class="tier-features">
         <li>Everything in Audit</li>
@@ -181,12 +181,12 @@
         <li>Memory & knowledge base setup</li>
         <li>2 weeks of tuning & support</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('setup', 997)">Get Started — $997</button>
+      <button class="tier-cta" onclick="openCheckout('setup', 149)">Professional — $149</button>
     </div>
 
     <div class="tier-card">
-      <div class="tier-name">Multi-Agent</div>
-      <div class="tier-price">$3,497</div>
+      <div class="tier-name">Enterprise</div>
+      <div class="tier-price">$299</div>
       <div class="tier-desc">Full agent team with delegation & oversight</div>
       <ul class="tier-features">
         <li>Everything in Setup</li>
@@ -196,12 +196,12 @@
         <li>Dashboard & monitoring</li>
         <li>30 days of support & iteration</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('multi-agent', 3497)">Let's Talk — $3,497</button>
+      <button class="tier-cta" onclick="openCheckout('multi-agent', 299)">Enterprise — $299</button>
     </div>
 
     <div class="tier-card">
-      <div class="tier-name">Retainer</div>
-      <div class="tier-price">$1,500<span style="font-size:0.9rem;color:var(--muted)">/mo</span></div>
+      <div class="tier-name">Business</div>
+      <div class="tier-price">$699</div>
       <div class="tier-desc">Ongoing management & optimization</div>
       <ul class="tier-features">
         <li>Monthly agent health reviews</li>
@@ -211,7 +211,7 @@
         <li>Model upgrades & migrations</li>
         <li>Cancel anytime</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('retainer', 1500)">Start Retainer — $1,500/mo</button>
+      <button class="tier-cta" onclick="openCheckout('retainer', 699)">Business — $699</button>
     </div>
   </section>
 
@@ -281,10 +281,10 @@
         <label for="tier">Which tier interests you? *</label>
         <select id="tier" name="tier" required>
           <option value="" disabled selected>Select a tier</option>
-          <option value="audit">Audit — $297</option>
-          <option value="setup">Setup — $997</option>
-          <option value="multi-agent">Multi-Agent — $3,497</option>
-          <option value="retainer">Retainer — $1,500/mo</option>
+          <option value="audit">Starter — $49</option>
+          <option value="setup">Professional — $149</option>
+          <option value="multi-agent">Enterprise — $299</option>
+          <option value="retainer">Business — $699</option>
           <option value="unsure">Not sure yet — help me decide</option>
         </select>
       </div>
@@ -491,40 +491,27 @@
     });
 
     const tierMap = {
-      'audit':      { name: 'Audit — $297',          price: 297,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_AUDIT' },
-      'setup':      { name: 'Setup — $997',          price: 997,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_SETUP' },
-      'multi-agent': { name: 'Multi-Agent — $3,497', price: 3497, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_MULTI' },
-      'retainer':   { name: 'Retainer — $1,500/mo',  price: 1500, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_RETAINER' }
+      'audit':       { name: 'Starter Audit — $49',     price: 49,   priceId: 'price_1TLxN5FCjIsAzbKcp8chnOSh' },
+      'setup':       { name: 'Professional — $149',    price: 149,  priceId: 'price_1TLxN5FCjIsAzbKcYElw34Q4' },
+      'multi-agent': { name: 'Enterprise — $299',       price: 299,  priceId: 'price_1TLxN5FCjIsAzbKc7EONPzBe' },
+      'retainer':    { name: 'Business — $699',         price: 699,  priceId: 'price_1TLxN5FCjIsAzbKcOfOoe7Wq' }
     };
 
     function openCheckout(tier, price) {
       const info = tierMap[tier];
       if (!info) return;
-      document.getElementById('modal-title').textContent = 'Particulate LLC — ' + info.name;
-      document.getElementById('modal-price').textContent = '$' + price;
-      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
-      document.getElementById('stripe-modal').classList.add('open');
-      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
+      stripe.redirectToCheckout({
+        lineItems: [{ price: info.priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/consulting/?success=true',
+        cancelUrl: window.location.origin + '/consulting/?canceled=true'
+      }).then(function(result) {
+        if (result.error) { alert(result.error.message); }
+      });
     }
-
-    function closeModal() {
-      document.getElementById('stripe-modal').classList.remove('open');
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
   </script>
 
-  <div id="stripe-modal">
-    <div class="stripe-box">
-      <h3 id="modal-title">Particulate LLC Consultation</h3>
-      <div class="stripe-price" id="modal-price">$297</div>
-      <p id="modal-desc">Secure checkout via Stripe. You'll complete your intake after payment.</p>
-      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
-      <button class="close-modal" onclick="closeModal()">Cancel</button>
-    </div>
-  </div>
-
+    <script src="https://js.stripe.com/v3/" defer></script>
 </body>
 </html>

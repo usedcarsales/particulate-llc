@@ -18,7 +18,7 @@
       "addressCountry": "US"
     },
     "areaServed": "US",
-    "priceRange": "$9-$79",
+    "priceRange": "$59-$250",
     "serviceType": "SEO Audit & Growth Consulting",
     "description": "AI-powered SEO consulting — technical audits, content strategy, link building, and analytics setup to grow organic traffic."
   }
@@ -200,7 +200,7 @@
     <div class="tiers-grid">
       <div class="tier-card">
         <div class="tier-name">Quick Audit</div>
-        <div class="tier-price">$9</div>
+        <div class="tier-price">$59</div>
         <div class="tier-desc">Top issues and quick wins</div>
         <ul class="tier-features">
           <li>Technical SEO checklist review</li>
@@ -208,12 +208,12 @@
           <li>Basic keyword opportunity list</li>
           <li>Written report within 24 hours</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Quick Audit — $9</button>
+        <button class="tier-cta" onclick="openCheckout('basic', 59)">Get Quick Audit — $59</button>
       </div>
 
       <div class="tier-card featured">
         <div class="tier-name">Growth Audit</div>
-        <div class="tier-price">$29</div>
+        <div class="tier-price">$250</div>
         <div class="tier-desc">Full SEO audit + content strategy</div>
         <ul class="tier-features">
           <li>Complete technical SEO audit</li>
@@ -222,12 +222,12 @@
           <li>3-month content calendar</li>
           <li>30-day follow-up support</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('full', 29)">Get Growth Audit — $29</button>
+        <button class="tier-cta" onclick="openCheckout('full', 250)">Get Growth Audit — $250</button>
       </div>
 
       <div class="tier-card">
         <div class="tier-name">Growth Partner</div>
-        <div class="tier-price">$79</div>
+        <div class="tier-price">$250</div>
         <div class="tier-desc">Ongoing SEO execution support</div>
         <ul class="tier-features">
           <li>Everything in Growth Audit</li>
@@ -237,7 +237,7 @@
           <li>Priority same-day response</li>
           <li>Local SEO optimization guide</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('guided', 79)">Get Growth Partner — $79</button>
+        <button class="tier-cta" onclick="openCheckout('guided', 250)">Get Growth Partner — $250</button>
       </div>
     </div>
   </section>
@@ -327,9 +327,9 @@
         <label for="tier">Which tier interests you? *</label>
         <select id="tier" name="tier" required>
           <option value="" disabled selected>Select a tier</option>
-          <option value="quick-audit">Quick Audit — $9</option>
-          <option value="growth-audit">Growth Audit — $29</option>
-          <option value="growth-partner">Growth Partner — $79</option>
+          <option value="quick-audit">Quick Audit — $59</option>
+          <option value="growth-audit">Growth Audit — $250</option>
+          <option value="growth-partner">Growth Partner — $250</option>
           <option value="unsure">Not sure yet — help me decide</option>
         </select>
       </div>
@@ -393,7 +393,7 @@
       "addressRegion": "NJ",
       "addressCountry": "US"
     },
-    "priceRange": "$9-$79",
+    "priceRange": "$59-$250",
     "areaServed": "US",
     "provider": {
       "@type": "LocalBusiness",
@@ -482,39 +482,26 @@
     });
 
     const tierMap = {
-      'basic':  { name: 'Quick Audit — $9',    price: 9,  checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_9' },
-      'full':   { name: 'Growth Audit — $29',  price: 29, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_29' },
-      'guided': { name: 'Growth Partner — $79', price: 79, checkoutUrl: 'https://buy.stripe.com/REPLACE_PRICE_ID_79' }
+      'basic':  { name: 'Quick Audit — $59',    price: 59,  priceId: 'price_1TLyk0FCjIsAzbKcjMegHLD3' },
+      'full':   { name: 'Growth Audit — $250',  price: 250, priceId: 'price_1TLyk0FCjIsAzbKcxxmrdKCq' },
+      'guided': { name: 'Growth Partner — $250', price: 250, priceId: 'price_1TLyk0FCjIsAzbKcDnZSl7Kk' }
     };
 
     function openCheckout(tier, price) {
       const info = tierMap[tier];
       if (!info) return;
-      document.getElementById('modal-title').textContent = 'Particulate LLC — ' + info.name;
-      document.getElementById('modal-price').textContent = '$' + price;
-      document.getElementById('stripe-checkout-btn').href = info.checkoutUrl;
-      document.getElementById('stripe-modal').classList.add('open');
-      document.getElementById('stripe-modal').scrollIntoView({ behavior: 'smooth' });
+      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
+      stripe.redirectToCheckout({
+        lineItems: [{ price: info.priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/consulting/seo-growth/?success=true',
+        cancelUrl: window.location.origin + '/consulting/seo-growth/?canceled=true'
+      }).then(function(result) {
+        if (result.error) { alert(result.error.message); }
+      });
     }
-
-    function closeModal() {
-      document.getElementById('stripe-modal').classList.remove('open');
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
   </script>
 
-  <div id="stripe-modal">
-    <div class="stripe-box">
-      <h3 id="modal-title">Particulate LLC Consultation</h3>
-      <div class="stripe-price" id="modal-price">$9</div>
-      <p id="modal-desc">Secure checkout via Stripe. You'll complete your intake after payment.</p>
-      <a class="stripe-btn" id="stripe-checkout-btn" href="#" target="_blank">Pay with Stripe</a>
-      <button class="close-modal" onclick="closeModal()">Cancel</button>
-    </div>
-  </div>
-
+    <script src="https://js.stripe.com/v3/" defer></script>
 </body>
 </html>
