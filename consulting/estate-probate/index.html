@@ -387,7 +387,7 @@
 <div class="form-section">
   <h2>Need Help Now?</h2>
   <p>Tell us about your situation and we'll recommend the right path. No payment required to start the conversation.</p>
-  <form action="https://formspree.io/f/xvgzkbyl" method="POST">
+  <form action="https://formspree.io/f/xaqlrrna" method="POST">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required />
@@ -429,9 +429,10 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 Particulate LLC. All rights reserved. | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms & Conditions</a></p>
-  <p style="margin-top: 0.5rem;">Particulate LLC provides consultation, guidance, and education — not legal, tax, or financial advice.</p>
-</footer>
+    <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
+    <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
+    <p style="margin-top:0.5rem;font-size:11px;color:var(--muted)">Particulate LLC is a technology and education company registered in New Jersey. This service provides consultation, guidance, and education — not legal, tax, or financial advice. Consult a licensed attorney for specific legal decisions.</p>
+  </footer>
 
 <script>
   const tierMap = {
@@ -467,6 +468,55 @@
       if (result.error) { alert(result.error.message); }
     });
   }
+</script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Particulate LLC — Death, Estate & Probate Navigation",
+    "description": "AI-powered estate settlement guidance — probate navigation, funeral cost savings, unclaimed asset discovery, and step-by-step support through every phase of estate administration.",
+    "url": "https://particulatellc.com/consulting/estate-probate/",
+    "email": "hello@particulatellc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Burlington County",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "priceRange": "$79-$1,499",
+    "areaServed": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Particulate LLC",
+      "url": "https://particulatellc.com"
+    },
+    "serviceType": "Estate & Probate Navigation Consulting"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://particulatellc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting",
+        "item": "https://particulatellc.com/consulting.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Estate & Probate"
+      }
+    ]
+  }
+]
 </script>
 <script src="https://js.stripe.com/v3/" defer></script>
 </body>
