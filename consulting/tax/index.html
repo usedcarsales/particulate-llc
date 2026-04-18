@@ -544,5 +544,16 @@
   </script>
 
   <script src="https://js.stripe.com/v3/" defer></script>
+<div id="intake-bot"></div>
+<script>
+  window.INTAKE_CONFIG = { service: 'tax', autoOpenDelay: 10000 };
+  // Auto-open checkout from intake bot redirect
+  (function(){
+    var p=new URLSearchParams(window.location.search);
+    var c=p.get("checkout");
+    if(c){setTimeout(function(){openCheckout(c);},500);}
+  })();
+</script>
+<script src="/js/intake-bot.js"></script>
 </body>
 </html>
