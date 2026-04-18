@@ -430,44 +430,30 @@
 
 <footer>
     <p>&copy; 2026 Particulate LLC · New Jersey · <a href="/">Home</a> · <a href="/consulting.html">Consulting</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
-    <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
+    <p style="margin-top:0.5rem"><a href="/consulting/">AI Agents</a> · <a href="/consulting/agent-setup/">Agent Setup</a> · <a href="/quantalpha/">QuantAlpha</a> · <a href="/consulting/retirement/">Retirement</a> · <a href="/consulting/tax/">Tax & Accounting</a> · <a href="/consulting/debt-credit/">Debt & Credit</a> · <a href="/consulting/health-nav/">Health Nav</a> · <a href="/consulting/home-buyer/">Home Buyer</a> · <a href="/consulting/seo-growth/">SEO & Growth</a></p>
     <p style="margin-top:0.5rem;font-size:11px;color:var(--muted)">Particulate LLC is a technology and education company registered in New Jersey. This service provides consultation, guidance, and education — not legal, tax, or financial advice. Consult a licensed attorney for specific legal decisions.</p>
   </footer>
 
 <script>
-  const tierMap = {
-    'essential': { name: 'Essential Guide — $79', price: 79, priceId: 'PLACEHOLDER_ESSENTIAL_PRICE_ID' },
-    'navigator': { name: 'Family Navigator — $399', price: 399, priceId: 'PLACEHOLDER_NAVIGATOR_PRICE_ID' },
-    'guardian':  { name: 'Estate Guardian — $1,499', price: 1499, priceId: 'PLACEHOLDER_GUARDIAN_PRICE_ID' }
-  };
-
   function openModal(tier) {
+    const tierMap = {
+      'essential': { name: 'Essential Guide — $79', price: 79, priceId: 'PLACEHOLDER_ESSENTIAL_PRICE_ID' },
+      'navigator': { name: 'Family Navigator — $399', price: 399, priceId: 'PLACEHOLDER_NAVIGATOR_PRICE_ID' },
+      'guardian':  { name: 'Estate Guardian — $1,499', price: 1499, priceId: 'PLACEHOLDER_GUARDIAN_PRICE_ID' }
+    };
     const info = tierMap[tier];
     if (!info) return;
     document.getElementById('modal-title').textContent = info.name;
     document.getElementById('modal-price').textContent = '$' + info.price;
     document.getElementById('modal-desc').textContent = 'One-time payment. Secure checkout via Stripe.';
-    document.getElementById('modal-checkout-btn').onclick = function() { openCheckout(tier); };
+    document.getElementById('modal-checkout-btn').onclick = function() { checkout(info.priceId, { successUrl: window.location.origin + '/consulting/estate-probate/?success=true', cancelUrl: window.location.origin + '/consulting/estate-probate/?canceled=true' }); };
     document.getElementById('stripe-modal').classList.add('open');
   }
 
   function closeModal() {
     document.getElementById('stripe-modal').classList.remove('open');
   }
-
-  function openCheckout(tier) {
-    const info = tierMap[tier];
-    if (!info) return;
-    const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
-    stripe.redirectToCheckout({
-      lineItems: [{ price: info.priceId, quantity: 1 }],
-      mode: 'payment',
-      successUrl: window.location.origin + '/consulting/estate-probate/?success=true',
-      cancelUrl: window.location.origin + '/consulting/estate-probate/?canceled=true'
-    }).then(function(result) {
-      if (result.error) { alert(result.error.message); }
-    });
-  }
+<script src="../../js/checkout.js"></script>
 </script>
 <script type="application/ld+json">
 [
