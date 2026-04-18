@@ -138,4 +138,11 @@
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
 </url>
-<sm:url><sm:loc>https://particulatellc.com/blog/ai-crypto-trading-signals-2026/</sm:loc><sm:lastmod>2026-04-18</sm:lastmod><sm:changefreq>monthly</sm:changefreq><sm:priority>0.7</sm:priority></sm:url></urlset>
+<sm:url><sm:loc>https://particulatellc.com/blog/ai-crypto-trading-signals-2026/</sm:loc><sm:lastmod>2026-04-18</sm:lastmod><sm:changefreq>monthly</sm:changefreq><sm:priority>0.7</sm:priority></sm:url></urlset><url>
+<url>
+  <loc>https://particulatellc.com/blog/</loc>
+  <lastmod>2026-04-18</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+</urlset>
