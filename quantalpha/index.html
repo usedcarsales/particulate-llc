@@ -41,6 +41,46 @@
         .signal-bearish { color: #ff1744; font-weight: 700; }
         .signal-neutral { color: #ffc107; font-weight: 700; }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "QuantAlpha",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "AI-powered daily crypto market intelligence with composite scores, whale tracking, RSI alerts, and trade signals.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Tier",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Daily brief for BTC, ETH, SOL in Discord"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium",
+          "price": "29",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M",
+          "description": "20-coin signal matrix, whale alerts, RSI alerts, email delivery"
+        },
+        {
+          "@type": "Offer",
+          "name": "Institutional",
+          "price": "199",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M",
+          "description": "Raw JSON API feed, custom coin lists, priority support"
+        }
+      ],
+      "provider": {
+        "@type": "Organization",
+        "name": "Particulate LLC",
+        "url": "https://particulatellc.com"
+      }
+    }
+    </script>
 </head>
 <body>
     <nav class="main-nav">
@@ -85,7 +125,7 @@
                 <li>📧 Email brief delivery</li>
                 <li>Featured opportunities</li>
             </ul>
-            <a href="#" class="qa-cta gold">Subscribe — $29/mo</a>
+            <a href="mailto:hello@particulatellc.com?subject=QuantAlpha Premium" class="qa-cta gold">Subscribe — $29/mo</a>
         </div>
         <div class="qa-card">
             <h3>🏢 Institutional</h3>
@@ -98,7 +138,7 @@
                 <li>Weekly strategy review</li>
                 <li>Priority support</li>
             </ul>
-            <a href="#" class="qa-cta">Contact Us</a>
+            <a href="mailto:hello@particulatellc.com?subject=QuantAlpha Institutional" class="qa-cta">Contact Us</a>
         </div>
     </section>
 
@@ -181,5 +221,25 @@ Premium: 20-coin matrix, whale alerts, RSI alerts
             </div>
         </div>
     </footer>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="../js/checkout.js"></script>
+    <script>
+      // QuantAlpha Stripe checkout — price IDs will be set when products are created
+      window.QA_PRICES = {
+        premium: null,   // TODO: price_1XXXXX ($29/mo)
+        institutional: null  // TODO: price_1XXXXX ($199/mo)
+      };
+      
+      // Wire up premium button when price ID is available
+      document.querySelectorAll('.qa-cta.gold').forEach(function(btn) {
+        if (btn.textContent.includes('Subscribe') && window.QA_PRICES.premium) {
+          btn.href = '#';
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            checkout(window.QA_PRICES.premium, { mode: 'subscription' });
+          });
+        }
+      });
+    </script>
 </body>
 </html>
