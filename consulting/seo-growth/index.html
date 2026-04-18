@@ -209,7 +209,7 @@
           <li>Basic keyword opportunity list</li>
           <li>Written report within 24 hours</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Quick Audit — $9</button>
+        <button class="tier-cta" onclick="checkout('price_1TLyk0FCjIsAzbKcjMegHLD3', { successUrl: window.location.origin + '/consulting/seo-growth/?success=true', cancelUrl: window.location.origin + '/consulting/seo-growth/?canceled=true' })">Get Quick Audit — $9</button>
       </div>
 
       <div class="tier-card featured">
@@ -223,7 +223,7 @@
           <li>3-month content calendar</li>
           <li>30-day follow-up support</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('full', 59)">Get Growth Audit — $59</button>
+        <button class="tier-cta" onclick="checkout('price_1TLyk0FCjIsAzbKcxxmrdKCq', { successUrl: window.location.origin + '/consulting/seo-growth/?success=true', cancelUrl: window.location.origin + '/consulting/seo-growth/?canceled=true' })">Get Growth Audit — $59</button>
       </div>
 
       <div class="tier-card">
@@ -238,7 +238,7 @@
           <li>Priority same-day response</li>
           <li>Local SEO optimization guide</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('guided', 250)">Get Growth Partner — $250</button>
+        <button class="tier-cta" onclick="checkout('price_1TLyk0FCjIsAzbKcDnZSl7Kk', { successUrl: window.location.origin + '/consulting/seo-growth/?success=true', cancelUrl: window.location.origin + '/consulting/seo-growth/?canceled=true' })">Get Growth Partner — $250</button>
       </div>
     </div>
   </section>
@@ -490,28 +490,8 @@
       btn.disabled = true;
     });
 
-    const tierMap = {
-      'basic':  { name: 'Quick Audit — $9',    price: 9,   priceId: 'price_1TLyk0FCjIsAzbKcjMegHLD3' },
-      'full':   { name: 'Growth Audit — $59',  price: 59,  priceId: 'price_1TLyk0FCjIsAzbKcxxmrdKCq' },
-      'guided': { name: 'Growth Partner — $250', price: 250, priceId: 'price_1TLyk0FCjIsAzbKcDnZSl7Kk' }
-    };
-
-    function openCheckout(tier, price) {
-      const info = tierMap[tier];
-      if (!info) return;
-      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
-      stripe.redirectToCheckout({
-        lineItems: [{ price: info.priceId, quantity: 1 }],
-        mode: 'payment',
-        successUrl: window.location.origin + '/consulting/seo-growth/?success=true',
-        cancelUrl: window.location.origin + '/consulting/seo-growth/?canceled=true'
-      }).then(function(result) {
-        if (result.error) { alert(result.error.message); }
-      });
-    }
   </script>
-
-    <script src="https://js.stripe.com/v3/" defer></script>
+<script src="../../js/checkout.js"></script>
 <div id="intake-bot"></div>
 <script>
   window.INTAKE_CONFIG = { service: 'seo-growth', autoOpenDelay: 10000 };
@@ -519,7 +499,7 @@
   (function(){
     var p=new URLSearchParams(window.location.search);
     var c=p.get("checkout");
-    if(c){setTimeout(function(){openCheckout(c);},500);}
+    if(c){var pm={'seo-growth':{'basic': 'price_1TLyk0FCjIsAzbKcjMegHLD3', 'full': 'price_1TLyk0FCjIsAzbKcxxmrdKCq', 'guided': 'price_1TLyk0FCjIsAzbKcDnZSl7Kk'}};var pid=pm['seo-growth'][c];if(pid)checkout(pid);}
   })();
 </script>
 <script src="/js/intake-bot.js"></script>

@@ -240,7 +240,7 @@
           <li>Required documents checklist</li>
           <li>What to do first (and why)</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('basic', 9)">Get Started — $9</button>
+        <button class="tier-cta" onclick="checkout('price_1TLV7fFCjIsAzbKcH7j746YP', { successUrl: window.location.origin + '/consulting/home-buyer/?success=true', cancelUrl: window.location.origin + '/consulting/home-buyer/?canceled=true' })">Get Started — $9</button>
       </div>
 
       <div class="tier-card featured">
@@ -256,7 +256,7 @@
           <li>Red flags: overbudget, bad loans, hidden costs</li>
           <li>Financing options comparison (FHA, VA, conventional)</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('full', 29)">Get Started — $29</button>
+        <button class="tier-cta" onclick="checkout('price_1TLV7fFCjIsAzbKclr4BY4bw', { successUrl: window.location.origin + '/consulting/home-buyer/?success=true', cancelUrl: window.location.origin + '/consulting/home-buyer/?canceled=true' })">Get Started — $29</button>
       </div>
 
       <div class="tier-card">
@@ -272,7 +272,7 @@
           <li>Pre-approval prep guide</li>
           <li>Inspection negotiation playbook</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('guided', 79)">Get Started — $79</button>
+        <button class="tier-cta" onclick="checkout('price_1TLV7fFCjIsAzbKc3sldvipJ', { successUrl: window.location.origin + '/consulting/home-buyer/?success=true', cancelUrl: window.location.origin + '/consulting/home-buyer/?canceled=true' })">Get Started — $79</button>
       </div>
     </div>
   </section>
@@ -319,7 +319,6 @@
       </div>
     </div>
   </section>
-
 
 
   <!-- PROCESS -->
@@ -616,44 +615,12 @@
       });
     });
 
-    // Tier → Stripe price ID mapping
-    const tierMap = {
-      'basic':  { name: 'Basic — $9',   price: 9,  priceId: 'price_1TLV7fFCjIsAzbKcH7j746YP' },
-      'full':   { name: 'Standard — $29', price: 29, priceId: 'price_1TLV7fFCjIsAzbKclr4BY4bw' },
-      'guided': { name: 'Premium — $79', price: 79, priceId: 'price_1TLV7fFCjIsAzbKc3sldvipJ' }
-    };
-
-    function openCheckout(tier, price) {
-      const info = tierMap[tier];
-      if (!info) return;
-      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
-      stripe.redirectToCheckout({
-        lineItems: [{ price: info.priceId, quantity: 1 }],
-        mode: 'payment',
-        successUrl: window.location.origin + '/consulting/home-buyer/?success=true',
-        cancelUrl: window.location.origin + '/consulting/home-buyer/?canceled=true'
-      }).then(function(result) {
-        if (result.error) {
-          alert(result.error.message);
-        }
-      });
-    }
-
-    function closeModal() {
-      document.getElementById('stripe-modal').classList.remove('open');
-    }
-
-    // Close modal on Escape
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
-
     // Form submission → Formspree
     // Formspree AJAX library handles submission automatically
     // See data-fs-success and data-fs-submit-btn attributes on the form
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-  <script src="https://js.stripe.com/v3/" defer></script>
+<script src="../../js/checkout.js"></script>
 <div id="intake-bot"></div>
 <script>
   window.INTAKE_CONFIG = { service: 'home-buyer', autoOpenDelay: 10000 };

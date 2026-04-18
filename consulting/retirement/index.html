@@ -170,7 +170,7 @@
         <li>Plain-English summary report</li>
         <li>Delivered in 48 hours</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('snapshot', 297)">Get Your Snapshot — $297</button>
+      <button class="tier-cta" onclick="checkout('price_1TLxq5FCjIsAzbKcxZE29Yi9', { successUrl: window.location.origin + '/consulting/retirement/?success=true', cancelUrl: window.location.origin + '/consulting/retirement/?canceled=true' })">Get Your Snapshot — $297</button>
     </div>
 
     <div class="tier-card featured">
@@ -186,7 +186,7 @@
         <li>Tax-loss harvesting opportunities</li>
         <li>30-min review call</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('analysis', 597)">Start Analysis — $597</button>
+      <button class="tier-cta" onclick="checkout('price_1TLxq5FCjIsAzbKcxBVccCzX', { successUrl: window.location.origin + '/consulting/retirement/?success=true', cancelUrl: window.location.origin + '/consulting/retirement/?canceled=true' })">Start Analysis — $597</button>
     </div>
 
     <div class="tier-card">
@@ -201,7 +201,7 @@
         <li>Year-end tax optimization prep</li>
         <li>Cancel anytime</li>
       </ul>
-      <button class="tier-cta" onclick="openCheckout('quarterly', 149)">Subscribe — $149/qtr</button>
+      <button class="tier-cta" onclick="checkout('price_1TLxq5FCjIsAzbKcwHXBz1qW', { successUrl: window.location.origin + '/consulting/retirement/?success=true', cancelUrl: window.location.origin + '/consulting/retirement/?canceled=true' })">Subscribe — $149/qtr</button>
     </div>
   </section>
 
@@ -461,28 +461,8 @@
       btn.disabled = true;
     });
   </script>
-  <script src="https://js.stripe.com/v3/" defer></script>
-  <script>
-    const tierMap = {
-      'snapshot':  { name: 'Snapshot — $297',  price: 297,  priceId: 'price_1TLxq5FCjIsAzbKcxZE29Yi9' },
-      'analysis':  { name: 'Full Analysis — $597', price: 597, priceId: 'price_1TLxq5FCjIsAzbKcxBVccCzX' },
-      'quarterly': { name: 'Quarterly Check-In — $149/qtr', price: 149, priceId: 'price_1TLxq5FCjIsAzbKcwHXBz1qW' }
-    };
-
-    function openCheckout(tier, price) {
-      const info = tierMap[tier];
-      if (!info) return;
-      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
-      stripe.redirectToCheckout({
-        lineItems: [{ price: info.priceId, quantity: 1 }],
-        mode: 'payment',
-        successUrl: window.location.origin + '/consulting/retirement/?success=true',
-        cancelUrl: window.location.origin + '/consulting/retirement/?canceled=true'
-      }).then(function(result) {
-        if (result.error) { alert(result.error.message); }
-      });
-    }
   </script>
+<script src="../../js/checkout.js"></script>
 <div id="intake-bot"></div>
 <script>
   window.INTAKE_CONFIG = { service: 'retirement', autoOpenDelay: 10000 };
@@ -490,7 +470,7 @@
   (function(){
     var p=new URLSearchParams(window.location.search);
     var c=p.get("checkout");
-    if(c){setTimeout(function(){openCheckout(c);},500);}
+    if(c){var pm={'retirement':{'snapshot': 'price_1TLxq5FCjIsAzbKcxZE29Yi9', 'analysis': 'price_1TLxq5FCjIsAzbKcxBVccCzX', 'quarterly': 'price_1TLxq5FCjIsAzbKcwHXBz1qW'}};var pid=pm['retirement'][c];if(pid)checkout(pid);}
   })();
 </script>
 <script src="/js/intake-bot.js"></script>

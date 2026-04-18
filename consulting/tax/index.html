@@ -211,7 +211,7 @@
           <li>2026 tax bracket lookups</li>
           <li>Educational content library</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('tax-chat', 29)">Start Tax Chat — $29/mo</button>
+        <button class="tier-cta" onclick="checkout('price_1TLxRXFCjIsAzbKcNO6tPGS4', { mode: 'subscription', successUrl: window.location.origin + '/consulting/tax/?success=true', cancelUrl: window.location.origin + '/consulting/tax/?canceled=true' })">Start Tax Chat — $29/mo</button>
       </div>
 
       <div class="tier-card featured">
@@ -227,7 +227,7 @@
           <li>Tax loss harvesting suggestions</li>
           <li>Export to CSV for your CPA</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('bookkeeping', 79)">Start Bookkeeping — $79/mo</button>
+        <button class="tier-cta" onclick="checkout('price_1TLxRXFCjIsAzbKcquSr2wNp', { mode: 'subscription', successUrl: window.location.origin + '/consulting/tax/?success=true', cancelUrl: window.location.origin + '/consulting/tax/?canceled=true' })">Start Bookkeeping — $79/mo</button>
       </div>
 
       <div class="tier-card">
@@ -243,7 +243,7 @@
           <li>Annual tax strategy review (1 hour)</li>
           <li>Multi-state tax obligation tracking</li>
         </ul>
-        <button class="tier-cta" onclick="openCheckout('business-suite', 199)">Start Business Suite — $199/mo</button>
+        <button class="tier-cta" onclick="checkout('price_1TLxRXFCjIsAzbKcM5BDVOJF', { mode: 'subscription', successUrl: window.location.origin + '/consulting/tax/?success=true', cancelUrl: window.location.origin + '/consulting/tax/?canceled=true' })">Start Business Suite — $199/mo</button>
       </div>
     </div>
   </section>
@@ -522,28 +522,8 @@
       btn.disabled = true;
     });
 
-    const tierMap = {
-      'tax-chat':      { name: 'Tax Chat — $29/mo',       price: 29,  priceId: 'price_1TLxRXFCjIsAzbKcNO6tPGS4' },
-      'bookkeeping':   { name: 'Bookkeeping+Tax — $79/mo', price: 79,  priceId: 'price_1TLxRXFCjIsAzbKcquSr2wNp' },
-      'business-suite': { name: 'Business Suite — $199/mo',  price: 199, priceId: 'price_1TLxRXFCjIsAzbKcM5BDVOJF' }
-    };
-
-    function openCheckout(tier, price) {
-      const info = tierMap[tier];
-      if (!info) return;
-      const stripe = Stripe('pk_live_51TB62iFCjIsAzbKc3N4sb0Lox13aM81B8wZ1Fy5jE2dX88xyygC0KIPxt1spwxbnrFl3Mjb1JI3ZG1pTu0BpYz2y00tthYqsmS');
-      stripe.redirectToCheckout({
-        lineItems: [{ price: info.priceId, quantity: 1 }],
-        mode: 'subscription',
-        successUrl: window.location.origin + '/consulting/tax/?success=true',
-        cancelUrl: window.location.origin + '/consulting/tax/?canceled=true'
-      }).then(function(result) {
-        if (result.error) { alert(result.error.message); }
-      });
-    }
   </script>
-
-  <script src="https://js.stripe.com/v3/" defer></script>
+<script src="../../js/checkout.js"></script>
 <div id="intake-bot"></div>
 <script>
   window.INTAKE_CONFIG = { service: 'tax', autoOpenDelay: 10000 };
@@ -551,7 +531,7 @@
   (function(){
     var p=new URLSearchParams(window.location.search);
     var c=p.get("checkout");
-    if(c){setTimeout(function(){openCheckout(c);},500);}
+    if(c){var pm={'tax':{'tax-chat':'price_1TLxRXFCjIsAzbKcNO6tPGS4','bookkeeping':'price_1TLxRXFCjIsAzbKcquSr2wNp','business-suite':'price_1TLxRXFCjIsAzbKcM5BDVOJF'}};var pid=pm['tax'][c];if(pid)checkout(pid,{mode:'subscription'});}
   })();
 </script>
 <script src="/js/intake-bot.js"></script>
