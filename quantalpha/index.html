@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantAlpha — AI-Powered Crypto Market Intelligence | Particulate LLC</title>
+    <meta name="description" content="Daily crypto market intelligence powered by AI. Composite scores, whale tracking, RSI alerts, and trade signals. Free tier available.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .qa-hero { background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #0f3460 100%); color: #fff; padding: 4rem 2rem; text-align: center; }
+        .qa-hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .qa-hero .tagline { font-size: 1.3rem; color: #a0c4ff; margin-bottom: 2rem; }
+        .qa-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
+        .qa-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e0e0e0; transition: transform 0.2s, border-color 0.2s; }
+        .qa-card:hover { transform: translateY(-4px); border-color: #0f3460; }
+        .qa-card.premium { border-color: #ffd700; position: relative; }
+        .qa-card.premium::before { content: "MOST POPULAR"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ffd700; color: #1a1a2e; padding: 4px 16px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; }
+        .qa-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+        .qa-price { font-size: 2.5rem; font-weight: 700; color: #0f3460; margin: 1rem 0; }
+        .qa-price span { font-size: 1rem; color: #666; font-weight: 400; }
+        .qa-features { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .qa-features li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; color: #333; }
+        .qa-features li::before { content: "✓ "; color: #0f3460; font-weight: 700; }
+        .qa-cta { display: inline-block; background: #0f3460; color: #fff; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: background 0.2s; }
+        .qa-cta:hover { background: #16213e; }
+        .qa-cta.gold { background: linear-gradient(135deg, #ffd700, #ffb700); color: #1a1a2e; }
+        .qa-how { background: #f8f9fa; padding: 3rem 2rem; text-align: center; }
+        .qa-how h2 { margin-bottom: 2rem; color: #1a1a2e; }
+        .qa-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .qa-step { padding: 1.5rem; }
+        .qa-step .num { font-size: 2rem; font-weight: 700; color: #0f3460; }
+        .qa-demo { background: #0a0a2e; color: #fff; padding: 3rem 2rem; text-align: center; }
+        .qa-demo h2 { margin-bottom: 1rem; }
+        .qa-demo pre { background: #1a1a3e; padding: 1.5rem; border-radius: 8px; text-align: left; max-width: 600px; margin: 1rem auto; font-size: 0.85rem; overflow-x: auto; }
+        .qa-faq { padding: 3rem 2rem; max-width: 700px; margin: 0 auto; }
+        .qa-faq h2 { text-align: center; margin-bottom: 2rem; color: #1a1a2e; }
+        .qa-faq-item { margin-bottom: 1.5rem; }
+        .qa-faq-item h4 { color: #0f3460; margin-bottom: 0.5rem; }
+        .qa-faq-item p { color: #555; line-height: 1.6; }
+        .signal-bullish { color: #00c853; font-weight: 700; }
+        .signal-bearish { color: #ff1744; font-weight: 700; }
+        .signal-neutral { color: #ffc107; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">Particulate LLC</a>
+            <div class="nav-links">
+                <a href="../services.html">Services</a>
+                <a href="../consulting.html">Consulting</a>
+                <a href="./" class="active">QuantAlpha</a>
+                <a href="../privacy-policy/">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="qa-hero">
+        <h1>📊 QuantAlpha</h1>
+        <p class="tagline">AI-Powered Crypto Market Intelligence — Every Day, Before Markets Open</p>
+        <p>Composite scores, whale tracking, RSI alerts, and trade signals synthesized from 6 data engines.</p>
+        <a href="#pricing" class="qa-cta gold" style="margin-top:1.5rem;">Start Free → No Credit Card</a>
+    </section>
+
+    <section id="pricing" class="qa-tiers">
+        <div class="qa-card">
+            <h3>🆓 Free Tier</h3>
+            <div class="qa-price">$0<span>/mo</span></div>
+            <ul class="qa-features">
+                <li>Daily brief in Discord</li>
+                <li>Top 3 coins: BTC, ETH, SOL</li>
+                <li>Composite scores & signals</li>
+                <li>Market price overview</li>
+            </ul>
+            <a href="https://discord.com/invite/clawd" class="qa-cta">Join Discord (Free)</a>
+        </div>
+        <div class="qa-card premium">
+            <h3>⭐ Premium</h3>
+            <div class="qa-price">$29<span>/mo</span></div>
+            <ul class="qa-features">
+                <li>Full 20-coin signal matrix</li>
+                <li>🐋 Real-time whale alerts</li>
+                <li>📉 RSI pullback notifications</li>
+                <li>📈 AI trade journal access</li>
+                <li>📧 Email brief delivery</li>
+                <li>Featured opportunities</li>
+            </ul>
+            <a href="#" class="qa-cta gold">Subscribe — $29/mo</a>
+        </div>
+        <div class="qa-card">
+            <h3>🏢 Institutional</h3>
+            <div class="qa-price">$199<span>/mo</span></div>
+            <ul class="qa-features">
+                <li>Everything in Premium</li>
+                <li>Custom coin watchlist</li>
+                <li>API access (JSON feed)</li>
+                <li>Historical signal archive</li>
+                <li>Weekly strategy review</li>
+                <li>Priority support</li>
+            </ul>
+            <a href="#" class="qa-cta">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="qa-how">
+        <h2>How It Works</h2>
+        <div class="qa-steps">
+            <div class="qa-step">
+                <div class="num">1</div>
+                <h4>6 Engines Synthesize</h4>
+                <p>Technical analysis, on-chain health, smart money flows, DeFi opportunity, social sentiment, and derivatives data all feed into one composite score.</p>
+            </div>
+            <div class="qa-step">
+                <div class="num">2</div>
+                <h4>AI Generates Signals</h4>
+                <p>Correlation engine weights each factor dynamically, producing BUY/SELL/NEUTRAL signals with confidence levels.</p>
+            </div>
+            <div class="qa-step">
+                <div class="num">3</div>
+                <h4>You Act (or Don't)</h4>
+                <p>Get the brief, see the signals, make your own call. We provide intelligence — you make decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="qa-demo">
+        <h2>Sample Free Brief</h2>
+        <p>What you'll see in Discord every morning:</p>
+        <pre>
+📊 QuantAlpha Daily Brief — Free Tier
+Saturday, April 18, 2026
+
+🎯 Market Snapshot
+- BTC: ⚪ NEUTRAL — 65/100
+- ETH: ⚪ NEUTRAL — 50/100  
+- SOL: 🟢 BUY — 72/100
+
+💰 Prices
+- BTC: $77,087 (+3.0%)
+- ETH: $3,200 (-1.2%)
+- SOL: $155 (+5.5%)
+
+🔒 Want the full picture?
+Premium: 20-coin matrix, whale alerts, RSI alerts
+👉 Upgrade: particulatellc.com/quantalpha
+        </pre>
+    </section>
+
+    <section class="qa-faq">
+        <h2>FAQ</h2>
+        <div class="qa-faq-item">
+            <h4>Is this financial advice?</h4>
+            <p>No. QuantAlpha provides market intelligence for educational purposes. Always do your own research (DYOR). Past performance does not guarantee future results.</p>
+        </div>
+        <div class="qa-faq-item">
+            <h4>What data sources do you use?</h4>
+            <p>CoinGecko (prices/TA), Arkham Intelligence (on-chain/wallet), Coinglass (derivatives), CryptoPanic (sentiment). All data is verified against multiple sources.</p>
+        </div>
+        <div class="qa-faq-item">
+            <h4>How are composite scores calculated?</h4>
+            <p>Six weighted factors: Technical Analysis (35%), On-Chain Health (20%), Smart Money (20%), DeFi Opportunity (15%), Social Sentiment (10%). Weights auto-tune based on 7-day rolling accuracy.</p>
+        </div>
+        <div class="qa-faq-item">
+            <h4>Can I cancel anytime?</h4>
+            <p>Yes. Cancel your subscription at any time. No contracts, no commitments. You'll retain access through the end of your billing period.</p>
+        </div>
+        <div class="qa-faq-item">
+            <h4>Do you offer a free trial?</h4>
+            <p>The free tier is always free — no trial needed. Upgrade to Premium anytime for the full experience.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Particulate LLC. All rights reserved.</p>
+            <p>QuantAlpha is a product of Particulate LLC. Not financial advice.</p>
+            <div class="footer-links">
+                <a href="../privacy-policy/">Privacy Policy</a>
+                <a href="../terms/">Terms & Conditions</a>
+                <a href="mailto:james@particulatellc.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
