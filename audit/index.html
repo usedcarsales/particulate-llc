@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Business Audit — Particulate LLC | Find Out Where AI Can Save You Time</title>
+    <meta name="description" content="Free 2-minute AI audit for your small business. Answer 12 questions and get a personalized report showing where AI automation can save you time and money. No signup required.">
+    <meta property="og:title" content="Free AI Business Audit — Particulate LLC">
+    <meta property="og:description" content="Answer 12 questions. Get a personalized AI automation report. Find out where AI can save your business time and money.">
+    <meta property="og:url" content="https://particulatellc.com/audit/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Particulate LLC">
+    <link rel="canonical" href="https://particulatellc.com/audit/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Particulate AI Business Audit",
+      "url": "https://particulatellc.com/audit/",
+      "description": "Free AI audit tool for small businesses. Identify automation opportunities in 2 minutes.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Particulate LLC",
+        "url": "https://particulatellc.com"
+      }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a2e; background: #f8f9fa; }
+        .nav { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.2rem; font-weight: 800; color: #0f3460; text-decoration: none; }
+        .nav-links a { color: #0f3460; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
+        .hero { background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #0f3460 100%); color: #fff; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; line-height: 1.2; }
+        .hero h1 span { color: #4ecdc4; }
+        .hero p { font-size: 1.15rem; color: #a0c4ff; max-width: 600px; margin: 0 auto 2rem; }
+        .hero .badge { display: inline-block; background: rgba(78,205,196,0.2); color: #4ecdc4; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        /* Audit Steps */
+        .audit-form { background: #fff; border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .progress-bar { background: #e0e0e0; border-radius: 8px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #0f3460, #4ecdc4); height: 100%; transition: width 0.4s ease; border-radius: 8px; }
+        .step-counter { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; }
+        .question { font-size: 1.3rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1.5rem; }
+        .question small { font-size: 0.85rem; color: #888; font-weight: 400; }
+        .options { display: flex; flex-direction: column; gap: 0.75rem; }
+        .option-btn { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 1rem 1.5rem; font-size: 1rem; cursor: pointer; transition: all 0.2s; text-align: left; font-family: inherit; color: #333; }
+        .option-btn:hover { border-color: #0f3460; background: #eef2ff; }
+        .option-btn.selected { border-color: #0f3460; background: #eef2ff; font-weight: 600; }
+        .option-btn .opt-label { font-weight: 600; }
+        .option-btn .opt-desc { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
+        .nav-btns { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .btn-back { background: #fff; border: 2px solid #e0e0e0; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 1rem; font-family: inherit; color: #666; }
+        .btn-back:hover { border-color: #999; }
+        .btn-next { background: #0f3460; color: #fff; border: none; padding: 0.75rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; font-family: inherit; }
+        .btn-next:hover { background: #0a2a50; }
+        .btn-next:disabled { background: #ccc; cursor: not-allowed; }
+        .hidden { display: none; }
+        /* Results */
+        .results { background: #fff; border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .results h2 { font-size: 1.8rem; font-weight: 800; color: #0f3460; margin-bottom: 0.5rem; }
+        .results .subtitle { color: #666; font-size: 1rem; margin-bottom: 2rem; }
+        .score-ring { width: 160px; height: 160px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 3rem; font-weight: 900; color: #fff; position: relative; }
+        .score-ring::after { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; }
+        .score-low { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+        .score-mid { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .score-high { background: linear-gradient(135deg, #0f3460, #4ecdc4); }
+        .score-label { text-align: center; margin-bottom: 2rem; }
+        .score-label .big { font-size: 1.2rem; font-weight: 700; color: #1a1a2e; }
+        .score-label .small { font-size: 0.9rem; color: #666; }
+        .finding { background: #f8f9fa; border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; border-left: 4px solid #0f3460; }
+        .finding h4 { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.3rem; }
+        .finding p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+        .finding .savings { color: #27ae60; font-weight: 700; }
+        .email-capture { background: linear-gradient(135deg, #0f3460 0%, #1a1a4e 100%); color: #fff; border-radius: 12px; padding: 2rem; text-align: center; margin-top: 2rem; }
+        .email-capture h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .email-capture p { color: #a0c4ff; margin-bottom: 1.2rem; font-size: 0.95rem; }
+        .email-form { display: flex; gap: 0.5rem; max-width: 400px; margin: 0 auto; }
+        .email-form input { flex: 1; padding: 0.75rem 1rem; border: none; border-radius: 6px; font-size: 1rem; font-family: inherit; }
+        .email-form button { background: #4ecdc4; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 1rem; font-family: inherit; }
+        .email-form button:hover { background: #3dbdb5; }
+        .cta-section { background: #f0f7ff; border-radius: 12px; padding: 2rem; text-align: center; margin-top: 2rem; border: 2px solid #0f3460; }
+        .cta-section h3 { color: #0f3460; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .cta-section p { color: #555; margin-bottom: 1.2rem; }
+        .cta-section .btn { display: inline-block; background: #0f3460; color: #fff; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; }
+        .cta-section .btn:hover { background: #0a2a50; }
+        footer { background: #0a0a2e; color: #a0c4ff; padding: 2rem; text-align: center; font-size: 0.85rem; }
+        footer a { color: #a0c4ff; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="../" class="nav-logo">Particulate</a>
+        <div class="nav-links">
+            <a href="../services.html">Services</a>
+            <a href="../consulting/">Consulting</a>
+            <a href="../blog/">Blog</a>
+            <a href="../#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">✓ Free — No signup required</div>
+        <h1>Find Out Where <span>AI Can Save You</span> 10+ Hours a Week</h1>
+        <p>Answer 12 quick questions about your business. Get a personalized AI audit report showing exactly where automation can cut costs, save time, and grow revenue.</p>
+    </section>
+
+    <div class="container">
+        <!-- Step 1: Business Type -->
+        <div class="audit-form" id="step-1">
+            <div class="progress-bar"><div class="progress-fill" style="width: 8%"></div></div>
+            <div class="step-counter">Question 1 of 12</div>
+            <div class="question">What type of business do you run? <small>Select the closest match</small></div>
+            <div class="options" data-step="1" data-field="business_type">
+                <button class="option-btn" data-value="retail"><span class="opt-label">Retail / E-commerce</span><span class="opt-desc">Selling products online or in-store</span></button>
+                <button class="option-btn" data-value="service"><span class="opt-label">Service Business</span><span class="opt-desc">Consulting, repair, cleaning, salons, etc.</span></button>
+                <button class="option-btn" data-value="professional"><span class="opt-label">Professional Services</span><span class="opt-desc">Law, accounting, insurance, real estate</span></button>
+                <button class="option-btn" data-value="restaurant"><span class="opt-label">Restaurant / Food Service</span><span class="opt-desc">Restaurants, catering, food trucks</span></button>
+                <button class="option-btn" data-value="other"><span class="opt-label">Other Small Business</span><span class="opt-desc">Manufacturing, logistics, creative, etc.</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" disabled>← Back</button>
+                <button class="btn-next" onclick="nextStep(1)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Team Size -->
+        <div class="audit-form hidden" id="step-2">
+            <div class="progress-bar"><div class="progress-fill" style="width: 17%"></div></div>
+            <div class="step-counter">Question 2 of 12</div>
+            <div class="question">How many people work at your business?</div>
+            <div class="options" data-step="2" data-field="team_size">
+                <button class="option-btn" data-value="1"><span class="opt-label">Just me (1)</span></button>
+                <button class="option-btn" data-value="2-5"><span class="opt-label">2–5 people</span></button>
+                <button class="option-btn" data-value="6-20"><span class="opt-label">6–20 people</span></button>
+                <button class="option-btn" data-value="21-50"><span class="opt-label">21–50 people</span></button>
+                <button class="option-btn" data-value="50+"><span class="opt-label">50+ people</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(2)">← Back</button>
+                <button class="btn-next" onclick="nextStep(2)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Hours on Admin -->
+        <div class="audit-form hidden" id="step-3">
+            <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+            <div class="step-counter">Question 3 of 12</div>
+            <div class="question">How many hours per week do you spend on administrative tasks? <small>Email, scheduling, data entry, invoicing</small></div>
+            <div class="options" data-step="3" data-field="admin_hours">
+                <button class="option-btn" data-value="0-5"><span class="opt-label">Less than 5 hours</span></button>
+                <button class="option-btn" data-value="5-10"><span class="opt-label">5–10 hours</span></button>
+                <button class="option-btn" data-value="10-20"><span class="opt-label">10–20 hours</span></button>
+                <button class="option-btn" data-value="20+"><span class="opt-label">20+ hours</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(3)">← Back</button>
+                <button class="btn-next" onclick="nextStep(3)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Customer Communication -->
+        <div class="audit-form hidden" id="step-4">
+            <div class="progress-bar"><div class="progress-fill" style="width: 33%"></div></div>
+            <div class="step-counter">Question 4 of 12</div>
+            <div class="question">How do you handle customer inquiries and leads?</div>
+            <div class="options" data-step="4" data-field="customer_comm">
+                <button class="option-btn" data-value="manual"><span class="opt-label">I respond to every one personally</span></button>
+                <button class="option-btn" data-value="partial"><span class="opt-label">I have a part-time person or basic system</span></button>
+                <button class="option-btn" data-value="auto"><span class="opt-label">I use some automation (auto-replies, forms)</span></button>
+                <button class="option-btn" data-value="neglect"><span class="opt-label">Honestly, some inquiries fall through the cracks</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(4)">← Back</button>
+                <button class="btn-next" onclick="nextStep(4)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 5: Data/Financial Tasks -->
+        <div class="audit-form hidden" id="step-5">
+            <div class="progress-bar"><div class="progress-fill" style="width: 42%"></div></div>
+            <div class="step-counter">Question 5 of 12</div>
+            <div class="question">How much time do you spend on financial/data tasks? <small>Bookkeeping, reports, data entry, expense tracking</small></div>
+            <div class="options" data-step="5" data-field="finance_hours">
+                <button class="option-btn" data-value="0-3"><span class="opt-label">Less than 3 hours/week</span></button>
+                <button class="option-btn" data-value="3-8"><span class="opt-label">3–8 hours/week</span></button>
+                <button class="option-btn" data-value="8-15"><span class="opt-label">8–15 hours/week</span></button>
+                <button class="option-btn" data-value="15+"><span class="opt-label">15+ hours/week</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(5)">← Back</button>
+                <button class="btn-next" onclick="nextStep(5)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 6: Marketing -->
+        <div class="audit-form hidden" id="step-6">
+            <div class="progress-bar"><div class="progress-fill" style="width: 50%"></div></div>
+            <div class="step-counter">Question 6 of 12</div>
+            <div class="question">How do you handle marketing and content?</div>
+            <div class="options" data-step="6" data-field="marketing">
+                <button class="option-btn" data-value="none"><span class="opt-label">I don't really do marketing</span></button>
+                <button class="option-btn" data-value="adhoc"><span class="opt-label">I post when I remember — no system</span></button>
+                <button class="option-btn" data-value="outsourced"><span class="opt-label">I pay someone to handle it</span></button>
+                <button class="option-btn" data-value="systematic"><span class="opt-label">I have a system and stick to it</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(6)">← Back</button>
+                <button class="btn-next" onclick="nextStep(6)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 7: Scheduling -->
+        <div class="audit-form hidden" id="step-7">
+            <div class="progress-bar"><div class="progress-fill" style="width: 58%"></div></div>
+            <div class="step-counter">Question 7 of 12</div>
+            <div class="question">How do you manage appointments and scheduling?</div>
+            <div class="options" data-step="7" data-field="scheduling">
+                <button class="option-btn" data-value="manual"><span class="opt-label">Phone calls, texts, back-and-forth</span></button>
+                <button class="option-btn" data-value="calendar"><span class="opt-label">Google/Outlook calendar, but it's a mess</span></button>
+                <button class="option-btn" data-value="booking"><span class="opt-label">I use a booking tool (Calendly, etc.)</span></button>
+                <button class="option-btn" data-value="none"><span class="opt-label">I don't do appointments</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(7)">← Back</button>
+                <button class="btn-next" onclick="nextStep(7)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 8: Inventory/Products -->
+        <div class="audit-form hidden" id="step-8">
+            <div class="progress-bar"><div class="progress-fill" style="width: 67%"></div></div>
+            <div class="step-counter">Question 8 of 12</div>
+            <div class="question">Do you manage inventory, products, or pricing?</div>
+            <div class="options" data-step="8" data-field="inventory">
+                <button class="option-btn" data-value="yes-manual"><span class="opt-label">Yes, manually (spreadsheets, lists)</span></button>
+                <button class="option-btn" data-value="yes-tool"><span class="opt-label">Yes, with a tool (POS, Shopify, etc.)</span></button>
+                <button class="option-btn" data-value="no"><span class="opt-label">No, we don't sell physical products</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(8)">← Back</button>
+                <button class="btn-next" onclick="nextStep(8)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 9: Biggest Pain -->
+        <div class="audit-form hidden" id="step-9">
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+            <div class="step-counter">Question 9 of 12</div>
+            <div class="question">What's your biggest operational pain point?</div>
+            <div class="options" data-step="9" data-field="pain_point">
+                <button class="option-btn" data-value="leads"><span class="opt-label">Getting and qualifying leads</span></button>
+                <button class="option-btn" data-value="time"><span class="opt-label">Not enough time — too much manual work</span></button>
+                <button class="option-btn" data-value="money"><span class="opt-label">Margins are tight — need to cut costs</span></button>
+                <button class="option-btn" data-value="growth"><span class="opt-label">Can't scale past current capacity</span></button>
+                <button class="option-btn" data-value="consistency"><span class="opt-label">Quality and consistency of output</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(9)">← Back</button>
+                <button class="btn-next" onclick="nextStep(9)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 10: Tech Comfort -->
+        <div class="audit-form hidden" id="step-10">
+            <div class="progress-bar"><div class="progress-fill" style="width: 83%"></div></div>
+            <div class="step-counter">Question 10 of 12</div>
+            <div class="question">How comfortable are you with technology?</div>
+            <div class="options" data-step="10" data-field="tech_comfort">
+                <button class="option-btn" data-value="low"><span class="opt-label">I keep things simple — phone, email, that's it</span></button>
+                <button class="option-btn" data-value="moderate"><span class="opt-label">I use common tools (Google, social media, basic apps)</span></button>
+                <button class="option-btn" data-value="high"><span class="opt-label">I'm comfortable learning new tech</span></button>
+                <button class="option-btn" data-value="very"><span class="opt-label">I'm tech-forward — always looking for an edge</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(10)">← Back</button>
+                <button class="btn-next" onclick="nextStep(10)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 11: Budget -->
+        <div class="audit-form hidden" id="step-11">
+            <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+            <div class="step-counter">Question 11 of 12</div>
+            <div class="question">What would you be willing to invest monthly in AI automation if it saved you 10+ hours?</div>
+            <div class="options" data-step="11" data-field="budget">
+                <button class="option-btn" data-value="0"><span class="opt-label">I need to see results first (free audit)</span></button>
+                <button class="option-btn" data-value="29"><span class="opt-label">$29–$79/mo</span></button>
+                <button class="option-btn" data-value="149"><span class="opt-label">$149–$299/mo</span></button>
+                <button class="option-btn" data-value="499"><span class="opt-label">$499+/mo — ROI is what matters</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(11)">← Back</button>
+                <button class="btn-next" onclick="nextStep(11)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 12: Industry -->
+        <div class="audit-form hidden" id="step-12">
+            <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+            <div class="step-counter">Question 12 of 12</div>
+            <div class="question">What industry are you in? <small>This helps us tailor your recommendations</small></div>
+            <div class="options" data-step="12" data-field="industry">
+                <button class="option-btn" data-value="automotive"><span class="opt-label">Automotive / Dealership</span></button>
+                <button class="option-btn" data-value="realestate"><span class="opt-label">Real Estate / Property</span></button>
+                <button class="option-btn" data-value="healthcare"><span class="opt-label">Healthcare / Medical</span></button>
+                <button class="option-btn" data-value="finance"><span class="opt-label">Finance / Accounting / Legal</span></button>
+                <button class="option-btn" data-value="food"><span class="opt-label">Food Service / Restaurant</span></button>
+                <button class="option-btn" data-value="other"><span class="opt-label">Other</span></button>
+            </div>
+            <div class="nav-btns">
+                <button class="btn-back" onclick="prevStep(12)">← Back</button>
+                <button class="btn-next" onclick="showResults()">See My Results →</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results hidden" id="results">
+            <h2>Your AI Audit Report</h2>
+            <p class="subtitle">Based on your answers, here's where AI can transform your business.</p>
+            
+            <div id="score-ring" class="score-ring score-mid">62</div>
+            <div class="score-label">
+                <div class="big" id="score-title">Moderate Automation Opportunity</div>
+                <div class="small" id="score-subtitle">You're doing some things right — AI can take you much further</div>
+            </div>
+
+            <div id="findings"></div>
+
+            <div class="cta-section">
+                <h3>🚀 Ready to Automate?</h3>
+                <p>Get a custom AI agent built for your business — starting at just $9.</p>
+                <a href="../consulting/" class="btn">Explore AI Agent Setup →</a>
+            </div>
+
+            <div class="email-capture">
+                <h3>📧 Get Your Full Report</h3>
+                <p>We'll email you a detailed PDF with personalized AI recommendations, ROI estimates, and a step-by-step automation roadmap.</p>
+                <form class="email-form" action="https://formspree.io/f/xaqlrrna" method="POST">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <input type="hidden" name="source" value="ai-audit-tool">
+                    <input type="hidden" name="audit_score" id="audit-score-input">
+                    <input type="hidden" name="business_type" id="audit-business-type">
+                    <button type="submit">Send Report</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Particulate LLC. All rights reserved. | <a href="../privacy-policy/">Privacy</a> | <a href="../terms-and-conditions/">Terms</a> | <a href="../consulting/">Consulting</a></p>
+        <p style="margin-top:0.5rem;font-size:0.75rem;color:#6688bb;">Particulate LLC — Burlington County, NJ | (856) 335-5537</p>
+    </footer>
+
+    <script>
+    const answers = {};
+    let currentStep = 1;
+    const totalSteps = 12;
+
+    // Option selection handler
+    document.querySelectorAll('.options').forEach(group => {
+        group.addEventListener('click', (e) => {
+            const btn = e.target.closest('.option-btn');
+            if (!btn) return;
+            
+            // Deselect siblings
+            group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            
+            // Store answer
+            const field = group.dataset.field;
+            answers[field] = btn.dataset.value;
+            
+            // Enable next button
+            const step = parseInt(group.dataset.step);
+            const nextBtn = document.getElementById(`step-${step}`).querySelector('.btn-next');
+            if (nextBtn) nextBtn.disabled = false;
+        });
+    });
+
+    function nextStep(step) {
+        if (step < totalSteps) {
+            document.getElementById(`step-${step}`).classList.add('hidden');
+            document.getElementById(`step-${step + 1}`).classList.remove('hidden');
+            currentStep = step + 1;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    function prevStep(step) {
+        if (step > 1) {
+            document.getElementById(`step-${step}`).classList.add('hidden');
+            document.getElementById(`step-${step - 1}`).classList.remove('hidden');
+            currentStep = step - 1;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    function showResults() {
+        document.getElementById(`step-12`).classList.add('hidden');
+        document.getElementById('results').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Calculate score
+        let score = 30; // base
+        let findings = [];
+
+        // Admin hours
+        const adminMap = { '0-5': 5, '5-10': 12, '10-20': 20, '20+': 28 };
+        const adminScore = adminMap[answers.admin_hours] || 0;
+        score += adminScore;
+        if (adminScore >= 12) findings.push({ title: '📋 Administrative Automation', desc: `You're spending ${answers.admin_hours} hours/week on admin tasks. AI agents can handle email triage, scheduling, document processing, and data entry — saving you <span class="savings">${Math.round(adminScore * 0.6)}+ hours/week</span>.`, priority: 'high' });
+
+        // Customer communication
+        const commMap = { 'neglect': 15, 'manual': 12, 'partial': 7, 'auto': 2 };
+        const commScore = commMap[answers.customer_comm] || 0;
+        score += commScore;
+        if (commScore >= 7) findings.push({ title: '💬 AI Lead Qualification', desc: answers.customer_comm === 'neglect' ? 'Leads are falling through the cracks. An AI agent can qualify every lead 24/7 — no more missed opportunities.' : 'Your manual follow-up process is costing you time and conversions. An AI agent responds in under 60 seconds, 24/7.', priority: 'high' });
+
+        // Finance hours
+        const finMap = { '0-3': 3, '3-8': 8, '8-15': 14, '15+': 20 };
+        const finScore = finMap[answers.finance_hours] || 0;
+        score += finScore;
+        if (finScore >= 8) findings.push({ title: '💰 Financial Data Processing', desc: `AI can automate invoice processing, expense categorization, and report generation — saving you <span class="savings">${Math.round(finScore * 0.5)}+ hours/week</span> on financial tasks.`, priority: 'high' });
+
+        // Marketing
+        const mktMap = { 'none': 12, 'adhoc': 10, 'outsourced': 3, 'systematic': 1 };
+        const mktScore = mktMap[answers.marketing] || 0;
+        score += mktScore;
+        if (mktScore >= 3) findings.push({ title: '📢 AI Content & Marketing', desc: answers.marketing === 'none' ? 'You\'re invisible online. AI can generate SEO-optimized blog posts, social content, and email campaigns — consistently and affordably.' : 'AI can systematize your marketing, generating consistent content that drives organic traffic and leads.', priority: 'medium' });
+
+        // Scheduling
+        const schMap = { 'manual': 8, 'calendar': 5, 'none': 0, 'booking': 2 };
+        const schScore = schMap[answers.scheduling] || 0;
+        score += schScore;
+        if (schScore >= 5) findings.push({ title: '📅 Smart Scheduling', desc: 'AI-powered booking eliminates the back-and-forth. Customers book, confirm, and get reminders — all automated.', priority: 'medium' });
+
+        // Inventory
+        if (answers.inventory === 'yes-manual') {
+            score += 8;
+            findings.push({ title: '📦 Inventory & Pricing Intelligence', desc: 'Manual inventory tracking is error-prone and time-consuming. AI can monitor stock levels, track pricing, and flag reorder points automatically.', priority: 'medium' });
+        }
+
+        // Pain point
+        const painMap = { 'leads': 8, 'time': 12, 'money': 6, 'growth': 8, 'consistency': 5 };
+        score += painMap[answers.pain_point] || 0;
+        if (answers.pain_point === 'time') findings.push({ title: '⏰ Time Recovery System', desc: 'Your #1 pain is time. AI agents handle the repetitive 30-40% of your work so you can focus on high-value tasks that grow the business.' });
+        if (answers.pain_point === 'leads') findings.push({ title: '🎯 Lead Generation Engine', desc: 'AI can find, qualify, and follow up with leads while you sleep. No more cold calling — warm, qualified leads delivered to your inbox.' });
+
+        // Cap score
+        score = Math.min(score, 98);
+
+        // Render score ring
+        const ring = document.getElementById('score-ring');
+        ring.textContent = score;
+        ring.className = 'score-ring ' + (score < 40 ? 'score-low' : score < 70 ? 'score-mid' : 'score-high');
+
+        document.getElementById('score-title').textContent = score < 40 ? 'Low Automation — Big Opportunity' : score < 70 ? 'Moderate Automation Opportunity' : 'High Automation Potential';
+        document.getElementById('score-subtitle').textContent = score < 40 ? 'You have a lot to gain from AI automation' : score < 70 ? "You're doing some things right — AI can take you much further" : 'Your business is primed for AI transformation';
+
+        // Render findings (sorted by priority)
+        const priorityOrder = { 'high': 0, 'medium': 1, 'low': 2 };
+        findings.sort((a, b) => (priorityOrder[a.priority] || 3) - (priorityOrder[b.priority] || 3));
+
+        const findingsDiv = document.getElementById('findings');
+        findingsDiv.innerHTML = findings.map(f => `
+            <div class="finding" style="border-left-color: ${f.priority === 'high' ? '#e74c3c' : f.priority === 'medium' ? '#f39c12' : '#0f3460'}">
+                <h4>${f.title}</h4>
+                <p>${f.desc}</p>
+            </div>
+        `).join('');
+
+        // Fill hidden form fields
+        document.getElementById('audit-score-input').value = score;
+        document.getElementById('audit-business-type').value = answers.business_type || 'unknown';
+    }
+    </script>
+</body>
+</html>
