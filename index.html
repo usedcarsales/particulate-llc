@@ -770,7 +770,58 @@
   }
 }
 </script>
-</head>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Particulate LLC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Particulate LLC is a New Jersey AI consulting firm that provides affordable, data-driven consulting services for home buying, tax, debt, SEO, retirement, estate planning, and AI agent setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Particulate AI consulting cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our services range from $9 for quick checks to $1,499 for comprehensive plans. Most popular tiers are $29-$79. All payments processed securely via Stripe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes AI consulting different from traditional consulting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI consulting analyzes your specific situation using data, regulations, and best practices \u2014 then delivers personalized recommendations at a fraction of the cost of $150-500/hour traditional consulting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve clients outside New Jersey?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our core services are NJ-focused. However, our AI agent setup and SEO services are available nationwide."
+      }
+    }
+  ]
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    ".service-description",
+    ".pricing-card h3",
+    ".faq-item h3"
+  ],
+  "xpath": [
+    "/html/head/title",
+    "/html/head/meta[@name='description']/@content"
+  ]
+}</script>
+  </head>
 <body>
 
   <!-- NAV -->

@@ -149,7 +149,20 @@
       .nav-links { gap: 1rem; }
     }
   </style>
-</head>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    ".service-description",
+    ".pricing-card h3",
+    ".faq-item h3"
+  ],
+  "xpath": [
+    "/html/head/title",
+    "/html/head/meta[@name='description']/@content"
+  ]
+}</script>
+  </head>
 <body>
   <nav>
     <div class="logo">Particulate <span>LLC</span></div>

@@ -136,7 +136,90 @@
     .faq-item.open p { display: block; }
     .faq-item:hover h3 { color: var(--accent); }
   </style>
-</head>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What consulting services does Particulate LLC offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Particulate LLC offers AI-powered consulting in 8 areas: home buying, debt & credit, tax & accounting, health navigation, SEO & growth, retirement planning, AI agent setup, and estate & probate. Each service uses AI analysis with human oversight for fast, affordable guidance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI-powered consulting work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You submit your information through our secure intake form. Our AI analyzes your specific situation using relevant data sources, regulations, and best practices. A human team member reviews key outputs before delivery. Results are typically ready within 24-48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is AI consultation cheaper than traditional consulting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Significantly. Traditional consultants charge $150-500/hour. Our AI-powered services start at $9 and max out at $1,499 for comprehensive plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas does Particulate LLC serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve all of New Jersey with deep expertise in Burlington County and South Jersey. Our AI-powered model means we can serve clients across the entire state efficiently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Particulate LLC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Particulate LLC is a New Jersey-based AI consulting firm that uses artificial intelligence to provide affordable, data-driven consulting services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the consultations automated or human-reviewed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. AI does the heavy lifting \u2014 data analysis, research, strategy generation. Human experts review critical outputs for quality and accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upgrade my consultation tier after purchasing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If you start with a lower tier and realize you need more depth, you can upgrade. The price difference is applied toward the higher tier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept all major credit cards via Stripe, plus cryptocurrency through NOWPayments. All payments are processed securely."
+      }
+    }
+  ]
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    ".service-description",
+    ".pricing-card h3",
+    ".faq-item h3"
+  ],
+  "xpath": [
+    "/html/head/title",
+    "/html/head/meta[@name='description']/@content"
+  ]
+}</script>
+  </head>
 <body>
   <nav>
     <div class="logo">Particulate<span>.</span></div>
@@ -394,12 +477,11 @@
     <p style="margin-top:0.5rem;font-size:11px;color:var(--muted)">Particulate LLC is a technology and education company registered in New Jersey. AI agent consultations are disclosed as AI-powered services with human oversight.</p>
   </footer>
 
-  <script type="application/ld+json">
-[
+  <script type="application/ld+json">[
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Particulate LLC — AI Agent Setup Consultation",
+    "name": "Particulate LLC \u2014 AI Agent Setup Consultation",
     "description": "Custom AI agent systems designed, built, and deployed for your business. From audit to full deployment.",
     "url": "https://particulatellc.com/consulting/",
     "email": "hello@particulatellc.com",
@@ -440,47 +522,8 @@
         "name": "AI Agent Setup"
       }
     ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are these real people or AI agents?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our consultations are AI-powered with human oversight. You get the speed and availability of AI with the quality control of a real team reviewing key outputs. Think of it as an expert system that works 24/7, with humans checking the important stuff."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I need help from a real professional?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We'll tell you honestly when a situation requires a licensed professional — CPA, attorney, financial advisor, or medical professional. We don't try to be what we're not. Our job is to get you organized and informed so you can make the most of professional help when you need it."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly do I get my results?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Quick Check tier: within 24 hours. All other tiers: within 24-48 hours of intake submission. Premium and Advocate tiers include ongoing support for the duration specified."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is my information secure?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. We use Stripe for payment processing (we never see your card details) and industry-standard encryption for data in transit. We don't sell or share your information. Our full privacy policy is at particulatellc.com/privacy-policy/."
-        }
-      }
-    ]
   }
-]
-  </script>
+]</script>
 
   <script>
     // Smooth scroll for anchor links

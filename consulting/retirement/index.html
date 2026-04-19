@@ -138,7 +138,90 @@
     .faq-item.open p { display: block; }
     .faq-item:hover h3 { color: var(--accent); }
   </style>
-</head>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is AI retirement planning consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI retirement planning uses artificial intelligence to analyze your savings, investments, timeline, and risk tolerance to create a personalized retirement strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does retirement planning cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Particulate offers Basic ($29), Standard ($79), and Premium ($499) tiers. Each includes personalized projections and NJ-specific considerations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do I need to retire in NJ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NJ has above-average costs of living and property taxes. A comfortable retirement typically requires $1.2-2M in savings. Our consultation calculates your specific number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I start planning for retirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Now. Every year you delay costs approximately $50,000+ in compound growth. Our consultation shows the exact impact of starting now versus waiting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What NJ-specific retirement programs exist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NJ offers the NJBEST 529 plan, PERS for state workers, and NJ FamilyCare for healthcare. Our consultation identifies programs relevant to your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a Roth or Traditional IRA better for NJ residents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your current vs. expected retirement tax bracket. NJ doesn't tax IRA contributions but does tax Traditional IRA withdrawals. Our analysis recommends the optimal strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI retirement planning compare to a financial advisor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI consultation provides data-driven analysis and projections. Financial advisors provide personalized portfolio management and fiduciary duty. Our consultation is the analytical foundation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the Premium retirement plan include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Premium tier ($499) includes a comprehensive financial plan, Monte Carlo simulations, Social Security optimization, tax-efficient withdrawal strategy, and 90 days of support."
+      }
+    }
+  ]
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    ".service-description",
+    ".pricing-card h3",
+    ".faq-item h3"
+  ],
+  "xpath": [
+    "/html/head/title",
+    "/html/head/meta[@name='description']/@content"
+  ]
+}</script>
+  </head>
 <body>
   <nav>
     <div class="logo">Particulate<span>.</span></div>
@@ -359,13 +442,12 @@
     </div>
   </footer>
 
-  <script type="application/ld+json">
-[
+  <script type="application/ld+json">[
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Particulate LLC — AI Retirement Planning Consultation",
-    "description": "AI-powered retirement planning — Social Security optimization, 401k/Roth strategies, and withdrawal planning.",
+    "name": "Particulate LLC \u2014 AI Retirement Planning Consultation",
+    "description": "AI-powered retirement planning \u2014 Social Security optimization, 401k/Roth strategies, and withdrawal planning.",
     "url": "https://particulatellc.com/consulting/retirement/",
     "email": "hello@particulatellc.com",
     "address": {
@@ -405,47 +487,8 @@
         "name": "AI Retirement Planning"
       }
     ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is this investment advice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We don't recommend specific stocks, funds, or investment strategies. We help you organize your retirement picture, understand your options (401k, IRA, Roth, Social Security timing), and create a plan you can take to a fiduciary financial advisor."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between this and a financial advisor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A financial advisor manages your money and charges 1%+ of assets under management. We charge a flat fee to analyze your situation, explain your options, and give you a written roadmap. Think of us as the prep work before (or alongside) professional management."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you help with Social Security timing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — this is one of the most impactful retirement decisions. Claiming at 62 vs. 67 vs. 70 can mean $100,000+ difference in lifetime benefits. We analyze your situation and show you the math."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you cover NJ-specific retirement considerations?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. NJ has some of the highest property taxes in the US, no Social Security tax but high income tax on retirement withdrawals, and specific pension exclusion rules. We factor all of this into your plan."
-        }
-      }
-    ]
   }
-]
-  </script>
+]</script>
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => {

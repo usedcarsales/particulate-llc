@@ -148,7 +148,90 @@
     .faq-item.open p { display: block; }
     .faq-item:hover h3 { color: var(--accent); }
   </style>
-</head>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is AI tax consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI tax consultation uses artificial intelligence to analyze your income, deductions, and NJ-specific tax rules to maximize your refund or minimize your liability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does tax consultation cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Particulate offers Standard ($29), Professional ($79), and Premium ($199) tiers. Each includes NJ-specific deduction analysis and filing recommendations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What NJ tax deductions am I missing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common missed NJ deductions include property tax deductions, NJ Earned Income Tax Credit, student loan interest, home office expenses, and SALT workarounds for high-earners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to file NJ state taxes if I work in PA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you live in NJ. However, NJ and PA have a reciprocal tax agreement. Our consultation explains how this affects your filing situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the NJ SALT deduction cap workaround?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NJ allows pass-through entity owners to bypass the $10,000 federal SALT cap via the PTBAIT. Our consultation analyzes if this applies to your business structure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI replace my CPA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI consultation provides analysis and recommendations, but complex filings still benefit from a licensed CPA. We identify when you need professional help."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the NJ tax bracket for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NJ has progressive income tax rates from 1.4% to 10.75%. Our consultation includes bracket analysis and optimization strategies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Particulate tax consultation different from TurboTax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurboTax helps you file. We help you plan. Our consultation focuses on strategy \u2014 deductions you're missing, timing of income/expenses, entity structure optimization."
+      }
+    }
+  ]
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    ".service-description",
+    ".pricing-card h3",
+    ".faq-item h3"
+  ],
+  "xpath": [
+    "/html/head/title",
+    "/html/head/meta[@name='description']/@content"
+  ]
+}</script>
+  </head>
 <body>
   <nav>
     <div class="logo">Particulate<span>.</span></div>
@@ -420,12 +503,11 @@
     <p style="margin-top:0.5rem;font-size:11px;color:var(--muted)">Particulate LLC is a technology and education company registered in New Jersey. AI agent consultations are disclosed as AI-powered services with human oversight.</p>
   </footer>
 
-  <script type="application/ld+json">
-[
+  <script type="application/ld+json">[
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Particulate LLC — AI Tax & Accounting",
+    "name": "Particulate LLC \u2014 AI Tax & Accounting",
     "description": "AI-powered bookkeeping, tax preparation help, and deduction discovery for solopreneurs, small businesses, and side hustle owners.",
     "url": "https://particulatellc.com/consulting/tax/",
     "email": "hello@particulatellc.com",
@@ -466,47 +548,8 @@
         "name": "AI Tax & Accounting"
       }
     ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is this tax filing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We don't file your taxes. We help you organize your financial information, identify deductions and credits you might be missing, and prepare a clean package for your CPA or tax software. Think of it as pre-filing optimization."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you replace my CPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No — but we can make your CPA's job easier and potentially cheaper. When you come prepared with organized documents and identified deductions, your CPA spends less time (and charges you less) while finding more savings."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What NJ-specific tax situations do you cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "NJ has unique rules: high property taxes with limited deduction options, no city-level tax but state income tax brackets that matter, specific business expense categories, and the PA/NJ reciprocal tax agreement for cross-border workers. We know these inside and out."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What do you need from me to get started?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For the Snapshot: last year's tax return and a brief description of your situation. For the Full Review: we'll send a detailed checklist covering income sources, deductions, business expenses, and life changes that affect your tax picture."
-        }
-      }
-    ]
   }
-]
-  </script>
+]</script>
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => {
