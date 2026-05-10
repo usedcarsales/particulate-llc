@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free AI-powered business audit for NJ small businesses. Get a 60-second assessment of your operations, growth gaps, and AI readiness." />
+  <meta property="og:title" content="Free AI Business Audit — Particulate LLC" />
+  <meta property="og:description" content="60-second assessment: operations, growth gaps, and AI readiness for your NJ small business." />
+  <link rel="canonical" href="https://particulatellc.com/consulting/audit/" />
+  <title>Free AI Business Audit — Particulate LLC | Burlington County, NJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --surface2: #10101a;
+      --border: #1a1a28;
+      --accent: #6366f1;
+      --accent2: #818cf8;
+      --accent3: #a5b4fc;
+      --glow: rgba(99, 102, 241, 0.15);
+      --text: #e8e8f4;
+      --muted: #7070a0;
+      --card: #0e0e18;
+      --green: #22c55e;
+      --green-glow: rgba(34, 197, 94, 0.15);
+      --orange: #f59e0b;
+      --red: #ef4444;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(5,5,8,0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; text-decoration: none; color: var(--text); }
+    .logo span { color: var(--accent2); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+    .hero { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2.6rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin: 0 auto 2rem; }
+    .hero .badge { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--green-glow); color: var(--green); font-size: 0.75rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 20px; border: 1px solid rgba(34,197,94,0.25); margin-bottom: 1.5rem; }
+
+    .audit-card { max-width: 640px; margin: 0 auto 4rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+    .progress { display: flex; gap: 0.4rem; margin-bottom: 2rem; }
+    .progress-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; transition: background 0.3s; }
+    .progress-bar.active { background: var(--accent); }
+
+    .question { display: none; }
+    .question.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .question h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .question .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+    .options { display: flex; flex-direction: column; gap: 0.6rem; }
+    .option { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; cursor: pointer; transition: border-color 0.2s, background 0.2s; font-size: 0.95rem; display: flex; align-items: center; gap: 0.75rem; }
+    .option:hover { border-color: var(--accent); background: var(--surface); }
+    .option .radio { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 50%; flex-shrink: 0; transition: border-color 0.2s, background 0.2s; }
+    .option.selected .radio { border-color: var(--accent); background: var(--accent); }
+    .option.selected { border-color: var(--accent); background: rgba(99,102,241,0.08); }
+
+    .nav-buttons { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+    .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent2); }
+    .btn-secondary { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+    .btn-secondary:hover { color: var(--text); border-color: var(--accent); }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* Results */
+    .results { display: none; }
+    .results.active { display: block; animation: fadeIn 0.5s ease; }
+    .score-ring { width: 160px; height: 160px; margin: 0 auto 2rem; position: relative; }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring .track { fill: none; stroke: var(--border); stroke-width: 8; }
+    .score-ring .fill { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; transition: stroke-dasharray 1.5s ease; }
+    .score-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .score-num { font-size: 2.4rem; font-weight: 900; }
+    .score-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .grade { text-align: center; margin-bottom: 2rem; }
+    .grade h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .grade p { color: var(--muted); max-width: 480px; margin: 0 auto; }
+
+    .pillars { display: grid; gap: 1rem; margin-bottom: 2rem; }
+    .pillar { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+    .pillar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .pillar-name { font-weight: 600; font-size: 0.9rem; }
+    .pillar-score { font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 6px; }
+    .pillar-score.high { color: var(--green); background: var(--green-glow); }
+    .pillar-score.mid { color: var(--orange); background: rgba(245,158,11,0.12); }
+    .pillar-score.low { color: var(--red); background: rgba(239,68,68,0.12); }
+    .pillar-desc { color: var(--muted); font-size: 0.85rem; }
+
+    .actions { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem; }
+    .actions h4 { font-size: 1rem; margin-bottom: 1rem; }
+    .actions ul { list-style: none; }
+    .actions li { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.5rem 0; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+    .actions li:last-child { border-bottom: none; }
+    .actions li .check { width: 18px; height: 18px; border-radius: 50%; background: var(--green-glow); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; margin-top: 2px; }
+
+    .cta-box { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(99,102,241,0.03)); border: 1px solid var(--accent); border-radius: 12px; padding: 2rem; text-align: center; }
+    .cta-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .cta-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+    .price-tag { font-size: 2rem; font-weight: 900; margin-bottom: 0.25rem; }
+    .price-tag span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+
+    .email-capture { margin-bottom: 1.5rem; }
+    .email-capture input { width: 100%; padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .email-capture input:focus { outline: none; border-color: var(--accent); }
+    .email-capture .btn { width: 100%; justify-content: center; }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--muted); }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .audit-card { padding: 1.5rem; margin: 0 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Particulate <span>LLC</span></a>
+  <div class="nav-links">
+    <a href="/consulting/">Consulting</a>
+    <a href="/services.html">Services</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">✓ Free — takes 60 seconds</div>
+  <h1>How <span>AI-Ready</span> Is Your Business?</h1>
+  <p>10 questions. Instant score. Personalized action plan for NJ small businesses looking to automate, grow, and compete.</p>
+</section>
+
+<section class="audit-card" id="audit-card">
+  <div class="progress" id="progress"></div>
+
+  <!-- Questions -->
+  <div id="questions"></div>
+
+  <!-- Email capture before results -->
+  <div class="question" id="email-step">
+    <h3>Almost there — where should we send your report?</h3>
+    <p class="sub">Get your full score breakdown + action plan delivered to your inbox.</p>
+    <form class="email-capture" id="email-form" action="https://formspree.io/f/movqjqjd" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required id="email-input" />
+      <input type="hidden" name="audit_score" id="hidden-score" />
+      <input type="hidden" name="audit_grade" id="hidden-grade" />
+      <input type="hidden" name="_subject" value="New AI Business Audit Submission" />
+      <button type="submit" class="btn btn-primary" id="email-submit">Send My Report →</button>
+    </form>
+    <div style="text-align:center;">
+      <button class="btn btn-secondary" id="skip-email">Skip — show results now</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="score-ring">
+      <svg width="160" height="160" viewBox="0 0 160 160">
+        <circle class="track" cx="80" cy="80" r="72" />
+        <circle class="fill" id="score-fill" cx="80" cy="80" r="72" stroke-dasharray="452" stroke-dashoffset="452" />
+      </svg>
+      <div class="score-text">
+        <div class="score-num" id="score-num">0</div>
+        <div class="score-label">AI Readiness</div>
+      </div>
+    </div>
+
+    <div class="grade">
+      <h2 id="grade-title">Calculating...</h2>
+      <p id="grade-desc"></p>
+    </div>
+
+    <div class="pillars" id="pillars"></div>
+
+    <div class="actions">
+      <h4>🎯 Your Action Plan</h4>
+      <ul id="action-list"></ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>Want a deeper dive?</h3>
+      <p>Get a full AI Business Audit with custom agent recommendations, implementation roadmap, and 90-day growth plan.</p>
+      <div class="price-tag">$99 <span>one-time</span></div>
+      <a href="/consulting/" class="btn btn-primary" style="margin-top:0.75rem;">Book Paid Audit →</a>
+      <p style="margin-top:0.75rem; font-size:0.8rem; color:var(--muted);">Or start with our $49 Starter Agent Setup</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons" id="nav-buttons">
+    <button class="btn btn-secondary" id="btn-prev" disabled>← Back</button>
+    <button class="btn btn-primary" id="btn-next" disabled>Next →</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Particulate LLC · Burlington County, NJ · <a href="/privacy-policy/">Privacy</a></p>
+</footer>
+
+<script>
+const questions = [
+  {
+    id: "systems",
+    title: "How do you currently track customers and leads?",
+    sub: "CRM, spreadsheets, sticky notes, or nothing?",
+    options: [
+      { label: "No system — everything is in my head or texts", score: 0 },
+      { label: "Spreadsheets or basic lists", score: 25 },
+      { label: "A CRM (HubSpot, Salesforce, etc.)", score: 50 },
+      { label: "CRM + automations (email sequences, Zapier)", score: 75 },
+      { label: "CRM + automations + AI tools already running", score: 100 },
+    ],
+    pillar: "operations",
+  },
+  {
+    id: "website",
+    title: "Does your business have a working website?",
+    sub: "Active, loads fast, and converts visitors?",
+    options: [
+      { label: "No website at all", score: 0 },
+      { label: "Basic page / social media only", score: 20 },
+      { label: "Website exists but outdated or slow", score: 40 },
+      { label: "Modern site with basic SEO", score: 70 },
+      { label: "Optimized site + analytics + conversion tracking", score: 100 },
+    ],
+    pillar: "marketing",
+  },
+  {
+    id: "content",
+    title: "How often do you publish content or communicate with customers?",
+    sub: "Emails, social posts, blog, SMS — anything.",
+    options: [
+      { label: "Rarely or never", score: 0 },
+      { label: "Once a month", score: 20 },
+      { label: "Weekly", score: 50 },
+      { label: "Multiple times per week", score: 75 },
+      { label: "Daily + automated sequences running", score: 100 },
+    ],
+    pillar: "marketing",
+  },
+  {
+    id: "hours",
+    title: "How many hours per week do you spend on repetitive admin tasks?",
+    sub: "Invoicing, scheduling, data entry, follow-ups.",
+    options: [
+      { label: "20+ hours", score: 0 },
+      { label: "10–20 hours", score: 25 },
+      { label: "5–10 hours", score: 50 },
+      { label: "2–5 hours", score: 75 },
+      { label: "Under 2 hours (mostly automated)", score: 100 },
+    ],
+    pillar: "operations",
+  },
+  {
+    id: "reviews",
+    title: "What's your current online review situation?",
+    sub: "Google, Yelp, Facebook — average rating and volume.",
+    options: [
+      { label: "Fewer than 10 reviews or no profile", score: 0 },
+      { label: "10–50 reviews, mixed ratings", score: 25 },
+      { label: "50+ reviews, 4+ stars", score: 60 },
+      { label: "100+ reviews, 4.5+ stars, respond to all", score: 85 },
+      { label: "Actively generating reviews + monitoring sentiment", score: 100 },
+    ],
+    pillar: "marketing",
+  },
+  {
+    id: "data",
+    title: "Do you track any business metrics regularly?",
+    sub: "Revenue, margins, customer acquisition cost, churn.",
+    options: [
+      { label: "I just check the bank account", score: 0 },
+      { label: "Basic revenue tracking", score: 25 },
+      { label: "Revenue + expenses monthly", score: 50 },
+      { label: "P&L + CAC + LTV tracked", score: 75 },
+      { label: "Live dashboard with alerts and forecasting", score: 100 },
+    ],
+    pillar: "finance",
+  },
+  {
+    id: "competition",
+    title: "How aware are you of what your competitors are doing?",
+    sub: "Pricing, marketing, new services, reviews.",
+    options: [
+      { label: "No idea", score: 0 },
+      { label: "I check occasionally", score: 25 },
+      { label: "I know their pricing and positioning", score: 50 },
+      { label: "I monitor their moves monthly", score: 75 },
+      { label: "Real-time monitoring + competitive alerts", score: 100 },
+    ],
+    pillar: "strategy",
+  },
+  {
+    id: "tech_stack",
+    title: "How would you describe your current tech stack?",
+    sub: "The tools and software you rely on daily.",
+    options: [
+      { label: "Email + phone calls only", score: 0 },
+      { label: "Basic tools (Google Workspace, QuickBooks)", score: 25 },
+      { label: "Integrated stack (5+ tools that talk to each other)", score: 60 },
+      { label: "Cloud-native with APIs and webhooks", score: 80 },
+      { label: "AI-augmented stack (copilots, agents, automations)", score: 100 },
+    ],
+    pillar: "operations",
+  },
+  {
+    id: "growth",
+    title: "What's your primary growth bottleneck right now?",
+    sub: "The #1 thing holding you back.",
+    options: [
+      { label: "Not enough leads / customers", score: 20, action: "Lead generation & SEO" },
+      { label: "Leads come in but I can't close them fast enough", score: 40, action: "Sales automation & follow-up sequences" },
+      { label: "Too much manual work, can't scale", score: 60, action: "Operations automation & AI agents" },
+      { label: "Cash flow / pricing pressure", score: 30, action: "Pricing strategy & financial forecasting" },
+      { label: "I'm growing but operations are breaking", score: 70, action: "Systems architecture & scalable processes" },
+    ],
+    pillar: "strategy",
+  },
+  {
+    id: "ai_openness",
+    title: "How open is your team to using AI tools?",
+    sub: "Yourself included — be honest.",
+    options: [
+      { label: "Skeptical or resistant", score: 0 },
+      { label: "Curious but unsure where to start", score: 30 },
+      { label: "Tried ChatGPT a few times", score: 50 },
+      { label: "Using AI for writing / research regularly", score: 75 },
+      { label: "Actively deploying AI for business processes", score: 100 },
+    ],
+    pillar: "strategy",
+  },
+];
+
+const pillarLabels = {
+  operations: "Operations & Systems",
+  marketing: "Marketing & Presence",
+  finance: "Finance & Metrics",
+  strategy: "Strategy & Growth",
+};
+
+let current = 0;
+let answers = [];
+let selectedOption = null;
+
+function renderProgress() {
+  const el = document.getElementById('progress');
+  el.innerHTML = questions.map((_, i) =>
+    `<div class="progress-bar ${i <= current ? 'active' : ''}"></div>`
+  ).join('');
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  const container = document.getElementById('questions');
+  container.innerHTML = `
+    <div class="question active" id="q-${current}">
+      <h3>${current + 1}. ${q.title}</h3>
+      <p class="sub">${q.sub}</p>
+      <div class="options">${q.options.map((opt, idx) => `
+        <div class="option" data-idx="${idx}" onclick="selectOption(${idx})">
+          <div class="radio"></div>
+          <span>${opt.label}</span>
+        </div>
+      `).join('')}</div>
+    </div>
+  `;
+  selectedOption = null;
+  document.getElementById('btn-next').disabled = true;
+}
+
+function selectOption(idx) {
+  selectedOption = idx;
+  document.querySelectorAll('.option').forEach((el, i) => {
+    el.classList.toggle('selected', i === idx);
+  });
+  document.getElementById('btn-next').disabled = false;
+}
+
+function showEmailStep() {
+  document.getElementById('questions').innerHTML = '';
+  document.getElementById('email-step').classList.add('active');
+  document.getElementById('nav-buttons').style.display = 'none';
+}
+
+function computeResults() {
+  const pillars = { operations: [], marketing: [], finance: [], strategy: [] };
+  let totalScore = 0;
+  const actions = [];
+
+  answers.forEach((a, i) => {
+    const q = questions[i];
+    const opt = q.options[a];
+    pillars[q.pillar].push(opt.score);
+    totalScore += opt.score;
+    if (opt.action) actions.push(opt.action);
+  });
+
+  const avg = Math.round(totalScore / questions.length);
+
+  const pillarScores = {};
+  Object.keys(pillars).forEach(k => {
+    const vals = pillars[k];
+    pillarScores[k] = vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : 0;
+  });
+
+  let grade, title, desc;
+  if (avg >= 80) { grade = 'A'; title = "AI-First Operator"; desc = "You're already ahead of most NJ small businesses. The next step is adding predictive AI agents and advanced automation."; }
+  else if (avg >= 60) { grade = 'B'; title = "Solid Foundation"; desc = "You have good systems in place. Targeted AI tools can unlock the next growth tier without disrupting what works."; }
+  else if (avg >= 40) { grade = 'C'; title = "Growing Pains"; desc = "Common for scaling businesses. A few strategic automations and an AI assistant would save 10+ hours/week."; }
+  else if (avg >= 20) { grade = 'D'; title = "Early Stage"; desc = "You're building from the ground up — perfect time to bake in AI from day one instead of retrofitting later."; }
+  else { grade = 'F'; title = "Starting Line"; desc = "Every business starts here. The good news: AI can help you leapfrog competitors who are stuck in old habits."; }
+
+  return { avg, grade, title, desc, pillarScores, actions };
+}
+
+function showResults() {
+  document.getElementById('email-step').classList.remove('active');
+  document.getElementById('results').classList.add('active');
+  document.getElementById('nav-buttons').style.display = 'none';
+
+  const r = computeResults();
+
+  // Animate score
+  const fill = document.getElementById('score-fill');
+  const circumference = 2 * Math.PI * 72;
+  const offset = circumference - (r.avg / 100) * circumference;
+  setTimeout(() => { fill.style.strokeDashoffset = offset; }, 100);
+
+  let displayed = 0;
+  const numEl = document.getElementById('score-num');
+  const timer = setInterval(() => {
+    displayed += 2;
+    if (displayed >= r.avg) { displayed = r.avg; clearInterval(timer); }
+    numEl.textContent = displayed;
+  }, 20);
+
+  document.getElementById('grade-title').textContent = `${r.grade} — ${r.title}`;
+  document.getElementById('grade-desc').textContent = r.desc;
+
+  // Pillars
+  const pillarsEl = document.getElementById('pillars');
+  pillarsEl.innerHTML = Object.entries(r.pillarScores).map(([k, v]) => {
+    const cls = v >= 70 ? 'high' : v >= 40 ? 'mid' : 'low';
+    let bar = '';
+    if (v < 40) bar = 'Significant opportunity here';
+    else if (v < 70) bar = 'Solid — a few upgrades unlock major gains';
+    else bar = 'Strong — maintain and optimize';
+    return `
+      <div class="pillar">
+        <div class="pillar-header">
+          <span class="pillar-name">${pillarLabels[k]}</span>
+          <span class="pillar-score ${cls}">${v}/100</span>
+        </div>
+        <div class="pillar-desc">${bar}</div>
+      </div>
+    `;
+  }).join('');
+
+  // Actions
+  const actionList = document.getElementById('action-list');
+  const defaultActions = [
+    "Set up a CRM with automated follow-ups",
+    "Claim and optimize your Google Business Profile",
+    "Implement one AI tool for your biggest time sink",
+    "Start tracking CAC and LTV monthly",
+    "Book a free 15-minute AI readiness call",
+  ];
+  const allActions = [...new Set([...r.actions, ...defaultActions])];
+  actionList.innerHTML = allActions.slice(0, 5).map(a => `
+    <li><span class="check">✓</span> ${a}</li>
+  `).join('');
+}
+
+document.getElementById('btn-next').addEventListener('click', () => {
+  if (selectedOption === null) return;
+  answers.push(selectedOption);
+  current++;
+  if (current >= questions.length) {
+    showEmailStep();
+    const r = computeResults();
+    document.getElementById('hidden-score').value = r.avg;
+    document.getElementById('hidden-grade').value = r.grade;
+    renderProgress();
+    return;
+  }
+  renderProgress();
+  renderQuestion();
+  document.getElementById('btn-prev').disabled = false;
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (current <= 0) return;
+  current--;
+  answers.pop();
+  renderProgress();
+  renderQuestion();
+  if (current === 0) document.getElementById('btn-prev').disabled = true;
+});
+
+document.getElementById('skip-email').addEventListener('click', showResults);
+
+document.getElementById('email-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('email-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  fetch(e.target.action, {
+    method: 'POST',
+    body: new FormData(e.target),
+    headers: { Accept: 'application/json' },
+  }).then(() => {
+    showResults();
+  }).catch(() => {
+    showResults();
+  });
+});
+
+renderProgress();
+renderQuestion();
+</script>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Free AI Business Audit",
+  "description": "Free 60-second AI readiness assessment for NJ small businesses.",
+  "url": "https://particulatellc.com/consulting/audit/",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+
+
+</body>
+</html>
