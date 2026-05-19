@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Particulate Analytics Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050508; --surface: #0c0c14; --border: #1a1a28;
+      --accent: #8b5cf6; --accent2: #a78bfa; --text: #e8e8f4; --muted: #7070a0;
+      --green: #4ade80; --red: #f87171; --gold: #f59e0b; --blue: #60a5fa;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent2); }
+    .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .card h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem; }
+    .card .value { font-size: 2rem; font-weight: 800; }
+    .card .value.green { color: var(--green); }
+    .card .value.blue { color: var(--blue); }
+    .card .value.gold { color: var(--gold); }
+    .card .value.accent { color: var(--accent2); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+    th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    tr:hover td { background: rgba(139, 92, 246, 0.05); }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+    .tag-checkout { background: rgba(139, 92, 246, 0.2); color: var(--accent2); }
+    .tag-form { background: rgba(74, 222, 128, 0.2); color: var(--green); }
+    .tag-cta { background: rgba(96, 165, 250, 0.2); color: var(--blue); }
+    .tag-scroll { background: rgba(245, 158, 11, 0.2); color: var(--gold); }
+    .empty { text-align: center; padding: 3rem; color: var(--muted); }
+    .refresh-btn { background: var(--accent); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.875rem; }
+    .refresh-btn:hover { opacity: 0.9; }
+    .bar { height: 6px; border-radius: 3px; background: var(--border); margin-top: 0.5rem; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: var(--accent2); transition: width 0.3s ease; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <div>
+        <h1>📊 Particulate Analytics</h1>
+        <p class="subtitle">Consulting page performance — <span id="dateRange">last 30 days</span></p>
+      </div>
+      <button class="refresh-btn" onclick="refreshDashboard()">↻ Refresh</button>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="grid" id="summaryCards">
+      <div class="card">
+        <h3>Total Page Views</h3>
+        <div class="value blue" id="totalViews">0</div>
+      </div>
+      <div class="card">
+        <h3>Checkout Clicks</h3>
+        <div class="value accent" id="totalCheckouts">0</div>
+      </div>
+      <div class="card">
+        <h3>Form Submissions</h3>
+        <div class="value green" id="totalForms">0</div>
+      </div>
+      <div class="card">
+        <h3>Conversion Rate</h3>
+        <div class="value gold" id="conversionRate">0%</div>
+      </div>
+    </div>
+
+    <!-- Checkout Breakdown by Tier -->
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>💳 Checkout Clicks by Tier</h2>
+      <table>
+        <thead>
+          <tr><th>Price ID</th><th>Page</th><th>Clicks</th><th>Share</th></tr>
+        </thead>
+        <tbody id="checkoutTable">
+          <tr><td colspan="4" class="empty">No checkout clicks recorded yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Page Performance -->
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>📄 Page Performance</h2>
+      <table>
+        <thead>
+          <tr><th>Page</th><th>Views</th><th>CTA Clicks</th><th>Scroll 75%+</th><th>Conv. Rate</th></tr>
+        </thead>
+        <tbody id="pageTable">
+          <tr><td colspan="5" class="empty">No page views recorded yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Top Referrers -->
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>🔗 Top Referrers</h2>
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Visits</th><th>Share</th></tr>
+        </thead>
+        <tbody id="referrerTable">
+          <tr><td colspan="3" class="empty">No referrer data yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Recent Events -->
+    <div class="card">
+      <h2>🕐 Recent Events (last 50)</h2>
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Event</th><th>Details</th><th>Page</th></tr>
+        </thead>
+        <tbody id="eventsTable">
+          <tr><td colspan="4" class="empty">No events recorded yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="/js/analytics.js"></script>
+  <script>
+    function refreshDashboard() {
+      if (!window.ParticulateAnalytics) {
+        document.querySelectorAll('.value, tbody').forEach(el => {
+          if (el.classList.contains('value')) el.textContent = '⚠️';
+          else el.innerHTML = '<tr><td colspan="4" class="empty">Analytics script not loaded. Visit some consulting pages first.</td></tr>';
+        });
+        return;
+      }
+      
+      const summary = window.ParticulateAnalytics.getSummary();
+      const stored = JSON.parse(localStorage.getItem('particulate_analytics') || '{}');
+      
+      // Summary cards
+      const totalViews = Object.values(summary.pageViews).reduce((a, b) => a + b, 0);
+      const totalCheckouts = Object.values(summary.checkoutClicks).reduce((a, b) => a + b, 0);
+      const totalForms = Object.values(summary.formSubmits).reduce((a, b) => a + b, 0);
+      const convRate = totalViews > 0 ? ((totalCheckouts / totalViews) * 100).toFixed(1) : '0';
+      
+      document.getElementById('totalViews').textContent = totalViews;
+      document.getElementById('totalCheckouts').textContent = totalCheckouts;
+      document.getElementById('totalForms').textContent = totalForms;
+      document.getElementById('conversionRate').textContent = convRate + '%';
+      
+      // Checkout table
+      const checkoutRows = Object.entries(summary.checkoutClicks)
+        .sort((a, b) => b[1] - a[1])
+        .map(([priceId, clicks]) => {
+          const pct = totalCheckouts > 0 ? ((clicks / totalCheckouts) * 100).toFixed(1) : '0';
+          return `<tr>
+            <td><code>${priceId}</code></td>
+            <td>—</td>
+            <td>${clicks}</td>
+            <td><div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>${pct}%</td>
+          </tr>`;
+        });
+      document.getElementById('checkoutTable').innerHTML = checkoutRows.length > 0
+        ? checkoutRows.join('')
+        : '<tr><td colspan="4" class="empty">No checkout clicks recorded yet</td></tr>';
+      
+      // Page table
+      const allPages = new Set([...Object.keys(summary.pageViews), ...Object.keys(summary.ctaClicks)]);
+      const pageRows = Array.from(allPages).sort().map(page => {
+        const views = summary.pageViews[page] || 0;
+        const ctas = summary.ctaClicks[page] || 0;
+        // Calculate scroll 75% for this page
+        let scroll75 = 0;
+        Object.values(stored).flat().forEach(e => {
+          if (e.name === 'scroll_depth' && e.data?.percent === 75 && e.url === page) scroll75++;
+        });
+        const rate = views > 0 ? ((ctas / views) * 100).toFixed(1) + '%' : '—';
+        return `<tr>
+          <td>${page}</td>
+          <td>${views}</td>
+          <td>${ctas}</td>
+          <td>${scroll75}</td>
+          <td>${rate}</td>
+        </tr>`;
+      });
+      document.getElementById('pageTable').innerHTML = pageRows.length > 0
+        ? pageRows.join('')
+        : '<tr><td colspan="5" class="empty">No page views recorded yet</td></tr>';
+      
+      // Referrer table
+      const refRows = Object.entries(summary.topReferrers)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10)
+        .map(([ref, count]) => {
+          const total = Object.values(summary.topReferrers).reduce((a, b) => a + b, 0);
+          const pct = total > 0 ? ((count / total) * 100).toFixed(1) : '0';
+          const display = ref === 'direct' ? 'Direct / Bookmark' : ref.replace(/^https?:\/\//, '').split('/')[0];
+          return `<tr><td>${display}</td><td>${count}</td><td><div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>${pct}%</td></tr>`;
+        });
+      document.getElementById('referrerTable').innerHTML = refRows.length > 0
+        ? refRows.join('')
+        : '<tr><td colspan="3" class="empty">No referrer data yet</td></tr>';
+      
+      // Recent events
+      const allEvents = Object.values(stored).flat().sort((a, b) => b.timestamp.localeCompare(a.timestamp)).slice(0, 50);
+      const eventRows = allEvents.map(e => {
+        const tagClass = e.name === 'stripe_checkout_click' ? 'tag-checkout'
+          : e.name === 'formspree_submit' ? 'tag-form'
+          : e.name === 'cta_click' ? 'tag-cta'
+          : e.name === 'scroll_depth' ? 'tag-scroll'
+          : '';
+        const details = e.data ? JSON.stringify(e.data).substring(0, 80) : '';
+        const time = new Date(e.timestamp).toLocaleString();
+        return `<tr>
+          <td style="white-space:nowrap">${time}</td>
+          <td><span class="tag ${tagClass}">${e.name.replace(/_/g, ' ')}</span></td>
+          <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis">${details}</td>
+          <td>${e.url}</td>
+        </tr>`;
+      });
+      document.getElementById('eventsTable').innerHTML = eventRows.length > 0
+        ? eventRows.join('')
+        : '<tr><td colspan="4" class="empty">No events recorded yet</td></tr>';
+    }
+    
+    // Auto-refresh on load
+    refreshDashboard();
+    // Auto-refresh every 30 seconds
+    setInterval(refreshDashboard, 30000);
+  </script>
+</body>
+</html>
