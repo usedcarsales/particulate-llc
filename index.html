@@ -876,51 +876,29 @@
 
         <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
-            <label for="sp-business-name" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Business Name *</label>
-            <input type="text" id="sp-business-name" name="business_name" required placeholder="Acme Corp" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
+            <label for="sp-contact-name" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Contact Name *</label>
+            <input type="text" id="sp-contact-name" name="contact_name" required placeholder="Jane Smith" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
           </div>
           <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
-            <label for="sp-email" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Business Email *</label>
-            <input type="email" id="sp-email" name="email" required placeholder="you@business.com" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
+            <label for="sp-phone" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Phone Number *</label>
+            <input type="tel" id="sp-phone" name="phone" required placeholder="(555) 123-4567" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
           </div>
         </div>
 
         <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
-            <label for="sp-industry" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Industry *</label>
-            <select id="sp-industry" name="industry" required style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;cursor:pointer;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'">
-              <option value="" disabled selected style="color:var(--muted);">Select your industry</option>
-              <option value="automotive">Automotive</option>
-              <option value="healthcare">Healthcare</option>
-              <option value="legal">Legal / Law</option>
-              <option value="finance">Finance / Accounting</option>
-              <option value="real-estate">Real Estate</option>
-              <option value="retail">Retail / E-commerce</option>
-              <option value="food-beverage">Food &amp; Beverage</option>
-              <option value="home-services">Home Services</option>
-              <option value="consulting">Consulting / Coaching</option>
-              <option value="technology">Technology / SaaS</option>
-              <option value="other">Other</option>
-            </select>
+            <label for="sp-email" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Email Address *</label>
+            <input type="email" id="sp-email" name="email" required placeholder="you@business.com" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
           </div>
           <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
-            <label for="sp-bot-purpose" style="font-size:0.82rem;font-weight:600;color:var(--muted);">What should your bot do? *</label>
-            <select id="sp-bot-purpose" name="bot_purpose" required style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;cursor:pointer;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'">
-              <option value="" disabled selected style="color:var(--muted);">Select primary function</option>
-              <option value="lead-qualification">Qualify &amp; capture leads</option>
-              <option value="customer-support">Answer customer questions</option>
-              <option value="appointment-booking">Book appointments</option>
-              <option value="product-recommendations">Recommend products</option>
-              <option value="faq">Handle FAQs</option>
-              <option value="onboarding">Onboard new clients</option>
-              <option value="custom">Something custom</option>
-            </select>
+            <label for="sp-business-name" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Business Name</label>
+            <input type="text" id="sp-business-name" name="business_name" placeholder="Acme Corp" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
           </div>
         </div>
 
         <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem;">
-          <label for="sp-details" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Anything else we should know?</label>
-          <textarea id="sp-details" name="extra_details" rows="3" placeholder="Tell us about your current pain points, tools you use, or specific features you need..." style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;resize:vertical;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+          <label for="sp-details" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Notes / Requests / Comments</label>
+          <textarea id="sp-details" name="notes" rows="4" placeholder="Tell us about your current pain points, what you'd like your bot to do, tools you use, or anything else..." style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;resize:vertical;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem 2rem;font-size:1rem;">
