@@ -860,6 +860,82 @@
 
   <hr class="divider" />
 
+  <!-- SKILLPACK GENERATOR -->
+  <section class="skillpack-section" id="skillpack" style="max-width:800px;margin:0 auto;padding:5.5rem 2rem;text-align:center;">
+    <div class="section-eyebrow" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);color:var(--accent3);font-size:0.78rem;font-weight:600;padding:0.4rem 1rem;border-radius:999px;margin-bottom:2.25rem;letter-spacing:0.06em;text-transform:uppercase;">🤖 Free Offer</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,4.5vw,3.2rem);">Get Your Free SkillPack</h2>
+    <p class="section-desc" style="max-width:560px;margin:0 auto 2.5rem;font-size:1.05rem;">
+      Build a custom AI chat bot for your business in minutes. No code required. We train and deploy it — you get the first version within 24 hours.
+    </p>
+
+    <div class="skillpack-card" style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;text-align:left;">
+      <form action="https://formspree.io/f/xkgozyer" method="POST" id="skillpack-form">
+        <!-- Hidden fields for routing -->
+        <input type="hidden" name="_subject" value="New SkillPack Request — Particulate LLC" />
+        <input type="hidden" name="_cc" value="james@particulatellc.com" />
+
+        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
+            <label for="sp-business-name" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Business Name *</label>
+            <input type="text" id="sp-business-name" name="business_name" required placeholder="Acme Corp" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
+          </div>
+          <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
+            <label for="sp-email" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Business Email *</label>
+            <input type="email" id="sp-email" name="email" required placeholder="you@business.com" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'" />
+          </div>
+        </div>
+
+        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
+            <label for="sp-industry" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Industry *</label>
+            <select id="sp-industry" name="industry" required style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;cursor:pointer;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'">
+              <option value="" disabled selected style="color:var(--muted);">Select your industry</option>
+              <option value="automotive">Automotive</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="legal">Legal / Law</option>
+              <option value="finance">Finance / Accounting</option>
+              <option value="real-estate">Real Estate</option>
+              <option value="retail">Retail / E-commerce</option>
+              <option value="food-beverage">Food &amp; Beverage</option>
+              <option value="home-services">Home Services</option>
+              <option value="consulting">Consulting / Coaching</option>
+              <option value="technology">Technology / SaaS</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;">
+            <label for="sp-bot-purpose" style="font-size:0.82rem;font-weight:600;color:var(--muted);">What should your bot do? *</label>
+            <select id="sp-bot-purpose" name="bot_purpose" required style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;cursor:pointer;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'">
+              <option value="" disabled selected style="color:var(--muted);">Select primary function</option>
+              <option value="lead-qualification">Qualify &amp; capture leads</option>
+              <option value="customer-support">Answer customer questions</option>
+              <option value="appointment-booking">Book appointments</option>
+              <option value="product-recommendations">Recommend products</option>
+              <option value="faq">Handle FAQs</option>
+              <option value="onboarding">Onboard new clients</option>
+              <option value="custom">Something custom</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem;">
+          <label for="sp-details" style="font-size:0.82rem;font-weight:600;color:var(--muted);">Anything else we should know?</label>
+          <textarea id="sp-details" name="extra_details" rows="3" placeholder="Tell us about your current pain points, tools you use, or specific features you need..." style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-size:0.92rem;outline:none;transition:all 0.2s;width:100%;resize:vertical;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem 2rem;font-size:1rem;">
+          <span>Get My Free SkillPack</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+      <p class="skillpack-note" style="text-align:center;color:#3a3a58;font-size:0.78rem;margin-top:1.25rem;line-height:1.5;">
+        No spam. Unsubscribe anytime. We build, train, and deploy your custom bot. First version delivered within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- BRANDS -->
   <section class="brands-section" id="brands">
     <div class="section-eyebrow">Our Portfolio</div>
