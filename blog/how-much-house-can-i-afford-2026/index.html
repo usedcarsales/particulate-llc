@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="J8Etv-BCo9S9OTZPcZtqaZY74nCPMvR35hrKmnPIlhM" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Much House Can I Afford in 2026? Calculator + Rate Reality Check | Particulate LLC</title>
+  <meta name="description" content="Free 2026 home affordability calculator — DTI caps, 2026 loan limits, PMI/MIP, and what 7.4% mortgage rates actually do to your buying power. Run your real numbers." />
+  <meta property="og:title" content="How Much House Can I Afford in 2026? Calculator + Rate Reality Check" />
+  <meta property="og:description" content="Free 2026 home affordability calculator — DTI caps, 2026 loan limits, and what 7.4% mortgage rates actually do to your buying power." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://particulatellc.com/blog/how-much-house-can-i-afford-2026/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Much House Can I Afford in 2026? Calculator + Rate Reality Check",
+    "datePublished": "2026-10-09",
+    "dateModified": "2026-10-09",
+    "author": { "@type": "Organization", "name": "Particulate LLC" },
+    "publisher": { "@type": "Organization", "name": "Particulate LLC", "url": "https://particulatellc.com" },
+    "description": "Free 2026 home affordability calculator — DTI caps, 2026 loan limits, PMI/MIP, and what 7.4% mortgage rates actually do to your buying power.",
+    "mainEntityOfPage": "https://particulatellc.com/blog/how-much-house-can-i-afford-2026/"
+  }
+  </script>
+  <style>
+    :root { --bg: #0a0a0a; --card: #141414; --text: #e5e5e5; --muted: #888; --accent: #10b981; --accent2: #34d399; --border: #222; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.2rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); }
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+    .tag { display: inline-block; background: var(--accent); color: #000; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.75rem; line-height: 1.15; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    .meta a { color: var(--accent2); text-decoration: none; }
+    h2 { font-size: 1.4rem; font-weight: 800; margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+    p { margin-bottom: 1rem; color: #ccc; }
+    ul, ol { margin: 0.5rem 0 1.5rem 1.5rem; color: #ccc; }
+    li { margin-bottom: 0.5rem; }
+    .highlight { background: var(--card); border-left: 3px solid var(--accent); padding: 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .highlight strong { color: var(--accent2); }
+    .cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { color: var(--text); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .cta-box p { color: var(--muted); margin-bottom: 1rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #000; font-weight: 700; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th { text-align: left; padding: 0.75rem; background: var(--card); color: var(--text); border-bottom: 2px solid var(--accent); font-weight: 700; }
+    td { padding: 0.75rem; border-bottom: 1px solid var(--border); color: #ccc; }
+    tr:last-child td { border-bottom: none; }
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted); max-width: 600px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 600px) { h1 { font-size: 1.6rem; } .container { padding: 1.5rem 1rem; } nav { padding: 1rem; flex-wrap: wrap; } table { font-size: 0.8rem; } th, td { padding: 0.5rem; } }
+
+    /* ---- Calculator ---- */
+    .calc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin: 2rem 0; }
+    .calc-head { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; }
+    .calc-grid label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.3rem; font-weight: 600; }
+    .calc-grid input[type="number"], .calc-grid select { width: 100%; background: #0a0a0a; border: 1px solid var(--border); color: var(--text); padding: 0.55rem 0.7rem; border-radius: 8px; font-size: 0.95rem; }
+    .calc-grid input:focus, .calc-grid select:focus { outline: none; border-color: var(--accent); }
+    .calc-out { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+    .res-grid .lbl { font-size: 0.72rem; color: var(--muted); }
+    .res-grid .val { font-size: 1.25rem; font-weight: 800; color: var(--accent2); font-variant-numeric: tabular-nums; }
+    .res-grid .sub { font-size: 0.68rem; color: var(--muted); }
+    .dti-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.3rem 0; }
+    .dti-label { width: 10rem; flex-shrink: 0; font-size: 0.75rem; color: var(--muted); }
+    .dti-track { flex: 1; height: 0.65rem; border-radius: 99px; background: #0a0a0a; overflow: hidden; }
+    .dti-fill { height: 100%; border-radius: 99px; }
+    .dti-val { width: 3.4rem; flex-shrink: 0; text-align: right; font-size: 0.78rem; color: var(--text); font-variant-numeric: tabular-nums; font-weight: 700; }
+    .calc-table { width: 100%; font-size: 0.82rem; margin: 1rem 0 0; }
+    .calc-table th, .calc-table td { padding: 0.45rem; }
+    .calc-note { font-size: 0.72rem; color: var(--muted); margin-top: 1rem; }
+    .warn { color: #f59e0b; font-size: 0.75rem; margin-top: 0.5rem; }
+    @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } .res-grid { grid-template-columns: repeat(2, 1fr); } .dti-label { width: 7.5rem; font-size: 0.68rem; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="/consulting/home-buyer/">Home Buyer</a>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Home Buyer</div>
+    <h1>How Much House Can I Afford in 2026? The Answer Moved $27,000 Without You Noticing</h1>
+    <p class="meta">October 9, 2026 · 9 min read · By <a href="/">Particulate LLC</a></p>
+
+    <p>Here's the uncomfortable math of October 2026: the 30-year fixed rate averaged <strong>7.40% last week</strong> (Freddie Mac PMMS, Oct 8) — up from 6.30% a year ago. If you make $95,000 with $450/month in existing debts, that one-point move quietly deleted about <strong>$27,000 of buying power</strong>. Same income, same down payment, same house hunt — a different number on the pre-approval.</p>
+    <p>Most "how much house can I afford" articles stop at a multiple of your salary ("3x income!") — advice that was already wrong in 2019 and is useless now. What actually determines your number is a three-way negotiation between your income, your debts, and the rate on the day you lock. The calculator below runs all three, with 2026 loan limits and real PMI/MIP math. Change the rate field and watch what happens.</p>
+
+    <div class="calc" id="calc">
+      <div class="calc-head">2026 Home Affordability Calculator</div>
+      <div class="calc-grid">
+        <div>
+          <label for="income">Household income ($/yr)</label>
+          <input type="number" id="income" value="95000" min="0" step="1000">
+        </div>
+        <div>
+          <label for="debts">Monthly debts, non-housing ($)</label>
+          <input type="number" id="debts" value="450" min="0" step="50">
+        </div>
+        <div>
+          <label for="down">Down payment ($)</label>
+          <input type="number" id="down" value="40000" min="0" step="1000">
+        </div>
+        <div>
+          <label for="rate">Mortgage rate (%)</label>
+          <input type="number" id="rate" value="7.40" min="0" step="0.05">
+        </div>
+        <div>
+          <label for="term">Term</label>
+          <select id="term">
+            <option value="30" selected>30 years</option>
+            <option value="20">20 years</option>
+            <option value="15">15 years</option>
+          </select>
+        </div>
+        <div>
+          <label for="type">Loan type</label>
+          <select id="type">
+            <option value="conforming" selected>Conventional (conforming)</option>
+            <option value="fha">FHA</option>
+            <option value="jumbo">Jumbo (high-cost)</option>
+          </select>
+        </div>
+        <div>
+          <label for="tax">Property tax + est. ($/mo)</label>
+          <input type="number" id="tax" value="500" min="0" step="25">
+        </div>
+        <div>
+          <label for="ins">Homeowner's insurance ($/yr)</label>
+          <input type="number" id="ins" value="1500" min="0" step="100">
+        </div>
+        <div>
+          <label for="hoa">HOA ($/mo)</label>
+          <input type="number" id="hoa" value="0" min="0" step="25">
+        </div>
+        <div>
+          <label for="closing">Closing costs (% of price)</label>
+          <input type="number" id="closing" value="3" min="0" max="8" step="0.5">
+        </div>
+        <div>
+          <label for="pmi">PMI rate (%/yr, if LTV &gt; 80%)</label>
+          <input type="number" id="pmi" value="0.58" min="0.3" max="1.2" step="0.02">
+        </div>
+        <div>
+          <label for="trate">Marginal tax rate (%)</label>
+          <select id="trate">
+            <option value="0">0%</option><option value="10">10%</option><option value="12">12%</option>
+            <option value="22" selected>22%</option><option value="24">24%</option><option value="32">32%</option>
+            <option value="35">35%</option><option value="37">37%</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="res-grid">
+          <div><div class="lbl">Target price</div><div class="val" id="price">$0</div></div>
+          <div><div class="lbl">Max loan</div><div class="val" id="loan">$0</div><div class="sub" id="capnote"></div></div>
+          <div><div class="lbl">Monthly housing</div><div class="val" id="housing">$0</div></div>
+          <div><div class="lbl">Cash to close</div><div class="val" id="cash">$0</div><div class="sub" id="cashnote"></div></div>
+        </div>
+        <div class="dti-row"><div class="dti-label">Front-end DTI (housing)</div><div class="dti-track"><div class="dti-fill" id="bar-front"></div></div><div class="dti-val" id="v-front">0%</div></div>
+        <div class="dti-row"><div class="dti-label">Back-end DTI (all debts)</div><div class="dti-track"><div class="dti-fill" id="bar-back"></div></div><div class="dti-val" id="v-back">0%</div></div>
+        <table class="calc-table">
+          <thead><tr><th>Loan type</th><th>Max loan</th><th>Monthly MI</th><th>Cash to close</th><th>Front DTI</th></tr></thead>
+          <tbody id="paths"></tbody>
+        </table>
+        <div class="calc-note" id="breakdown"></div>
+        <div class="warn" id="warn" style="display:none;"></div>
+        <div class="calc-note">2026 figures: FHFA conforming limit $832,750 baseline / $1,249,125 high-cost ceiling · FHA floor $541,287 · FHA MIP 1.75% upfront + 0.55%/yr · DTI caps 31% front / 43% back are the standard automated-underwriting guidelines. Estimates only — not mortgage lending advice. Inputs never leave your browser.</div>
+      </div>
+    </div>
+
+    <h2>Where Your Number Actually Comes From</h2>
+    <p>Lenders don't care about the house price. They care about two ratios, computed on gross monthly income:</p>
+    <ul>
+      <li><strong>Front-end DTI:</strong> your total housing payment (principal + interest + property tax + insurance + HOA + mortgage insurance) ÷ monthly income. Standard cap: <strong>31%</strong>.</li>
+      <li><strong>Back-end DTI:</strong> housing payment <em>plus car payments, student loans, credit card minimums</em> ÷ monthly income. Standard cap: <strong>43%</strong> (with strong compensating factors, some approvals stretch toward 50%).</li>
+    </ul>
+    <p>For our example buyer — $95,000 income, $450/month in debts — that's a housing budget of $2,454/month (31% front-end binds first). Then the calculator solves for the biggest loan that payment supports at your rate, after property tax and insurance eat their share. At 7.40% with $40,000 down and $500/month in property taxes, that's:</p>
+    <table>
+      <thead>
+        <tr><th>Line item</th><th>Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Housing budget (31% of $7,917/mo income)</td><td>$2,454/mo</td></tr>
+        <tr><td>− Property tax + insurance</td><td>−$625/mo</td></tr>
+        <tr><td>− Mortgage insurance (86% LTV, 0.58%/yr)</td><td>−$119/mo</td></tr>
+        <tr><td>→ Principal &amp; interest available</td><td>$1,710/mo</td></tr>
+        <tr><td><strong>→ Max loan @ 7.40%, 30-yr</strong></td><td><strong>$246,947</strong></td></tr>
+        <tr><td><strong>→ Target price (+$40,000 down)</strong></td><td><strong>$286,947</strong></td></tr>
+        <tr><td>Cash to close ($40K down + 3% closing)</td><td>$48,608</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The Rate Paradox: Same Buyer, One Year Apart</h2>
+    <p>Here's what the last twelve months did. The Freddie Mac survey rate went from 6.30% (Oct 2025) to 7.40% (Oct 2026). Run the same buyer — same $95K income, same $40K down — at both rates:</p>
+    <table>
+      <thead>
+        <tr><th></th><th>Oct 2025 @ 6.30%</th><th>Oct 2026 @ 7.40%</th><th>Change</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Max loan</td><td>$274,112</td><td>$246,947</td><td><strong>−$27,165</strong></td></tr>
+        <tr><td>Target price</td><td>$314,112</td><td>$286,947</td><td><strong>−$27,165</strong></td></tr>
+        <tr><td>Monthly housing payment</td><td>$2,454</td><td>$2,454</td><td>unchanged</td></tr>
+      </tbody>
+    </table>
+    <p class="highlight"><strong>The payment didn't move — the house did.</strong> Your DTI caps fix the monthly budget; the rate decides how much house that budget buys. A full point of rate took about 10% off your ceiling. This is why "how much can I afford" has no timeless answer: it expires with the rate on the day you lock.</p>
+    <p>The other direction matters just as much, for anyone deciding whether to wait for lower rates: the <em>same $247,000 loan</em> costs $1,710/month at 7.40% but $1,545 at 6.40%. Over 30 years, that one point is <strong>about $59,450 in lifetime interest</strong> ($368,585 vs $309,134). Waiting for a rate you can't predict has a real carrying cost too — there is no free option here, and anyone who tells you they know where rates go next is selling something.</p>
+
+    <h2>Your Debts Are a Bigger Lever Than the Rate</h2>
+    <p>Change "Monthly debts" in the calculator from $450 to $1,200 — a car payment plus a student loan, completely normal. What happens:</p>
+    <table>
+      <thead>
+        <tr><th></th><th>$450/mo debts</th><th>$1,200/mo debts</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Binding constraint</td><td>31% front-end</td><td>43% back-end</td></tr>
+        <tr><td>Max loan</td><td>$246,947</td><td>$213,195</td></tr>
+        <tr><td>Target price</td><td>$286,947</td><td><strong>$253,195</strong></td></tr>
+      </tbody>
+    </table>
+    <p>$33,752 of buying power — gone, from debts that have nothing to do with housing. Paying off a $500/month car loan before applying does more for your pre-approval than waiting for a quarter-point rate dip. This is also why lenders want every debt documented: they're not judging your lifestyle, they're running the same 43% math.</p>
+
+    <h2>2026 Loan Limits and the Three Paths</h2>
+    <p>Three common loan types, three different rulebooks. The calculator's comparison table runs all three on your numbers:</p>
+    <ul>
+      <li><strong>Conventional (conforming):</strong> 2026 FHFA limit is <strong>$832,750</strong> baseline ($1,249,125 in high-cost counties). PMI if you put down under 20% — and here's the part people miss: <strong>PMI is not forever</strong>. Once you reach 20% equity (through payments or appreciation), conventional PMI drops off. At our example numbers that's $119/month back in your pocket eventually.</li>
+      <li><strong>FHA:</strong> floor limit $541,287. Lower credit thresholds, but the mortgage insurance is a double charge: <strong>1.75% upfront</strong> (financed into the loan, so it compounds) <strong>plus 0.55%/yr for the life of the loan</strong> if you start above 90% LTV. Life of the loan — the only exit is refinancing to conventional after you build equity.</li>
+      <li><strong>Jumbo:</strong> above conforming limits. Stricter reserves-and-credit requirements; at 7.4% rates, the payment math on a large jumbo is unforgiving — the calculator will cap the loan at the high-cost ceiling of $1,249,125 and show DTI going red fast.</li>
+    </ul>
+    <p>At our example numbers, FHA and conventional come out nearly identical monthly ($114 vs $119 of MI), but FHA costs about <strong>$4,362 more cash to close</strong> because of the upfront MIP. For a buyer with strong credit and 10% down, conventional usually wins on total cost. FHA wins when the credit score or down payment is thin — that's what it exists for.</p>
+
+    <h2>The 15-Year Trade-Off Nobody Prices Correctly</h2>
+    <p>Switch the term to 15 years in the calculator. Same buyer, same $2,454 budget: the max loan collapses to <strong>$188,638</strong> (a $228,638 target price) — because at 7.4% rates, the same payment amortizes over half the time. That's $58,000 less house.</p>
+    <p>The 15-year loan is a fantastic idea <em>if the house you want fits under that number anyway</em> — on that loan size you'd pay about $124,200 in lifetime interest versus $281,600 on the 30-year path, a savings of roughly <strong>$157,400</strong>. But most first-time buyers in a high-cost state like New Jersey hit the DTI wall first, and the honest move is the 30-year note with a plan to make extra principal payments in months you can afford it. Discipline you control beats a term that binds you.</p>
+
+    <h2>What This Calculator Leaves Out</h2>
+    <p>Intentionally, to stay honest about what it can estimate:</p>
+    <ul>
+      <li><strong>Points, locks, and lender fees</strong> — these live inside your rate quote and closing costs, which is why the closing % field is adjustable (NJ commonly lands 2–4%).</li>
+      <li><strong>Escrow cushion and prepaid items</strong> — your first property-tax quarter and a year of insurance typically get collected at closing. Add roughly one month of housing payment to cash-to-close for this.</li>
+      <li><strong>NJ-specific costs already in the fields:</strong> New Jersey's effective property taxes are the highest in the country — the default $500/month is a <em>starter</em>; many NJ towns run $800–$1,200/month on a $300K house. Run your actual township rate or your number will be too optimistic.</li>
+      <li><strong>Appreciation, refinancing odds, and rate futures</strong> — unknowable, and any calculator that claims otherwise is lying to you.</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>Want this run with your actual numbers?</h3>
+      <p>Particulate LLC's Home Buyer Roadmap walks you through the full process — pre-approval strategy, DTI optimization before you apply, contract review, and NJ closing costs with real math. Fixed-price tiers: Basic Roadmap $9 · Full Breakdown $29 · Guided Buying Plan $79.</p>
+      <a class="cta-btn" href="/consulting/home-buyer/">See Home Buyer Roadmaps — from $9</a>
+    </div>
+
+    <p><strong>Related reading:</strong></p>
+    <ul>
+      <li><a href="/blog/first-time-home-buyer-nj-2026/">What First-Time Home Buyers in NJ Need to Know in 2026</a> — the full process from pre-approval to closing day</li>
+      <li><a href="/blog/nj-paycheck-calculator-2026/">NJ Paycheck Calculator 2026</a> — the take-home side of this same equation</li>
+      <li><a href="/blog/debt-payoff-strategies-2026/">Debt Payoff Strategies That Actually Work</a> — the fastest way to fix your back-end DTI before applying</li>
+    </ul>
+
+    <div class="disclaimer">This article and calculator are general information for educational purposes, not mortgage lending advice for your specific situation. DTI caps are lender guidelines, not law; individual approvals vary with credit, reserves, and overlays. Rate cited is the Freddie Mac Primary Mortgage Market Survey weekly average (Oct 8, 2026); your quoted rate depends on credit, points, and lock. Verify current-year limits at fhfa.gov and hud.gov before acting, and consult a qualified professional — or <a href="/consulting/home-buyer/">have us run the numbers with you</a>.</div>
+  </div>
+
+  <footer>
+    <p>© 2026 Particulate LLC · Burlington County, NJ · <a href="/consulting/">Consulting Services</a> · <a href="/blog/">Blog</a></p>
+  </footer>
+
+  <script>
+  // ---- Affordability engine (ported from Particulate's HomeKey tool, verified Oct 2026) ----
+  // 2026 caps: FHFA conforming $832,750 / ceiling $1,249,125 · FHA floor $541,287
+  // FHA MIP 1.75% upfront + 0.55%/yr · DTI caps 31% front / 43% back
+  var CLL_BASE = 832750, CLL_CEIL = 1249125, FHA_FLOOR = 541287;
+
+  function monthRate(apr) { return apr / 100 / 12 }
+  function pmt(principal, apr, years) {
+    var r = monthRate(apr), n = years * 12;
+    if (principal <= 0) return 0;
+    if (r === 0) return principal / n;
+    return principal * r / (1 - Math.pow(1 + r, -n));
+  }
+  function loanTypeCap(type) {
+    if (type === 'conforming') return CLL_BASE;
+    if (type === 'jumbo') return CLL_CEIL;
+    return FHA_FLOOR;
+  }
+  function mipMonthly(type, loan) { return type !== 'fha' ? 0 : (loan * 0.0055) / 12 }
+  function mipUpfront(type, loan) { return type !== 'fha' ? 0 : loan * 0.0175 }
+
+  function solveAffordability(i) {
+    var monthlyIncome = i.income / 12;
+    var capFront = monthlyIncome * 0.31;
+    var capBack = Math.max(monthlyIncome * 0.43, 0) - i.debts;
+    var budgetP = Math.max(0, Math.min(capFront, capBack));
+    var taxInsHoa = i.otherHousing + i.insAnnual / 12 + i.hoa;
+    var cap = loanTypeCap(i.type);
+    var piRate = pmt(1, i.rate, i.term);
+    var extraRate = i.type === 'fha' ? 0.0055 / 12 : 0;
+    var loan = (budgetP - taxInsHoa) / (piRate + extraRate);
+    if (loan < 0) loan = 0;
+    var ltv = (loan + i.down) > 0 ? loan / (loan + i.down) : 1;
+    if (i.type !== 'fha' && ltv > 0.8) {
+      loan = (budgetP - taxInsHoa) / (piRate + i.pmiRate / 100 / 12);
+      if (loan < 0) loan = 0;
+      ltv = (loan + i.down) > 0 ? loan / (loan + i.down) : 1;
+      if (ltv <= 0.8) loan = (budgetP - taxInsHoa) / piRate;
+    }
+    loan = Math.max(0, Math.min(loan, cap));
+    var price = loan + i.down;
+    var ltvF = price > 0 ? loan / price : 1;
+    var piM = pmt(loan, i.rate, i.term);
+    var mipM = mipMonthly(i.type, loan);
+    var pmiM = (i.type !== 'fha' && ltvF > 0.8) ? (loan * i.pmiRate / 100) / 12 : 0;
+    var totalHousing = piM + mipM + pmiM + i.otherHousing + i.insAnnual / 12 + i.hoa;
+    var front = monthlyIncome > 0 ? (totalHousing / monthlyIncome) * 100 : 0;
+    var back = monthlyIncome > 0 ? ((totalHousing + i.debts) / monthlyIncome) * 100 : 0;
+    var closeCosts = price * (i.closeCostPct / 100);
+    var upfront = mipUpfront(i.type, loan);
+    var cashNeeded = i.down + closeCosts + upfront;
+    var propTaxAnnual = i.otherHousing * 12;
+    var interestY1 = loan * monthRate(i.rate) * 12 * 0.85;
+    var itemized = propTaxAnnual + interestY1;
+    var stdDeduction = 15200;
+    var taxSavingsMonthly = Math.max(0, itemized - stdDeduction) * (i.taxRate / 100) / 12;
+    return { budgetP: budgetP, loan: loan, price: price, ltv: ltvF, piM: piM, mipM: mipM, pmiM: pmiM,
+      totalHousing: totalHousing, front: front, back: back, closeCosts: closeCosts, upfront: upfront,
+      cashNeeded: cashNeeded, capHit: loan >= cap, taxSavingsMonthly: taxSavingsMonthly,
+      fhaMipForLife: i.type === 'fha' && ltvF > 0.9 };
+  }
+
+  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function val(id) { return parseFloat(document.getElementById(id).value) || 0; }
+
+  function getInputs() {
+    return {
+      income: Math.max(0, val('income')),
+      debts: Math.max(0, val('debts')),
+      down: Math.max(0, val('down')),
+      rate: Math.max(0, val('rate')),
+      term: parseInt(document.getElementById('term').value, 10),
+      type: document.getElementById('type').value,
+      otherHousing: Math.max(0, val('tax')),
+      insAnnual: Math.max(0, val('ins')),
+      hoa: Math.max(0, val('hoa')),
+      closeCostPct: Math.max(0, val('closing')),
+      pmiRate: Math.max(0, val('pmi')),
+      taxRate: Math.max(0, val('trate'))
+    };
+  }
+
+  function dtiColor(pct, cap) {
+    if (pct <= cap * 0.95) return '#10b981';
+    if (pct <= cap * 1.05) return '#f59e0b';
+    return '#ef4444';
+  }
+
+  function calc() {
+    var i = getInputs();
+    var r = solveAffordability(i);
+
+    document.getElementById('price').textContent = fmt(r.price);
+    document.getElementById('loan').textContent = fmt(r.loan);
+    document.getElementById('capnote').textContent = r.capHit ? 'loan-limit cap hit' : '';
+    document.getElementById('housing').textContent = fmt(r.totalHousing);
+    document.getElementById('cash').textContent = fmt(r.cashNeeded);
+    document.getElementById('cashnote').textContent = '(' + fmt(r.closeCosts) + ' closing' + (i.type === 'fha' ? ' + ' + fmt(r.upfront) + ' upfront MIP' : '') + ')';
+
+    var barF = document.getElementById('bar-front');
+    barF.style.width = Math.min(100, (r.front / 50) * 100) + '%';
+    barF.style.background = dtiColor(r.front, 31);
+    document.getElementById('v-front').textContent = r.front.toFixed(1) + '%';
+    var barB = document.getElementById('bar-back');
+    barB.style.width = Math.min(100, (r.back / 50) * 100) + '%';
+    barB.style.background = dtiColor(r.back, 43);
+    document.getElementById('v-back').textContent = r.back.toFixed(1) + '%';
+
+    // three-paths comparison table
+    var tbody = document.getElementById('paths');
+    tbody.innerHTML = '';
+    ['conforming', 'fha', 'jumbo'].forEach(function (t) {
+      var rr = solveAffordability(Object.assign({}, i, { type: t }));
+      var tr = document.createElement('tr');
+      if (t === i.type) tr.style.background = 'rgba(16,185,129,0.12)';
+      var name = t === 'fha' ? 'FHA' : (t === 'jumbo' ? 'Jumbo' : 'Conforming');
+      tr.innerHTML = '<td>' + name + (t === i.type ? ' ●' : '') + '</td><td>' + fmt(rr.loan) +
+        '</td><td>' + fmt(rr.mipM + rr.pmiM) + '</td><td>' + fmt(rr.cashNeeded) +
+        '</td><td>' + rr.front.toFixed(1) + '%</td>';
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('breakdown').textContent =
+      'P&I ' + fmt(r.piM) + ' · MI ' + fmt(r.mipM + r.pmiM) + ' · tax+ins ' +
+      fmt(i.otherHousing + i.insAnnual / 12) + ' · budget ' + fmt(r.budgetP) + '/mo (31%/43% caps) · LTV ' +
+      (r.ltv * 100).toFixed(1) + '% · est. deduction tax savings ' + fmt(r.taxSavingsMonthly) + '/mo';
+
+    var warn = document.getElementById('warn');
+    var msgs = [];
+    if (r.capHit) msgs.push('Loan limit cap reached for this loan type — the ceiling won\'t rise with more income here.');
+    if (r.fhaMipForLife) msgs.push('FHA at >90% LTV: MIP lasts for the life of the loan — the only exit is refinancing to conventional.');
+    if (i.type !== 'fha' && r.ltv > 0.8 && r.ltv <= 0.85) msgs.push('You\'re close to 20% down: a bit more down payment kills the PMI line entirely.');
+    warn.style.display = msgs.length ? 'block' : 'none';
+    warn.textContent = msgs.join(' ');
+  }
+
+  ['income', 'debts', 'down', 'rate', 'term', 'type', 'tax', 'ins', 'hoa', 'closing', 'pmi', 'trate'].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', calc);
+    el.addEventListener('change', calc);
+  });
+  calc();
+  </script>
+</body>
+</html>
