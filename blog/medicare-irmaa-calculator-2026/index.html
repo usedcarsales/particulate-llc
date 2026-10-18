@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicare IRMAA Calculator 2026: What the Income Surcharges Really Cost | Particulate LLC</title>
+  <meta name="description" content="Free 2026 Medicare IRMAA calculator — official CMS brackets for Part B and Part D surcharges. See what $1 over a bracket costs you (up to $1,148/year), how the two-year MAGI lookback works, and how to appeal with SSA-44 before the December 7 enrollment deadline." />
+  <meta property="og:title" content="Medicare IRMAA Calculator 2026: What the Income Surcharges Really Cost" />
+  <meta property="og:description" content="Free IRMAA calculator with the official 2026 CMS bracket tables for Part B and Part D. One dollar over a bracket can cost $1,148 a year — run your numbers before December 7." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://particulatellc.com/blog/medicare-irmaa-calculator-2026/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Medicare IRMAA Calculator 2026: What the Income Surcharges Really Cost",
+    "datePublished": "2026-10-16",
+    "dateModified": "2026-10-16",
+    "author": { "@type": "Organization", "name": "Particulate LLC" },
+    "publisher": { "@type": "Organization", "name": "Particulate LLC", "url": "https://particulatellc.com" },
+    "description": "Free 2026 Medicare IRMAA calculator with the official CMS bracket tables for Part B and Part D surcharges.",
+    "mainEntityOfPage": "https://particulatellc.com/blog/medicare-irmaa-calculator-2026/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://particulatellc.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Medicare IRMAA Calculator 2026", "item": "https://particulatellc.com/blog/medicare-irmaa-calculator-2026/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What income does Medicare IRMAA use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "IRMAA is based on your modified adjusted gross income (MAGI) from the tax return you filed two years earlier. Your 2026 Medicare surcharges are set by the 2024 return you filed in 2025 — the Social Security Administration gets this figure directly from the IRS. MAGI here is adjusted gross income plus tax-exempt interest." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the 2026 IRMAA brackets?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For 2026, individual filers with 2024 MAGI at or below $109,000 pay no surcharge. Brackets start above $109,000 (Part B surcharge $81.20/month, Part D $14.50), then $137,000 ($202.90/$37.50), $171,000 ($324.60/$60.40), $205,000 ($446.30/$83.30), and $500,000 ($487.00/$91.00). Joint filers' thresholds are doubled up to $750,000, per CMS." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I appeal or lower my IRMAA?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You can appeal using Form SSA-44 if you had a life-changing event — retirement, work reduction, loss of income-producing property, divorce, death of a spouse, or similar — that makes your current income much lower than the two-year-old MAGI the surcharge was based on. You cannot appeal simply because you disagree with the brackets; the event must genuinely reduce your income." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does IRMAA apply to Medicare Advantage plans?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every Medicare Advantage enrollee still pays the Part B premium (and IRMAA on top of it if their income warrants), plus any Part D surcharge. Switching plans during the Annual Enrollment Period never escapes IRMAA — it follows your income, not your plan choice." }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the Medicare open enrollment deadline for 2027 coverage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The Medicare Annual Enrollment Period runs October 15 through December 7, 2026. Plan changes made by December 7 take effect January 1, 2027. Missing the window generally locks your current coverage for all of 2027, with only limited special-enrollment exceptions." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg: #0a0a0a; --card: #141414; --text: #e5e5e5; --muted: #888; --accent: #ef4444; --accent2: #f87171; --border: #222; --good: #22c55e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.2rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); }
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+    .tag { display: inline-block; background: var(--accent); color: #000; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.75rem; line-height: 1.15; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 800; margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin: 1.75rem 0 0.5rem; }
+    p { margin-bottom: 1rem; color: #ccc; }
+    ul, ol { margin: 0.5rem 0 1.5rem 1.5rem; color: #ccc; }
+    li { margin-bottom: 0.5rem; }
+    a { color: var(--accent2); }
+    .highlight { background: var(--card); border-left: 3px solid var(--accent); padding: 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .highlight strong { color: var(--accent2); }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    th { background: var(--card); color: var(--text); text-align: left; padding: 0.55rem 0.65rem; border: 1px solid var(--border); font-weight: 700; }
+    td { padding: 0.55rem 0.65rem; border: 1px solid var(--border); color: #ccc; }
+    .cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0; }
+    .cta-box h3 { margin-top: 0; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #000; font-weight: 800; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; margin-top: 1rem; }
+    .tool { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0 2.5rem; }
+    .tool h3 { margin-top: 0; }
+    .tool label { display: block; font-size: 0.85rem; font-weight: 700; margin: 0.9rem 0 0.3rem; color: var(--text); }
+    .tool input, .tool select { width: 100%; padding: 0.65rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem; }
+    .tool .row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .tool .row > div { flex: 1; min-width: 160px; }
+    .btn-row { display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    .btn { background: var(--accent); color: #000; font-weight: 800; border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-size: 0.95rem; cursor: pointer; }
+    .btn-secondary { background: transparent; color: var(--muted); border: 1px solid var(--border); font-weight: 600; }
+    .result { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-top: 1.25rem; }
+    .result .hero { font-size: 1.6rem; font-weight: 900; color: var(--accent2); margin-bottom: 0.25rem; }
+    .result .sub { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    .result .line { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--border); padding: 0.45rem 0; font-size: 0.9rem; }
+    .result .line span:first-child { color: var(--muted); }
+    .result .line span:last-child { font-weight: 700; color: var(--text); text-align: right; }
+    .warn { background: rgba(239,68,68,0.08); border: 1px solid var(--accent); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.9rem; }
+    .warn strong { color: var(--accent2); }
+    .note { background: rgba(34,197,94,0.06); border: 1px solid var(--good); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.9rem; }
+    .note strong { color: var(--good); }
+    .fineprint { color: var(--muted); font-size: 0.75rem; margin-top: 1rem; }
+    footer { border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--muted); }
+    @media (max-width: 600px) { h1 { font-size: 1.7rem; } .container { padding: 2rem 1.25rem; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">Particulate<span>LLC</span></a>
+  <div class="nav-links">
+    <a href="/services.html">Services</a>
+    <a href="/consulting/">Consulting</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+<div class="container">
+  <span class="tag">Health Navigation</span>
+  <h1>Medicare IRMAA Calculator 2026: What the Income Surcharges Really Cost</h1>
+  <p class="meta">October 16, 2026 · Particulate LLC · 8-minute read</p>
+
+  <p>Medicare's Annual Enrollment Period opened <strong>October 15, 2026</strong> and closes <strong>December 7</strong> — and for roughly 8% of beneficiaries, the most expensive line in their healthcare budget isn't the plan they're comparing. It's <strong>IRMAA</strong>: the Income-Related Monthly Adjustment Amount that stacks surcharges on top of your Part B and Part D premiums based on a tax return you filed two years ago.</p>
+  <p>The 2026 standard Part B premium is <strong>$202.90/month</strong>. But if your 2024 modified adjusted gross income crossed <strong>$109,000</strong> as a single filer ($218,000 joint), you're paying up to <strong>$487.00 more per month</strong> for Part B alone — plus up to $91.00 more for Part D. That's as much as <strong>$6,936 a year</strong> in surcharges, and it follows you regardless of which plan you pick during enrollment.</p>
+  <div class="highlight"><strong>The bracket edges are cliffs, not slopes.</strong> Single filer with 2024 MAGI of $109,000: zero surcharge. At $109,001, Part B jumps $81.20/month and Part D jumps $14.50/month — <strong>$1,148.40 a year for one dollar of income</strong>. The calculator below shows exactly where you sit.</div>
+  <p>Enter your <strong>2024 MAGI</strong> (adjusted gross income plus tax-exempt interest — the figure the IRS sent to Social Security) to see your 2026 brackets:</p>
+
+  <div class="tool" id="calc">
+    <h3>2026 Medicare IRMAA Calculator</h3>
+    <div class="row">
+      <div>
+        <label for="filing">Filing status on your 2024 return</label>
+        <select id="filing">
+          <option value="single">Single / Head of household / Qualifying surviving spouse</option>
+          <option value="joint">Married filing jointly</option>
+          <option value="mfs">Married filing separately (lived with spouse)</option>
+        </select>
+      </div>
+      <div>
+        <label for="magi">2024 MAGI (annual, $)</label>
+        <input type="number" id="magi" min="0" step="1000" inputmode="numeric" placeholder="e.g. 120000" />
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" type="button" onclick="recalc()">Calculate my surcharges</button>
+      <button class="btn btn-secondary" type="button" onclick="resetTool()">Reset</button>
+    </div>
+    <div class="result" id="result" style="display:none;"></div>
+    <p class="fineprint">All figures from CMS's official 2026 release (Nov 14, 2025). Standard Part B premium: $202.90/mo, $283 annual deductible. Part D surcharges are added to your plan's own premium. Educational tool — not Medicare, tax, or investment advice.</p>
+  </div>
+
+  <h2>How IRMAA works: the two-year lookback</h2>
+  <p>IRMAA is determined by your <strong>modified adjusted gross income from two years earlier</strong>. Your 2026 surcharges are set by your 2024 tax return — the one you filed in spring 2025. Social Security receives that number directly from the IRS, matches it against the bracket table CMS publishes each fall, and sends you a notice (initial determination) if a surcharge applies.</p>
+  <p>This two-year gap is why IRMAA surprises people. The Roth conversion you did in 2024, the business you sold, the large capital gains harvest — all of it shows up in your Medicare bill in 2026, even if your income has since collapsed. And the moves you make on <em>this</em> year's return control your <strong>2028</strong> surcharges.</p>
+
+  <h2>The 2026 IRMAA brackets (official CMS tables)</h2>
+  <p>Full Part B coverage — your total monthly Part B premium is the standard $202.90 plus the surcharge:</p>
+  <table>
+    <tr><th>Single MAGI (2024)</th><th>Joint MAGI (2024)</th><th>Part B surcharge</th><th>Part B total</th><th>Part D surcharge</th></tr>
+    <tr><td>≤ $109,000</td><td>≤ $218,000</td><td>$0.00</td><td>$202.90</td><td>$0.00</td></tr>
+    <tr><td>$109,001–$137,000</td><td>$218,001–$274,000</td><td>$81.20</td><td>$284.10</td><td>$14.50</td></tr>
+    <tr><td>$137,001–$171,000</td><td>$274,001–$342,000</td><td>$202.90</td><td>$405.80</td><td>$37.50</td></tr>
+    <tr><td>$171,001–$205,000</td><td>$342,001–$410,000</td><td>$324.60</td><td>$527.50</td><td>$60.40</td></tr>
+    <tr><td>$205,001–$499,999</td><td>$410,001–$749,999</td><td>$446.30</td><td>$649.20</td><td>$83.30</td></tr>
+    <tr><td>≥ $500,000</td><td>≥ $750,000</td><td>$487.00</td><td>$689.90</td><td>$91.00</td></tr>
+  </table>
+  <p>Married beneficiaries who <strong>lived with their spouse but filed separately</strong> face the harshest table in the tax code: no middle brackets at all. Above $109,000, the surcharge is $446.30/month (Part B) plus $83.30 (Part D); at $391,000 and up, $487.00 plus $91.00. If you're in this category, the filing-status decision is worth more than any plan change.</p>
+
+  <h2>The $1-over problem: bracket edges are cliffs</h2>
+  <p>IRMAA brackets have no phase-in. Cross a threshold by a single dollar and the full surcharge applies for the <em>entire year</em> — all twelve months, both Part B and Part D. The first edge is the steepest in percentage terms:</p>
+  <ul>
+    <li><strong>$109,000 → $109,001 (single):</strong> $95.70/month more = <strong>$1,148.40/year</strong></li>
+    <li><strong>$137,000 → $137,001:</strong> $144.70/month more = $1,736.40/year</li>
+    <li><strong>$171,000 → $171,001:</strong> $145.00/month more = $1,740.00/year</li>
+    <li><strong>$205,000 → $205,001:</strong> $144.60/month more = $1,735.20/year</li>
+    <li><strong>$499,999 → $500,000:</strong> $48.40/month more = $580.80/year</li>
+  </ul>
+  <p>That's why MAGI management matters more than plan shopping for beneficiaries near a boundary. Deferring a year-end bonus, harvesting a capital loss, or pushing a discretionary Roth conversion below a bracket edge can save four figures — on top of whatever the conversion itself does to your taxes.</p>
+
+  <h2>What you can change during open enrollment — and what you can't</h2>
+  <p>Between <strong>October 15 and December 7, 2026</strong>, you can switch Medicare Advantage plans, drop Medicare Advantage for Original Medicare (or back), and change Part D drug plans. Changes take effect <strong>January 1, 2027</strong>. What you cannot do: escape IRMAA by switching plans. The surcharge rides on top of whatever Part B and Part D coverage you hold.</p>
+  <p>What you <em>can</em> change is the <strong>future</strong> surcharge. Your 2026 tax return (filed in 2027) sets your <strong>2028</strong> brackets. For households hovering near an edge, this year-end is the planning window:</p>
+  <ul>
+    <li>Size any Roth conversion to land under a bracket edge — the interaction with your overall retirement plan matters more than the conversion alone (see our <a href="/blog/nj-retirement-planning-overlooked/">New Jersey retirement planning guide</a>).</li>
+    <li>Once you're 70½ and taking required minimum distributions, direct charitable gifts (QCDs) reduce AGI in a way itemized deductions don't.</li>
+    <li>Time large capital gains across tax years instead of stacking them into one.</li>
+    <li>Max traditional (not Roth) 401(k)/IRA/SEP contributions for any year you're within reach of an edge — MAGI counts income <em>after</em> those deductions.</li>
+  </ul>
+
+  <h2>How to appeal: Form SSA-44</h2>
+  <p>If a <strong>life-changing event</strong> has cut your income well below your two-year-old MAGI, you can ask Social Security to recompute using current income with <strong>Form SSA-44</strong> (Medicare Income-Related Monthly Adjustment Amount – Life-Changing Event). Qualifying events include retirement or reduced work hours, loss of income-producing property, loss of pension, an employer settlement, or divorce, plus a broad "other" category for circumstances like a large income drop. Approved appeals can lower your surcharge retroactively to the month after the event.</p>
+  <p>You cannot appeal simply because the brackets feel unfair, or because a one-time gain inflated one year. The event must genuinely and durably reduce your income. If that's you, file it <em>this</em> fall — don't wait for the December 7 plan deadline to think about it, since the SSA-44 process runs on its own track at Social Security, separate from enrollment.</p>
+
+  <h2>Deadlines that matter</h2>
+  <table>
+    <tr><th>Date</th><th>What happens</th></tr>
+    <tr><td><strong>October 15, 2026</strong></td><td>Medicare Annual Enrollment Period opens</td></tr>
+    <tr><td><strong>December 7, 2026</strong></td><td>AEP closes — last day to switch MA or Part D plans for 2027</td></tr>
+    <tr><td><strong>January 1, 2027</strong></td><td>New plan choices take effect</td></tr>
+    <tr><td><strong>Fall 2027</strong></td><td>2028 IRMAA determination from your 2026 return lands</td></tr>
+  </table>
+
+  <h2>Why this matters for the pre-65 crowd too</h2>
+  <p>The MAGI brackets that produce IRMAA at 65 are the same income levers that govern Marketplace subsidies before it. If you're 60–64 and buying your own coverage, the <a href="/blog/aca-subsidy-calculator-2027/">ACA subsidy calculator for 2027</a> shows the opposite cliff — the one where crossing 400% of the poverty line zeroes out premium tax credits. Planning both boundaries together is the difference between a smooth glide into Medicare and a five-figure surprise.</p>
+
+  <div class="cta-box">
+    <h3>Don't want to run this math alone?</h3>
+    <p>IRMAA sits at the intersection of Medicare rules and tax strategy — exactly where a wrong assumption costs the most. Our Health Navigation service walks you through bracket management, SSA-44 appeals, and open enrollment decisions with your actual numbers in front of us.</p>
+    <a class="cta-btn" href="/consulting/health-nav/">Explore Health Navigation →</a>
+  </div>
+
+  <p>Related reading: <a href="/blog/aca-subsidy-calculator-2027/">ACA Subsidy Calculator 2027</a> · <a href="/blog/social-security-claiming-age-calculator-2026/">Social Security claiming calculator</a> · <a href="/blog/urgent-care-vs-er-overpaying/">Urgent care vs ER without overpaying</a></p>
+</div>
+<footer>
+  <p>© 2026 Particulate LLC · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
+  <p>Educational content only — not Medicare, tax, legal, or investment advice.</p>
+</footer>
+<script>
+var STANDARD_B = 202.90;
+// CMS 2026 brackets. Top-tier thresholds are INCLUSIVE (\u2265 $500k single, \u2265 $750k joint, \u2265 $391k MFS),
+// so the second-to-last bracket's logical max is one dollar below the threshold edge.
+var BRACKETS = {
+  single: [
+    { max: 109000, b: 0, d: 0, edge: 109000 },
+    { max: 137000, b: 81.20, d: 14.50, edge: 137000 },
+    { max: 171000, b: 202.90, d: 37.50, edge: 171000 },
+    { max: 205000, b: 324.60, d: 60.40, edge: 205000 },
+    { max: 499999, b: 446.30, d: 83.30, edge: 500000 },
+    { max: Infinity, b: 487.00, d: 91.00, edge: Infinity }
+  ],
+  joint: [
+    { max: 218000, b: 0, d: 0, edge: 218000 },
+    { max: 274000, b: 81.20, d: 14.50, edge: 274000 },
+    { max: 342000, b: 202.90, d: 37.50, edge: 342000 },
+    { max: 410000, b: 324.60, d: 60.40, edge: 410000 },
+    { max: 749999, b: 446.30, d: 83.30, edge: 750000 },
+    { max: Infinity, b: 487.00, d: 91.00, edge: Infinity }
+  ],
+  mfs: [
+    { max: 109000, b: 0, d: 0, edge: 109000 },
+    { max: 390999, b: 446.30, d: 83.30, edge: 391000 },
+    { max: Infinity, b: 487.00, d: 91.00, edge: Infinity }
+  ]
+};
+function fmt(n) {
+  if (n === Infinity) return '$∞';
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+function calc(status, magi) {
+  magi = Math.max(0, Number(magi) || 0);
+  var brackets = BRACKETS[status];
+  var tier = brackets.length;
+  for (var i = 0; i < brackets.length; i++) {
+    if (magi <= brackets[i].max) { tier = i + 1; break; }
+  }
+  var cur = brackets[tier - 1];
+  var nextMax = cur.edge;
+  var prevMax = tier > 1 ? brackets[tier - 2].edge : 0;
+  var res = {
+    status: status, magi: magi, tier: tier,
+    bSurcharge: cur.b, dSurcharge: cur.d,
+    bTotal: STANDARD_B + cur.b,
+    combinedMonthly: cur.b + cur.d,
+    combinedAnnual: (cur.b + cur.d) * 12,
+    bAnnual: cur.b * 12,
+    nextBoundary: nextMax,
+    overPrevBy: magi - prevMax
+  };
+  return res;
+}
+function recalc() {
+  var status = document.getElementById('filing').value;
+  var magi = document.getElementById('magi').value;
+  localStorage.setItem('irmaa2026', JSON.stringify({ f: status, m: magi }));
+  var r = calc(status, magi);
+  var out = document.getElementById('result');
+  var h = '';
+  if (r.combinedMonthly === 0) {
+    h += '<div class="hero">No surcharge</div>';
+    h += '<div class="sub">Standard Part B premium of $202.90/mo applies (2026, CMS)</div>';
+    h += '<div class="line"><span>Your bracket</span><span>1 of 6 — standard premium</span></div>';
+    if (r.magi > 0) {
+      var gap = r.nextBoundary - r.magi;
+      if (gap > 0 && gap < 12000) {
+        var jump = (BRACKETS[r.status][1].b + BRACKETS[r.status][1].d) * 12;
+        h += '<div class="warn"><strong>⚠ Only ' + fmt(gap) + ' below the first bracket.</strong> Crossing ' + fmt(r.nextBoundary) + ' of 2024 MAGI adds ' + fmt(jump) + '/yr in surcharges. If a 2024 amendment is still possible, or when planning this year\'s MAGI for 2028, keep discretionary income under the edge.</div>';
+      }
+    }
+  } else {
+    h += '<div class="hero">+' + fmt(r.combinedMonthly) + '/mo</div>';
+    h += '<div class="sub">Combined Part B + Part D surcharge (2026, CMS brackets)</div>';
+    h += '<div class="line"><span>Your bracket</span><span>' + r.tier + ' of ' + BRACKETS[r.status].length + '</span></div>';
+    h += '<div class="line"><span>Part B surcharge</span><span>' + fmt(r.bSurcharge) + ' / mo</span></div>';
+    h += '<div class="line"><span>Part B total premium</span><span>' + fmt(r.bTotal) + ' / mo</span></div>';
+    h += '<div class="line"><span>Part D surcharge</span><span>' + fmt(r.dSurcharge) + ' / mo</span></div>';
+    h += '<div class="line"><span>Combined surcharge, annual</span><span>' + fmt(r.combinedAnnual) + ' / yr</span></div>';
+    h += '<div class="line"><span>Of which is the $1-over effect</span><span>' + fmt(r.combinedAnnual) + ' for the ' + fmt(r.overPrevBy) + ' above the edge</span></div>';
+    if (r.status === 'mfs' && r.tier >= 2) {
+      h += '<div class="note"><strong>MFS trap:</strong> married-filing-separately has no middle brackets — above ' + fmt(109000) + ' you jump straight to the near-top surcharge. Many couples save four figures a year by filing jointly instead; run both with a tax pro before the next filing deadline.</div>';
+    }
+    if (r.nextBoundary !== Infinity) {
+      var nb = BRACKETS[r.status][r.tier] || null;
+      if (nb) {
+        var nextJump = (nb.b + nb.d) - (r.bSurcharge + r.dSurcharge);
+        var dist = r.nextBoundary - r.magi;        if (dist > 0 && dist < 12000) {
+          h += '<div class="warn"><strong>⚠ Close to the next bracket:</strong> ' + fmt(dist) + ' of MAGI below the ' + fmt(r.nextBoundary) + ' edge. Crossing it adds another ' + fmt(nextJump) + '/mo (' + fmt(nextJump * 12) + '/yr).</div>';
+        }
+      }
+    } else {
+      h += '<div class="note"><strong>Top bracket:</strong> this is the maximum 2026 surcharge — ' + fmt(r.combinedAnnual) + '/yr above the standard premium.</div>';
+    }
+    h += '<div class="note"><strong>Two-year lookback:</strong> these surcharges come from your <strong>2024</strong> MAGI. If your income has since dropped because of a life-changing event (retirement, work reduction, divorce, loss of pension), file <strong>Form SSA-44</strong> with Social Security to request a redetermination using current income.</div>';
+  }
+  out.innerHTML = h;
+  out.style.display = 'block';
+}
+function resetTool() {
+  document.getElementById('magi').value = '';
+  document.getElementById('result').style.display = 'none';
+  localStorage.removeItem('irmaa2026');
+}
+(function () {
+  try {
+    var saved = JSON.parse(localStorage.getItem('irmaa2026') || 'null');
+    if (saved) {
+      document.getElementById('filing').value = saved.f || 'single';
+      document.getElementById('magi').value = saved.m || '';
+      if (saved.m) recalc();
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
