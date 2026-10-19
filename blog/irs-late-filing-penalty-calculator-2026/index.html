@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IRS Late Filing &amp; Late Payment Penalty Calculator: What Missing October 15 Costs (2026) | Particulate LLC</title>
+  <meta name="description" content="Free IRS late-filing penalty calculator — the 5%/month failure-to-file penalty, the 0.5%/month failure-to-pay penalty, the $525 60-day minimum, and 7% interest compounded daily. See what every month costs." />
+  <meta property="og:title" content="IRS Late Filing &amp; Late Payment Penalty Calculator (2026)" />
+  <meta property="og:description" content="Calculate the combined net 5%/month IRS penalty for filing or paying late — plus the $525 minimum trap and daily-compounded interest. Free tool." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://particulatellc.com/blog/irs-late-filing-penalty-calculator-2026/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "IRS Late Filing & Late Payment Penalty Calculator: What Missing October 15 Costs (2026)",
+    "datePublished": "2026-10-14",
+    "dateModified": "2026-10-14",
+    "author": { "@type": "Organization", "name": "Particulate LLC" },
+    "publisher": { "@type": "Organization", "name": "Particulate LLC", "url": "https://particulatellc.com" },
+    "description": "The IRS failure-to-file and failure-to-pay penalties calculated live — the net 5%/month combined clock, the $525 60-day minimum, and interest at 7% compounded daily.",
+    "mainEntityOfPage": "https://particulatellc.com/blog/irs-late-filing-penalty-calculator-2026/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://particulatellc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://particulatellc.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "IRS Late Filing Penalty Calculator" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the penalty for filing taxes late?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The failure-to-file penalty is 5% of your unpaid tax for each month or partial month your return is late, up to a maximum of 25%. When the failure-to-pay penalty (0.5% per month) runs at the same time, the failure-to-file charge is reduced by that amount, so the combined clock runs at a net 5% per month for the first five months. After five months the failure-to-file penalty maxes out, but the failure-to-pay penalty keeps accruing up to its own 25% cap, and interest is charged on top."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I miss the October 15 tax extension deadline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "October 15 is the last day for returns on extension — the extra time to file runs out even though the extra time to pay ran out back in April. File on October 16 or later and the failure-to-file penalty starts immediately, charged as a full month even if you're only one day late. Interest on the unpaid tax has been running since the original April due date either way, and the failure-to-pay penalty continues at 0.5% per month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the $525 minimum failure-to-file penalty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For returns due after December 31, 2025, if your return is more than 60 days late, the failure-to-file penalty is at least $525 — or 100% of the unpaid tax if that's less. Even taxpayers who owe very little can get hit with the full $525, which is why filing something, even late, always beats filing nothing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the IRS charge interest on top of penalties?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Underpayment interest accrues from the original due date until the tax is paid in full, compounded daily. For the quarter beginning October 1, 2026, the individual rate is 7% per year. The rate equals the federal short-term rate plus 3 percentage points and is adjusted quarterly, so it moves with the market — interest also runs on penalties once they're assessed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I reduce the penalty if I can't pay my tax bill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. File on time even if you can't pay — that alone avoids the 5%-per-month failure-to-file penalty entirely. An approved IRS installment agreement drops the failure-to-pay penalty from 0.5% to 0.25% per month for individuals who filed on time. Penalty relief for reasonable cause, and administrative first-time relief for taxpayers with a clean history, may also be available on request."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg: #0a0a0a; --card: #141414; --text: #e5e5e5; --muted: #888; --accent: #ef4444; --accent2: #f87171; --border: #222; --green: #34d399; --amber: #fbbf24; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); }
+    nav .logo { font-weight: 900; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+    nav .logo span { color: var(--accent); }
+    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); }
+    .tag { display: inline-block; background: rgba(239,68,68,.12); color: var(--accent2); border: 1px solid rgba(239,68,68,.3); padding: 3px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem; }
+    h1 { font-size: 2.1rem; line-height: 1.2; margin-bottom: 0.75rem; font-weight: 900; }
+    h2 { font-size: 1.4rem; margin: 2.5rem 0 0.75rem; font-weight: 800; }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 0.5rem; font-weight: 700; }
+    p { margin-bottom: 1rem; color: #ccc; }
+    ul, ol { margin: 0 0 1rem 1.4rem; color: #ccc; }
+    li { margin-bottom: 0.5rem; }
+    .meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 2rem; }
+    strong { color: var(--text); }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+    th { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 2px solid var(--border); color: var(--text); }
+    td { padding: 0.55rem 0.5rem; border-bottom: 1px solid var(--border); color: #ccc; }
+    .cta-box { background: linear-gradient(135deg, #1a0a0a 0%, #141414 100%); border: 1px solid rgba(239,68,68,.35); border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0; }
+    .cta-box h3 { margin-top: 0; font-size: 1.15rem; }
+    .cta-box p { margin-bottom: 1rem; font-size: 0.92rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #000; font-weight: 800; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.92rem; }
+    .cta-btn:hover { background: var(--accent2); }
+    footer { border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--muted); }
+    a { color: var(--accent2); }
+    .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted); max-width: 600px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 600px) { h1 { font-size: 1.6rem; } .container { padding: 1.5rem 1rem; } nav { padding: 1rem; flex-wrap: wrap; } table { font-size: 0.8rem; } th, td { padding: 0.5rem; } }
+
+    /* ---- Calculator tool ---- */
+    .calc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin: 2rem 0; }
+    .calc-head { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
+    .inputs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 0.25rem; }
+    .inputs label { font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.3rem; }
+    .inputs input { width: 100%; background: #0a0a0a; border: 1px solid var(--border); color: var(--text); padding: 0.6rem 0.7rem; border-radius: 8px; font-size: 1rem; font-variant-numeric: tabular-nums; }
+    .inputs input:focus { outline: none; border-color: var(--accent); }
+    .statute-strip { font-size: 0.66rem; color: var(--muted); margin: 0.5rem 0 1.25rem; }
+    .statute-strip code { color: #94a3b8; }
+    .results { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1rem; }
+    .rbox { background: #0a0a0a; border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; }
+    .rbox .l { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+    .rbox .v { font-size: 1.25rem; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; margin-top: 0.15rem; }
+    .rbox.hero { grid-column: 1 / -1; background: linear-gradient(135deg, #1a0a0a 0%, #0d0d0d 100%); border-color: rgba(239,68,68,.4); }
+    .rbox.hero .v { font-size: 2rem; color: var(--accent2); }
+    .warn-box { display: none; font-size: 0.78rem; color: var(--amber); background: rgba(251,191,36,.06); border: 1px solid rgba(251,191,36,.3); border-radius: 8px; padding: 0.7rem 0.9rem; margin-bottom: 1rem; }
+    .info-box { display: none; font-size: 0.78rem; color: var(--green); background: rgba(52,211,153,.06); border: 1px solid rgba(52,211,153,.3); border-radius: 8px; padding: 0.7rem 0.9rem; margin-bottom: 1rem; }
+    .wait-box { background: #0a0a0a; border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 1.25rem; }
+    .wait-box .t { font-size: 0.8rem; font-weight: 800; color: var(--text); margin-bottom: 0.4rem; }
+    .wait-box .d { font-size: 0.78rem; color: #ccc; }
+    .calc-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.75rem; }
+    .calc-btns { display: flex; gap: 0.5rem; }
+    .sbtn { background: transparent; border: 1px solid var(--border); color: var(--muted); font-size: 0.72rem; padding: 0.4rem 0.7rem; border-radius: 7px; cursor: pointer; }
+    .sbtn:hover { border-color: var(--accent); color: var(--text); }
+    @media (max-width: 600px) { .inputs { grid-template-columns: 1fr; } .results { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="/consulting/tax/">Tax &amp; Accounting</a>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Tax &amp; Accounting</div>
+    <h1>IRS Late Filing &amp; Late Payment Penalty Calculator: What Missing October 15 Costs</h1>
+    <p class="meta">October 14, 2026 · 7 min read · By <a href="/">Particulate LLC</a></p>
+
+    <p>The October 15 extension deadline is tomorrow, and the IRS punishes missing it faster than almost any other mistake in the tax system. File late and the failure-to-file penalty runs at <strong>5% of your unpaid tax per month, up to 25%</strong>. Can't pay on top of that? The failure-to-pay penalty adds <strong>0.5% per month</strong> on the same money — combined, a net <strong>5% per month</strong> while both clocks run, because the IRS credits the pay penalty against the file penalty. And interest at 7% compounded daily sits on top of all of it.</p>
+    <p>On a $10,000 unpaid tax bill, every month of not filing costs about $500. Miss the deadline by 60 days and a <strong>$525 minimum penalty</strong> locks in even if you owe almost nothing. Run your numbers below — the calculator applies the actual IRS penalty rules, including the offset that keeps the two penalties from double-counting.</p>
+
+    <div class="calc" id="calc">
+      <div class="calc-head">IRS Late Filing &amp; Late Payment Penalty Calculator — IRC &sect;6651</div>
+      <div class="inputs">
+        <div>
+          <label for="inp-tax">Unpaid tax ($)</label>
+          <input type="number" id="inp-tax" min="0" step="100" placeholder="e.g. 10000" oninput="render()">
+        </div>
+        <div>
+          <label for="inp-filemonths">Months late FILING (0 = will file on time)</label>
+          <input type="number" id="inp-filemonths" min="0" max="60" step="1" placeholder="e.g. 2" oninput="render()">
+        </div>
+        <div>
+          <label for="inp-paymonths">Total months tax stays UNPAID (from April 15)</label>
+          <input type="number" id="inp-paymonths" min="0" max="120" step="1" placeholder="e.g. 8" oninput="render()">
+        </div>
+      </div>
+      <div class="statute-strip">Failure to file: 5%/month, max 25% (<code>IRC &sect;6651(a)(1)</code>) — Failure to pay: 0.5%/month, max 25% (<code>&sect;6651(a)(2)</code>) — 60-day minimum: $525 for returns due after 12/31/2025 — Interest: 7% compounded daily (Q4 2026, <code>&sect;6621</code>)</div>
+
+      <div class="warn-box" id="warn-min"></div>
+      <div class="info-box" id="info-ontime"></div>
+
+      <div class="results">
+        <div class="rbox hero">
+          <div class="l">Penalties + interest you're adding</div>
+          <div class="v" id="out-extra">$0</div>
+          <div class="l" id="out-pct" style="margin-top:0.2rem">&mdash;</div>
+        </div>
+        <div class="rbox">
+          <div class="l">Failure-to-file penalty</div>
+          <div class="v" id="out-ftf">$0</div>
+        </div>
+        <div class="rbox">
+          <div class="l">Failure-to-pay penalty</div>
+          <div class="v" id="out-ftp">$0</div>
+        </div>
+        <div class="rbox">
+          <div class="l">Interest (7% compounded daily)</div>
+          <div class="v" id="out-int">$0</div>
+        </div>
+        <div class="rbox">
+          <div class="l">Estimated total bill (with tax)</div>
+          <div class="v" id="out-total">$0</div>
+        </div>
+      </div>
+      <p class="calc-note" id="offset-note">Failure-to-file is shown net of the failure-to-pay offset (&sect;6651(c)) — the IRS charges 5% but credits the 0.5% pay penalty against it in the same months, so combined they run at a net 5%/month while both clocks run.</p>
+
+      <div class="wait-box">
+        <div class="t">The cost of waiting</div>
+        <div class="d" id="wait-line">Enter your numbers to see what each additional month of not filing costs.</div>
+      </div>
+
+      <div class="calc-btns">
+        <button class="sbtn" onclick="resetCalc()">Reset</button>
+      </div>
+      <div class="calc-note">Estimate only — penalties are charged per month or <em>partial</em> month (one day late = one full month), and the IRS charges the full month even if you pay mid-month. Interest is estimated on the unpaid tax from the original April due date at the Q4 2026 individual rate (7%/year, compounded daily); the IRS also charges interest on penalties once assessed, so real totals run slightly higher. The rate equals the federal short-term rate + 3 points and resets quarterly. Not tax advice.</div>
+    </div>
+
+    <h2>How the two penalty clocks actually work</h2>
+    <p>The IRS charges two separate penalties for two separate failures, and they interact in a way most people get wrong:</p>
+    <table>
+      <tr><th>Penalty</th><th>Rate</th><th>Runs on</th><th>Cap</th><th>Stops when</th></tr>
+      <tr><td>Failure to file</td><td>5% / month (or partial month)</td><td>Unpaid tax after timely payments &amp; credits</td><td>25% (5 months)</td><td>You file the return</td></tr>
+      <tr><td>Failure to pay</td><td>0.5% / month (or partial month)</td><td>Same unpaid tax</td><td>25% (~50 months)</td><td>You pay in full</td></tr>
+    </table>
+    <p>Because both penalties run on the same dollars in the same months, <code>IRC &sect;6651(c)</code> subtracts the failure-to-pay amount from the failure-to-file charge — that's why the combined rate is a net 5% per month, not the 5.5% you'd get by adding the gross rates. After five months the failure-to-file penalty maxes out (22.5% net of offset, plus the 2.5% of pay penalty that ran alongside it — 25% of the unpaid tax in those months), but the failure-to-pay penalty <em>keeps running</em> at 0.5% per month until it hits its own 25% cap years later. The clocks are ruthless about partial months: file one day into a new month and that month counts in full.</p>
+
+    <h2>The $525 trap at 60 days</h2>
+    <p>Here's the rule that catches people with small balances: for returns due after December 31, 2025, once your return is <strong>more than 60 days late</strong>, the failure-to-file penalty becomes the greater of the calculated amount or <strong>$525</strong> (or 100% of the unpaid tax, if less). Owe $300 in tax? The minimum doesn't apply — but owe $2,000 and go 60+ days past the deadline, and you're paying $525 for the privilege even though the calculated 5%-per-month figure might be lower.</p>
+    <p>This is why the universal advice is: <strong>always file something</strong>. An extension you can't fully pay, a return with a balance due you'll set up payments on, even a return you know has errors — filing stops the 5%-per-month clock entirely and caps your exposure at the far cheaper 0.5%-per-month pay penalty plus interest.</p>
+
+    <h2>Interest: the part nobody budgets for</h2>
+    <p>Penalties aren't the end. Underpayment interest runs from the original April due date until the balance is gone — including through any payment plan — at the federal rate: short-term rate plus 3 percentage points, adjusted quarterly. For the quarter beginning October 1, 2026, that's <strong>7% per year, compounded daily</strong> for individuals. Compounded daily adds a few tenths of a percent over the year versus simple interest, and interest runs on penalties once they're assessed too.</p>
+    <p>The compounding is why tax debt feels like it grows faster than the stated rates. A balance left alone for a year at 7% compounded daily grows about 7.25% — on top of penalties that may have added 25% or more.</p>
+
+    <h2>If you can't pay: the half-price escape hatch</h2>
+    <p>The penalty system has a built-in reward for staying in compliance:</p>
+    <ul>
+      <li><strong>File on time, pay later:</strong> zero failure-to-file penalty. You carry only the 0.5%/month pay penalty plus interest while you work it off.</li>
+      <li><strong>Approved installment agreement</strong> (for individuals who filed on time): the failure-to-pay penalty drops from 0.5% to <strong>0.25% per month</strong> — half price — for as long as the plan is active and you stay current.</li>
+      <li><strong>Intent-to-levy notice:</strong> ignore the IRS long enough and the pay penalty jumps to 1% per month — the escalation the 0.25% relief exists to prevent.</li>
+      <li><strong>Reasonable cause / first-time relief:</strong> penalties can be abated for documented reasonable cause, and the IRS has long offered administrative first-time relief for taxpayers with a clean three-year compliance history — ask before assuming you're stuck.</li>
+    </ul>
+    <p>The sequencing matters: <em>file first, then arrange payment</em>. The reverse order — paying without filing — leaves the 5%-per-month clock running on whatever's still due.</p>
+
+    <h2>Where this fits in your October 15 plan</h2>
+    <p>This calculator is the emergency-room version of our extension coverage. Start with <a href="/blog/october-15-tax-extension-deadline/">the full October 15 extension deadline explainer</a> — what's due, what the extension does and doesn't buy you, and the payment options for filing-with-a-balance. Then read <a href="/blog/q4-tax-moves-before-january-1/">the Q4 tax moves checklist</a> so this year's balance doesn't repeat next April — safe-harbor estimated payments are the difference between owing penalties again and owing nothing. Small businesses should also review <a href="/blog/2026-tax-season-nj-small-business/">the 2026 NJ small business tax season guide</a> for entity-level deadlines that have their own penalty clocks, and lock in your safe harbor with <a href="/blog/january-15-estimated-tax-deadline-2027/">the January 15 estimated tax deadline guide and calculator</a> so next year's quarterly payments don't drift into penalty territory.</p>
+
+    <div class="cta-box">
+      <h3>Owe more than you can pay?</h3>
+      <p>Penalty math, installment agreement strategy, abatement requests, and a payment plan that stops the 5%-per-month clock — we help NJ individuals and small businesses file first and negotiate from a compliant position. That's always the cheaper seat at the table.</p>
+      <a class="cta-btn" href="/consulting/tax/">Get tax &amp; accounting help &rarr;</a>
+    </div>
+
+    <div class="disclaimer">This calculator and article are for general information only, based on the failure-to-file and failure-to-pay penalty rules of IRC &sect;6651, the 60-day minimum penalty amounts published by the IRS for returns due after December 31, 2025, and the Q4 2026 underpayment interest rate (IR-2026-98). Rates and minimums change periodically. They are not tax, legal, or accounting advice. Confirm your specific situation with the IRS or a qualified practitioner before relying on any figure. Particulate LLC is a business management consultancy, not a law firm or CPA firm.</div>
+  </div>
+
+  <footer>
+    <p>© 2026 Particulate LLC · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-and-conditions/">Terms</a></p>
+  </footer>
+
+  <script>
+    var LS_KEY = 'ppllc-irs-pen-v1';
+    function $id(id) { return document.getElementById(id); }
+    function parseNum(s) {
+      var n = parseFloat(String(s).replace(/[^0-9.]/g, ''));
+      return (isNaN(n) || n < 0) ? 0 : n;
+    }
+    function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+    function calc() {
+      var T = parseNum($id('inp-tax').value);
+      var B = Math.round(parseNum($id('inp-filemonths').value)); // months late filing
+      var C = Math.round(parseNum($id('inp-paymonths').value));  // months unpaid total
+      if (B < 0) B = 0; if (B > 60) B = 60;
+      if (C < 0) C = 0; if (C > 120) C = 120;
+      if (T > 0 && B > 0 && C < B) C = B; // can't pay before you file late
+      var ftfM = Math.min(B, 5);          // FTF caps at 5 months
+      var ftpM = Math.min(C, 50);         // FTP caps at 25% = 50 months
+      // Combined months 1..ftfM run 5% total net: FTF net 4.5% + FTP 0.5% (IRC 6651(c) offset)
+      var ftp = 0.005 * ftpM * T;
+      var ftf = 0.045 * ftfM * T;         // net of offset
+      var minApplies = (B >= 3 && T > 0);  // >60 days late -> minimum
+      var minPen = minApplies ? Math.min(525, T) : 0;
+      if (ftf < minPen) ftf = minPen;
+      var days = C * 30.4375;
+      var interest = T > 0 ? T * (Math.pow(1 + 0.07 / 365, days) - 1) : 0;
+      var extra = ftf + ftp + interest;
+      var total = T + extra;
+      var pct = T > 0 ? (extra / T) * 100 : null;
+      var perMonthNow = (B < 5 && T > 0) ? 0.05 * T : 0; // cost of one more unfiled month
+      return { T: T, B: B, C: C, ftf: ftf, ftp: ftp, interest: interest, extra: extra, total: total, pct: pct, minApplies: minApplies, perMonthNow: perMonthNow, ftfM: ftfM };
+    }
+    function render() {
+      var r = calc();
+      $id('out-extra').textContent = fmt(r.extra);
+      $id('out-pct').textContent = r.pct !== null ? Math.round(r.pct * 10) / 10 + '% of the unpaid tax — on top of the tax itself' : '\u2014';
+      $id('out-ftf').textContent = fmt(r.ftf);
+      $id('out-ftp').textContent = fmt(r.ftp);
+      $id('out-int').textContent = fmt(r.interest);
+      $id('out-total').textContent = fmt(r.total);
+      // 60-day minimum warning
+      if (r.minApplies) {
+        $id('warn-min').style.display = 'block';
+        $id('warn-min').textContent = 'More than 60 days late filing: the $525 minimum failure-to-file penalty is in play (shown if it exceeds the calculated amount). If you owe less than $525, the penalty is 100% of the tax instead.';
+      } else {
+        $id('warn-min').style.display = 'none';
+      }
+      // on-time-filed info
+      if (r.T > 0 && r.B === 0) {
+        $id('info-ontime').style.display = 'block';
+        $id('info-ontime').textContent = 'Filing on time: zero failure-to-file penalty. You carry only the 0.5%/month pay penalty + interest — and an approved installment agreement drops the pay penalty to 0.25%/month.';
+      } else {
+        $id('info-ontime').style.display = 'none';
+      }
+      // offset note visibility
+      $id('offset-note').style.display = r.ftfM > 0 ? 'block' : 'none';
+      // cost of waiting
+      if (r.T > 0) {
+        if (r.B === 0) {
+          $id('wait-line').textContent = 'File by the deadline and the 5%/month failure-to-file penalty never starts. Waiting one month past it adds ' + fmt(0.05 * r.T) + ' on this balance (5% combined) — every month, for five months.';
+        } else if (r.B < 5) {
+          $id('wait-line').textContent = 'Each additional month you stay unfiled adds about ' + fmt(r.perMonthNow) + ' (5% combined) while the failure-to-file clock runs \u2014 ' + (5 - r.B) + ' more month(s) until the 25% cap.';
+        } else {
+          $id('wait-line').textContent = 'The failure-to-file penalty is maxed at 25%. Each further month now adds only ' + fmt(0.005 * r.T) + ' of pay penalty plus interest \u2014 but filing still stops interest on penalties and clears the compliance bar for relief.';
+        }
+      } else {
+        $id('wait-line').textContent = 'Enter your numbers to see what each additional month of not filing costs.';
+      }
+      try { localStorage.setItem(LS_KEY, JSON.stringify({ t: r.T, b: r.B, c: r.C })); } catch (e) {}
+    }
+    function resetCalc() {
+      $id('inp-tax').value = '';
+      $id('inp-filemonths').value = '';
+      $id('inp-paymonths').value = '';
+      try { localStorage.removeItem(LS_KEY); } catch (e) {}
+      render();
+    }
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+        if (s) {
+          if (s.t) $id('inp-tax').value = String(s.t);
+          if (s.b) $id('inp-filemonths').value = String(s.b);
+          if (s.c) $id('inp-paymonths').value = String(s.c);
+        }
+      } catch (e) {}
+      render();
+    })();
+  </script>
+</body>
+</html>

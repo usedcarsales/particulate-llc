@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="J8Etv-BCo9S9OTZPcZtqaZY74nCPMvR35hrKmnPIlhM" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When Should You Claim Social Security? 2026 Claiming-Age Calculator + Break-Even Math | Particulate LLC</title>
+  <meta name="description" content="Free 2026 Social Security claiming-age calculator — real reduction/delayed-credit math, earnings test, tax torpedo, break-even age. Run your real numbers before you file." />
+  <meta property="og:title" content="When Should You Claim Social Security? 2026 Claiming-Age Calculator + Break-Even Math" />
+  <meta property="og:description" content="Free 2026 claiming-age calculator — reduction math, earnings test, tax torpedo, and the break-even age most people get wrong." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://particulatellc.com/blog/social-security-claiming-age-calculator-2026/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "When Should You Claim Social Security? 2026 Claiming-Age Calculator + Break-Even Math",
+    "datePublished": "2026-10-10",
+    "dateModified": "2026-10-10",
+    "author": { "@type": "Organization", "name": "Particulate LLC" },
+    "publisher": { "@type": "Organization", "name": "Particulate LLC", "url": "https://particulatellc.com" },
+    "description": "Free 2026 Social Security claiming-age calculator — real reduction/delayed-credit math, earnings test, tax torpedo, break-even age.",
+    "mainEntityOfPage": "https://particulatellc.com/blog/social-security-claiming-age-calculator-2026/"
+  }
+  </script>
+  <style>
+    :root { --bg: #0a0a0a; --card: #141414; --text: #e5e5e5; --muted: #888; --accent: #10b981; --accent2: #34d399; --border: #222; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.2rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); }
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+    .tag { display: inline-block; background: var(--accent); color: #000; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.75rem; line-height: 1.15; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    .meta a { color: var(--accent2); text-decoration: none; }
+    h2 { font-size: 1.4rem; font-weight: 800; margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+    p { margin-bottom: 1rem; color: #ccc; }
+    ul, ol { margin: 0.5rem 0 1.5rem 1.5rem; color: #ccc; }
+    li { margin-bottom: 0.5rem; }
+    .highlight { background: var(--card); border-left: 3px solid var(--accent); padding: 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .highlight strong { color: var(--accent2); }
+    .cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { color: var(--text); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .cta-box p { color: var(--muted); margin-bottom: 1rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #000; font-weight: 700; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th { text-align: left; padding: 0.75rem; background: var(--card); color: var(--text); border-bottom: 2px solid var(--accent); font-weight: 700; }
+    td { padding: 0.75rem; border-bottom: 1px solid var(--border); color: #ccc; }
+    tr:last-child td { border-bottom: none; }
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted); max-width: 600px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 600px) { h1 { font-size: 1.6rem; } .container { padding: 1.5rem 1rem; } nav { padding: 1rem; flex-wrap: wrap; } table { font-size: 0.8rem; } th, td { padding: 0.5rem; } }
+
+    /* ---- Calculator ---- */
+    .calc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin: 2rem 0; }
+    .calc-head { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; }
+    .calc-grid label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.3rem; font-weight: 600; }
+    .calc-grid input[type="number"], .calc-grid select { width: 100%; background: #0a0a0a; border: 1px solid var(--border); color: var(--text); padding: 0.55rem 0.7rem; border-radius: 8px; font-size: 0.95rem; }
+    .calc-grid input:focus, .calc-grid select:focus { outline: none; border-color: var(--accent); }
+    .slider-row { grid-column: 1 / -1; }
+    .slider-row input[type="range"] { width: 100%; accent-color: var(--accent); }
+    .slider-val { font-size: 1.1rem; font-weight: 800; color: var(--accent2); }
+    .calc-out { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+    .res-grid .lbl { font-size: 0.72rem; color: var(--muted); }
+    .res-grid .val { font-size: 1.25rem; font-weight: 800; color: var(--accent2); font-variant-numeric: tabular-nums; }
+    .res-grid .sub { font-size: 0.68rem; color: var(--muted); }
+    .calc-table { width: 100%; font-size: 0.82rem; margin: 1rem 0 0; }
+    .calc-table th, .calc-table td { padding: 0.45rem; }
+    .calc-note { font-size: 0.72rem; color: var(--muted); margin-top: 1rem; }
+    .warn { color: #f59e0b; font-size: 0.75rem; margin-top: 0.5rem; }
+    @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } .res-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="/consulting/retirement/">Retirement</a>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Retirement</div>
+    <h1>When Should You Claim Social Security? The $75,000 Difference Hiding in Your Claiming Age</h1>
+    <p class="meta">October 10, 2026 · 10 min read · By <a href="/">Particulate LLC</a></p>
+
+    <p>62 is the single most common claiming age for both men and women (SSA's own statistics say so) — and it is also the most expensive decision many retirees ever make without doing the math. For a worker with a $2,500 full benefit (PIA), claiming at 62 instead of 70 means a check that is <strong>43.5% smaller, every month, for life</strong>: $1,750 instead of $3,100.</p>
+    <p>The other side of that trade is real too: the early claimer collects eight years of checks the delayer never sees — $168,000 in the example above. Delaying is only "free money" if you live long enough. The break-even lands at <strong>age 80.3</strong> — and that number moves with your investment returns, your taxes, and your longevity.</p>
+    <p>Most claiming-age articles hand you a rule ("wait if you're healthy!") and stop. The calculator below runs the actual math: your birth year's full retirement age, the 5/9-of-1% monthly reduction, the 8%-per-year delayed credits, the 2026 earnings test ($24,480 / $65,160), and the federal "tax torpedo" bands — all live, all recomputed as you type. Pull your PIA from <strong>ssa.gov → my Social Security</strong> first; guessing it produces confident-looking garbage.</p>
+
+    <div class="calc" id="calc">
+      <div class="calc-head">2026 Social Security Claiming-Age Calculator</div>
+      <div class="calc-grid">
+        <div>
+          <label for="birthYear">Birth year</label>
+          <input type="number" id="birthYear" value="1965" min="1940" max="1970" step="1">
+        </div>
+        <div>
+          <label for="pia">Your PIA / full benefit ($/mo, from ssa.gov)</label>
+          <input type="number" id="pia" value="2500" min="0" step="50">
+        </div>
+        <div class="slider-row">
+          <label for="claimAge">Claim age: <span class="slider-val" id="claimAgeVal">67</span></label>
+          <input type="range" id="claimAge" min="62" max="70" step="1" value="67">
+        </div>
+        <div>
+          <label for="workIncome">Expected work income ($/yr, if claiming before FRA)</label>
+          <input type="number" id="workIncome" value="0" min="0" step="1000">
+        </div>
+        <div>
+          <label for="filing">Filing status</label>
+          <select id="filing">
+            <option value="single">Single</option>
+            <option value="mfj">Married filing jointly</option>
+          </select>
+        </div>
+        <div>
+          <label for="otherIncome">Other retirement income ($/yr)</label>
+          <input type="number" id="otherIncome" value="30000" min="0" step="1000">
+        </div>
+        <div>
+          <label for="returnPct">Expected real return (%)</label>
+          <input type="number" id="returnPct" value="4" min="0" max="10" step="0.5">
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="res-grid">
+          <div><div class="lbl">Monthly at your claim age</div><div class="val" id="v-monthly">—</div><div class="sub" id="v-factor">—</div></div>
+          <div><div class="lbl">Your full retirement age</div><div class="val" id="v-fra">—</div><div class="sub" id="v-fraSub">—</div></div>
+          <div><div class="lbl">Break-even vs claiming at 62</div><div class="val" id="v-be">—</div><div class="sub" id="v-beSub">—</div></div>
+          <div><div class="lbl">Wealth at 85 (at your real return)</div><div class="val" id="v-wealth">—</div><div class="sub" id="v-wealthSub">—</div></div>
+        </div>
+        <div class="res-grid">
+          <div><div class="lbl">Annual benefit</div><div class="val" id="v-annual">—</div><div class="sub" id="v-et">—</div></div>
+          <div><div class="lbl">Provisional income</div><div class="val" id="v-prov">—</div><div class="sub" id="v-tax">—</div></div>
+          <div><div class="lbl">Collected by age 80</div><div class="val" id="v-cum80">—</div><div class="sub" id="v-cum80Sub">—</div></div>
+          <div><div class="lbl">Collected by age 85</div><div class="val" id="v-cum85">—</div><div class="sub" id="v-cum85Sub">—</div></div>
+        </div>
+        <table class="calc-table" id="agesTable">
+          <thead><tr><th>Age</th><th>Monthly</th><th>% of PIA</th><th>Collected by 80</th><th>Wealth at 85</th><th>Break-even vs 62</th></tr></thead>
+          <tbody id="ages"></tbody>
+        </table>
+        <div class="calc-note" id="breakdown">—</div>
+        <div class="warn" id="warn" style="display:none;"></div>
+        <div class="calc-note">Simplified 2026 heuristics: no WEP/GPO, no spousal/survivor coordination, nominal benefits, simplified taxability bands. Directional model — not tax or financial advice. Verify your record at ssa.gov.</div>
+      </div>
+    </div>
+
+    <h2>What the Calculator Is Actually Telling You</h2>
+    <p>The engine behind the widget is straightforward Social Security arithmetic, and it's worth understanding rather than trusting:</p>
+    <ul>
+      <li><strong>The early-claiming haircut is 5/9 of 1% per month</strong> for the first 36 months before your full retirement age, then 5/12 of 1% for months beyond that. For a worker with FRA 67 (born 1960+), claiming at 62 means 60 months early: 36 × 5/9% + 24 × 5/12% = a 30% reduction. Claim at 62 with a $2,500 PIA and you lock in <strong>$1,750/month for life</strong>.</li>
+      <li><strong>Delayed credits are 2/3 of 1% per month</strong> (8% per year) from FRA to 70. Same worker waiting to 70: 36 × 2/3% = +24%, so <strong>$3,100/month</strong>.</li>
+      <li><strong>Claiming at 62 is a 43.5% smaller check than claiming at 70</strong> — a gap of $1,350/month in this example. That is the "cost" side of delaying that the head-start $168,000 has to justify.</li>
+    </ul>
+
+    <h2>Worked Example: Born 1965, $2,500 PIA (Every Number Engine-Verified)</h2>
+    <p>This is the default scenario in the calculator above. A worker born in 1965 has FRA of 67, and a $2,500 PIA produces this claiming ladder:</p>
+    <table>
+      <thead><tr><th>Claim age</th><th>Monthly benefit</th><th>% of full</th><th>Annual</th><th>Collected by 80 (nominal)</th><th>Wealth at 85 (4% real)</th><th>Break-even vs 62</th></tr></thead>
+      <tbody>
+        <tr><td>62</td><td>$1,750</td><td>70.0%</td><td>$21,000</td><td>$378,000</td><td>$792,998</td><td>—</td></tr>
+        <tr><td>63</td><td>$1,875</td><td>75.0%</td><td>$22,500</td><td>$382,500</td><td>$794,287</td><td>77.0</td></tr>
+        <tr><td>64</td><td>$2,000</td><td>80.0%</td><td>$24,000</td><td>$384,000</td><td>$790,506</td><td>78.0</td></tr>
+        <tr><td>65</td><td>$2,167</td><td>86.7%</td><td>$26,000</td><td>$390,000</td><td>$797,327</td><td>77.6</td></tr>
+        <tr><td>66</td><td>$2,333</td><td>93.3%</td><td>$28,000</td><td>$392,000</td><td>$797,552</td><td>78.0</td></tr>
+        <tr><td><strong>67 (FRA)</strong></td><td><strong>$2,500</strong></td><td><strong>100%</strong></td><td>$30,000</td><td>$390,000</td><td>$791,611</td><td>78.7</td></tr>
+        <tr><td>68</td><td>$2,700</td><td>108.0%</td><td>$32,400</td><td>$388,800</td><td>$789,657</td><td>79.0</td></tr>
+        <tr><td>69</td><td>$2,900</td><td>116.0%</td><td>$34,800</td><td>$382,800</td><td>$780,777</td><td>79.6</td></tr>
+        <tr><td>70</td><td>$3,100</td><td>124.0%</td><td>$37,200</td><td>$372,000</td><td>$765,423</td><td>80.3</td></tr>
+      </tbody>
+    </table>
+    <p>Read the last column honestly. If you claim at 70, the $1,350/month gap needs <strong>10.4 years to repay the eight-year head start</strong> you gave up — the totals cross at age 80.3. Die before 80 and claiming at 62 won. Live past 85 and the 70-claim is ahead by <strong>$75,000 nominal</strong> ($558,000 vs $483,000 collected by 85) — and still growing at $1,350/month.</p>
+
+    <h3>The assumption that flips the answer: your real return</h3>
+    <p>Nominal break-evens flatter delaying. The last table column tells the real story: at a 4% real return, the early claimer who invests the checks is actually <strong>ahead by about $27,575 at 85</strong> ($792,998 vs $765,423) — because money collected at 62 compounds for 23 years. Drop the return assumption to 0% real and the ranking flips: the 70-claim wins by the full $75,000.</p>
+    <div class="highlight"><strong>The honest summary:</strong> delaying is longevity insurance, not a return optimization. If you expect to live past ~80 — and a healthy 62-year-old usually should bet that way — the bigger check is the safer bet. If your family history says otherwise, or your portfolio reliably beats inflation after tax, claiming earlier is not a mistake.</div>
+
+    <h2>Three Traps the Calculator Surfaces</h2>
+
+    <h3>1. The earnings test punishes early claiming while working</h3>
+    <p>Claim before FRA while still earning and SSA withholds $1 of benefits per $2 over the 2026 limit of <strong>$24,480</strong> ($65,160 in the year you reach FRA, at $1 per $3, for months before FRA only). Example: claim at 63 while making $40,000 — SSA withholds about <strong>$7,760, roughly four months of checks</strong>. The money isn't lost (it's recalculated back into your benefit at FRA), but early claiming while working is often the worst of both worlds: a permanently reduced benefit <em>and</em> withholding.</p>
+
+    <h3>2. The tax torpedo: claiming late can newly expose benefits to tax</h3>
+    <p>Up to 85% of Social Security becomes taxable as "provisional income" (other income + half your benefit) crosses $25,000 single / $32,000 joint — 50% taxable above the base, up to 85% above $34,000 / $44,000. The interaction is nonlinear and can run against delay: a single retiree with only $10,000 of other income pays <strong>0% tax on benefits if claiming at 62</strong> (provisional $20,500), but lands in the <strong>50% band if claiming at 70</strong> (provisional $28,600) — because the bigger benefit itself pushes them over. Run both ages in the calculator with your real income before assuming "delayed = always better after tax."</p>
+
+    <h3>3. Couples: the survivor check is the number that matters</h3>
+    <p>When one spouse dies, the survivor receives the <strong>larger</strong> of the two benefits — not both. That means the higher earner delaying to 70 permanently raises what the survivor will collect, often for a decade or more. The 62/70 split (lower earner early, higher earner to 70) frequently beats both-spouses-at-FRA over two lifetimes. This calculator models one worker only — couples should model the survivor scenario explicitly before filing.</p>
+
+    <h2>Before You File: the 60-Second Checklist</h2>
+    <ol>
+      <li>Pull your official statement at <strong>ssa.gov → my Social Security</strong> and confirm your real PIA and FRA — every number above is anchored to them.</li>
+      <li>If claiming before FRA while working: apply the 2026 earnings-test limits ($24,480 / $65,160) to your expected income.</li>
+      <li>Map your provisional income (other income + 50% of SS) against the $25k/$32k and $34k/$44k taxability thresholds at each candidate age.</li>
+      <li>Couples: compare survivor benefits at 62 vs 70 for the higher earner before either of you files.</li>
+      <li>Set the return slider to what you actually expect after inflation — not the bull-market number — and read the break-even against your own longevity read.</li>
+    </ol>
+    <p>Claiming is effectively irreversible (a narrow 12-month do-over window aside), and these heuristics don't cover WEP/GPO, spousal coordination, or state tax interactions. A professional review of your actual record is cheap insurance on a six-figure decision.</p>
+
+    <div class="cta-box">
+      <h3>Want a review of your actual claiming record?</h3>
+      <p>Particulate's retirement reviews run your real SSA numbers through this exact modeler — survivor scenarios, tax torpedo, and NJ-specific treatment included.</p>
+      <a href="/consulting/retirement/" class="cta-btn">See Retirement Planning Options →</a>
+    </div>
+
+    <h2>Related Reading</h2>
+    <ul>
+      <li><a href="/blog/nj-retirement-planning-overlooked/">NJ Retirement Planning: What Generic Advice Gets Wrong</a> — Social Security timing, pension taxation, and the 401(k) trap for NJ residents</li>
+      <li><a href="/blog/q4-tax-moves-before-january-1/">Q4 Tax Moves to Make Before January 1</a> — the year-end window that affects this year's bracket</li>
+      <li><a href="/blog/how-much-house-can-i-afford-2026/">How Much House Can I Afford in 2026?</a> — the other irreversible financial decision, with a live calculator</li>
+    </ul>
+
+    <footer>
+      <p>Particulate LLC · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/consulting/retirement/">Retirement Consulting</a></p>
+      <p class="disclaimer">This article and calculator use research-based 2026 heuristics published by the Social Security Administration; figures are estimates, not guarantees. Nothing here is tax, legal, or financial advice. Verify your record at ssa.gov and consult a qualified professional before filing.</p>
+    </footer>
+  </div>
+
+  <script>
+  // ===== Claim Clock engine port — vanilla JS, 2026 figures =====
+  var ET_LOWER_2026 = 24480;
+  var ET_HIGHER_2026 = 65160;
+  var TAX_BASE = { single: 25000, mfj: 32000 };
+  var TAX_UPPER = { single: 34000, mfj: 44000 };
+  function num(v) { var f = parseFloat(v); return isNaN(f) ? 0 : f; }
+  function usd(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+  function fraYears(birthYear) {
+    var y = Math.round(num(birthYear));
+    if (y <= 1954) return 66;
+    if (y === 1955) return 66 + 2 / 12;
+    if (y === 1956) return 66 + 4 / 12;
+    if (y === 1957) return 66 + 6 / 12;
+    if (y === 1958) return 66 + 8 / 12;
+    if (y === 1959) return 66 + 10 / 12;
+    return 67;
+  }
+  function benefitAt(claimAgeYears, pia, fraY) {
+    var claimMonths = Math.round(claimAgeYears * 12);
+    var fraMonths = Math.round(fraY * 12);
+    var piaM = Math.max(0, num(pia));
+    var factor = 1;
+    if (claimMonths < fraMonths) {
+      var early = fraMonths - claimMonths;
+      var first = Math.min(early, 36);
+      var rest = Math.max(0, early - 36);
+      factor = 1 - (first * 5) / 900 - (rest * 5) / 1200;
+    } else {
+      var delayed = Math.min(claimMonths - fraMonths, (70 - fraY) * 12);
+      factor = 1 + delayed * (2 / 3) / 100;
+    }
+    return { monthly: piaM * factor, factor: factor };
+  }
+  function cumulative(claimAgeYears, monthly, endAgeYears, r) {
+    var startM = Math.round(claimAgeYears * 12);
+    var endM = Math.round(endAgeYears * 12);
+    var cum = 0, wealth = 0;
+    var mr = num(r) / 100 / 12;
+    for (var m = startM; m < endM; m++) {
+      cum += monthly;
+      wealth += monthly * Math.pow(1 + mr, endM - m);
+    }
+    return { cum: cum, wealth: wealth };
+  }
+  function breakEvenVs62(claimAgeYears, pia, fraY) {
+    var bx = benefitAt(claimAgeYears, pia, fraY);
+    var b62 = benefitAt(62, pia, fraY);
+    if (claimAgeYears <= 62 || bx.monthly <= b62.monthly) return null;
+    var startX = Math.round(claimAgeYears * 12);
+    var sumX = 0, sum62 = 0;
+    for (var m = 62 * 12; m < 62 * 12 + 50 * 12; m++) {
+      if (m >= startX) sumX += bx.monthly;
+      sum62 += b62.monthly;
+      if (m >= startX && sumX >= sum62) return m / 12;
+    }
+    return null;
+  }
+
+  function calc() {
+    var birthYear = num(document.getElementById('birthYear').value);
+    var pia = num(document.getElementById('pia').value);
+    var claim = Math.min(70, Math.max(62, num(document.getElementById('claimAge').value)));
+    var work = Math.max(0, num(document.getElementById('workIncome').value));
+    var married = document.getElementById('filing').value === 'mfj';
+    var otherInc = Math.max(0, num(document.getElementById('otherIncome').value));
+    var ret = num(document.getElementById('returnPct').value);
+
+    document.getElementById('claimAgeVal').textContent = claim;
+
+    var fraY = fraYears(birthYear);
+    var bx = benefitAt(claim, pia, fraY);
+    var b62 = benefitAt(62, pia, fraY);
+    var annual = bx.monthly * 12;
+
+    // Earnings test (2026)
+    var etWithheld = 0, etNote = '';
+    if (claim < fraY - 0.001 && work > ET_LOWER_2026 && pia > 0) {
+      var rawW = (work - ET_LOWER_2026) / 2;
+      etWithheld = Math.min(rawW, annual);
+      etNote = 'earnings test: ' + usd(etWithheld) + ' withheld this yr (recalculated at FRA)';
+    } else if (Math.abs(claim - fraY) < 0.75 && claim < fraY && work > ET_HIGHER_2026 && pia > 0) {
+      var rawW2 = (work - ET_HIGHER_2026) / 3;
+      etWithheld = Math.min(rawW2, annual * 0.75);
+      etNote = 'FRA-year earnings test: ' + usd(etWithheld) + ' withheld';
+    } else {
+      etNote = 'no withholding (past FRA or under the $24,480 limit)';
+    }
+
+    // Tax torpedo
+    var base = married ? TAX_BASE.mfj : TAX_BASE.single;
+    var upper = married ? TAX_UPPER.mfj : TAX_UPPER.single;
+    var provisional = otherInc + 0.5 * annual;
+    var pct = 0;
+    if (provisional > upper) pct = 85; else if (provisional > base) pct = 50;
+
+    // Break-even + wealth
+    var be = breakEvenVs62(claim, pia, fraY);
+    var wX = cumulative(claim, bx.monthly, 85, ret);
+    var w62 = cumulative(62, b62.monthly, 85, ret);
+    var c80 = cumulative(claim, bx.monthly, 80, 0);
+    var c85 = cumulative(claim, bx.monthly, 85, 0);
+    var c80_62 = cumulative(62, b62.monthly, 80, 0).cum;
+    var c85_62 = cumulative(62, b62.monthly, 85, 0).cum;
+
+    document.getElementById('v-monthly').textContent = usd(bx.monthly);
+    document.getElementById('v-factor').textContent = (bx.factor * 100).toFixed(1) + '% of your ' + usd(pia) + ' PIA';
+    document.getElementById('v-fra').textContent = fraY % 1 === 0 ? String(fraY) : (Math.floor(fraY) + ' yr ' + Math.round((fraY % 1) * 12) + ' mo');
+    document.getElementById('v-fraSub').textContent = 'born ' + birthYear;
+    document.getElementById('v-be').textContent = be ? be.toFixed(1) : '—';
+    document.getElementById('v-beSub').textContent = claim === 62 ? 'this IS age 62' : (be ? 'claim at 62 wins before ' + be.toFixed(1) : '');
+    document.getElementById('v-wealth').textContent = usd(wX.wealth);
+    document.getElementById('v-wealthSub').textContent = wX.wealth >= w62.wealth ? 'vs ' + usd(w62.wealth) + ' claiming at 62' : 'vs ' + usd(w62.wealth) + ' at 62 (62 invested wins)';
+    document.getElementById('v-annual').textContent = usd(annual);
+    document.getElementById('v-et').textContent = etNote;
+    document.getElementById('v-prov').textContent = usd(provisional);
+    document.getElementById('v-tax').textContent = pct === 0 ? '0% of SS taxable (under ' + usd(base) + ')' : pct + '% of SS taxable (' + usd(annual * pct / 100) + '/yr)';
+    document.getElementById('v-cum80').textContent = usd(c80.cum);
+    document.getElementById('v-cum80Sub').textContent = '62-claim: ' + usd(c80_62) + (c80.cum >= c80_62 ? ' (early ahead)' : ' (delay ahead)');
+    document.getElementById('v-cum85').textContent = usd(c85.cum);
+    document.getElementById('v-cum85Sub').textContent = '62-claim: ' + usd(c85_62) + (c85.cum >= c85_62 ? ' (delay ahead)' : ' (early ahead)');
+
+    // ages table
+    var tbody = document.getElementById('ages');
+    tbody.innerHTML = '';
+    for (var a = 62; a <= 70; a++) {
+      var b = benefitAt(a, pia, fraY);
+      var abe = a === 62 ? null : breakEvenVs62(a, pia, fraY);
+      var w = cumulative(a, b.monthly, 85, ret);
+      var cum80 = cumulative(a, b.monthly, 80, 0).cum;
+      var tr = document.createElement('tr');
+      if (a === claim) tr.style.background = 'rgba(16,185,129,0.12)';
+      var fraNote = Math.abs(a - fraY) < 0.51 ? ' (FRA)' : '';
+      tr.innerHTML = '<td>' + a + fraNote + (a === claim ? ' ●' : '') + '</td><td>' + usd(b.monthly) +
+        '</td><td>' + (b.factor * 100).toFixed(1) + '%</td><td>' + usd(cum80) +
+        '</td><td>' + usd(w.wealth) + '</td><td>' + (abe ? abe.toFixed(1) : '—') + '</td>';
+      tbody.appendChild(tr);
+    }
+
+    document.getElementById('breakdown').textContent =
+      'Claim ' + claim + ': ' + usd(bx.monthly) + '/mo · collected by 85: ' + usd(c85.cum) +
+      ' · wealth at 85 @ ' + ret + '% real: ' + usd(wX.wealth) + ' vs ' + usd(w62.wealth) + ' (62) · provisional ' +
+      usd(provisional) + ' vs ' + usd(base) + '/' + usd(upper) + ' bands';
+
+    var warn = document.getElementById('warn');
+    var msgs = [];
+    if (claim < fraY - 0.001 && work > ET_LOWER_2026 && pia > 0) msgs.push('Earnings test active: ' + usd(etWithheld) + ' of benefits withheld at ' + usd(work) + ' income. Withheld benefits are recalculated at FRA — not lost, but claiming early while working often loses twice.');
+    if (claim === 62 && fraY === 67) msgs.push('Claiming at 62 with FRA 67 locks in the full 30% reduction — the largest haircut in the schedule.');
+    if (pct === 85) msgs.push('85% of benefits taxable at this income level — extra SS is taxed at your full marginal rate either way.');
+    warn.style.display = msgs.length ? 'block' : 'none';
+    warn.textContent = msgs.join(' ');
+  }
+
+  ['birthYear', 'pia', 'claimAge', 'workIncome', 'filing', 'otherIncome', 'returnPct'].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', calc);
+    el.addEventListener('change', calc);
+  });
+  calc();
+  </script>
+</body>
+</html>
