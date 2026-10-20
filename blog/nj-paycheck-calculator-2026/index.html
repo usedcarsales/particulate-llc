@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="J8Etv-BCo9S9OTZPcZtqaZY74nCPMvR35hrKmnPIlhM" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJ Paycheck Calculator (2026): See Your Real Take-Home Pay | Particulate LLC</title>
+  <meta name="description" content="Free 2026 New Jersey paycheck calculator — federal tax, NJ's unique wage tax, FICA, and the 401(k) quirk most calculators miss. Run your real numbers, W-2 or self-employed." />
+  <meta property="og:title" content="NJ Paycheck Calculator (2026): See Your Real Take-Home Pay" />
+  <meta property="og:description" content="Free 2026 New Jersey paycheck calculator — federal tax, NJ's unique wage tax, FICA, and the 401(k) quirk most calculators miss. Run your real numbers." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://particulatellc.com/blog/nj-paycheck-calculator-2026/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NJ Paycheck Calculator (2026): See Your Real Take-Home Pay",
+    "datePublished": "2026-10-08",
+    "dateModified": "2026-10-08",
+    "author": { "@type": "Organization", "name": "Particulate LLC" },
+    "publisher": { "@type": "Organization", "name": "Particulate LLC", "url": "https://particulatellc.com" },
+    "description": "Free 2026 New Jersey paycheck calculator — federal tax, NJ's unique wage tax, FICA, and the 401(k) quirk most calculators miss. Run your real numbers, W-2 or self-employed.",
+    "mainEntityOfPage": "https://particulatellc.com/blog/nj-paycheck-calculator-2026/"
+  }
+  </script>
+  <style>
+    :root { --bg: #0a0a0a; --card: #141414; --text: #e5e5e5; --muted: #888; --accent: #ef4444; --accent2: #f87171; --border: #222; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.2rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); }
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+    .tag { display: inline-block; background: var(--accent); color: #000; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.75rem; line-height: 1.15; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    .meta a { color: var(--accent2); text-decoration: none; }
+    h2 { font-size: 1.4rem; font-weight: 800; margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+    p { margin-bottom: 1rem; color: #ccc; }
+    ul, ol { margin: 0.5rem 0 1.5rem 1.5rem; color: #ccc; }
+    li { margin-bottom: 0.5rem; }
+    .highlight { background: var(--card); border-left: 3px solid var(--accent); padding: 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .highlight strong { color: var(--accent2); }
+    .cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { color: var(--text); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .cta-box p { color: var(--muted); margin-bottom: 1rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #000; font-weight: 700; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th { text-align: left; padding: 0.75rem; background: var(--card); color: var(--text); border-bottom: 2px solid var(--accent); font-weight: 700; }
+    td { padding: 0.75rem; border-bottom: 1px solid var(--border); color: #ccc; }
+    tr:last-child td { border-bottom: none; }
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted); max-width: 600px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 600px) { h1 { font-size: 1.6rem; } .container { padding: 1.5rem 1rem; } nav { padding: 1rem; flex-wrap: wrap; } table { font-size: 0.8rem; } th, td { padding: 0.5rem; } }
+
+    /* ---- Calculator ---- */
+    .calc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin: 2rem 0; }
+    .calc-head { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; }
+    .calc-grid label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.3rem; font-weight: 600; }
+    .calc-grid input[type="number"], .calc-grid select { width: 100%; background: #0a0a0a; border: 1px solid var(--border); color: var(--text); padding: 0.55rem 0.7rem; border-radius: 8px; font-size: 0.95rem; }
+    .calc-grid input:focus, .calc-grid select:focus { outline: none; border-color: var(--accent); }
+    .mode-row { grid-column: 1 / -1; display: flex; gap: 0.75rem; }
+    .mode-btn { flex: 1; text-align: center; padding: 0.55rem; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--muted); background: #0a0a0a; user-select: none; }
+    .mode-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+    .check-row { grid-column: 1 / -1; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #ccc; }
+    .check-row input { width: auto; }
+    .calc-out { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .takehome { display: flex; flex-wrap: wrap; gap: 1rem; align-items: baseline; margin-bottom: 1rem; }
+    .takehome .big { font-size: 2rem; font-weight: 900; color: var(--text); font-variant-numeric: tabular-nums; }
+    .takehome .per { color: var(--muted); font-size: 0.85rem; }
+    .takehome .annual { color: var(--accent2); font-weight: 700; font-size: 1rem; }
+    .takehome .rate { margin-left: auto; text-align: right; font-size: 0.8rem; color: var(--muted); }
+    .takehome .rate strong { color: var(--text); font-size: 1.1rem; }
+    .bar-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.35rem 0; }
+    .bar-label { width: 9.5rem; flex-shrink: 0; font-size: 0.75rem; color: var(--muted); }
+    .bar-track { flex: 1; height: 0.65rem; border-radius: 99px; background: #0a0a0a; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 99px; }
+    .bar-val { width: 5.5rem; flex-shrink: 0; text-align: right; font-size: 0.75rem; color: var(--text); font-variant-numeric: tabular-nums; font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+    .calc-note { font-size: 0.72rem; color: var(--muted); margin-top: 1rem; }
+    @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } .bar-label { width: 7rem; font-size: 0.68rem; } .bar-val { width: 4.5rem; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Particulate <span>LLC</span></a>
+    <div class="nav-links">
+      <a href="/consulting/debt-credit/">Debt &amp; Credit</a>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Debt &amp; Credit</div>
+    <h1>NJ Paycheck Calculator: What You Actually Take Home in 2026</h1>
+    <p class="meta">October 8, 2026 · 8 min read · By <a href="/">Particulate LLC</a></p>
+
+    <p>You negotiated $75,000. The offer letter looks great. Then the first direct deposit lands and it's about $2,269 — not the $2,885 gross you were mentally spending. That gap is six different taxes and deductions, and in New Jersey one of them works differently than almost anywhere else in the country.</p>
+    <p>Most online paycheck calculators get New Jersey wrong. They apply a generic "state income tax" model and miss the part that actually costs NJ residents money: <strong>New Jersey taxes your 401(k) contributions.</strong> The calculator below runs the real 2026 rules — federal brackets, NJ's own rate tables, FICA, and that 401(k) quirk — so the number it shows is the number your payroll department is aiming for.</p>
+
+    <div class="calc" id="calc">
+      <div class="calc-head">2026 NJ Take-Home Pay Calculator</div>
+      <div class="calc-grid">
+        <div class="mode-row">
+          <div class="mode-btn active" id="mode-w2" onclick="setMode('w2')">W-2 Employee</div>
+          <div class="mode-btn" id="mode-se" onclick="setMode('se')">Self-Employed</div>
+        </div>
+        <div>
+          <label for="salary">Annual gross income ($)</label>
+          <input type="number" id="salary" value="75000" min="0" step="1000">
+        </div>
+        <div>
+          <label for="period">Pay frequency</label>
+          <select id="period">
+            <option value="weekly">Weekly (52)</option>
+            <option value="bi-weekly" selected>Bi-weekly (26)</option>
+            <option value="semi-monthly">Semi-monthly (24)</option>
+            <option value="monthly">Monthly (12)</option>
+          </select>
+        </div>
+        <div>
+          <label for="filing">Filing status</label>
+          <select id="filing">
+            <option value="single" selected>Single</option>
+            <option value="mfj">Married filing jointly</option>
+            <option value="hoh">Head of household</option>
+            <option value="mfs">Married filing separately</option>
+          </select>
+        </div>
+        <div>
+          <label for="children">Children under 17 (federal credit)</label>
+          <input type="number" id="children" value="0" min="0" max="10" step="1">
+        </div>
+        <div>
+          <label for="dependents">NJ dependents under 18</label>
+          <input type="number" id="dependents" value="0" min="0" max="10" step="1">
+        </div>
+        <div>
+          <label for="p401">Pre-tax 401(k) (% of salary)</label>
+          <input type="number" id="p401" value="0" min="0" max="50" step="1">
+        </div>
+        <div>
+          <label for="med">Section 125 medical premiums ($/yr)</label>
+          <input type="number" id="med" value="0" min="0" step="100">
+        </div>
+        <div>
+          <label for="hsa">HSA contributions ($/yr, federal only)</label>
+          <input type="number" id="hsa" value="0" min="0" step="100">
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="senior"> <label for="senior" style="margin:0;">Senior or disabled (adds $1,500 NJ exemption)</label>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="takehome">
+          <div>
+            <div class="big" id="net">$0</div>
+            <div class="per" id="per-label">take-home per paycheck</div>
+          </div>
+          <div class="annual" id="net-annual">$0 / year after taxes</div>
+          <div class="rate">Effective tax rate<br><strong id="rate">0%</strong></div>
+        </div>
+        <div id="bars"></div>
+        <div class="calc-note" id="marginal-note"></div>
+        <div class="calc-note">Estimates use 2026 federal brackets (IRS IR-2025-103), NJ Division of Taxation rate schedules, and the 2026 Social Security wage base of $184,500. Excludes NJ unemployment/disability payroll taxes, benefits, and local taxes (NJ has no local income tax). Estimates only — not tax or payroll advice.</div>
+      </div>
+    </div>
+
+    <h2>Where Each Dollar Goes</h2>
+    <p>For a single filer earning $75,000 with no pre-tax deductions, the 2026 math works out like this:</p>
+    <table>
+      <thead>
+        <tr><th>Line item</th><th>Annual</th><th>Bi-weekly</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gross salary</td><td>$75,000.00</td><td>$2,884.62</td></tr>
+        <tr><td>Federal income tax (after $16,100 standard deduction)</td><td>−$7,670.00</td><td>−$295.00</td></tr>
+        <tr><td>NJ income tax (on gross wages, $1,000 exemption)</td><td>−$2,597.70</td><td>−$99.91</td></tr>
+        <tr><td>Social Security (6.2%)</td><td>−$4,650.00</td><td>−$178.85</td></tr>
+        <tr><td>Medicare (1.45%)</td><td>−$1,087.50</td><td>−$41.83</td></tr>
+        <tr><td><strong>Take-home</strong></td><td><strong>$58,994.80</strong></td><td><strong>$2,269.03</strong></td></tr>
+      </tbody>
+    </table>
+    <p>A 21.3% effective rate. The two biggest lines are federal income tax and Social Security — but the line most calculators misstate is that NJ figure, because of how New Jersey's wage tax actually works.</p>
+
+    <h2>The NJ Quirk Most Calculators Miss</h2>
+    <p>New Jersey's income tax on wages looks like a state version of the federal system, but four differences change your paycheck:</p>
+    <ul>
+      <li><strong>No standard deduction.</strong> NJ taxes your gross wages directly. You get a $1,000 personal exemption ($2,000 married filing jointly), plus $1,500 if you or your spouse is 65+ or disabled — that's it. Compare that to the federal $16,100 standard deduction and you see why NJ bites harder than its rate table suggests.</li>
+      <li><strong>Your 401(k) does NOT reduce NJ tax.</strong> Federal law exempts 401(k) deferrals from federal income tax. New Jersey taxes them now anyway. A $4,500 contribution saves you $0 in NJ state tax this year.</li>
+      <li><strong>Section 125 medical premiums ARE exempt.</strong> Pre-tax health premiums come out before both federal and NJ tax — one of the few deductions NJ respects.</li>
+      <li><strong>Dependent credit:</strong> $500 per dependent under 18, credited directly against NJ tax — not a deduction. For a family with two young kids, that's up to $1,000 off the NJ bill.</li>
+    </ul>
+
+    <h2>The 401(k) Trap, by the Numbers</h2>
+    <p>Run the calculator above at $75,000 single, then set the 401(k) field to 6%. Here's what changes and what doesn't:</p>
+    <table>
+      <thead>
+        <tr><th></th><th>0% to 401(k)</th><th>6% to 401(k) ($4,500/yr)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Federal income tax</td><td>$7,670</td><td>$6,680 (−$990)</td></tr>
+        <tr><td>NJ income tax</td><td>$2,597.70</td><td>$2,597.70 <strong>(−$0)</strong></td></tr>
+        <tr><td>Per-paycheck take-home</td><td>$2,269.03</td><td>$2,134.03 (−$135.00)</td></tr>
+      </tbody>
+    </table>
+    <p>The contribution costs you $135 per bi-weekly paycheck out of pocket while putting $173.08 into retirement every period — the federal tax savings ($990/year) covers the difference. It's still a good deal — but note the federal tax break comes now while NJ taxes that money <em>this year anyway</em>. Anyone comparing "pre-tax vs. Roth" strategies in New Jersey needs to price that in, and most generic calculators never mention it.</p>
+
+    <h2>FICA: The Lines You Can't Change</h2>
+    <p>Social Security takes 6.2% of wages up to the 2026 wage base of <strong>$184,500</strong> — above that, the employee side drops to zero for the rest of the year. Medicare has no cap: 1.45% on everything, plus an extra 0.9% above $200,000 single / $250,000 joint. Unlike income tax, FICA ignores your deductions entirely — your 401(k) deferral is still fully taxed for Social Security and Medicare purposes.</p>
+
+    <h3>Self-employed? The math doubles.</h3>
+    <p>If you're freelancing or running a side business, you pay both halves: 15.3% SE tax on 92.35% of net earnings (the same $184,500 Social Security cap applies). The good news: half of your SE tax is deductible against federal income tax. Switch the calculator to "Self-Employed" and the SE tax line replaces the Social Security/Medicare lines so you can see the real damage on contract income.</p>
+
+    <h2>What This Calculator Leaves Out</h2>
+    <p>Intentionally, to stay honest about what it can estimate:</p>
+    <ul>
+      <li><strong>NJ unemployment, disability, and family leave payroll taxes</strong — small percentages on the first ~$40K of wages that your employer withholds. Add roughly $100–$350/year depending on wages.</li>
+      <li><strong>Benefit elections</strong — dental, vision, life insurance, commuter benefits. Enter the medical piece above; everything else varies too much to model.</li>
+      <li><strong>Local income tax</strong — good news: New Jersey has none. Philadelphia commuters: the wage tax is a different conversation.</li>
+      <li><strong>Retirement plan quality</strong — NJ taxes traditional 401(k)/IRA contributions now and exempts withdrawals in retirement. That reversal (federal is the opposite for traditional accounts) is why NJ retirees can face a surprise.</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>Want this run with your actual numbers?</h3>
+      <p>Particulate LLC's Debt &amp; Credit service turns take-home math into a plan — paycheck optimization, debt payoff sequencing against your real cash flow, and the NJ-specific rules payroll software skips. Fixed-price tiers, no surprise bills.</p>
+      <a class="cta-btn" href="/consulting/debt-credit/">See Debt &amp; Credit Plans — from $9</a>
+    </div>
+
+    <p><strong>Related reading:</strong></p>
+    <ul>
+      <li><a href="/blog/debt-payoff-strategies-2026/">Debt Payoff Strategies That Actually Work</a> — what to do with the cash flow this calculator frees up</li>
+      <li><a href="/blog/q4-tax-moves-before-january-1/">Q4 Tax Moves to Make Before January 1</a> — if the take-home number is smaller than you hoped</li>
+      <li><a href="/blog/october-15-tax-extension-deadline/">The October 15 Extension Deadline</a> — for extension filers, this one has 7 days left</li>
+      <li><a href="/blog/january-15-estimated-tax-deadline-2027/">January 15 Estimated Tax Deadline</a> — the Q4 payment and safe harbor, explained with a calculator</li>
+    </ul>
+
+    <div class="disclaimer">This article and calculator are general information for educational purposes, not tax, payroll, or financial advice for your specific situation. Figures use announced 2026 brackets, standard deductions, wage bases, and NJ rate schedules; credit and phaseout rules are simplified. Verify current-year numbers before acting, and consult a qualified professional — or <a href="/consulting/debt-credit/">have us run the numbers with you</a>.</div>
+  </div>
+
+  <footer>
+    <p>© 2026 Particulate LLC · Burlington County, NJ · <a href="/consulting/">Consulting Services</a> · <a href="/blog/">Blog</a></p>
+  </footer>
+
+  <script>
+  // ---- 2026 tax data (ported from Particulate's NJPaycheck tool, verified 2026-09-25) ----
+  // Federal: IRS IR-2025-103 / Rev. Proc. 2025-32 (TY2026). NJ: Div. of Taxation Tables A & B.
+  var FED_STD = { single: 16100, mfj: 32200, hoh: 24150, mfs: 16100 };
+  var FED_BRACKETS = {
+    single: [[12400,0.10],[50400,0.12],[105700,0.22],[201775,0.24],[256225,0.32],[640600,0.35],[Infinity,0.37]],
+    mfj: [[24800,0.10],[100800,0.12],[211400,0.22],[403550,0.24],[512450,0.32],[768700,0.35],[Infinity,0.37]],
+    hoh: [[17700,0.10],[63600,0.12],[100800,0.22],[211400,0.24],[268300,0.32],[640600,0.35],[Infinity,0.37]],
+    mfs: [[12400,0.10],[50400,0.12],[105700,0.22],[201775,0.24],[256225,0.32],[384350,0.35],[Infinity,0.37]]
+  };
+  var CTC_PER_CHILD = 2200;
+  var CTC_PHASE = { single: 200000, hoh: 200000, mfs: 200000, mfj: 400000 };
+  var NJ_TABLE_A = { rates: [0.014,0.0175,0.035,0.0553,0.0637,0.0897,0.1075], bounds: [20000,35000,40000,75000,500000,1000000,Infinity] };
+  var NJ_TABLE_B = { rates: [0.014,0.0175,0.0245,0.035,0.0553,0.0637,0.0897,0.1075], bounds: [20000,50000,70000,80000,150000,500000,1000000,Infinity] };
+  var SS_RATE = 0.062, SS_WAGE_BASE_2026 = 184500;
+  var MEDICARE_RATE = 0.0145, MEDICARE_ADDL_RATE = 0.009;
+  var MEDICARE_ADDL_THRESH = { single: 200000, mfs: 125000, mfj: 250000, hoh: 200000 };
+  var PERIODS = { weekly: 52, 'bi-weekly': 26, 'semi-monthly': 24, monthly: 12 };
+  var PERIOD_LABEL = { weekly: 'per week', 'bi-weekly': 'per bi-weekly paycheck', 'semi-monthly': 'per semi-monthly paycheck', monthly: 'per month' };
+
+  var mode = 'w2';
+
+  function progressive(taxable, rates, bounds) {
+    var tax = 0, prev = 0;
+    for (var i = 0; i < rates.length; i++) {
+      if (taxable <= prev) break;
+      var slice = Math.min(taxable, bounds[i]) - prev;
+      if (slice > 0) tax += slice * rates[i];
+      prev = bounds[i];
+    }
+    return tax;
+  }
+
+  function njTax(wageIncome, filing, exemptions, dependents) {
+    var t = (filing === 'mfj' || filing === 'hoh') ? NJ_TABLE_B : NJ_TABLE_A;
+    var afterExempt = Math.max(0, wageIncome - exemptions);
+    var tax = progressive(afterExempt, t.rates, t.bounds);
+    var credit = Math.min(tax, dependents * 500);
+    return { tax: Math.max(0, tax - credit), credit: credit };
+  }
+
+  function fedTax(taxable, filing, children) {
+    var brackets = FED_BRACKETS[filing], tax = 0, prev = 0;
+    for (var i = 0; i < brackets.length; i++) {
+      if (taxable <= prev) break;
+      var slice = Math.min(taxable, brackets[i][0]) - prev;
+      if (slice > 0) tax += slice * brackets[i][1];
+      prev = brackets[i][0];
+    }
+    var ctc = children * CTC_PER_CHILD;
+    var over = Math.max(0, taxable - CTC_PHASE[filing]);
+    if (over > 0) ctc = Math.max(0, ctc - 0.05 * over);
+    ctc = Math.min(ctc, Math.max(0, tax));
+    return { tax: tax - ctc, ctc: ctc, bracketTax: tax };
+  }
+
+  function fmt(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }); }
+
+  function val(id) { return parseFloat(document.getElementById(id).value) || 0; }
+
+  function setMode(m) {
+    mode = m;
+    document.getElementById('mode-w2').classList.toggle('active', m === 'w2');
+    document.getElementById('mode-se').classList.toggle('active', m === 'se');
+    calc();
+  }
+
+  function calc() {
+    var gross = Math.max(0, val('salary'));
+    var period = document.getElementById('period').value;
+    var filing = document.getElementById('filing').value;
+    var kids = Math.max(0, parseInt(val('children')) || 0);
+    var deps = Math.max(0, parseInt(val('dependents')) || 0);
+    var senior = document.getElementById('senior').checked;
+    var pct401 = Math.min(50, Math.max(0, val('p401')));
+    var p401 = gross * (pct401 / 100);
+    var med = Math.max(0, val('med'));
+    var hsa = Math.max(0, val('hsa'));
+    var periods = PERIODS[period] || 26;
+
+    // ---- FICA ----
+    var ssTax = 0, medicareTax = 0, seTax = 0, halfSe = 0;
+    if (mode === 'se') {
+      var seBase = gross * 0.9235;
+      var ssBase = Math.min(seBase, SS_WAGE_BASE_2026);
+      seTax = ssBase * SS_RATE * 2 + seBase * MEDICARE_RATE * 2;
+      halfSe = seTax / 2;
+    } else {
+      ssTax = Math.min(gross, SS_WAGE_BASE_2026) * SS_RATE;
+      var medBase = Math.max(0, gross - med); // 401(k) is FICA-taxed; only Section 125 medical is Medicare-exempt
+      var addlBase = Math.max(0, medBase - MEDICARE_ADDL_THRESH[filing]);
+      medicareTax = medBase * MEDICARE_RATE + addlBase * MEDICARE_ADDL_RATE;
+    }
+
+    // ---- Federal ----
+    var fedTaxable = Math.max(0, gross - p401 - med - hsa - halfSe - FED_STD[filing]);
+    var f = fedTax(fedTaxable, filing, kids);
+
+    // ---- NJ (no 401k/HSA deduction; Section 125 medical exempt) ----
+    var njExemptions = (filing === 'mfj' ? 2000 : 1000) + (senior ? 1500 : 0);
+    var njWage = Math.max(0, gross - med);
+    var nj = njTax(njWage, filing, njExemptions, deps);
+
+    var totalTax = f.tax + nj.tax + ssTax + medicareTax + seTax;
+    var netAnnual = gross - p401 - med - totalTax;
+    var rate = gross > 0 ? (totalTax / gross) * 100 : 0;
+
+    // Marginal federal rate
+    var marginal = 0.10;
+    for (var i = 0; i < FED_BRACKETS[filing].length; i++) {
+      if (fedTaxable > FED_BRACKETS[filing][i][0]) continue;
+      marginal = FED_BRACKETS[filing][i][1]; break;
+    }
+
+    // ---- Render ----
+    document.getElementById('net').textContent = fmt(netAnnual / periods);
+    document.getElementById('per-label').textContent = 'take-home ' + PERIOD_LABEL[period];
+    document.getElementById('net-annual').textContent = fmt(netAnnual) + ' / year after taxes';
+    document.getElementById('rate').textContent = rate.toFixed(1) + '%';
+    document.getElementById('marginal-note').textContent =
+      'Federal taxable income: ' + fmt(fedTaxable) + ' · marginal federal bracket ' + (marginal * 100).toFixed(0) +
+      '% · NJ exemptions ' + fmt(njExemptions) +
+      (kids > 0 ? ' · federal child tax credit ' + fmt(f.ctc) : '') +
+      (deps > 0 ? ' · NJ dependent credit ' + fmt(nj.credit) : '');
+
+    var rows = [];
+    rows.push(['Federal income tax', f.tax, '#3b82f6']);
+    rows.push(['NJ income tax', nj.tax, '#ef4444']);
+    if (mode === 'w2') {
+      rows.push(['Social Security (6.2%)', ssTax, '#22c55e']);
+      rows.push(['Medicare (1.45%)', medicareTax, '#14b8a6']);
+    } else {
+      rows.push(['Self-employment tax (15.3%)', seTax, '#22c55e']);
+    }
+    if (p401 > 0) rows.push(['401(k) deferral (' + pct401 + '%)', p401, '#a855f7']);
+    if (med > 0) rows.push(['Medical premiums', med, '#f59e0b']);
+    rows.push(['Take-home', Math.max(0, netAnnual), '#e5e5e5']);
+
+    var bars = document.getElementById('bars');
+    bars.innerHTML = '';
+    rows.forEach(function (r) {
+      var w = Math.min(100, (r[1] / Math.max(1, gross)) * 100);
+      var row = document.createElement('div');
+      row.className = 'bar-row';
+      row.innerHTML =
+        '<div class="bar-label">' + r[0] + '</div>' +
+        '<div class="bar-track"><div class="bar-fill" style="width:' + w + '%;background:' + r[2] + '"></div></div>' +
+        '<div class="bar-val">' + fmt(r[1]) + '</div>';
+      bars.appendChild(row);
+    });
+  }
+
+  ['salary', 'period', 'filing', 'children', 'dependents', 'p401', 'med', 'hsa', 'senior'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', calc);
+    document.getElementById(id).addEventListener('change', calc);
+  });
+  calc();
+  </script>
+</body>
+</html>
